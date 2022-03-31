@@ -1,13 +1,13 @@
-package day21;
+package academy.day21;
 
 public class ManualCar extends Car {
 	@Override
 	public void drive() {
-		System.out.println("»ç¶÷ÀÌ ¿îÀüÇÕ´Ï´Ù.");
-		System.out.println("»ç¶÷ÀÌ ÇÚµéÀ» Á¶ÀÛÇÕ´Ï´Ù");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
 	}
-	
+
 	public void stop() {
-		System.out.println("ºê·¹ÀÌÅ©·Î Á¤ÁöÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ê·¹ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
 }

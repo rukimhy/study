@@ -1,22 +1,22 @@
-package day25;
+package academy.day25;
 
-import collection.Member;
+import academy.collection.Member;
 
 public class MemberHashSetTest {
 
 	public static void main(String[] args) {
 		MemberHashSet memberHashSet = new MemberHashSet();
-		
-		Member memberLee = new Member(1001, "ÀÌÁö¿ø");
-		Member memberSon = new Member(1002, "¼Õ¹Î±¹");
-		Member memberPark = new Member(1003, "¹Ú¼­ÈÍ");
-		
+
+		Member memberLee = new Member(1001, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		Member memberSon = new Member(1002, "ï¿½Õ¹Î±ï¿½");
+		Member memberPark = new Member(1003, "ï¿½Ú¼ï¿½ï¿½ï¿½");
+
 		memberHashSet.addMember(memberLee);
 		memberHashSet.addMember(memberSon);
 		memberHashSet.addMember(memberPark);
 		memberHashSet.showAllMember();
-		
-		Member memberHong = new Member(1003, "È«±æµ¿");
+
+		Member memberHong = new Member(1003, "È«ï¿½æµ¿");
 		memberHashSet.addMember(memberHong);
 		memberHashSet.showAllMember();
 	}

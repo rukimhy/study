@@ -1,8 +1,8 @@
-package day26;
-/*	¼ºÀû °ü¸® ÇÁ·Î±×·¥ (ÆÄÀÏ ÀÔÃâ·Â)
-	ÀÌ¸§ | ±¹¾î | ¿µ¾î | ¼öÇÐ | ÄÄÇ»ÅÍ | Æò±Õ | ¼øÀ§
-	1.ÀÔ·Â 2.Á¶È¸ 3.»èÁ¦ 4.Á¾·á
-	2¹ø Á¶È¸ 1.ÀüÃ¼Á¶È¸ 2.¼±ÅÃÁ¶È¸
+package academy.day26;
+/*	ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½)
+	ï¿½Ì¸ï¿½ | ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½Ç»ï¿½ï¿½ | ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½
+	1.ï¿½Ô·ï¿½ 2.ï¿½ï¿½È¸ 3.ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½
+	2ï¿½ï¿½ ï¿½ï¿½È¸ 1.ï¿½ï¿½Ã¼ï¿½ï¿½È¸ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸
  */
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-class Student{
+class Student {
 	private String studentName;
 	private int kor;
 	private int eng;
@@ -21,7 +21,7 @@ class Student{
 	private double avg;
 	private int no;
 
-	Student(String studentName, int kor, int eng, int math, int com){
+	Student(String studentName, int kor, int eng, int math, int com) {
 		this.studentName = studentName;
 		this.kor = kor;
 		this.eng = eng;
@@ -87,73 +87,73 @@ class Student{
 	}
 
 	public String toString() {
-		return studentName+"\t"+kor+"\t"+eng+"\t"+math+"\t"+com+"\t"+avg+"\t"+no+"\n";
+		return studentName + "\t" + kor + "\t" + eng + "\t" + math + "\t" + com + "\t" + avg + "\t" + no + "\n";
 	}
 }
 
 public class Q50 {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		Scanner scan = new Scanner(System.in);
 
 		File f = new File("student.txt");
-		if(f.exists()) {
+		if (f.exists()) {
 			String source = "";
 			FileWriter fw = new FileWriter("student.txt", true);
 			fw.write(source);
 			fw.close();
 
 		} else {
-			String source = "ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇÐ\tÄÄÇ»ÅÍ\tÆò±Õ\t¼øÀ§\n";
+			String source = "ï¿½Ì¸ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½Ç»ï¿½ï¿½\tï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\n";
 			FileWriter fw = new FileWriter("student.txt");
 			fw.write(source);
 			fw.close();
 		}
 
-		while(true) {
-			System.out.print("1.ÀÔ·Â 2.Á¶È¸ 3.»èÁ¦ 4.Á¾·á : ");
+		while (true) {
+			System.out.print("1.ï¿½Ô·ï¿½ 2.ï¿½ï¿½È¸ 3.ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½ : ");
 			String select = scan.nextLine();
 
-			if(select.equals("4") ) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			if (select.equals("4")) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			} 
-			//ÀÔ·Â
-			else if(select.equals("1")) {
-				System.out.print("ÀÌ¸§ : ");
+			}
+			// ï¿½Ô·ï¿½
+			else if (select.equals("1")) {
+				System.out.print("ï¿½Ì¸ï¿½ : ");
 				String name = scan.next();
 				int kor, eng, math, com;
 				do {
-					System.out.print("±¹¾î : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					kor = scan.nextInt();
-				} while(kor < 0 || kor > 100);
+				} while (kor < 0 || kor > 100);
 
 				do {
-					System.out.print("¿µ¾î : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					eng = scan.nextInt();
-				} while(eng < 0 || eng > 100);
+				} while (eng < 0 || eng > 100);
 
 				do {
-					System.out.print("¼öÇÐ : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					math = scan.nextInt();
-				} while(math < 0 || math > 100);
+				} while (math < 0 || math > 100);
 
 				do {
-					System.out.print("ÄÄÇ»ÅÍ : ");
-					com = scan.nextInt();	
-				} while(com < 0 || com > 100);
+					System.out.print("ï¿½ï¿½Ç»ï¿½ï¿½ : ");
+					com = scan.nextInt();
+				} while (com < 0 || com > 100);
 
 				Student student = new Student(name, kor, eng, math, com);
-				System.out.println("Ãß°¡µÇ¾ú½À´Ï´Ù.");
+				System.out.println("ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				FileWriter fw = new FileWriter("student.txt", true);
 				fw.write(student.toString());
 				fw.close();
 
-			} 
+			}
 
-			//»èÁ¦
-			else if(select.equals("3")) {
-				System.out.print("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			// ï¿½ï¿½ï¿½ï¿½
+			else if (select.equals("3")) {
+				System.out.print("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 				String name = scan.nextLine();
 
 				FileReader fr = new FileReader("student.txt");
@@ -161,33 +161,31 @@ public class Q50 {
 
 				int i, j, count = 0, temp1 = 0, temp2 = 0;
 
-				while((i=fr.read()) != -1)
-				{
-					if(count == 1) {
-						if((char)i == '\n') {
+				while ((i = fr.read()) != -1) {
+					if (count == 1) {
+						if ((char) i == '\n') {
 							count = 2;
-						}
-						else {
+						} else {
 							continue;
 						}
 					}
 
 					else {
-						if(name.charAt(0) == (char)temp2 && name.charAt(1) == (char)temp1 && name.charAt(2) == (char)i) {
-							count = 1;									
+						if (name.charAt(0) == (char) temp2 && name.charAt(1) == (char) temp1
+								&& name.charAt(2) == (char) i) {
+							count = 1;
 						}
 					}
-					
-					if(name.charAt(0) != (char)temp1) {
-						fw.write((char)i);
+
+					if (name.charAt(0) != (char) temp1) {
+						fw.write((char) i);
 					}
 					temp2 = temp1;
 					temp1 = i;
 				}
-				
 
-				if(count < name.length()) {
-					System.out.println("Ã£´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.");
+				if (count < name.length()) {
+					System.out.println("Ã£ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				}
 				fw.close();
 				fr.close();
@@ -199,45 +197,44 @@ public class Q50 {
 
 			}
 
-			//Á¶È¸
-			else if(select.equals("2")) {
-				System.out.print("1.ÀüÃ¼ Á¶È¸ || 2.¼±ÅÃ Á¶È¸ : ");
+			// ï¿½ï¿½È¸
+			else if (select.equals("2")) {
+				System.out.print("1.ï¿½ï¿½Ã¼ ï¿½ï¿½È¸ || 2.ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : ");
 				String select_2 = scan.nextLine();
 
-				if(select_2.equals("1")) {
+				if (select_2.equals("1")) {
 					FileReader fr = new FileReader("student.txt");
 					int i;
-					while((i=fr.read())!= -1)
-					{
-						System.out.print((char)i);
+					while ((i = fr.read()) != -1) {
+						System.out.print((char) i);
 					}
 					fr.close();
-				} else if(select_2.equals("2")) {
-					System.out.print("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				} else if (select_2.equals("2")) {
+					System.out.print("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					String name = scan.nextLine();
-					System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇÐ\tÄÄÇ»ÅÍ\tÆò±Õ\t¼øÀ§");
+					System.out.println("ï¿½Ì¸ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½Ç»ï¿½ï¿½\tï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½");
 
 					FileReader fr = new FileReader("student.txt");
 					int i, count = 0, temp1 = 0, temp2 = 0;
 					boolean chk = true;
 
-					while((i=fr.read()) != -1)
-					{
+					while ((i = fr.read()) != -1) {
 
-						if(count == name.length()) {
-							System.out.print((char)i);
-							if((char)i == '\n') {
-								count = name.length()+50;
+						if (count == name.length()) {
+							System.out.print((char) i);
+							if ((char) i == '\n') {
+								count = name.length() + 50;
 								break;
 							}
 						}
-						if(count != name.length()) {
-							if(name.charAt(0) == (char)temp2 && name.charAt(1) == (char)temp1 && name.charAt(2) == (char)i) {
-								count = name.length();									
+						if (count != name.length()) {
+							if (name.charAt(0) == (char) temp2 && name.charAt(1) == (char) temp1
+									&& name.charAt(2) == (char) i) {
+								count = name.length();
 							}
 						}
 
-						if(count == name.length() && chk == true) {
+						if (count == name.length() && chk == true) {
 							System.out.printf(name);
 							chk = false;
 						}
@@ -245,20 +242,19 @@ public class Q50 {
 						temp1 = i;
 					}
 
-					if(count < name.length()) {
-						System.out.println("Ã£´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.");
+					if (count < name.length()) {
+						System.out.println("Ã£ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
 					fr.close();
 
 				} else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				}
 
 			} else {
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
 	}
 
 }
-

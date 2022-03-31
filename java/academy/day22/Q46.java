@@ -1,113 +1,105 @@
-package day22;
+package academy.day22;
 
 import java.util.Random;
 
-interface Booster{}
+interface Booster {
+}
 
-abstract class Vehicle
-{
+abstract class Vehicle {
 	int distance;
 	int gauge;
+
 	abstract void move();
 }
 
-class Car extends Vehicle implements Booster
-{
-	Car()
-	{
+class Car extends Vehicle implements Booster {
+	Car() {
 		super.distance = 0;
 		super.gauge = 0;
 	}
-	void printDistance() 
-	{
-		System.out.println("ÀÚµ¿Â÷ÀÇ ÁÖÇà°Å¸® : "+distance);
+
+	void printDistance() {
+		System.out.println("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ : " + distance);
 	}
-	void printGauge() 
-	{
-		System.out.println("ÀÚµ¿Â÷ÀÇ °ÔÀÌÁö : "+gauge);
+
+	void printGauge() {
+		System.out.println("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + gauge);
 	}
+
 	@Override
-	void move() 
-	{
+	void move() {
 		Random r = new Random();
 		int meter = r.nextInt(21);
 		distance += meter;
-		System.out.println("ÀÚµ¿Â÷´Â "+meter+"¸¸Å­ ÀÌµ¿Çß½À´Ï´Ù.");
+		System.out.println("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ " + meter + "ï¿½ï¿½Å­ ï¿½Ìµï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 	}
-	public String toString() 
-	{
-		return "ÀÚµ¿Â÷";
+
+	public String toString() {
+		return "ï¿½Úµï¿½ï¿½ï¿½";
 	}
 }
 
-class Bicycle extends Vehicle implements Booster
-{
-	Bicycle()
-	{
+class Bicycle extends Vehicle implements Booster {
+	Bicycle() {
 		super.distance = 0;
 		super.gauge = 0;
 	}
-	void printDistance() 
-	{
-		System.out.println("ÀÚÀü°ÅÀÇ ÁÖÇà°Å¸® : "+distance);
+
+	void printDistance() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ : " + distance);
 	}
-	void printGauge() 
-	{
-		System.out.println("ÀÚÀü°ÅÀÇ °ÔÀÌÁö : "+gauge);
+
+	void printGauge() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + gauge);
 	}
+
 	@Override
-	void move() 
-	{
+	void move() {
 		Random r = new Random();
 		int meter = r.nextInt(21);
 		distance += meter;
-		System.out.println("ÀÚÀü°Å´Â "+meter+"¸¸Å­ ÀÌµ¿Çß½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Å´ï¿½ " + meter + "ï¿½ï¿½Å­ ï¿½Ìµï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 	}
-	public String toString() 
-	{
-		return "ÀÚÀü°Å";
+
+	public String toString() {
+		return "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 	}
 }
 
-class Motorcycle extends Vehicle implements Booster
-{
-	Motorcycle()
-	{
+class Motorcycle extends Vehicle implements Booster {
+	Motorcycle() {
 		super.distance = 0;
 		super.gauge = 0;
 	}
-	void printDistance() 
-	{
-		System.out.println("¿ÀÅä¹ÙÀÌÀÇ ÁÖÇà°Å¸® : "+distance);
+
+	void printDistance() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ : " + distance);
 	}
-	void printGauge() 
-	{
-		System.out.println("¿ÀÅä¹ÙÀÌÀÇ °ÔÀÌÁö : "+gauge);
+
+	void printGauge() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + gauge);
 	}
+
 	@Override
-	void move() 
-	{
+	void move() {
 		Random r = new Random();
 		int meter = r.nextInt(21);
 		distance += meter;
-		System.out.println("¿ÀÅä¹ÙÀÌ´Â "+meter+"¸¸Å­ ÀÌµ¿Çß½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ " + meter + "ï¿½ï¿½Å­ ï¿½Ìµï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 	}
-	
-	public String toString() 
-	{
-		return "¿ÀÅä¹ÙÀÌ";
+
+	public String toString() {
+		return "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 	}
 }
 
 public class Q46 {
-	
-	public static void booster(Booster b, int a) 
-	{
-		if(b instanceof Vehicle) 
-		{
-			Vehicle v = (Vehicle)b;
+
+	public static void booster(Booster b, int a) {
+		if (b instanceof Vehicle) {
+			Vehicle v = (Vehicle) b;
 			v.distance += a;
-			System.out.println(v+" : "+a+"¸¸Å­ ºÎ½ºÅÍ ÇÕ´Ï´Ù.");
+			System.out.println(v + " : " + a + "ï¿½ï¿½Å­ ï¿½Î½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 			v.gauge = -1;
 		}
 	}
@@ -119,72 +111,57 @@ public class Q46 {
 		Motorcycle motorcycle = new Motorcycle();
 		int count = 1;
 
-		while(true) 
-		{
-			System.out.println("========="+count+"ÅÏ=========");
-			int randomChoice = r.nextInt(3)+1; // 1:ÀÚµ¿Â÷x 2:ÀÚÀü°Åx 3:¿ÀÅä¹ÙÀÌx
-			if(randomChoice == 1) 
-			{
-				System.out.println("ÀÚµ¿Â÷ ¿òÁ÷ÀÌÁö ¸øÇÕ´Ï´Ù.");
+		while (true) {
+			System.out.println("=========" + count + "ï¿½ï¿½=========");
+			int randomChoice = r.nextInt(3) + 1; // 1:ï¿½Úµï¿½ï¿½ï¿½x 2:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½x 3:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½x
+			if (randomChoice == 1) {
+				System.out.println("ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				bicycle.move();
 				motorcycle.move();
-			} 
-			else if(randomChoice == 2) 
-			{
-				System.out.println("ÀÚÀü°Å ¿òÁ÷ÀÌÁö ¸øÇÕ´Ï´Ù.");
+			} else if (randomChoice == 2) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				car.move();
 				motorcycle.move();
 
-			} 
-			else 
-			{
-				System.out.println("¿ÀÅä¹ÙÀÌ ¿òÁ÷ÀÌÁö ¸øÇÕ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				car.move();
 				bicycle.move();
 			}
-			
+
 			car.gauge++;
 			bicycle.gauge++;
 			motorcycle.gauge++;
-			
+
 			car.printGauge();
 			bicycle.printGauge();
 			motorcycle.printGauge();
-			
-			if(bicycle.gauge == 2) 
-			{
+
+			if (bicycle.gauge == 2) {
 				booster(bicycle, 5);
 			}
-			if(motorcycle.gauge == 3) 
-			{
+			if (motorcycle.gauge == 3) {
 				booster(motorcycle, 3);
-			} 
-			if(car.gauge == 4) 
-			{
+			}
+			if (car.gauge == 4) {
 				booster(car, 2);
 			}
-			
+
 			car.printDistance();
 			bicycle.printDistance();
 			motorcycle.printDistance();
-			
-			if(bicycle.distance >= 500 || motorcycle.distance >= 500 || car.distance >= 500) 
-			{
-				if(bicycle.distance >= 500) 
-				{
-					System.out.println("ÀÚÀü°Å ¿ì½Â");
-				} 
-				else if(motorcycle.distance >= 500) 
-				{
-					System.out.println("¿ÀÅä¹ÙÀÌ ¿ì½Â");
-				} 
-				else 
-				{
-					System.out.println("ÀÚµ¿Â÷ ¿ì½Â");
+
+			if (bicycle.distance >= 500 || motorcycle.distance >= 500 || car.distance >= 500) {
+				if (bicycle.distance >= 500) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
+				} else if (motorcycle.distance >= 500) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
+				} else {
+					System.out.println("ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½");
 				}
 				break;
 			}
-			
+
 			count++;
 			System.out.println("=====================");
 		}

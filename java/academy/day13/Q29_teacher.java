@@ -1,127 +1,119 @@
-package day13;
+package academy.day13;
 
-class pencil
-{
+class pencil {
 	String pencilcolor;
-	
-	String getColor()
-	{
+
+	String getColor() {
 		return pencilcolor;
 	}
-	void setColor(String color)
-	{
+
+	void setColor(String color) {
 		pencilcolor = color;
 	}
-	
-	public void pencilmake()
-	{
-		System.out.println(pencilcolor+"»ö ¿¬ÇÊ·Î Àû½À´Ï´Ù.");
-	}
-}
-class Eraser
-{
-	String EraserFrom;
-	String getForm()
-	{
-		return EraserFrom;
-	}
-	void setForm(String form)
-	{
-		EraserFrom = form;
-	}
-	public void Erasermake() 
-	{
-		System.out.println("Áö¿ì°³¸¦ "+EraserFrom+"ÀÇ Á¦Ç°À¸·Î Áö¿ó´Ï´Ù.");
-	}
-}
-class pen 
-{
-	String penColor;
-	String penFrom;
-	
-	
-	String getColor()
-	{
-		return penColor;
-	}
-	void setColor(String color)
-	{
-		penColor = color;
-	}
-	String getForm()
-	{
-		return penFrom;
-	}
-	void setForm(String form)
-	{
-		penFrom = form;
-	}
-	public void penmake()
-	{
-		System.out.println("ÆæÀ» "+penFrom+" Á¦Ç°ÀÇ "+penColor+"»öÀ¸·Î ¾¹´Ï´Ù.");
+
+	public void pencilmake() {
+		System.out.println(pencilcolor + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ê·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
-class piltong
-{
+class Eraser {
+	String EraserFrom;
+
+	String getForm() {
+		return EraserFrom;
+	}
+
+	void setForm(String form) {
+		EraserFrom = form;
+	}
+
+	public void Erasermake() {
+		System.out.println("ï¿½ï¿½ï¿½ì°³ï¿½ï¿½ " + EraserFrom + "ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+	}
+}
+
+class pen {
+	String penColor;
+	String penFrom;
+
+	String getColor() {
+		return penColor;
+	}
+
+	void setColor(String color) {
+		penColor = color;
+	}
+
+	String getForm() {
+		return penFrom;
+	}
+
+	void setForm(String form) {
+		penFrom = form;
+	}
+
+	public void penmake() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ " + penFrom + " ï¿½ï¿½Ç°ï¿½ï¿½ " + penColor + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
+	}
+}
+
+class piltong {
 	pencil p1;
 	pencil p2;
 }
 
+public class Q29_teacher {
 
-public class Q29_teacher{
+	public static void main(String[] args) {
 
-	public static void main(String[] args) 
-	{
-		
 		piltong pt = new piltong();
 		pencil pencil1 = new pencil();
 		pencil pencil2 = new pencil();
 		pencil pencil3 = new pencil();
 		pencil pencil4 = new pencil();
 
-		pencil1.setColor("»¡°£");
-		pencil2.setColor("ÆÄ¶õ");
-		pencil3.setColor("ÁÖÈ²");
-		pencil4.setColor("³ë¶õ");
+		pencil1.setColor("ï¿½ï¿½ï¿½ï¿½");
+		pencil2.setColor("ï¿½Ä¶ï¿½");
+		pencil3.setColor("ï¿½ï¿½È²");
+		pencil4.setColor("ï¿½ï¿½ï¿½");
 
 		pt.p1 = pencil2;
 		pt.p2 = pencil4;
-		
-//		pencil1.pencilcolor = "»¡°£";
-//		pencil2.pencilcolor = "ÆÄ¶õ";
-//		pencil3.pencilcolor = "ÁÖÈ²";
-//		pencil4.pencilcolor = "³ë¶õ";	
-		
+
+		// pencil1.pencilcolor = "ï¿½ï¿½ï¿½ï¿½";
+		// pencil2.pencilcolor = "ï¿½Ä¶ï¿½";
+		// pencil3.pencilcolor = "ï¿½ï¿½È²";
+		// pencil4.pencilcolor = "ï¿½ï¿½ï¿½";
+
 		Eraser Eraser1 = new Eraser();
 		Eraser Eraser2 = new Eraser();
 
-		Eraser1.EraserFrom = "ÀáÀÚ¸®";
-		Eraser2.EraserFrom = "¸ð´×±Û·Î¸®";	
-		
+		Eraser1.EraserFrom = "ï¿½ï¿½ï¿½Ú¸ï¿½";
+		Eraser2.EraserFrom = "ï¿½ï¿½×±Û·Î¸ï¿½";
+
 		pen pen1 = new pen();
 		pen pen2 = new pen();
 		pen pen3 = new pen();
 
-		pen1.penColor = "°ËÁ¤";
-		pen2.penColor = "ÃÊ·Ï";
-		pen3.penColor = "º£ÀÌºñºí·ç";
-		
-		pen1.penFrom = "¸ð³ª¹Ì";
-		pen2.penFrom = "Á¦Æ®½ºÆ®¸²";
-		pen3.penFrom = "¿öÅÍ¸Ç";
-		
+		pen1.penColor = "ï¿½ï¿½ï¿½ï¿½";
+		pen2.penColor = "ï¿½Ê·ï¿½";
+		pen3.penColor = "ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½";
+
+		pen1.penFrom = "ï¿½ð³ª¹ï¿½";
+		pen2.penFrom = "ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½";
+		pen3.penFrom = "ï¿½ï¿½ï¿½Í¸ï¿½";
+
 		pencil1.pencilmake();
 		pencil2.pencilmake();
 		pencil3.pencilmake();
 		pencil4.pencilmake();
-		
+
 		Eraser1.Erasermake();
 		Eraser2.Erasermake();
-		
+
 		pen1.penmake();
 		pen2.penmake();
 		pen3.penmake();
-	
+
 	}
 }

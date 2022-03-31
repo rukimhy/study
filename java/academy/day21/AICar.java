@@ -1,13 +1,13 @@
-package day21;
+package academy.day21;
 
 public class AICar extends Car {
 	@Override
 	public void drive() {
-		System.out.println("ÀÚÀ² ÁÖÇàÇÕ´Ï´Ù.");
-		System.out.println("ÀÚµ¿Â÷°¡ ¾Ë¾Æ¼­ ¹æÇâÀ» ÀüÈ¯ÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.");
 	}
-	
+
 	public void stop() {
-		System.out.println("½º½º·Î ¸ØÃä´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }

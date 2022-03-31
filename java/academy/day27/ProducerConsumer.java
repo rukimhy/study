@@ -1,63 +1,66 @@
-package day27;
+package academy.day27;
 
-class Buffer{
+class Buffer {
 	private int contents;
 	private boolean available = false;
+
 	public synchronized void put(int value) {
-		
-		while(available == true) {
+
+		while (available == true) {
 			try {
 				wait();
-			} catch(InterruptedException e) {
-				
+			} catch (InterruptedException e) {
+
 			}
 		}
-		
+
 		contents = value;
-		System.out.println("»ý»êÀÚ#####: »ý»ê " + contents);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½#####: ï¿½ï¿½ï¿½ï¿½ " + contents);
 		notify();
 		available = true;
 	}
-	
+
 	public synchronized int get() {
-		
-		while(available == false) {
+
+		while (available == false) {
 			try {
 				wait();
-			} catch(InterruptedException e) {
-				
+			} catch (InterruptedException e) {
+
 			}
 		}
-		
-		System.out.println("¼ÒºñÀÚ#####: ¼Òºñ "+contents);
+
+		System.out.println("ï¿½Òºï¿½ï¿½ï¿½#####: ï¿½Òºï¿½ " + contents);
 		notify();
 		available = false;
 		return contents;
 	}
 }
 
-class Producer extends Thread{
+class Producer extends Thread {
 	private Buffer b;
-	
+
 	public Producer(Buffer blank) {
 		b = blank;
 	}
-	
+
 	public void run() {
-		for(int i = 1; i<=10; i++) {
+		for (int i = 1; i <= 10; i++) {
 			b.put(i);
 		}
 	}
 }
 
-class Consumer extends Thread{
+class Consumer extends Thread {
 	private Buffer b;
+
 	public Consumer(Buffer blank) {
 		b = blank;
 	}
+
 	public void run() {
 		int value = 0;
-		for (int i = 1; i<= 10; i++) {
+		for (int i = 1; i <= 10; i++) {
 			value = b.get();
 		}
 	}
@@ -71,6 +74,6 @@ public class ProducerConsumer {
 		Consumer c1 = new Consumer(buff);
 		p1.start();
 		c1.start();
-	}	
+	}
 
 }

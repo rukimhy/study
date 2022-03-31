@@ -1,30 +1,29 @@
-package day2;
+package academy.day2;
 
 public class IfExample2_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		int age = 9;
 		int charge;
-		
-		if(age < 8) {
+
+		if (age < 8) {
 			charge = 1000;
-			System.out.println("ÃëÇÐ Àü ¾Æµ¿ÀÔ´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Æµï¿½ï¿½Ô´Ï´ï¿½.");
 		}
-		if(age < 14) {
+		if (age < 14) {
 			charge = 2000;
-			System.out.println("ÃÊµîÇÐ»ýÀÔ´Ï´Ù.");
+			System.out.println("ï¿½Êµï¿½ï¿½Ð»ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
-		if(age <20) {
+		if (age < 20) {
 			charge = 2500;
-			System.out.println("Áß, °íµîÇÐ»ýÀÔ´Ï´Ù.");
-		}
-		else {
+			System.out.println("ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½Ô´Ï´ï¿½.");
+		} else {
 			charge = 3000;
-			System.out.println("ÀÏ¹ÝÀÎÀÔ´Ï´Ù.");
+			System.out.println("ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
-		System.out.println("ÀÔÀå·á´Â"+charge+"¿øÀÔ´Ï´Ù.");
-	
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + charge + "ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+
 	}
 }

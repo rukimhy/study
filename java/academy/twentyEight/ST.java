@@ -1,4 +1,4 @@
-package Twentyeight;
+package academy.twentyEight;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,46 +8,45 @@ import java.net.Socket;
 
 public class ST extends Thread {
 
-   private Socket m_Socket; //Socket Å¸ÀÔ º¯¼ö m_Socket ¼±¾ð, Client socket µé¾î°¨.
-      
-   public void run() //thread¿¡ ÀÖ´Â thread¿¡¼­ µ¿ÀÛÇÏ´Â run ÇÔ¼ö¸¦ ¿À¹ö¶óÀÌµù
+   private Socket m_Socket; // Socket Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ m_Socket ï¿½ï¿½ï¿½ï¿½, Client socket ï¿½ï¿½î°¨.
+
+   public void run() // threadï¿½ï¿½ ï¿½Ö´ï¿½ threadï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ run ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
    {
-      super.run(); // ºÎ¸ð thread¿¡ run ÇÔ¼ö È£Ãâ
-     
-      try 
-      {
+      super.run(); // ï¿½Î¸ï¿½ threadï¿½ï¿½ run ï¿½Ô¼ï¿½ È£ï¿½ï¿½
+
+      try {
          BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(System.in));
-         //¹öÆÛ¸®´õ¸¦ ÀÌ¿ëÇÑ ÀÔ·Â °´Ã¼ »ý¼º
-         PrintWriter sendWriter = new PrintWriter(m_Socket.getOutputStream()); // bufferreader·Î ÀÔ·Â, printwriter·Î º¸³½´Ù.
-         //PrintWriterÀÇ sendWriter·Î º¯¼ö·Î ¼±¾ð ÈÄ °´Ã¼¸¦ »ý¼º
-         //°´Ã¼¸¦ »ý¼ºÇÒ¶§ ¼ÒÄÏÀÇ Ãâ·Â ½ºÆ®¸²À» ÀÎÀÚ·Î ¹Þ¾Æ¼­ »ý¼º
+         // ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+         PrintWriter sendWriter = new PrintWriter(m_Socket.getOutputStream()); // bufferreaderï¿½ï¿½ ï¿½Ô·ï¿½, printwriterï¿½ï¿½
+                                                                               // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+         // PrintWriterï¿½ï¿½ sendWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+         // ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½
          String sendString;
-         //¹®ÀÚ¿­ º¯¼ö sendString »ý¼º
-         
-         while(true) //¹«ÇÑ ¹Ýº¹, ³¡³ª±â Àü±îÁö °è¼Ó ÁÖ°í¹Þ°í ÀÌ¹Ç·Î.
+         // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ sendString ï¿½ï¿½ï¿½ï¿½
+
+         while (true) // ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½Þ°ï¿½ ï¿½Ì¹Ç·ï¿½.
          {
             sendString = tmpbuf.readLine();
-            //ÀÔ·ÂÀ» ¹Þ¾Æ¼­ ¹®ÀÚ¿­ º¯¼ö sendString¿¡ ´ëÀÔ
+            // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ sendStringï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             sendWriter.println(sendString);
-            //PrintWriterÀÇ printlnÇÔ¼ö¿¡ ¹®ÀÚ¿­ º¯¼ö sendStringÀ» ´ëÀÔ
+            // PrintWriterï¿½ï¿½ printlnï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ sendStringï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             sendWriter.flush();
-            //PrintWriterÀÇ flush ÇÔ¼ö È£Ãâ
-            // ¹®ÀÚ¿­À» ÀÔ·Â ¹Þ¾Æ¼­ PrintWriterÀÇ °´Ã¼¿¡ ÀÔ·Â ¹ÞÀº ¹®ÀÚ¿­À» ¹Þ°í
-            // PrintWriterÀÇ flush ÇÔ¼öÀÌ È£Ãâ µÇ¸é ¹®ÀÚ¿­ µ¥ÀÌÅÍ¸¦ Àü¼ÛÇÏ°Ô µË´Ï´Ù.
+            // PrintWriterï¿½ï¿½ flush ï¿½Ô¼ï¿½ È£ï¿½ï¿½
+            // ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ¾Æ¼ï¿½ PrintWriterï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Þ°ï¿½
+            // PrintWriterï¿½ï¿½ flush ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ë´Ï´ï¿½.
          }
       }
-     
-      catch(IOException e) 
-      {
-         //ÀÔÃâ·Â ¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà
+
+      catch (IOException e) {
+         // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          e.printStackTrace();
       }
    }
-   
-   //¸ÞÀÎ¹®¿¡¼­ ¼ÒÄÏ °´Ã¼ ¹Þ¾Æ¼­ ³» º¯¼ö¿¡ ´ëÀÔ
-   public void setSocket(Socket _socket) // Main server¿¡¼­ c_socket ³ÖÀº°Å.
+
+   // ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+   public void setSocket(Socket _socket) // Main serverï¿½ï¿½ï¿½ï¿½ c_socket ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
    {
-	   //m_Socket¿¡ main¿¡¼­ ¸¸µç ¼ÒÄÏ ´ëÀÔ
+      // m_Socketï¿½ï¿½ mainï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
       m_Socket = _socket;
    }
 

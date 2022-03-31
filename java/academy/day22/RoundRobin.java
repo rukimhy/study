@@ -1,13 +1,13 @@
-package day22;
+package academy.day22;
 
 public class RoundRobin implements Scheduler {
 	@Override
 	public void getNextCall() {
-		System.out.println("»ó´ã ÀüÈ­¸¦ ¼ø¼­´ë·Î ´ë±â¿­¿¡¼­ °¡Á®¿É´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½â¿­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É´Ï´ï¿½.");
 	}
-	
+
 	@Override
 	public void sendCallToAgent() {
-		System.out.println("´ÙÀ½ ¼ø¼­ »ó´ã¿ø¿¡°Ô ¹èºÐÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
 }

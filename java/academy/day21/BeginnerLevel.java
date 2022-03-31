@@ -1,23 +1,23 @@
-package day21;
+package academy.day21;
 
 public class BeginnerLevel extends PlayerLevel {
 	@Override
 	public void run() {
-		System.out.println("ÃµÃµÈ÷ ´Þ¸³´Ï´Ù.");
+		System.out.println("ÃµÃµï¿½ï¿½ ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	}
-	
+
 	@Override
 	public void jump() {
-		System.out.println("jumpÇÒ ÁÙ ¸ð¸¨´Ï´Ù.");
+		System.out.println("jumpï¿½ï¿½ ï¿½ï¿½ ï¿½ð¸¨´Ï´ï¿½.");
 	};
-	
+
 	@Override
 	public void turn() {
-		System.out.println("turnÇÒ ÁÙ ¸ð¸¨´Ï´Ù.");
+		System.out.println("turnï¿½ï¿½ ï¿½ï¿½ ï¿½ð¸¨´Ï´ï¿½.");
 	};
-	
+
 	@Override
 	public void showLevelMessage() {
-		System.out.println("****ÃÊº¸ÀÚ ·¹º§ÀÔ´Ï´Ù.****");
+		System.out.println("****ï¿½Êºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.****");
 	};
 }

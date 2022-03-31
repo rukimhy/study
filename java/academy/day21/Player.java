@@ -1,13 +1,13 @@
-package day21;
+package academy.day21;
 
 public class Player {
 	private PlayerLevel level;
-	
+
 	public Player() {
 		level = new BeginnerLevel();
 		level.showLevelMessage();
 	}
-	
+
 	public PlayerLevel getLevel() {
 		return level;
 	}

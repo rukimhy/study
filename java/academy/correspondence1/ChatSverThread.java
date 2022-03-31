@@ -1,4 +1,4 @@
-package NetWork;
+package academy.correspondence1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,188 +10,187 @@ import java.util.HashMap;
 public class ChatSverThread implements Runnable
 
 {
-	Socket child; //Socket Å¬·¡½º Å¸ÀÔÀÇ º¯¼ö child ¼±¾ð
-	BufferedReader ois; // BufferReader Å¬·¡½º Å¸ÀÔÀÇ º¯¼ö ois ¼±¾ð
-	PrintWriter oos; // PrintWriter Å¬·¡½º Å¸ÀÔÀÇ º¯¼ö oos ¼±¾ð
+	Socket child; // Socket Å¬ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ child ï¿½ï¿½ï¿½ï¿½
+	BufferedReader ois; // BufferReader Å¬ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ois ï¿½ï¿½ï¿½ï¿½
+	PrintWriter oos; // PrintWriter Å¬ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ oos ï¿½ï¿½ï¿½ï¿½
 
-	String user_id; // ¹®ÀÚ¿­ º¯¼ö user_id ¼±¾ð
-	HashMap<String/*À¯Àú ID*/, PrintWriter/*À¯Àúµé PrintWriter*/> hm; // Á¢¼ÓÀÚ °ü¸®
-    //ÄÃ·º¼Ç HashMapÀÇ Å°°ª String¿¡ °ªPrintWriterÀÇ º¯¼ö hmÀ» ¼±¾ð
-	InetAddress ip; // InetAddress Å¬·¡½º Å¸ÀÔÀÇ º¯¼ö ip ¼±¾ð
-	String msg; // ¹®ÀÚ¿­ º¯¼ö msg ¼±¾ð
+	String user_id; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ user_id ï¿½ï¿½ï¿½ï¿½
+	HashMap<String/* ï¿½ï¿½ï¿½ï¿½ ID */, PrintWriter/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ PrintWriter */> hm; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½Ã·ï¿½ï¿½ï¿½ HashMapï¿½ï¿½ Å°ï¿½ï¿½ Stringï¿½ï¿½ ï¿½ï¿½PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ hmï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	InetAddress ip; // InetAddress Å¬ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ip ï¿½ï¿½ï¿½ï¿½
+	String msg; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ msg ï¿½ï¿½ï¿½ï¿½
 
-	public ChatSverThread(Socket s, HashMap<String, PrintWriter> h ) {
-    //ChatSverThreadÀÇ Socket°ú HashMapÀ» ÀÎÀÚ·Î ¹Þ´Â »ý¼ºÀÚ
+	public ChatSverThread(Socket s, HashMap<String, PrintWriter> h) {
+		// ChatSverThreadï¿½ï¿½ Socketï¿½ï¿½ HashMapï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		child = s;
-        //ÀÎÀÚ·Î ¹ÞÀº º¯¼ö s¸¦ child¿¡ ´ëÀÔ(Socket)
+		// ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ sï¿½ï¿½ childï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Socket)
 		hm = h;
-        //ÀÎÀÚ·Î ¹ÞÀº º¯¼ö h¸¦ hm¿¡ ´ëÀÔ(HashMap)
+		// ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ hï¿½ï¿½ hmï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(HashMap)
 
-		try	{
-        //½ÃµµÇÑ´Ù.
-			ois = new BufferedReader( new InputStreamReader( child.getInputStream() ) );
-            //BufferReader °´Ã¼¸¦ »ý¼º½Ã InputStreamReader °´Ã¼·Î ÀÎÀÚ¸¦ ¹Þ°í
-            //InputStreamReader °´Ã¼¸¦ »ý¼º½Ã¿¡´Â child(Socket)¿¡ getInputStream()ÇÔ¼ö¸¦ È£ÃâÇÏ¸é
-            //InputStreamÀ» ¸®ÅÏÇÏ¿© ÀÎÀÚ·Î ¹Þ°í InputStreamReader °´Ã¼¸¦ »ý¼º
-            // BufferReader·Î »ý¼ºµÈ °´Ã¼¸¦ ois¿¡ ´ëÀÔ
-			oos = new PrintWriter( child.getOutputStream() );
-            //PrintWriter °´Ã¼¸¦ »ý¼º½Ã¿¡´Â child(Socket)¿¡ getOutputStream()ÇÔ¼ö¸¦ È£ÃâÇÏ¸é
-            //OutputStreamÀ» ¸®ÅÏÇÏ¿© ÀÎÀÚ·Î ¹Þ°í PrintWriter °´Ã¼¸¦ »ý¼º
-            //PrintWriter·Î »ý¼ºµÈ °´Ã¼¸¦ oos¿¡ ´ëÀÔ
+		try {
+			// ï¿½Ãµï¿½ï¿½Ñ´ï¿½.
+			ois = new BufferedReader(new InputStreamReader(child.getInputStream()));
+			// BufferReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Þ°ï¿½
+			// InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ child(Socket)ï¿½ï¿½ getInputStream()ï¿½Ô¼ï¿½ï¿½ï¿½
+			// È£ï¿½ï¿½ï¿½Ï¸ï¿½
+			// InputStreamï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ°ï¿½ InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// BufferReaderï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ oisï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			oos = new PrintWriter(child.getOutputStream());
+			// PrintWriter ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ child(Socket)ï¿½ï¿½ getOutputStream()ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½
+			// OutputStreamï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ°ï¿½ PrintWriter ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ oosï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 			user_id = ois.readLine();
-            //oisÀÇ readLineÇÔ¼ö¸¦ È£ÃâÇÏ¿© ÇÑÁÙÀÇ ¹®ÀÚ¿­À» ÀÐ¾î¼­ user_id¿¡ ´ëÀÔ
+			// oisï¿½ï¿½ readLineï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ð¾î¼­ user_idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			ip = child.getInetAddress();
-            //child(Socket)À» ÅëÇØ¼­ getInetAddress()ÇÔ¼ö¸¦ ÅëÇØ¼­
-            //Client IP ÁÖ¼Ò¸¦ ¹®ÀÚ¿­·Î ¹Þ¾Æ ip¿¡ ´ëÀÔ
-			System.out.println( ip + "·ÎºÎÅÍ " + user_id + "´ÔÀÌ Á¢¼ÓÇÏ¿´½À´Ï´Ù." );//Ãâ·Â
-			broadcast(user_id + "´ÔÀÌ Á¢¼ÓÇÏ¼Ì½À´Ï´Ù.");
-            //broadcast ÇÔ¼ö È£Ãâ È£ÃâÀ» ÇÒ¶§ ¹®ÀÚ¿­ ÀÎÀÚ·Î ´ëÀÔ
+			// child(Socket)ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ getInetAddress()ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½
+			// Client IP ï¿½Ö¼Ò¸ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ ipï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			System.out.println(ip + "ï¿½Îºï¿½ï¿½ï¿½ " + user_id + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");// ï¿½ï¿½ï¿½
+			broadcast(user_id + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
+			// broadcast ï¿½Ô¼ï¿½ È£ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			synchronized( hm ) {
-            //ÀÓ°è¿µ¿ª ¼³Á¤ ÇÔ 
-            //HashMap¿¡ Ãß°¡½Ã ÇÑ ¾²·¹µå¸¸ µé¾î¿Í¼­ »ç¿ë °¡´ÉÇÔ
-				hm.put( user_id, oos );
-                //HashMap¿¡ Å°:user_id(String) °ª: oos(PrintWriter)¸¦ Ãß°¡ÇÔ
+			synchronized (hm) {
+				// ï¿½Ó°è¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				// HashMapï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¸¸ ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				hm.put(user_id, oos);
+				// HashMapï¿½ï¿½ Å°:user_id(String) ï¿½ï¿½: oos(PrintWriter)ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½
 			}
 		}
 
-		catch (Exception e ) {//¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà
-			e.printStackTrace();//¿¹¿Ü Ãâ·Â
+		catch (Exception e) {// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			e.printStackTrace();// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}
 
 	}
 
 	public void run() {
-		String receiveData; // ¹®ÀÚ¿­ º¯¼ö receiveDate ¼±¾ð
+		String receiveData; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveDate ï¿½ï¿½ï¿½ï¿½
 
-		try//½ÃµµÇÏ´Ù
+		try// ï¿½Ãµï¿½ï¿½Ï´ï¿½
 		{
-			while( (receiveData = ois.readLine()) != null ) {
-            //oisÀÇ readLine ÇÔ¼ö¸¦ È£ÃâÇÏ¿© ¹®ÀÚ¿­ ÇÑÁÙ ¾¿À» receiveDate¿¡ ´ëÀÔÀ» ÇÏ¸é
-            //receiveDate°¡ nullÀÌ ¾Æ´Ï¸é °è¼Ó ¹Ýº¹
-				//³¡³¾¶§
-				if( receiveData.equals( "/quit" ) ) {
-                //receiveDate°¡ /quitÀÌ¸é ¾Æ·¡ ¸í·É¹® ½ÇÇà
-					synchronized( hm ) {
-                    //ÀÓ°è¿µ¿ª ¼³Á¤ ÇÔ
-                     //HashMap¿¡ »èÁ¦½Ã ÇÑ ¾²·¹µå¸¸ µé¾î¿Í¼­ »ç¿ë °¡´ÉÇÔ
-						hm.remove( user_id );
-                        //HashMap¿¡ Å°°ªÀÌ user_idÀÎ °ÍÀ» »èÁ¦ÇÏ´Â ÇÔ¼ö
+			while ((receiveData = ois.readLine()) != null) {
+				// oisï¿½ï¿½ readLine ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveDateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½
+				// receiveDateï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				if (receiveData.equals("/quit")) {
+					// receiveDateï¿½ï¿½ /quitï¿½Ì¸ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½É¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+					synchronized (hm) {
+						// ï¿½Ó°è¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+						// HashMapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¸¸ ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+						hm.remove(user_id);
+						// HashMapï¿½ï¿½ Å°ï¿½ï¿½ï¿½ï¿½ user_idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 					}
 
-					break;//¹Ýº¹¹® Å»Ãâ
+					break;// ï¿½Ýºï¿½ï¿½ï¿½ Å»ï¿½ï¿½
 				}
-				//±Ó¼Ó¸»
-				else if( receiveData.indexOf( "/to" ) >= 0 ) {
-                //receiveDateÀÇ ÇÔ¼ö indexOf¸¦ ÀÌ¿ëÇÑ ¹®ÀÚ¿­¿¡ ÀÖ´ÂÁö¸¦ Å½»ö
-                //¸¸¾à¿¡ ÀÖÀ¸¸é 0ÀÌ»ó°ªÀ» ÁÖ±â ¶§¹®¿¡ ¾Æ·¡ ¸í·É¾î ½ÇÇà
-					sendMsg( receiveData );//sendMsgÇÔ¼ö¸¦ receiveData¸¦ ÀÎÀÚ·Î ¹Þ¾Æ¼­ È£Ãâ
+				// ï¿½Ó¼Ó¸ï¿½
+				else if (receiveData.indexOf("/to") >= 0) {
+					// receiveDateï¿½ï¿½ ï¿½Ô¼ï¿½ indexOfï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
+					// ï¿½ï¿½ï¿½à¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½É¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+					sendMsg(receiveData);// sendMsgï¿½Ô¼ï¿½ï¿½ï¿½ receiveDataï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ¾Æ¼ï¿½ È£ï¿½ï¿½
 				}
-				//ÀüÃ¼ ¸Þ¼¼Áö º¸³»±â
+				// ï¿½ï¿½Ã¼ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				else {
-                //À§¿¡ Á¶°ÇÀÌ ¸ðµÎ ¾Æ´Ï¸é ¾Æ·¡¸í·É¹® ½ÇÇà
-					System.out.println(user_id + " >> " + receiveData );//Ãâ·Â
-					broadcast( user_id + " >> " + receiveData );
-                    //broadcast ÇÔ¼ö È£Ãâ È£ÃâÀ» ÇÒ¶§ ¹®ÀÚ¿­ ÀÎÀÚ·Î ´ëÀÔ
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ï¿½É¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+					System.out.println(user_id + " >> " + receiveData);// ï¿½ï¿½ï¿½
+					broadcast(user_id + " >> " + receiveData);
+					// broadcast ï¿½Ô¼ï¿½ È£ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½
 				}
 
 			}
 
 		}
 
-		catch (Exception e ) {//¿¹¿ÜÃ³¸® ¹ß»ýÇÏ¸é ½ÇÇà
-			e.printStackTrace();//¿¹¿ÜÃ³¸® Ãâ·Â
+		catch (Exception e) {// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+			e.printStackTrace();// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}
 
-		finally {//À§¿¡ try catch ¾î¶²»óÈ²ÀÌµç ´Ù³¡³ª¸é ½ÇÇà
-			synchronized( hm ) {
-            ////ÀÓ°è¿µ¿ª ¼³Á¤ ÇÔ 
-            //HashMap¿¡ »èÁ¦½Ã ÇÑ ¾²·¹µå¸¸ µé¾î¿Í¼­ »ç¿ë °¡´ÉÇÔ
-				hm.remove( user_id );
-               //HashMap¿¡ Å°°ªÀÌ user_idÀÎ °ÍÀ» »èÁ¦ÇÏ´Â ÇÔ¼ö  
+		finally {// ï¿½ï¿½ï¿½ï¿½ try catch ï¿½î¶²ï¿½ï¿½È²ï¿½Ìµï¿½ ï¿½Ù³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			synchronized (hm) {
+				//// ï¿½Ó°è¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				// HashMapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¸¸ ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				hm.remove(user_id);
+				// HashMapï¿½ï¿½ Å°ï¿½ï¿½ï¿½ï¿½ user_idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 			}
 
-			broadcast( user_id + "´ÔÀÌ ÅðÀåÇß½À´Ï´Ù." );
-             //broadcast ÇÔ¼ö È£Ãâ È£ÃâÀ» ÇÒ¶§ ¹®ÀÚ¿­ ÀÎÀÚ·Î ´ëÀÔ
-			System.out.println( user_id + "´ÔÀÌ ÅðÀåÇß½À´Ï´Ù." );//Ãâ·Â
+			broadcast(user_id + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+			// broadcast ï¿½Ô¼ï¿½ È£ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½
+			System.out.println(user_id + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");// ï¿½ï¿½ï¿½
 
-			try//½ÃµµÇÏ´Ù
+			try// ï¿½Ãµï¿½ï¿½Ï´ï¿½
 			{
-				if( child != null ) {
-                //child(Socket)ÀÌ ¸¸¾à¿¡ nullÀÌ ¾Æ´Ï¸é
+				if (child != null) {
+					// child(Socket)ï¿½ï¿½ ï¿½ï¿½ï¿½à¿¡ nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½
 					ois.close();
-                    //BufferReader °´Ã¼ ois close()
+					// BufferReader ï¿½ï¿½Ã¼ ois close()
 					oos.close();
-                    //PrintWriter °´Ã¼ oos close()
+					// PrintWriter ï¿½ï¿½Ã¼ oos close()
 					child.close();
-                    //Socket °´Ã¼ child close()
+					// Socket ï¿½ï¿½Ã¼ child close()
 				}
 			}
 
-			catch ( Exception e) {}//¿¹¿ÜÃ³¸® ¹ß»ý½Ã
+			catch (Exception e) {
+			} // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½
 		}
 	}
 
-
-
-	public void broadcast(String message){
-    // ¸®ÅÏÀ» ÇÏÁö¾Ê°í ¹®ÀÚ¿­À» ÀÎÀÚ·Î ¹Þ´Â broadcast ÇÔ¼ö
-		synchronized( hm ) {
-        //ÀÓ°è¿µ¿ª ¼³Á¤ ÇÔ 
-			try{
-				for( PrintWriter oos : hm.values( )){
-                //HashMap¿¡¼­ °ª¸¸ »©¼­ PrintWriter oos¶ó´Â º¯¼ö¿¡ ´ëÀÔÀ» ÇÑ´Ù.
-                //nullÀÌ ³ª¿À±âÀü±îÁö °è¼Ó ¹Ýº¹ÇÑ´Ù.
-					oos.println( message ); 
-                    //oos(PrintWriter)ÀÇ ÇÔ¼ö println¿¡ ¹®ÀÚ¿­(message)À» ³Ö´Â´Ù.
-                    //message(¹®ÀÚ¿­)ÀÌ PrintWriter¿¡ ´ã±ä´Ù.
+	public void broadcast(String message) {
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ´ï¿½ broadcast ï¿½Ô¼ï¿½
+		synchronized (hm) {
+			// ï¿½Ó°è¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+			try {
+				for (PrintWriter oos : hm.values()) {
+					// HashMapï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ PrintWriter oosï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+					// nullï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ï¿½Ñ´ï¿½.
+					oos.println(message);
+					// oos(PrintWriter)ï¿½ï¿½ ï¿½Ô¼ï¿½ printlnï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½(message)ï¿½ï¿½ ï¿½Ö´Â´ï¿½.
+					// message(ï¿½ï¿½ï¿½Ú¿ï¿½)ï¿½ï¿½ PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 					oos.flush();
-                    //oos(PrintWriter)ÀÇ ÇÔ¼ö flush()¸¦ È£ÃâÇÑ´Ù.
-                    //flushÇÔ¼ö¸¦ È£ÃâÇÏ¸é PrintWirter¿¡ ´ã°ÜÀÖ´ø 
-                    //¹®ÀÚ¿­À» ¿¬°áµÈ SocketÀ» ÅëÇØ Àü¼ÛÇÏ°Ô µÈ´Ù.
+					// oos(PrintWriter)ï¿½ï¿½ ï¿½Ô¼ï¿½ flush()ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ñ´ï¿½.
+					// flushï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ PrintWirterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
+					// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Socketï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½È´ï¿½.
 				}
-                //¹Ýº¹À» ÇÏ¸é¼­ ¸ðµç ¿¬°áµÈ ¼ÒÄÏ¿¡ ¹®ÀÚ¿­À» ¼Û½ÅÇÏ°Ô µÈ´Ù.
-			}catch(Exception e){ }//¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà
+				// ï¿½Ýºï¿½ï¿½ï¿½ ï¿½Ï¸é¼­ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Û½ï¿½ï¿½Ï°ï¿½ ï¿½È´ï¿½.
+			} catch (Exception e) {
+			} // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 
+	public void sendMsg(String message) {
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ´ï¿½ sendMsg ï¿½Ô¼ï¿½
+		int begin = message.indexOf(" ") + 1;
+		// Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ beginï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int end = message.indexOf(" ", begin);
+		// beginï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½Ö´ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ endï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	public void sendMsg(String message){
-    // ¸®ÅÏÀ» ÇÏÁö ¾Ê°í ¹®ÀÚ¿­À» ÀÎÀÚ·Î ¹Þ´Â sendMsg ÇÔ¼ö
-		int begin = message.indexOf(" ") + 1; 
-        //Ã³À½ ½ºÆäÀÌ½º ±× ´ÙÀ½ ÀÎµ¦½º ¼ýÀÚ¸¦ Á¤¼öÇü º¯¼ö begin¿¡ ´ëÀÔ
-		int end   = message.indexOf(" ", begin);
-        //begin¿¡¼­ ½ÃÀÛÇØ ±× ±×´ÙÀ½ ½ºÆäÀÌ½º ÀÖ´Â ÀÎµ¦½º¸¦ Á¤¼öÇü º¯¼ö end¿¡ ´ëÀÔ
-
-		if(end != -1){
-        //Á¤¼öÇü º¯¼ö end°¡ -1ÀÌ ¾Æ´Ï¸é ½ÇÇà
+		if (end != -1) {
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ endï¿½ï¿½ -1ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String id = message.substring(begin, end);
-            //¹®ÀÚ¿­ º¯¼ö messageÀ» begin¿¡¼­ end¸¸Å« Àß¶ó¼­ ¹®ÀÚ¿­ º¯¼ö id¿¡ ´ëÀÔ
-			String msg = message.substring(end+1);
-            //¹®ÀÚ¿­ º¯¼ö messageÀ» end¿¡¼­ 1À» ´õÇÑ ÀÎµ¦½ººÎÅÍ ³¡±îÁö ÀÖ´Â ¹®ÀÚ¿­À»
-            //¹®ÀÚ¿­ º¯¼ö msg¿¡ ´ëÀÔ
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ messageï¿½ï¿½ beginï¿½ï¿½ï¿½ï¿½ endï¿½ï¿½Å« ï¿½ß¶ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			String msg = message.substring(end + 1);
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ messageï¿½ï¿½ endï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ msgï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			PrintWriter oos = hm.get(id);
-            //PrintWriterÀÇ º¯¼ö oos ¿¡ HashMap¿¡¼­ get ÇÔ¼öÀÇ ÀÎÀÚ¸¦ ¹®ÀÚ¿­ º¯¼ö id¸¦ ³Ö¾î¼­
-            //ValueÀÌ PrintWriterÀ» »©¼­ oos¿¡ ´ëÀÔ
+			// PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ oos ï¿½ï¿½ HashMapï¿½ï¿½ï¿½ï¿½ get ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ idï¿½ï¿½ ï¿½Ö¾î¼­
+			// Valueï¿½ï¿½ PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ oosï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			try{//½ÃµµÇÏ´Ù
-				if(oos != null){
-                //PrintWriter oosÀÇ °ªÀÌ ³ÎÀÌ ¾Æ´Ï¸é ¾Æ·¡ ¸í·É¹® ½ÇÇà
-					oos.println( user_id + "´ÔÀÌ ´ÙÀ½°ú °°Àº ±Ó¼Ó¸»À» º¸³»¼Ì½À´Ï´Ù. : " + msg );
-                    //oos(PrintWirter)¿¡ printlnÇÔ¼ö¿¡ ¹®ÀÚ¿­À» ´ã´Â´Ù. 
+			try {// ï¿½Ãµï¿½ï¿½Ï´ï¿½
+				if (oos != null) {
+					// PrintWriter oosï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½É¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+					oos.println(user_id + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½Ï´ï¿½. : " + msg);
+					// oos(PrintWirter)ï¿½ï¿½ printlnï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½Â´ï¿½.
 					oos.flush();
-                    //oos(PrintWriter)ÀÇ ÇÔ¼ö flush()¸¦ È£ÃâÇÑ´Ù.
-                    //flushÇÔ¼ö¸¦ È£ÃâÇÏ¸é PrintWirter¿¡ ´ã°ÜÀÖ´ø 
-                    //¹®ÀÚ¿­À» ¿¬°áµÈ SocketÀ» ÅëÇØ Àü¼ÛÇÏ°Ô µÈ´Ù.
+					// oos(PrintWriter)ï¿½ï¿½ ï¿½Ô¼ï¿½ flush()ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ñ´ï¿½.
+					// flushï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ PrintWirterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
+					// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Socketï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½È´ï¿½.
 				}
 
-			}catch(Exception e)//¿¹¿ÜÃ³¸®°¡ ¹ß»ýÇÏ¸é ½ÇÇà
-			{ 
+			} catch (Exception e)// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+			{
 
 			}
 		}
 	}
 
 }
-

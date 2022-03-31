@@ -1,4 +1,4 @@
-package day17;
+package academy.day17;
 
 public class Student4 {
 	private static int serialNum = 1000;
@@ -6,15 +6,16 @@ public class Student4 {
 	public String studentName;
 	public int grade;
 	public String address;
-	
+
 	public Student4() {
 		serialNum++;
 		studentID = serialNum;
 	}
-	
+
 	public String getStudentName() {
 		return studentName;
 	}
+
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
@@ -27,5 +28,5 @@ public class Student4 {
 	public static void setSerialNum(int serialNum) {
 		Student4.serialNum = serialNum;
 	}
-	
+
 }

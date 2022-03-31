@@ -1,13 +1,13 @@
-package day22;
+package academy.day22;
 
 public class Customer implements Buy, Sell {
 	@Override
 	public void sell() {
-		System.out.println("±¸¸ÅÇÏ±â");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½");
 	}
-	
+
 	@Override
 	public void buy() {
-		System.out.println("ÆÇ¸ÅÇÏ±â");
+		System.out.println("ï¿½Ç¸ï¿½ï¿½Ï±ï¿½");
 	}
 }

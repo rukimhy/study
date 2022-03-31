@@ -1,22 +1,23 @@
-package day27;
+package academy.day27;
 
-class ThreadTest1 extends Thread{
-	public ThreadTest1 (String str) {
+class ThreadTest1 extends Thread {
+	public ThreadTest1(String str) {
 		setName(str);
 	}
+
 	public void run() {
-		for(int i = 1; i <= 10; i++) {
-			System.out.println(i+getName());
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(i + getName());
 		}
-		System.out.println("³¡" + getName());
+		System.out.println("ï¿½ï¿½" + getName());
 	}
 }
 
 public class DoubleThread {
 
 	public static void main(String[] args) {
-		ThreadTest1 t1 = new ThreadTest1(" : ¹è¿ì±â ½¬¿î ÀÚ¹Ù");
-		ThreadTest1 t2 = new ThreadTest1(" : ¹è¿ì±â ¾î·Á¿î ÀÚ¹Ù");
+		ThreadTest1 t1 = new ThreadTest1(" : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¹ï¿½");
+		ThreadTest1 t2 = new ThreadTest1(" : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¹ï¿½");
 		t1.start();
 		t2.start();
 	}

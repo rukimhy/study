@@ -1,30 +1,27 @@
-package day17;
+package academy.day17;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-//´Þ¸®±â¼±¼ö
-class Player
-{
-	//³ª¶ó, ÀÌµ¿°Å¸® , µ¹¹ß »óÈ²(±â´É)
+//ï¿½Þ¸ï¿½ï¿½â¼±ï¿½ï¿½
+class Player {
+	// ï¿½ï¿½ï¿½ï¿½, ï¿½Ìµï¿½ï¿½Å¸ï¿½ , ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È²(ï¿½ï¿½ï¿½)
 	String nara;
-	int move =0;
-	
+	int move = 0;
+
 	Player(String nara) {
 		// TODO Auto-generated constructor stub
 		this.nara = nara;
 	}
-	
-	void checkMove(Random r, boolean check) //check°¡ trueÀÌ¸é µ¹¹æ»óÈ² falseÀÌ¸é ¹®Á¦¾øÀ½
+
+	void checkMove(Random r, boolean check) // checkï¿½ï¿½ trueï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È² falseï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
-		if(!check)
-		{
-			move += r.nextInt(10)+1;
+		if (!check) {
+			move += r.nextInt(10) + 1;
 		}
-		
+
 	}
 }
-
 
 public class Q39_teacher {
 
@@ -33,80 +30,74 @@ public class Q39_teacher {
 		Random r = new Random();
 		boolean check = true;
 		Player[] players = new Player[4];
-		
-		String[] country = {"ÇÑ±¹", "Áß±¹", "¹Ì±¹", "·¯½Ã¾Æ"};
-		
-		for(int i =0;i<players.length;i++)
-		{
+
+		String[] country = { "ï¿½Ñ±ï¿½", "ï¿½ß±ï¿½", "ï¿½Ì±ï¿½", "ï¿½ï¿½ï¿½Ã¾ï¿½" };
+
+		for (int i = 0; i < players.length; i++) {
 			players[i] = new Player(country[i]);
 		}
-		
-		while(check)
-		{
+
+		while (check) {
 			int d = r.nextInt(4);
-			System.out.println("µ¹¹ß > " + (d + 1) + "¹ø ·¹ÀÎ");
-			for(int i=0;i<players.length;i++)
-			{
-				if(i == d)
-				{
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ > " + (d + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+			for (int i = 0; i < players.length; i++) {
+				if (i == d) {
 					players[i].checkMove(r, true);
-				}
-				else
-				{
+				} else {
 					players[i].checkMove(r, false);
 				}
-				if(players[i].move>=100)
-				{
+				if (players[i].move >= 100) {
 					check = false;
 				}
-				System.out.println((i+1)+"¹ø ·¹ÀÎ"+players[i].nara+"¼±¼ö°¡ : "+players[i].move+"M");
+				System.out.println((i + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + players[i].nara + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + players[i].move + "M");
 			}
 			System.out.println();
 			try {
 				TimeUnit.SECONDS.sleep(1);
-			}
-			catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		int max = 0;
-		
-		for(int i =0;i<players.length;i++)
-		{
-			if(players[max].move < players[i].move)
-			{
+
+		for (int i = 0; i < players.length; i++) {
+			if (players[max].move < players[i].move) {
 				max = i;
 			}
 		}
-		
-		System.out.println("¿ì½Â±¹Àº "+players[max].nara+"ÀÔ´Ï´Ù.");
+
+		System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ " + players[max].nara + "ï¿½Ô´Ï´ï¿½.");
 		/*
-		//1¹ø·¹ÀÎÀÌ ¿ì½Â
-		if(players[0].move> players[1].move && players[0].move> players[2].move && players[0].move> players[3].move)
-		{
-			System.out.println("¿ì½Â±¹Àº "+players[0].nara+"ÀÔ´Ï´Ù.");
-			
-		}
-		//2¹ø·¹ÀÎÀÌ ¿ì½Â
-		if(players[1].move> players[0].move && players[1].move> players[2].move && players[1].move> players[3].move)
-		{
-			System.out.println("¿ì½Â±¹Àº "+players[0].nara+"ÀÔ´Ï´Ù.");
-			
-		}
-		//3¹ø·¹ÀÎÀÌ ¿ì½Â
-		if(players[2].move> players[0].move && players[2].move> players[1].move && players[2].move> players[3].move)
-		{
-			System.out.println("¿ì½Â±¹Àº "+players[0].nara+"ÀÔ´Ï´Ù.");
-			
-		}
-		//4¹ø·¹ÀÎÀÌ ¿ì½Â
-		if(players[3].move> players[0].move && players[3].move> players[1].move && players[3].move> players[2].move)
-		{
-			System.out.println("¿ì½Â±¹Àº "+players[0].nara+"ÀÔ´Ï´Ù.");
-			
-		}
-		*/
+		 * //1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		 * if(players[0].move> players[1].move && players[0].move> players[2].move &&
+		 * players[0].move> players[3].move)
+		 * {
+		 * System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ "+players[0].nara+"ï¿½Ô´Ï´ï¿½.");
+		 * 
+		 * }
+		 * //2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		 * if(players[1].move> players[0].move && players[1].move> players[2].move &&
+		 * players[1].move> players[3].move)
+		 * {
+		 * System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ "+players[0].nara+"ï¿½Ô´Ï´ï¿½.");
+		 * 
+		 * }
+		 * //3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		 * if(players[2].move> players[0].move && players[2].move> players[1].move &&
+		 * players[2].move> players[3].move)
+		 * {
+		 * System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ "+players[0].nara+"ï¿½Ô´Ï´ï¿½.");
+		 * 
+		 * }
+		 * //4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		 * if(players[3].move> players[0].move && players[3].move> players[1].move &&
+		 * players[3].move> players[2].move)
+		 * {
+		 * System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ "+players[0].nara+"ï¿½Ô´Ï´ï¿½.");
+		 * 
+		 * }
+		 */
 	}
 
 }

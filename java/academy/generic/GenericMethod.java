@@ -1,3 +1,5 @@
+package academy.generic;
+
 class GenericMethod {
     static <T, V> double makeRectangle(Point<T, V> p1, Point<T, V> p2) {
         double left = ((Number) p1.getX()).doubleValue();

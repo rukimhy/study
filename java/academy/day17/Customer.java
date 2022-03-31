@@ -1,11 +1,11 @@
-package day17;
+package academy.day17;
 
 public class Customer {
 	protected int customerID;
 	protected String customerName;
 	protected String customerGrade;
 	int bonusPoint;
-	
+
 	public int getCustomerID() {
 		return customerID;
 	}
@@ -31,18 +31,18 @@ public class Customer {
 	}
 
 	double bonusRatio;
-	
+
 	public Customer() {
 		customerGrade = "SILVER";
 		bonusRatio = 0.01;
 	}
-	
+
 	public int calcPrive(int price) {
 		bonusPoint += price * bonusRatio;
 		return price;
 	}
-	
+
 	public String showCustomerInfo() {
-		return customerName+"´ÔÀÇ µî±ÞÀº "+customerGrade+"ÀÌ¸ç, º¸³Ê½º Æ÷ÀÎÆ®´Â "+bonusPoint+"ÀÔ´Ï´Ù.";
+		return customerName + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ " + customerGrade + "ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ " + bonusPoint + "ï¿½Ô´Ï´ï¿½.";
 	}
 }

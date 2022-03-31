@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -7,16 +7,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 
-class JPanel1 extends JFrame{
+class JPanel1 extends JFrame {
 	public JPanel1() {
 		Container ct = getContentPane();
 		ct.setLayout(new FlowLayout());
-		ct.add(new JRadioButton("ÀÚ¹Ù"));
+		ct.add(new JRadioButton("ï¿½Ú¹ï¿½"));
 		ct.add(new JRadioButton("C"));
 		ct.add(new JRadioButton("VisualBasic"));
 		ct.add(new JRadioButton("JSP"));
 		ct.add(new JRadioButton("PHP"));
-		ct.add(new JButton("ÀÚ¹Ù"));
+		ct.add(new JButton("ï¿½Ú¹ï¿½"));
 		ct.add(new JButton("C"));
 		ct.add(new JButton("VisualBasic"));
 		ct.add(new JButton("JSP"));

@@ -1,20 +1,20 @@
-package day17;
+package academy.day17;
 
 public class Subway {
 	String lineNumber;
 	int passengerCount;
 	int money;
-	
+
 	public Subway(String lineNumber) {
 		this.lineNumber = lineNumber;
 	}
-	
+
 	public void take(int money) {
 		this.money += money;
 		passengerCount++;
 	}
-	
+
 	public void showInfo() {
-		System.out.println(lineNumber+"ÀÇ ½Â°´Àº "+passengerCount+"¸íÀÌ°í, ¼öÀÔÀº "+money+"¿ø ÀÔ´Ï´Ù.");
+		System.out.println(lineNumber + "ï¿½ï¿½ ï¿½Â°ï¿½ï¿½ï¿½ " + passengerCount + "ï¿½ï¿½ï¿½Ì°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + money + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");
 	}
 }

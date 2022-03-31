@@ -1,4 +1,4 @@
-package day7;
+package academy.day7;
 
 public class Q16_example {
 
@@ -10,81 +10,80 @@ public class Q16_example {
 		START = 0;
 		END = 1;
 		count = 1;
-		
-		//Ã¹¹øÂ° Çà
-		for(C = START; C != END; C+=TR) {
-			for(D = 0; D != 5; D++) {
+
+		// Ã¹ï¿½ï¿½Â° ï¿½ï¿½
+		for (C = START; C != END; C += TR) {
+			for (D = 0; D != 5; D++) {
 				arr[C][D] = count;
 				count++;
 			}
 		}
-		
-		//¸¶Áö¸· ¿­
+
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		START = 1;
 		END = 4;
-		for(C = START; C != 5; C++) {
-			for(D = END; D == END; D++) {
+		for (C = START; C != 5; C++) {
+			for (D = END; D == END; D++) {
 				arr[C][D] = count;
 				count++;
 			}
 		}
-		
-		//¸¶Áö¸· Çà
+
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		START = 4;
 		END = 3;
 		TR = -1;
-		for(C = START, D = END; D != -1; D+=TR) {
+		for (C = START, D = END; D != -1; D += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		//Ã¹¹øÂ° ¿­
+
+		// Ã¹ï¿½ï¿½Â° ï¿½ï¿½
 		START = 3;
 		END = 0;
-		for(C=START, D=END; C != 0; C+=TR) {
+		for (C = START, D = END; C != 0; C += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		//µÎ¹øÂ° Çà
+
+		// ï¿½Î¹ï¿½Â° ï¿½ï¿½
 		START = 1;
 		END = 1;
 		TR = 1;
-		for(C=START, D=END; D != 4; D+=TR) {
+		for (C = START, D = END; D != 4; D += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		//³×¹øÂ° ¿­
+
+		// ï¿½×¹ï¿½Â° ï¿½ï¿½
 		START = 2;
 		END = 3;
-		for(C=START, D=END; C != 4; C+=TR) {
+		for (C = START, D = END; C != 4; C += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		//³×¹øÂ° Çà
+
+		// ï¿½×¹ï¿½Â° ï¿½ï¿½
 		START = 3;
 		END = 2;
 		TR = -1;
-		for(C=START, D=END; D != 0; D+=TR) {
+		for (C = START, D = END; D != 0; D += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		//¸¶Áö¸·
+
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		START = 2;
 		END = 1;
 		TR = 1;
-		for(C=START, D=END; D!=3; D+=TR) {
+		for (C = START, D = END; D != 3; D += TR) {
 			arr[C][D] = count;
 			count++;
 		}
-		
-		
-		//Ãâ·Â
-		for(C=0; C != 5; C++) {
-			for(D=0; D != 5; D++) {
+
+		// ï¿½ï¿½ï¿½
+		for (C = 0; C != 5; C++) {
+			for (D = 0; D != 5; D++) {
 				System.out.printf("%d\t", arr[C][D]);
 			}
 			System.out.println();

@@ -1,16 +1,15 @@
-package day16;
+package academy.day16;
 
 import java.util.Scanner;
 
 //buyer
-class Buyer
-{
+class Buyer {
 	int money;
 
-	int comindex =0;
-	int airindex =0;
-	int refindex =0;
-	int aircindex =0;
+	int comindex = 0;
+	int airindex = 0;
+	int refindex = 0;
+	int aircindex = 0;
 
 	Computer[] coms = new Computer[10];
 	Aircon[] air = new Aircon[10];
@@ -18,53 +17,50 @@ class Buyer
 	AirCleaner[] airc = new AirCleaner[10];
 
 }
-//computer
-class Computer
-{
+
+// computer
+class Computer {
 	String manufacture;
 	String cpu;
 	int price;
 
-	void use()
-	{
-		System.out.println("Á¦Á¶»ç°¡"+manufacture+"ÀÎ"+cpu+"ÄÄÇ»ÅÍ¸¦ »ç¿ëÇÕ´Ï´Ù.");
+	void use() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡" + manufacture + "ï¿½ï¿½" + cpu + "ï¿½ï¿½Ç»ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
 }
-//Aricon
-class Aircon
-{
+
+// Aricon
+class Aircon {
 	String manufacture;
 	String kind;
 	int price;
 
-	void start()
-	{
-		System.out.println("Á¦Á¶»ç°¡ " + manufacture + "ÀÎ " + kind +"¿¡¾îÄÁÀ» »ç¿ëÇÑ´Ù");
+	void start() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + manufacture + "ï¿½ï¿½ " + kind + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½");
 	}
 }
-//Ref
-class Ref
-{
+
+// Ref
+class Ref {
 	String manufacture;
 	String door;
 	String L;
 	int price;
-	void manage() 
-	{
-		System.out.println("Á¦Á¶»ç°¡ " + manufacture + "ÀÎ "+ door +"Çü " + L + "³ÃÀå°í°¡ ½ÄÇ°À» °ü¸®ÇÑ´Ù");
-	}
-}
-//AirCleaner
-class AirCleaner
-{
-	String manufacture;
-	int price;
-	void start() 
-	{
-		System.out.println("Á¦Á¶»ç°¡ " + manufacture + "ÀÎ " + "¿¡¾îÄÁÀÌ °ø±â¸¦ ±ú²ýÇÏ°Ô ÇÑ´Ù ");
+
+	void manage() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + manufacture + "ï¿½ï¿½ " + door + "ï¿½ï¿½ " + L + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½");
 	}
 }
 
+// AirCleaner
+class AirCleaner {
+	String manufacture;
+	int price;
+
+	void start() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + manufacture + "ï¿½ï¿½ " + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ñ´ï¿½ ");
+	}
+}
 
 public class Q37_teacher {
 
@@ -76,401 +72,307 @@ public class Q37_teacher {
 		Ref[] refArr = new Ref[10];
 		AirCleaner[] airCleanerArr = new AirCleaner[10];
 
-		for(int i = 0; i< 5; ++i)
-		{
+		for (int i = 0; i < 5; ++i) {
 			comArr[i] = new Computer();
 			comArr[i].manufacture = "Samsung";
 			comArr[i].cpu = "i7";
 			comArr[i].price = 200;
 			airconArr[i] = new Aircon();
-			airconArr[i].kind = "º®°ÉÀÌ";
+			airconArr[i].kind = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 			airconArr[i].manufacture = "Samsung";
 			airconArr[i].price = 100;
 			refArr[i] = new Ref();
 			refArr[i].manufacture = "Samsung";
-			refArr[i].door = "¾ç¹®";
+			refArr[i].door = "ï¿½ç¹®";
 			refArr[i].L = "600L";
 			refArr[i].price = 200;
 			airCleanerArr[i] = new AirCleaner();
 			airCleanerArr[i].manufacture = "LG";
 			airCleanerArr[i].price = 80;
 		}
-		for(int i = 5; i<10; ++i)
-		{
+		for (int i = 5; i < 10; ++i) {
 			comArr[i] = new Computer();
 			comArr[i].manufacture = "LG";
 			comArr[i].cpu = "i5";
 			comArr[i].price = 150;
 			airconArr[i] = new Aircon();
-			airconArr[i].kind = "½ºÅÄµå";
+			airconArr[i].kind = "ï¿½ï¿½ï¿½Äµï¿½";
 			airconArr[i].manufacture = "LG";
 			airconArr[i].price = 250;
 			refArr[i] = new Ref();
 			refArr[i].manufacture = "LG";
-			refArr[i].door = "4µµ¾î";
+			refArr[i].door = "4ï¿½ï¿½ï¿½ï¿½";
 			refArr[i].L = "800L";
 			refArr[i].price = 350;
 			airCleanerArr[i] = new AirCleaner();
-			airCleanerArr[i].manufacture = "´ÙÀÌ½¼";
+			airCleanerArr[i].manufacture = "ï¿½ï¿½ï¿½Ì½ï¿½";
 			airCleanerArr[i].price = 60;
 		}
 
-
 		Buyer[] b = new Buyer[3];
 
-		for(int i =0;i<3;i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			b[i] = new Buyer();
 		}
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("1¹ø ¹ÙÀÌ¾î µ·À» ÀÔ·ÂÇÏ¼¼¿ä :");
+		System.out.println("1ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ :");
 		b[0].money = sc.nextInt();
-		System.out.println("2¹ø ¹ÙÀÌ¾î µ·À» ÀÔ·ÂÇÏ¼¼¿ä :");
+		System.out.println("2ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ :");
 		b[1].money = sc.nextInt();
-		System.out.println("3¹ø ¹ÙÀÌ¾î µ·À» ÀÔ·ÂÇÏ¼¼¿ä :");
+		System.out.println("3ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ :");
 		b[2].money = sc.nextInt();
 
-		while(true)
-		{
-			for(int i =0;i<3;i++)
-			{
-				if(b[i].money >= 60)
-				{
-					//¹°°ÇÀº »ç´Â °ÔÀÓ ½ÃÀÛ
-					System.out.print((i+1)+"¹ÙÀÌ¾î »óÇ°À» ¼±ÅÃ ÇØÁÖ¼¼¿ä 1. ÄÄÇ»ÅÍ 2.¿¡¾îÄÜ 3.³ÃÀå°í 4.°ø±âÃ»Á¤±â :");
+		while (true) {
+			for (int i = 0; i < 3; i++) {
+				if (b[i].money >= 60) {
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+					System.out.print((i + 1) + "ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1. ï¿½ï¿½Ç»ï¿½ï¿½ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.ï¿½ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ :");
 					int select = sc.nextInt();
-					if(select == 1)//ÄÄÇ»ÅÍ
+					if (select == 1)// ï¿½ï¿½Ç»ï¿½ï¿½
 					{
-						System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(i7) 2.LG(i5) : ");
+						System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(i7) 2.LG(i5) : ");
 						select = sc.nextInt();
-						if(select == 1)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
+						if (select == 1) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 200;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 200; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 200;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 0;
-								while(comArr[j] == null)
-								{
+								while (comArr[j] == null) {
 									j++;
 								}
-								if(j>=5)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
+								if (j >= 5) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
 									b[i].coms[b[i].comindex++] = comArr[j];
 									comArr[j] = null;
 								}
 
 							}
 
-						}
-						else if(select == 2)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
-							// 5~9±îÁö LG
-							//1. µ·ÀÌ °ÅÁö¾ß
+						} else if (select == 2) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							// 5~9ï¿½ï¿½ï¿½ï¿½ LG
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 150;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 150; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 150;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 5;
-								while(comArr[j] == null)
-								{
+								while (comArr[j] == null) {
 									j++;
 								}
-								if(j>=10)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
-									//comindex++ => comindex = comindex +1
+								if (j >= 10) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
+									// comindex++ => comindex = comindex +1
 									b[i].coms[b[i].comindex++] = comArr[j];
 									comArr[j] = null;
 								}
 
 							}
+						} else {
+							System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 						}
-						else
-						{
-							System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						}
-					}
-					else if(select == 2) // ¿¡¾îÄÜ
+					} else if (select == 2) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					{
-						System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(º®°ÉÀÌÇü) 2.LG(½ºÅÄµåÇü) : ");
+						System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) 2.LG(ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½) : ");
 						select = sc.nextInt();
-						if(select == 1)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
+						if (select == 1) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 100;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 100; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 100;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 0;
-								while(airconArr[j] == null)
-								{
+								while (airconArr[j] == null) {
 									j++;
 								}
-								if(j>=5)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
+								if (j >= 5) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
 									b[i].air[b[i].airindex++] = airconArr[j];
 									airconArr[j] = null;
 								}
 
 							}
 
-						}
-						else if(select == 2)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
-							// 5~9±îÁö LG
-							//1. µ·ÀÌ °ÅÁö¾ß
+						} else if (select == 2) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							// 5~9ï¿½ï¿½ï¿½ï¿½ LG
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 200;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 200; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 200;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 5;
-								while(airconArr[j] == null)
-								{
+								while (airconArr[j] == null) {
 									j++;
 								}
-								if(j>=10)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
-									//comindex++ => comindex = comindex +1
+								if (j >= 10) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
+									// comindex++ => comindex = comindex +1
 									b[i].air[b[i].airindex++] = airconArr[j];
 									airconArr[j] = null;
 								}
 
 							}
+						} else {
+							System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 						}
-						else
-						{
-							System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						}
-					}
-					else if(select == 3) // ³ÃÀå°í
+					} else if (select == 3) // ï¿½ï¿½ï¿½ï¿½ï¿½
 					{
-						System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(¾ç¹®,600L) 2.LG(4µµ¾î, 800L) : ");
+						System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ç¹®,600L) 2.LG(4ï¿½ï¿½ï¿½ï¿½, 800L) : ");
 						select = sc.nextInt();
-						if(select == 1)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
+						if (select == 1) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 200;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 200; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 200;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 0;
-								while(refArr[j] == null)
-								{
+								while (refArr[j] == null) {
 									j++;
 								}
-								if(j>=5)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
+								if (j >= 5) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
 									b[i].ref[b[i].refindex++] = refArr[j];
 									refArr[j] = null;
 								}
 
 							}
 
-						}
-						else if(select == 2)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
-							// 5~9±îÁö LG
-							//1. µ·ÀÌ °ÅÁö¾ß
+						} else if (select == 2) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							// 5~9ï¿½ï¿½ï¿½ï¿½ LG
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 350;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 350; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 350;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 5;
-								while(refArr[j] == null)
-								{
+								while (refArr[j] == null) {
 									j++;
 								}
-								if(j>=10)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
-									//comindex++ => comindex = comindex +1
+								if (j >= 10) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
+									// comindex++ => comindex = comindex +1
 									b[i].ref[b[i].refindex++] = refArr[j];
 									refArr[j] = null;
 								}
 
 							}
+						} else {
+							System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 						}
-						else
-						{
-							System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						}
-					}
-					else if(select == 4) // °ø±âÃ»Á¤±â
+					} else if (select == 4) // ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
 					{
-						System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.LG 2.´ÙÀÌ½¼ : ");
+						System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.LG 2.ï¿½ï¿½ï¿½Ì½ï¿½ : ");
 						select = sc.nextInt();
-						if(select == 1)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
+						if (select == 1) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 80;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 80; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 80;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 0;
-								while(airCleanerArr[j] == null)
-								{
+								while (airCleanerArr[j] == null) {
 									j++;
 								}
-								if(j>=5)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
+								if (j >= 5) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
 									b[i].airc[b[i].aircindex++] = airCleanerArr[j];
 									airCleanerArr[j] = null;
 								}
 
 							}
 
-						}
-						else if(select == 2)
-						{
-							//1. µ·ÀÌ °ÅÁö¾ß
-							// 5~9±îÁö LG
-							//1. µ·ÀÌ °ÅÁö¾ß
+						} else if (select == 2) {
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+							// 5~9ï¿½ï¿½ï¿½ï¿½ LG
+							// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							b[i].money -= 60;
-							if(b[i].money <0)
-							{
-								System.out.println("°ÅÁö¾ß ¾È³ç!");
-								b[i].money += 60; 
-							}
-							else
-							{
-								//2. 0~4±îÁö »ï¼º
+							if (b[i].money < 0) {
+								System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½!");
+								b[i].money += 60;
+							} else {
+								// 2. 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º
 								int j = 5;
-								while(airCleanerArr[j] == null)
-								{
+								while (airCleanerArr[j] == null) {
 									j++;
 								}
-								if(j>=10)
-								{
-									System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-								}
-								else
-								{
-									//comindex++ => comindex = comindex +1
+								if (j >= 10) {
+									System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+								} else {
+									// comindex++ => comindex = comindex +1
 									b[i].airc[b[i].aircindex++] = airCleanerArr[j];
 									airCleanerArr[j] = null;
 								}
 
 							}
+						} else {
+							System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 						}
-						else
-						{
-							System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						}
+					} else {
+						System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.!!!!!!!!!!!!!");
 					}
-					else
-					{
-						System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.!!!!!!!!!!!!!");
+					for (int x = 0; x < 3; x++) {
+						System.out.println((x + 1) + "Buyerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ " + b[x].money + "ï¿½Ô´Ï´ï¿½.");
 					}
-					for(int x = 0;x<3;x++)
-					{
-						System.out.println((x+1)+"BuyerÀÇ ÇöÀç ±Ý¾×Àº "+b[x].money+"ÀÔ´Ï´Ù.");
-					}
-					
+
 				}
-				
+
 			}
-			if(b[0].money<60 && b[1].money<60 && b[2].money<60)
-			{
-				System.out.println("¸¶ÄÏ °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+			if (b[0].money < 60 && b[1].money < 60 && b[2].money < 60) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
 			}
 		}
 
-		for(int i =0;i<3;i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			int k = 0;
-			while(b[i].coms[k]!=null)
-			{
-				System.out.println((i+1)+"¹ø ¹ÙÀÌ¾î´Â ");
+			while (b[i].coms[k] != null) {
+				System.out.println((i + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ");
 				b[i].coms[k].use();
 				k++;
 			}
 			k = 0;
-			while(b[i].air[k]!=null)
-			{
-				System.out.println((i+1)+"¹ø ¹ÙÀÌ¾î´Â ");
-				b[i].air[k].start();;
+			while (b[i].air[k] != null) {
+				System.out.println((i + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ");
+				b[i].air[k].start();
+				;
 				k++;
 			}
 			k = 0;
-			while(b[i].ref[k]!=null)
-			{
-				System.out.println((i+1)+"¹ø ¹ÙÀÌ¾î´Â ");
+			while (b[i].ref[k] != null) {
+				System.out.println((i + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ");
 				b[i].ref[k].manage();
 				k++;
 			}
 			k = 0;
-			while(b[i].airc[k]!=null)
-			{
-				System.out.println((i+1)+"¹ø ¹ÙÀÌ¾î´Â ");
+			while (b[i].airc[k] != null) {
+				System.out.println((i + 1) + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ");
 				b[i].airc[k].start();
 				k++;
 			}

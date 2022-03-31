@@ -1,23 +1,21 @@
-package collection;
-
-import collection.Member;
+package academy.collection;
 
 public class MemberArrayListTest {
 
 	public static void main(String[] args) {
 		MemberArrayList memberArrayList = new MemberArrayList();
-		Member memberLee = new Member(1001, "ÀÌÁö¿ø");
-		Member memberSon = new Member(1002, "¼Õ¹Î±¹");
-		Member memberPark = new Member(1003, "¹Ú¼­ÈÍ");
-		Member memberHong = new Member(1004, "È«±æµ¿");
-		
+		Member memberLee = new Member(1001, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		Member memberSon = new Member(1002, "ï¿½Õ¹Î±ï¿½");
+		Member memberPark = new Member(1003, "ï¿½Ú¼ï¿½ï¿½ï¿½");
+		Member memberHong = new Member(1004, "È«ï¿½æµ¿");
+
 		memberArrayList.addMember(memberLee);
 		memberArrayList.addMember(memberSon);
 		memberArrayList.addMember(memberPark);
 		memberArrayList.addMember(memberHong);
-		
+
 		memberArrayList.showAllMember();
-		
+
 		memberArrayList.removeMember(memberHong.getMemberId());
 		memberArrayList.showAllMember();
 	}

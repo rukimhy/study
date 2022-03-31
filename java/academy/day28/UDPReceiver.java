@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -9,14 +9,14 @@ public class UDPReceiver {
 		int port = 8800;
 		int times = 10;
 		DatagramSocket ds = new DatagramSocket(port);
-		
+
 		int i = 1;
-		while(i <= times) {
+		while (i <= times) {
 			byte buffer[] = new byte[30];
 			DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
 			ds.receive(dp);
 			String str = new String(dp.getData());
-			System.out.println("¼ö½ÅµÈ µ¥ÀÌÅÍ : "+str);
+			System.out.println("ï¿½ï¿½ï¿½Åµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + str);
 			++i;
 		}
 	}

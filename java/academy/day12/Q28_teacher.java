@@ -1,122 +1,105 @@
-package day12;
+package academy.day12;
 
 import java.util.Scanner;
 
 public class Q28_teacher {
 	public static void guide() {
-		System.out.println("ºñÇà±â ¿¡¾à ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
-		System.out.print("1.¿¹¸Å 2.ºóÁÂ¼® È®ÀÎ 3. Á¾·á : ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ô´Ï´ï¿½.");
+		System.out.print("1.ï¿½ï¿½ï¿½ï¿½ 2.ï¿½ï¿½ï¿½Â¼ï¿½ È®ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ : ");
 	}
 
 	public static boolean triger(int N) {
-		if(N==16) //¿¹¾à ´Ù Ã¡À» ‹šÀÇ Æ®¸®°Å
+		if (N == 16) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½
 		{
-			System.out.println("ÁË¼ÛÇÕ´Ï´Ù. ¸ğµç ÁÂ¼®ÀÇ ¿¹¸Å°¡ ³¡³µ½À´Ï´Ù.");
+			System.out.println("ï¿½Ë¼ï¿½ï¿½Õ´Ï´ï¿½. ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return false;
 		}
 		return true;
 	}
 
-	
 	public static int input() {
 		Scanner sc = new Scanner(System.in);
 		int str = sc.nextInt();
 		return str;
 	}
-	
-	public static int[] input2()
-	{
+
+	public static int[] input2() {
 		int[] temp = new int[2];
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ÁÂ¼®À» ¼±ÅÃÇÏ¼¼¿ä. : ");
+		System.out.print("ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½. : ");
 		int R = sc.nextInt();
 		int C = sc.nextInt();
-		
+
 		temp[0] = R;
 		temp[1] = C;
-		
+
 		return temp;
 	}
-	
-	public static boolean failCheck(int[] input)
-	{
+
+	public static boolean failCheck(int[] input) {
 		if (input[0] > 7 || input[0] < 0 || input[0] > 1 || input[1] < 0) {
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			return false;
 		}
 		return true;
 	}
-	
-	public static int reserve(boolean[][] seat, int R, int C)
-	{
+
+	public static int reserve(boolean[][] seat, int R, int C) {
 		if (seat[R][C] == true) {
-			System.out.println("ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù.");
+			System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 		if (seat[R][C] == false) {
 			seat[R][C] = true;
-			System.out.println(R + "¿­" + C + "¼® ¿¹¾àÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println(R + "ï¿½ï¿½" + C + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return 1;
 		}
-		
+
 		return 0;
-		
+
 	}
-	
-	public static void allPrint(boolean [][] seat)
-	{
+
+	public static void allPrint(boolean[][] seat) {
 		for (int i = 0; i < seat.length; i++) {
 			for (int j = 0; j < seat[2].length; j++)
-				if (seat[i][j] == false) // boolean ¹è¿­ÀÇ ÃÊ±â°ªÀº false ·Î ÃÊ±âÈ­ µÇ¹Ç·Î false´Â ºóÁÂ¼®
+				if (seat[i][j] == false) // boolean ï¿½è¿­ï¿½ï¿½ ï¿½Ê±â°ªï¿½ï¿½ false ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Ç¹Ç·ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½Â¼ï¿½
 				{
-					System.out.println(i + "¿­" + j + "¼® ÀÌ ºñ¾îÀÖ½À´Ï´Ù. ");
+					System.out.println(i + "ï¿½ï¿½" + j + "ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ");
 				}
 		}
 	}
 
 	public static void P() {
 
-		
-		boolean[][] seat = new boolean[8][2]; // true ¿¹¾à false ´Â ºóÀÚ¸®
-		
+		boolean[][] seat = new boolean[8][2]; // true ï¿½ï¿½ï¿½ï¿½ false ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½
+
 		int N = 0;
-		
+
 		while (true) {
 
 			guide();
-			int str=input();
-			
-			if(str == 1)
-			{
-				boolean maxCheck=triger(N);
-				if(maxCheck)
-				{
-					int[] temp=input2();
-					boolean inputCheck=failCheck(temp);
-					if(inputCheck)
-					{
+			int str = input();
+
+			if (str == 1) {
+				boolean maxCheck = triger(N);
+				if (maxCheck) {
+					int[] temp = input2();
+					boolean inputCheck = failCheck(temp);
+					if (inputCheck) {
 						N += reserve(seat, temp[0], temp[1]);
 					}
-				}
-				else
-				{
+				} else {
 					N = 16;
 				}
-			}
-			else if(str == 2)
-			{
+			} else if (str == 2) {
 				allPrint(seat);
-			}
-			else if(str == 3)
-			{
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			} else if (str == 3) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
-	}	
+	}
 
 	public static void main(String[] args) {
 		P();

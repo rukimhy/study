@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,39 +7,39 @@ public class Rock_scissors_paper_remake {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
-		
-		System.out.println("ÄÄÇ»ÅÍ¿Í °¡À§ ¹ÙÀ§ º¸ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 		String str = scan.next();
-		
+
 		int i = -1;
 		int sum = 0;
 		int cpu_choice = rand.nextInt(3);
-		
-		if(!(str.equals("°¡À§") || str.equals("¹ÙÀ§") || str.equals("º¸"))) {
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+
+		if (!(str.equals("ï¿½ï¿½ï¿½ï¿½") || str.equals("ï¿½ï¿½ï¿½ï¿½") || str.equals("ï¿½ï¿½"))) {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		} else {
-			if(str.equals("°¡À§")) {
+			if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				i = 0;
-			} else if(str.equals("¹ÙÀ§")) {
+			} else if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				i = 1;
 			} else {
 				i = 2;
 			}
-			
+
 			sum = i - cpu_choice;
-			
-			if(sum == 1 || sum == -2) {
-				System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
-			} else if(sum == 0) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
+
+			if (sum == 1 || sum == -2) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
+			} else if (sum == 0) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			} else {
-				System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-			System.out.println("ÄÄÇ»ÅÍÀÇ ¼ö : " + cpu_choice + " - À¯ÀúÀÇ ¼ö : " + i);
+			System.out.println("ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + cpu_choice + " - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + i);
 		}
 	}
 

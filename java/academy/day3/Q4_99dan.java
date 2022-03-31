@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 import java.util.Scanner;
 
@@ -6,50 +6,50 @@ public class Q4_99dan {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 1. ÀüÃ¼ Ãâ·Â 2. ´ÜÀÔ·Â 3. Á¾·á
+		// 1. ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½Ô·ï¿½ 3. ï¿½ï¿½ï¿½ï¿½
 		Scanner scan = new Scanner(System.in);
-		
-		while(true) {
-			System.out.println("9x9´ÜÀ» Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
-			System.out.println("1. ÀüÃ¼ Ãâ·Â");
-			System.out.println("2. ´Ü ÀÔ·Â");
-			System.out.println("3. Á¾·á");
-			System.out.print("¸Þ´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä : ");
+
+		while (true) {
+			System.out.println("9x9ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ô´Ï´ï¿½.");
+			System.out.println("1. ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½");
+			System.out.println("2. ï¿½ï¿½ ï¿½Ô·ï¿½");
+			System.out.println("3. ï¿½ï¿½ï¿½ï¿½");
+			System.out.print("ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 			int choice = scan.nextInt();
-			
-			if(!(choice == 1 || choice == 2 || choice == 3)) {
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+
+			if (!(choice == 1 || choice == 2 || choice == 3)) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				System.out.println("--------------");
-				//continue;
+				// continue;
 			} else {
-				if(choice == 1) {
-					for(int i = 2; i <= 9; i++) {
-						for(int j = 1; j <= 9; j++) {
-							System.out.println(i + "X" + j + "=" + i*j);
+				if (choice == 1) {
+					for (int i = 2; i <= 9; i++) {
+						for (int j = 1; j <= 9; j++) {
+							System.out.println(i + "X" + j + "=" + i * j);
 						}
 						System.out.println();
 					}
-				} else if(choice == 2) {
-					System.out.print("´ÜÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				} else if (choice == 2) {
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					int num = scan.nextInt();
-					
-					if(!(num>=2 && num <=9)) {
-						System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						//continue;
+
+					if (!(num >= 2 && num <= 9)) {
+						System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+						// continue;
 					} else {
 						int i = num;
-						for(int j = 1; j<=9; j++) {
-							System.out.println(i + "X" + j + "=" + i*j);
+						for (int j = 1; j <= 9; j++) {
+							System.out.println(i + "X" + j + "=" + i * j);
 						}
 						System.out.println();
-						
+
 					}
 				} else {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 					break;
 				}
 			}
-				
+
 		}
 
 	}

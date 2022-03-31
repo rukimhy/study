@@ -1,20 +1,20 @@
-package day20;
+package academy.day20;
 
-public class Battle {	
+public class Battle {
 
 	void attack(Unit a, Unit b) {
-		System.out.println(a.name+"ÀÇ °ø°Ý!!");
+		System.out.println(a.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!!");
 		b.energy -= a.set;
-		System.out.println(b.name+"ÀÇ Ã¼·ÂÀÌ "+b.energy+" ¸¸Å­ ³²¾Ò´Ù.");
+		System.out.println(b.name + "ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ " + b.energy + " ï¿½ï¿½Å­ ï¿½ï¿½ï¿½Ò´ï¿½.");
 		a.set = a.atk;
 	}
-	
+
 	boolean check(Unit a, Unit b) {
-		if(a.energy <= 0 || b.energy <= 0) {
-			if(a.energy > 0) {
-				System.out.println(a.name+"ÀÇ ½Â¸®!");
+		if (a.energy <= 0 || b.energy <= 0) {
+			if (a.energy > 0) {
+				System.out.println(a.name + "ï¿½ï¿½ ï¿½Â¸ï¿½!");
 			} else {
-				System.out.println(b.name+"ÀÇ ½Â¸®!");
+				System.out.println(b.name + "ï¿½ï¿½ ï¿½Â¸ï¿½!");
 			}
 			return false;
 		}

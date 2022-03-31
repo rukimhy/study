@@ -1,12 +1,15 @@
-package day21;
+package academy.day21;
 
 abstract public class Computer {
 	abstract public void display();
+
 	abstract public void typing();
+
 	public void turnOn() {
-		System.out.println("Àü¿øÀ» ÄÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	}
+
 	public void turnOff() {
-		System.out.println("Àü¿øÀ» ²ü´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }

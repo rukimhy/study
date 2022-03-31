@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -12,20 +12,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-class JRadiobutton1 extends JFrame implements ActionListener{
+class JRadiobutton1 extends JFrame implements ActionListener {
 	JLabel jl;
 	JRadioButton[] jr = new JRadioButton[5];
-	String[] hobby = {"°È±â", "µî»ê", "°ñÇÁ", "½ºÅ²½ºÄí¹ö", "Æä·¯±Û¶óÀÌµù"};
+	String[] hobby = { "ï¿½È±ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ä·¯ï¿½Û¶ï¿½ï¿½Ìµï¿½" };
+
 	public JRadiobutton1() {
 		jl = new JLabel();
-		JLabel jl1 = new JLabel("´ç½ÅÀÇ Ãë¹Ì´Â?");
-		JLabel jl2 = new JLabel("´ç½ÅÀÇ ³ªÀÌ´Â?");
+		JLabel jl1 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ì´ï¿½?");
+		JLabel jl2 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½?");
 		JCheckBox[] jc = new JCheckBox[5];
-		String[] age = {"20´ë" ,"30´ë","40´ë","50´ë","60´ë"};
+		String[] age = { "20ï¿½ï¿½", "30ï¿½ï¿½", "40ï¿½ï¿½", "50ï¿½ï¿½", "60ï¿½ï¿½" };
 		JPanel hobbypanel = new JPanel();
 		JPanel agepanel = new JPanel();
 		ButtonGroup gb = new ButtonGroup();
-		for (int i = 0; i<age.length; i++) {
+		for (int i = 0; i < age.length; i++) {
 			jr[i] = new JRadioButton(hobby[i]);
 			jc[i] = new JCheckBox(age[i]);
 			hobbypanel.add(jr[i]);
@@ -38,14 +39,14 @@ class JRadiobutton1 extends JFrame implements ActionListener{
 		JPanel jp1 = new JPanel();
 		jp1.add(jl1);
 		jp1.add(hobbypanel);
-		
+
 		JPanel jp2 = new JPanel();
 		jp2.add(jl2);
 		jp2.add(agepanel);
-		
+
 		JPanel jp3 = new JPanel();
 		jp3.add(jl);
-		
+
 		ct.add(jp1);
 		ct.add(jp2);
 		ct.add(jp3);
@@ -53,15 +54,16 @@ class JRadiobutton1 extends JFrame implements ActionListener{
 		setSize(350, 300);
 		setVisible(true);
 	}
+
 	public void actionPerformed(ActionEvent ae) {
-		String s = "´ç½ÅÀÇ Ãë¹Ì : ";
-		for ( int i = 0 ; i<hobby.length; i++) {
-			if(jr[i].isSelected() == true) {
-				s = s+hobby[i]+" ";
+		String s = "ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : ";
+		for (int i = 0; i < hobby.length; i++) {
+			if (jr[i].isSelected() == true) {
+				s = s + hobby[i] + " ";
 			}
 		}
-		s = s+"´ç½ÅÀÇ ³ªÀÌ : ";
-		jl.setText(s+ae.getActionCommand());
+		s = s + "ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ";
+		jl.setText(s + ae.getActionCommand());
 	}
 }
 

@@ -1,15 +1,14 @@
-package day2;
+package academy.day2;
 
 public class IfExample1 {
 
 	public static void main(String[] args) {
-		
+
 		int age = 7;
-		if(age >= 8) {
-			System.out.println("ÇÐ±³¿¡ ´Ù´Õ´Ï´Ù.");
-		}
-		else {
-			System.out.println("ÇÐ±³¿¡ ´Ù´ÏÁö ¾Ê½À´Ï´Ù.");
+		if (age >= 8) {
+			System.out.println("ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½Ù´Õ´Ï´ï¿½.");
+		} else {
+			System.out.println("ï¿½Ð±ï¿½ï¿½ï¿½ ï¿½Ù´ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }

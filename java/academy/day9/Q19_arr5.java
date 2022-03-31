@@ -1,4 +1,4 @@
-package day9;
+package academy.day9;
 
 import java.util.Random;
 
@@ -6,8 +6,9 @@ public class Q19_arr5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* arr[5] ÀÏÂ÷¿ø ¹è¿­¿¡¼­ ¾È¿¡ 1~99±îÁöÀÇ ·£´ý¼ö¸¦ ¹è¿­¿¡ ³Ö¾î¶ó
-		 * ¹è¿­ 0~4¹øÀÇ ¼ýÀÚ °ªÀÌ ¼ø¼­´ë·Î Á¤·ÄµÇ´Â ÇÁ·Î±×·¥À» ¸¸µé¾î¶ó
+		/*
+		 * arr[5] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ï¿½ï¿½ ï¿½È¿ï¿½ 1~99ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½
+		 * ï¿½è¿­ 0~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÄµÇ´ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 * before : 25[0] 7[1] 88[2] 3[3] 1[4]
 		 * after : 1[0] 3[1] 7[2] 25[3] 88[4]
 		 */
@@ -16,21 +17,17 @@ public class Q19_arr5 {
 		int[] arr = new int[5];
 
 		System.out.print("before : ");
-		for(int i = 0; i < 5; i++) 
-		{
-			arr[i] = r.nextInt(99)+1;
-			System.out.print(arr[i]+" / ");
+		for (int i = 0; i < 5; i++) {
+			arr[i] = r.nextInt(99) + 1;
+			System.out.print(arr[i] + " / ");
 		}
 
-		for(int i = 0; i < 5; i++) 
-		{
-			for(int j = 0; j < 5; j++) 
-			{
-				if(i == j) continue;
-				else if(i < j)
-				{
-					if(arr[i] > arr[j]) 
-					{
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (i == j)
+					continue;
+				else if (i < j) {
+					if (arr[i] > arr[j]) {
 						tmp = arr[i];
 						arr[i] = arr[j];
 						arr[j] = tmp;
@@ -40,9 +37,8 @@ public class Q19_arr5 {
 		}
 		System.out.println();
 		System.out.print("after : ");
-		for(int i = 0; i < 5; i++) 
-		{
-			System.out.print(arr[i]+" / ");
+		for (int i = 0; i < 5; i++) {
+			System.out.print(arr[i] + " / ");
 		}
 	}
 

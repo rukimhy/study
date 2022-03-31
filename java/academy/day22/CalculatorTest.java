@@ -1,4 +1,4 @@
-package day22;
+package academy.day22;
 
 public class CalculatorTest {
 
@@ -12,8 +12,8 @@ public class CalculatorTest {
 		System.out.println(calc.divide(num1, num2));
 		calc.showInfo();
 		calc.description();
-		
-		int[] arr = {1, 2, 3, 4, 5};
+
+		int[] arr = { 1, 2, 3, 4, 5 };
 		System.out.println(Calc.total(arr));
 	}
 

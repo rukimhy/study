@@ -1,23 +1,23 @@
-package day25;
+package academy.day25;
 
-class Outer{
+class Outer {
 	int outNum = 100;
 	static int sNum = 200;
-	
+
 	Runnable getRunnable(int i) {
 		int num = 100;
-		
-		class MyRunnable implements Runnable{
+
+		class MyRunnable implements Runnable {
 			int localNum = 10;
-			
+
 			@Override
 			public void run() {
-				System.out.println("i = "+i);
-				System.out.println("num = "+num);
-				System.out.println("localNum = "+ localNum);
-				System.out.println("outNum = "+ outNum+"¿ÜºÎ Å¬·¡½º ÀÎ½ºÅÏ½º º¯¼ö");
-				System.out.println("Outer.sNum = "+Outer.sNum+"(¿ÜºÎ Å¬·¡½º Á¤Àû º¯¼ö)");
-				
+				System.out.println("i = " + i);
+				System.out.println("num = " + num);
+				System.out.println("localNum = " + localNum);
+				System.out.println("outNum = " + outNum + "ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+				System.out.println("Outer.sNum = " + Outer.sNum + "(ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+
 			}
 		}
 		return new MyRunnable();

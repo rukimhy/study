@@ -1,4 +1,4 @@
-package day10;
+package academy.day10;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -9,129 +9,109 @@ public class Q20_teacher {
 		Random rand = new Random();
 		Scanner sc = new Scanner(System.in);
 
-		int [][] hosu = new int[5][5];
-		
-		int fishCount = 0; 
-		
-		for(int i = 0;i<3;i++) // 0 1
+		int[][] hosu = new int[5][5];
+
+		int fishCount = 0;
+
+		for (int i = 0; i < 3; i++) // 0 1
 		{
-			int y=rand.nextInt(5);  //3  3 
-			int x=rand.nextInt(5);  //2  2
-			if(hosu[y][x] == 0)
-			{
+			int y = rand.nextInt(5); // 3 3
+			int x = rand.nextInt(5); // 2 2
+			if (hosu[y][x] == 0) {
 				hosu[y][x] = 1;
-				
-				System.out.println(y+", "+x);
-			}
-			else
-			{
+
+				System.out.println(y + ", " + x);
+			} else {
 				i--;
 			}
 		}
 
 		int userX = -1;
 		int userY = -1;
-		while(userX <0 || userX >4 || userY <0 || userY >4)
-		{
-			System.out.print("ÁÂÇ¥ y, x¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		while (userX < 0 || userX > 4 || userY < 0 || userY > 4) {
+			System.out.print("ï¿½ï¿½Ç¥ y, xï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			userY = sc.nextInt();
 			userX = sc.nextInt();
-			
-			if(userX <0 || userX >4 || userY <0 || userY >4)
-			{
-				System.out.println("ÁÂÇ¥ÀÇ °ªÀÌ 0º¸´Ù ÀÛ°Å³ª 4º¸´Ù Å®´Ï´Ù. Àß¸øµÈ Ä³½ºÆÃÀÔ´Ï´Ù.");
+
+			if (userX < 0 || userX > 4 || userY < 0 || userY > 4) {
+				System.out.println("ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û°Å³ï¿½ 4ï¿½ï¿½ï¿½ï¿½ Å®ï¿½Ï´ï¿½. ï¿½ß¸ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
-			
+
 		}
-		
-		if(hosu[userY][userX] == 1)
-		{
+
+		if (hosu[userY][userX] == 1) {
 			fishCount++;
 			hosu[userY][userX] = 0;
-			System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 		}
-		
-		while(fishCount <3)
-		{
-			System.out.print("1. À§ 2. ¾Æ·¡ 3. ¿ÞÂÊ 4. ¿À¸¥ÂÊ : ");
+
+		while (fishCount < 3) {
+			System.out.print("1. ï¿½ï¿½ 2. ï¿½Æ·ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ");
 			int move = sc.nextInt();
-			
-			if(move == 1) //À§
+
+			if (move == 1) // ï¿½ï¿½
 			{
 				userY--;
-				if(userY == -1)
-				{
+				if (userY == -1) {
 					userY = 0;
-					System.out.println("´õÀÌ»ó À§·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
-					continue;// ÀÌ°É ¾È¾²¸é ¾î¶² ¹®Á¦°¡ ÀÖÀ» ±î¿ä?
+					System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					continue;// ï¿½Ì°ï¿½ ï¿½È¾ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½?
 				}
-				System.out.println("y : "+userY+", x :"+userX);
-				if(hosu[userY][userX] == 1)
-				{
+				System.out.println("y : " + userY + ", x :" + userX);
+				if (hosu[userY][userX] == 1) {
 					fishCount++;
 					hosu[userY][userX] = 0;
-					System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 				}
-				
-			}
-			else if(move == 2)//¾Æ·¡
+
+			} else if (move == 2)// ï¿½Æ·ï¿½
 			{
 				userY++;
-				if(userY == 5)
-				{
+				if (userY == 5) {
 					userY = 4;
-					System.out.println("´õÀÌ»ó ¾Æ·¡·Î·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
-					continue;// ÀÌ°É ¾È¾²¸é ¾î¶² ¹®Á¦°¡ ÀÖÀ» ±î¿ä?
+					System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½Æ·ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					continue;// ï¿½Ì°ï¿½ ï¿½È¾ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½?
 				}
-				System.out.println("y : "+userY+", x :"+userX);
-				if(hosu[userY][userX] == 1)
-				{
+				System.out.println("y : " + userY + ", x :" + userX);
+				if (hosu[userY][userX] == 1) {
 					fishCount++;
 					hosu[userY][userX] = 0;
-					System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 				}
-			}
-			else if(move == 3)//¿ÞÂÊ
+			} else if (move == 3)// ï¿½ï¿½ï¿½ï¿½
 			{
 				userX--;
-				if(userX == -1)
-				{
+				if (userX == -1) {
 					userX = 0;
-					System.out.println("´õÀÌ»ó ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
-					continue;// ÀÌ°É ¾È¾²¸é ¾î¶² ¹®Á¦°¡ ÀÖÀ» ±î¿ä?
+					System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					continue;// ï¿½Ì°ï¿½ ï¿½È¾ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½?
 				}
-				System.out.println("y : "+userY+", x :"+userX);
-				if(hosu[userY][userX] == 1)
-				{
+				System.out.println("y : " + userY + ", x :" + userX);
+				if (hosu[userY][userX] == 1) {
 					fishCount++;
 					hosu[userY][userX] = 0;
-					System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 				}
-			}
-			else if(move == 4)//¿À¸¥ÂÊ
+			} else if (move == 4)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			{
 				userX++;
-				if(userX == 5)
-				{
+				if (userX == 5) {
 					userX = 4;
-					System.out.println("´õÀÌ»ó ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
-					continue;// ÀÌ°É ¾È¾²¸é ¾î¶² ¹®Á¦°¡ ÀÖÀ» ±î¿ä?
+					System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					continue;// ï¿½Ì°ï¿½ ï¿½È¾ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½?
 				}
-				
-				System.out.println("y : "+userY+", x :"+userX);				
-				
-				if(hosu[userY][userX] == 1)
-				{
+
+				System.out.println("y : " + userY + ", x :" + userX);
+
+				if (hosu[userY][userX] == 1) {
 					fishCount++;
 					hosu[userY][userX] = 0;
-					System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 				}
-			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
-		
+
 	}
 }

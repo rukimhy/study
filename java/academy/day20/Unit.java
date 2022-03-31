@@ -1,4 +1,4 @@
-package day20;
+package academy.day20;
 
 public class Unit {
 	String name;

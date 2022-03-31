@@ -1,4 +1,4 @@
-package day20;
+package academy.day20;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -11,31 +11,32 @@ public class Main {
 		Unit villain = new Villain();
 		Burf burf = new Burf();
 		Battle battle = new Battle();
-		
+
 		int random = -1;
 		int count = 1;
 		boolean check = true;
-		
-		while(battle.check(knight, villain)) {
-			System.out.println(count+"¹øÂ° °æ±â°¡ ½ÃÀÛµË´Ï´Ù.");
+
+		while (battle.check(knight, villain)) {
+			System.out.println(count + "ï¿½ï¿½Â° ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ÛµË´Ï´ï¿½.");
 			System.out.println("=====================================");
-			
-			if(count % 2 == 1) {
-				burf.burf(knight, r);				
+
+			if (count % 2 == 1) {
+				burf.burf(knight, r);
 				battle.attack(knight, villain);
 
 			} else {
 				burf.burf(villain, r);
 				battle.attack(villain, knight);
 			}
-			System.out.println("±â»ç Ã¼·Â : "+knight.energy+" // ±â»ç °ø°Ý·Â : "+knight.atk+" // ¾Ç´ç Ã¼·Â : "+villain.energy+" // ¾Ç´ç °ø°Ý·Â : "+villain.atk);
-			
+			System.out.println("ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ : " + knight.energy + " // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ : " + knight.atk + " // ï¿½Ç´ï¿½ Ã¼ï¿½ï¿½ : "
+					+ villain.energy + " // ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ : " + villain.atk);
+
 			count++;
 			System.out.println("=====================================");
-			
+
 			try {
 				TimeUnit.SECONDS.sleep(1);
-			} catch(InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}

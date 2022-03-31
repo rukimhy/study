@@ -1,9 +1,8 @@
-package day19;
+package academy.day19;
 
 import java.util.Random;
 
-class Unit
-{
+class Unit {
 	int price;
 	int hp;
 	int attack;
@@ -13,155 +12,127 @@ class Unit
 	String characteristic;
 }
 
-class Marine extends Unit
-{
-	Marine()
-	{
+class Marine extends Unit {
+	Marine() {
 		super.price = 50;
 		super.hp = 50;
 		super.attack = 6;
 		super.defense = 0;
-		super.target = "Áö»ó, °øÁß";
+		super.target = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½";
 		super.speed = 1.875;
-		super.characteristic = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		super.characteristic = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
 
-	void print()
-	{
-		System.out.println("¸¶¸°ÀÇ »ý»êºñ¿ëÀº ¹Ì³×¶ö " + super.price + ", Ã¼·Â " + super.hp + ", °ø°Ý·Â " + super.attack + " ¹æ¾î·Â " + super.defense + ", °ø°Ý´ë»ó " + super.target + ", ÀÌµ¿¼Óµµ " + super.speed + ", À¯´Ö Æ¯¼º" + super.characteristic + "ÀÔ´Ï´Ù.");
+	void print() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì³×¶ï¿½ " + super.price + ", Ã¼ï¿½ï¿½ " + super.hp + ", ï¿½ï¿½ï¿½Ý·ï¿½ " + super.attack
+				+ " ï¿½ï¿½ï¿½ï¿½ " + super.defense + ", ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ " + super.target + ", ï¿½Ìµï¿½ï¿½Óµï¿½ " + super.speed + ", ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½"
+				+ super.characteristic + "ï¿½Ô´Ï´ï¿½.");
 	}
 
-	void energyPrint()
-	{
-		System.out.println("¸¶¸° ¿¡³ÊÁö : "+hp);
+	void energyPrint() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + hp);
 	}
-	void attackPrint()
-	{
-		System.out.println("¸¶¸°ÀÌ "+attack+"°ø°Ý·ÂÀ¸·Î °ø°ÝÀ» ÇÕ´Ï´Ù.");
+
+	void attackPrint() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + attack + "ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	}
 }
-class Juggling extends Unit
-{
-	Juggling() // »ý¼ºÀÚ
+
+class Juggling extends Unit {
+	Juggling() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
 		super.price = 50;
 		super.hp = 35;
 		super.attack = 5;
 		super.defense = 0;
-		super.target = "Áö»ó";
+		super.target = "ï¿½ï¿½ï¿½ï¿½";
 		super.speed = 2.612;
-		super.characteristic = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		super.characteristic = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
 
-	void print()
-	{
-		System.out.println("Àú±Û¸µÀÇ »ý»êºñ¿ëÀº ¹Ì³×¶ö " + super.price + ", Ã¼·Â " + super.hp + ", °ø°Ý·Â " + super.attack + " ¹æ¾î·Â " + super.defense + ", °ø°Ý´ë»ó " + super.target + ", ÀÌµ¿¼Óµµ " + super.speed + ", À¯´Ö Æ¯¼º" + super.characteristic + "ÀÔ´Ï´Ù.");
+	void print() {
+		System.out.println("ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì³×¶ï¿½ " + super.price + ", Ã¼ï¿½ï¿½ " + super.hp + ", ï¿½ï¿½ï¿½Ý·ï¿½ " + super.attack
+				+ " ï¿½ï¿½ï¿½ï¿½ " + super.defense + ", ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ " + super.target + ", ï¿½Ìµï¿½ï¿½Óµï¿½ " + super.speed + ", ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½"
+				+ super.characteristic + "ï¿½Ô´Ï´ï¿½.");
 	}
 
-	void energyPrint()
-	{
-		System.out.println("Àú±Û¸µ ¿¡³ÊÁö : "+hp);
+	void energyPrint() {
+		System.out.println("ï¿½ï¿½ï¿½Û¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + hp);
 	}
-	void attackPrint()
-	{
-		System.out.println("Àú±Û¸µÀÌ "+attack+"°ø°Ý·ÂÀ¸·Î °ø°ÝÀ» ÇÕ´Ï´Ù.");
+
+	void attackPrint() {
+		System.out.println("ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ " + attack + "ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	}
 
 }
 
-class EndCheck
-{
+class EndCheck {
 	boolean check = true;
 	int end = -1;
 }
 
-
-class Controller
-{
-	int attack(Marine[] m, Juggling[] j, Random r, int sun)
-	{
-		//°´Ã¼°¡ nullÀÎÁö Ã¼Å©, ¿¡³ÊÁö°¡ 0ÀÌ µÇ¸é null·Î Ã¼ÀÎÁö
+class Controller {
+	int attack(Marine[] m, Juggling[] j, Random r, int sun) {
+		// ï¿½ï¿½Ã¼ï¿½ï¿½ nullï¿½ï¿½ï¿½ï¿½ Ã¼Å©, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½Ç¸ï¿½ nullï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½
 		int zergIndex = r.nextInt(10);
 		int terranIndex = r.nextInt(10);
-		if(j[zergIndex] != null && m[terranIndex] != null)
-		{
-			if(sun == 0)
-			{
-				
-				j[zergIndex].hp=j[zergIndex].hp-m[terranIndex].attack;
+		if (j[zergIndex] != null && m[terranIndex] != null) {
+			if (sun == 0) {
+
+				j[zergIndex].hp = j[zergIndex].hp - m[terranIndex].attack;
 				m[terranIndex].attackPrint();
 				j[zergIndex].energyPrint();
-				if(j[zergIndex].hp<=0)
-				{
+				if (j[zergIndex].hp <= 0) {
 					j[zergIndex] = null;
 				}
 				return 1;
-			}
-			else
-			{
+			} else {
 				m[terranIndex].hp = m[terranIndex].hp - j[zergIndex].attack;
 				j[zergIndex].attackPrint();
 				m[terranIndex].energyPrint();
-				if(m[terranIndex].hp<=0)
-				{
+				if (m[terranIndex].hp <= 0) {
 					m[terranIndex] = null;
 				}
 				return 0;
 			}
-		}
-		else
-		{
-			if(sun == 0)
-			{
+		} else {
+			if (sun == 0) {
 				return 1;
-			}
-			else
-			{
+			} else {
 				return 0;
 			}
 		}
 	}
-	
-	EndCheck check(Marine[] m, Juggling[] j)
-	{
+
+	EndCheck check(Marine[] m, Juggling[] j) {
 		EndCheck e = new EndCheck();
 		int mCount = 0;
 		int jCount = 0;
-		
-		for(int i = 0;i<m.length;i++)
-		{
-			if(m[i] == null)
-			{
+
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] == null) {
 				mCount++;
 			}
 		}
-		for(int k = 0;k<j.length;k++)
-		{
-			if(j[k] == null)
-			{
+		for (int k = 0; k < j.length; k++) {
+			if (j[k] == null) {
 				jCount++;
 			}
 		}
-		
-		if(mCount == 10)
-		{
+
+		if (mCount == 10) {
 			e.check = false;
 			e.end = 0;
 			return e;
-		}
-		else if(jCount == 10)
-		{
+		} else if (jCount == 10) {
 			e.check = false;
 			e.end = 1;
 			return e;
-		}
-		else
-		{
+		} else {
 			return e;
 		}
 	}
 
-	
 }
 
 public class Q42_teacher {
@@ -173,8 +144,7 @@ public class Q42_teacher {
 		Controller c = new Controller();
 		EndCheck e = new EndCheck();
 
-		for(int i = 0;i<10;i++)
-		{
+		for (int i = 0; i < 10; i++) {
 			m[i] = new Marine();
 			j[i] = new Juggling();
 		}
@@ -183,23 +153,17 @@ public class Q42_teacher {
 
 		int sun = r.nextInt(2);
 
-		while(e.check)
-		{
-			sun=c.attack(m, j, r, sun);
-			e=c.check(m, j);
+		while (e.check) {
+			sun = c.attack(m, j, r, sun);
+			e = c.check(m, j);
 		}
-		
-		if(e.end == 0)
-		{
-			System.out.println("Àú±×¿¡ ½Â¸®ÀÔ´Ï´Ù.");
-		}
-		else if(e.end == 1)
-		{
-			System.out.println("Å×¶õÀÌ ½Â¸®ÀÔ´Ï´Ù.");
-		}
-		else
-		{
-			System.out.println("Àß¸øµÈ °á°úÀÔ´Ï´Ù.");
+
+		if (e.end == 0) {
+			System.out.println("ï¿½ï¿½ï¿½×¿ï¿½ ï¿½Â¸ï¿½ï¿½Ô´Ï´ï¿½.");
+		} else if (e.end == 1) {
+			System.out.println("ï¿½×¶ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½Ô´Ï´ï¿½.");
+		} else {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 	}
 

@@ -1,127 +1,119 @@
-package day10;
+package academy.day10;
 
 import java.util.Scanner;
 
 public class Q22_phone {
 
 	public static void numToAlpha(char str_i, int count, char[][] alphabet_arr) {
-		if(str_i == '2') {
-			if(count == 3) {
+		if (str_i == '2') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[0][count]);
-		}
-		else if(str_i == '3') {
-			if(count == 3) {
+		} else if (str_i == '3') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[1][count]);
-		}
-		else if(str_i == '4') {
-			if(count == 3) {
+		} else if (str_i == '4') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[2][count]);
-		}
-		else if(str_i == '5') {
-			if(count == 3) {
+		} else if (str_i == '5') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[3][count]);
-		}
-		else if(str_i == '6') {
-			if(count == 3) {
+		} else if (str_i == '6') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[4][count]);
-		}
-		else if(str_i == '7') {
+		} else if (str_i == '7') {
 			System.out.print(alphabet_arr[5][count]);
-		}
-		else if(str_i == '8') {
-			if(count == 3) {
+		} else if (str_i == '8') {
+			if (count == 3) {
 				count = 2;
 			}
 			System.out.print(alphabet_arr[6][count]);
-		}
-		else if(str_i == '9') {
+		} else if (str_i == '9') {
 			System.out.print(alphabet_arr[7][count]);
 		}
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//¹®ÀÚ¿­À» intÇüÀ¸·Î ¹Ù²Ù´Â ¹æ¹ý : int a = Integer.parseInt(str);
-		/* #, *, 0, 1Àº ±×´ë·Î Ãâ·Â
+		// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ intï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù´ï¿½ ï¿½ï¿½ï¿½ : int a = Integer.parseInt(str);
+		/*
+		 * #, *, 0, 1ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½
 		 * 2(ABC) 3(DEF) 4(GHI) 5(JKL) 6(MNO) 7(PQRS) 8(TUV) 9(WXYZ)
-		 * 77884448 (QUIT) ¿¡¼­ Á¾·á
-		 * ÇÔ¼ö 2°³ ÀÌ»ó »ç¿ë
+		 * 77884448 (QUIT) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ô¼ï¿½ 2ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½
 		 */
 		Scanner scan = new Scanner(System.in);
 
-		char[][] alphabet_arr = { {'A', 'B', 'C'},{'D','E','F'},
-					{'G','H','I'},{'J','K','L'},{'M','N','O'},
-				{'P','Q','R','S'},{'T','U','V'},{'W','X','Y','Z'}};
+		char[][] alphabet_arr = { { 'A', 'B', 'C' }, { 'D', 'E', 'F' },
+				{ 'G', 'H', 'I' }, { 'J', 'K', 'L' }, { 'M', 'N', 'O' },
+				{ 'P', 'Q', 'R', 'S' }, { 'T', 'U', 'V' }, { 'W', 'X', 'Y', 'Z' } };
 
-		while(true) {
-			System.out.print("0~9, *, # Áß¿¡¼­ ÀÔ·ÂÇÏ½Ã¿À : ");
+		while (true) {
+			System.out.print("0~9, *, # ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 			String str = scan.next();
 
 			int pass_count = 0;
 
-			if(str.equals("77884448")) {
-				System.out.println("QUIT = ÇÁ·Î±×·¥ Á¾·á");
+			if (str.equals("77884448")) {
+				System.out.println("QUIT = ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				break;
 			}
 
-			for(int i=0; i<str.length(); i++) {	
+			for (int i = 0; i < str.length(); i++) {
 				char str_i = str.charAt(i);
 				int count = 0;
 
-				if(pass_count == 2 || pass_count == 1 || pass_count == 3) {
+				if (pass_count == 2 || pass_count == 1 || pass_count == 3) {
 					pass_count--;
 					continue;
 				}
 
-				if(str_i == '#' || str_i == '*' || str_i == '0' || str_i == '1') System.out.print(str_i);
+				if (str_i == '#' || str_i == '*' || str_i == '0' || str_i == '1')
+					System.out.print(str_i);
 				else {
-					if(str.length() == 1) {
+					if (str.length() == 1) {
 						numToAlpha(str_i, count, alphabet_arr);
 						break;
-					} 
-					else if(str.length() == 2) {
-						if(str_i == str.charAt(i+1)) {
+					} else if (str.length() == 2) {
+						if (str_i == str.charAt(i + 1)) {
 							pass_count = 1;
 							count = 1;
 						}
 
 						numToAlpha(str_i, count, alphabet_arr);
 						continue;
-					} 
-					else if(str.length() == 3) {
-						if(str_i == str.charAt(i+1) && str_i == str.charAt(i+2)) {
+					} else if (str.length() == 3) {
+						if (str_i == str.charAt(i + 1) && str_i == str.charAt(i + 2)) {
 							pass_count = 2;
 							count = 2;
 						}
 
 						numToAlpha(str_i, count, alphabet_arr);
 						continue;
-					}
-					else if(i+3 >= str.length() || i+2 >= str.length() || i+1 >= str.length()) {
-						if(i+1 >= str.length()) {
+					} else if (i + 3 >= str.length() || i + 2 >= str.length() || i + 1 >= str.length()) {
+						if (i + 1 >= str.length()) {
 							count = 0;
-						} else if(i+2 >= str.length()) {
-							if(str_i == str.charAt(i+1)) {
+						} else if (i + 2 >= str.length()) {
+							if (str_i == str.charAt(i + 1)) {
 								count = 1;
 								pass_count = 1;
 							} else {
 								count = 0;
 							}
 						} else {
-							if(str_i == str.charAt(i+1) && str_i == str.charAt(i+2)) {
+							if (str_i == str.charAt(i + 1) && str_i == str.charAt(i + 2)) {
 								pass_count = 2;
 								count = 2;
-							} else if(str_i == str.charAt(i+1)) {
+							} else if (str_i == str.charAt(i + 1)) {
 								pass_count = 1;
 								count = 1;
 							} else {
@@ -129,27 +121,28 @@ public class Q22_phone {
 							}
 						}
 					} else {
-						if(str_i == str.charAt(i+1) && str_i == str.charAt(i+2) && str_i == str.charAt(i+3)) {
+						if (str_i == str.charAt(i + 1) && str_i == str.charAt(i + 2) && str_i == str.charAt(i + 3)) {
 							pass_count = 3;
 							count = 3;
-						} else if(str_i == str.charAt(i+1) && str_i == str.charAt(i+2)) {
+						} else if (str_i == str.charAt(i + 1) && str_i == str.charAt(i + 2)) {
 							pass_count = 2;
 							count = 2;
-						} else if(str_i == str.charAt(i+1)) {
+						} else if (str_i == str.charAt(i + 1)) {
 							pass_count = 1;
 							count = 1;
 						}
 					}
 					numToAlpha(str_i, count, alphabet_arr);
-					
-					if(str_i == 2 || str_i == 3 || str_i == 4 || str_i == 5 || str_i == 6 || str_i == 8) {
-						if(pass_count == 3) pass_count = 2;
-					}
-				} //else¹® ³¡
 
-			} //for¹® ³¡
+					if (str_i == 2 || str_i == 3 || str_i == 4 || str_i == 5 || str_i == 6 || str_i == 8) {
+						if (pass_count == 3)
+							pass_count = 2;
+					}
+				} // elseï¿½ï¿½ ï¿½ï¿½
+
+			} // forï¿½ï¿½ ï¿½ï¿½
 			System.out.println();
 
-		} //while¹® ³¡
+		} // whileï¿½ï¿½ ï¿½ï¿½
 	}
 }

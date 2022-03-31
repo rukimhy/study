@@ -1,4 +1,4 @@
-package day16;
+package academy.day16;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
-package day12;
+package academy.day12;
 
 public class Person {
-	//¸â¹ö º¯¼ö
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	String name;
 	int height;
 	double weight;

@@ -1,37 +1,39 @@
-package day27;
+package academy.day27;
 
 import java.util.Random;
 
-/* 2¸íÀÇ »ç¶÷ÀÌ ÀÖ°í °¢ »ç¶÷Àº 1ÅÏ¸¶´Ù 1~20 ·£´ý¼ö¸¦ ¹Þ¾Æ¼­ ÅäÅ»°ªÀ» ÀúÀåÇÑ´Ù.
- * 100ÅÏÀÌ Áö³ª°í ³ª¸é ¾î¶² »ç¶÷ÀÌ ÀÌ°å´ÂÁö Ãâ·Â
- * ´Ü, °¢ »ç¶÷ÀÌ ¹ø°¥¾Æ°¡¸é¼­ ½ÇÇàµÇ´Â °ÍÀÌ ¾Æ´Ï¶ó µ¿½Ã¿¡ 100ÅÏÀÌ ÁøÇàµÇ¾î¾ß ÇÑ´Ù.
- * ¾²·¹µå »ç¿ë
+/* 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½Ï¸ï¿½ï¿½ï¿½ 1~20 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+ * 100ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+ * ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ°ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ 100ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 
-class Total{
+class Total {
 	int total = 0;
+
 	void sum(Random r) {
-		total += r.nextInt(20)+1;
+		total += r.nextInt(20) + 1;
 	}
+
 	int getTotal() {
 		return total;
 	}
 }
 
-class Human extends Thread{
+class Human extends Thread {
 	Total t;
 	Random r;
 	int total;
-	
-	Human(Total t, String name, Random r){
+
+	Human(Total t, String name, Random r) {
 		this.t = t;
 		setName(name);
 		this.r = r;
 	}
-	
+
 	public void run() {
-		for(int i = 1; i <= 100; i++) {
-			System.out.println(getName()+"ÀÇ "+i+"¹øÂ° ÅÏ");
+		for (int i = 1; i <= 100; i++) {
+			System.out.println(getName() + "ï¿½ï¿½ " + i + "ï¿½ï¿½Â° ï¿½ï¿½");
 			t.sum(r);
 		}
 		this.total = t.getTotal();
@@ -42,26 +44,26 @@ public class Q51 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Random r = new Random();
-		
+
 		Total t1 = new Total();
 		Total t2 = new Total();
-		
-		Human h1 = new Human(t1, "»ç¶÷1", r);
-		Human h2 = new Human(t2, "»ç¶÷2", r);
-		
+
+		Human h1 = new Human(t1, "ï¿½ï¿½ï¿½1", r);
+		Human h2 = new Human(t2, "ï¿½ï¿½ï¿½2", r);
+
 		h1.start();
 		h2.start();
-		
+
 		h1.join();
 		h2.join();
-		
-		System.out.println(h1.getName()+ ":"+h1.total);
-		System.out.println(h2.getName()+ ":"+h2.total);
-		
-		if(h1.total > h2.total) {
-			System.out.println(h1.getName()+"ÀÌ ÀÌ°å½À´Ï´Ù.");
+
+		System.out.println(h1.getName() + ":" + h1.total);
+		System.out.println(h2.getName() + ":" + h2.total);
+
+		if (h1.total > h2.total) {
+			System.out.println(h1.getName() + "ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 		} else {
-			System.out.println(h2.getName()+"ÀÌ ÀÌ°å½À´Ï´Ù.");
+			System.out.println(h2.getName() + "ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 

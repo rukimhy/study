@@ -1,27 +1,27 @@
-package day10;
+package academy.day10;
 
 public class functest {
-	
-	//1╧Ь аж╟М ╧ч╟М
+
+	// 1О©╫О©╫ О©╫ж╟О©╫ О©╫ч╟О©╫
 	public static int abc(int a) {
 		return a;
 	}
-	
-	//2╧Ь ╬хаж╟М ╧ч╟М
+
+	// 2О©╫О©╫ О©╫О©╫О©╫ж╟О©╫ О©╫ч╟О©╫
 	public static void def(int b) {
 		System.out.println(b);
 	}
-	
-	//3╧Ь аж╟М ╬х╧ч╟М
+
+	// 3О©╫О©╫ О©╫ж╟О©╫ О©╫х╧ч╟О©╫
 	public static int ghi() {
 		return 10;
 	}
-	
-	//4╧Ь ╬хаж╟М ╬х╧ч╟М
+
+	// 4О©╫О©╫ О©╫О©╫О©╫ж╟О©╫ О©╫х╧ч╟О©╫
 	public static void xyz() {
-		System.out.println("╬хЁГго╪╪©Д.");
+		System.out.println("О©╫хЁО©╫О©╫о╪О©╫О©╫О©╫.");
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		xyz();

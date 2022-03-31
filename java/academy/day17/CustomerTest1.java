@@ -1,17 +1,17 @@
-package day17;
+package academy.day17;
 
 public class CustomerTest1 {
 
 	public static void main(String[] args) {
 		Customer customerLee = new Customer();
 		customerLee.setCustomerID(10010);
-		customerLee.setCustomerName("ÀÌ¼ø½Å");
+		customerLee.setCustomerName("ï¿½Ì¼ï¿½ï¿½ï¿½");
 		customerLee.bonusPoint = 1000;
 		System.out.println(customerLee.showCustomerInfo());
-		
+
 		VIPCustomer customerKim = new VIPCustomer();
 		customerKim.setCustomerID(10020);
-		customerKim.setCustomerName("±èÀ¯½Å");
+		customerKim.setCustomerName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		customerKim.bonusPoint = 10000;
 		System.out.println(customerKim.showCustomerInfo());
 	}

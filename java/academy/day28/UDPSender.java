@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -10,11 +10,11 @@ public class UDPSender {
 		DatagramSocket ds = new DatagramSocket();
 		InetAddress ia = InetAddress.getByName("127.0.0.1");
 		int port = 8800;
-		byte buffer[] = "ÀÚ¹Ù´Â½±´Ù".getBytes();
+		byte buffer[] = "ï¿½Ú¹Ù´Â½ï¿½ï¿½ï¿½".getBytes();
 		DatagramPacket dp = new DatagramPacket(buffer, buffer.length, ia, port);
-		
+
 		ds.send(dp);
-		
+
 	}
 
 }

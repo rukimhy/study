@@ -1,126 +1,107 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q23_teacher {
 
-	public static int[] ComRandom()
-	{
-		Random r = new Random(); //·£´ý °´Ã¼»ý¼º
+	public static int[] ComRandom() {
+		Random r = new Random(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½
 		int[] com = new int[3];
-		com[0] = r.nextInt(9)+1; //ÄÄÇ»ÅÍÀÇ ·£´ý°ª
-		com[1] = r.nextInt(9)+1;//µÎ¹øÂ° ·£´ý°ª
-		while(com[0] == com[1]) //·£´ý°ª Áßº¹ ¹æÁö¸¦ À§ÇÑ ½Ä
+		com[0] = r.nextInt(9) + 1; // ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		com[1] = r.nextInt(9) + 1;// ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (com[0] == com[1]) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		{
-			com[1] = r.nextInt(9)+1; 
+			com[1] = r.nextInt(9) + 1;
 		}
 
-		com[2] = r.nextInt(9)+1;//¼¼¹øÂ° ·£´ý°ª
-		while(com[0] == com[2] || com[1] == com[2]) //¼¼¹øÂ° ·£´ý°ªµµ Áßº¹ ¹æÁö¸¦ À§ÇÑ ½Ä
+		com[2] = r.nextInt(9) + 1;// ï¿½ï¿½ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (com[0] == com[2] || com[1] == com[2]) // ï¿½ï¿½ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		{
-			com[2] = r.nextInt(9)+1; 
+			com[2] = r.nextInt(9) + 1;
 		}
-		System.out.println(com[0] + " " + com[1] +" " + com[2]); // Á¤ÇØÁø ·£´ý°ª Ãâ·Â
-		
+		System.out.println(com[0] + " " + com[1] + " " + com[2]); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+
 		return com;
-		
+
 	}
-	
-	public static int[] UserInput()
-	{
-		Scanner sc = new Scanner(System.in);//½ºÄ³³Ê °´Ã¼ »ý¼º
+
+	public static int[] UserInput() {
+		Scanner sc = new Scanner(System.in);// ï¿½ï¿½Ä³ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 		int[] user = new int[3];
-		System.out.print("¼ýÀÚ 1 ÀÔ·Â: ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ 1 ï¿½Ô·ï¿½: ");
 		user[0] = sc.nextInt();
-		System.out.print("¼ýÀÚ 2 ÀÔ·Â: ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ 2 ï¿½Ô·ï¿½: ");
 		user[1] = sc.nextInt();
-		System.out.print("¼ýÀÚ 3 ÀÔ·Â: ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ 3 ï¿½Ô·ï¿½: ");
 		user[2] = sc.nextInt();
-		
+
 		return user;
 	}
 
-	public static int[] CheckFunc(int[] user, int[] com)
-	{
+	public static int[] CheckFunc(int[] user, int[] com) {
 		int[] result = new int[2];
 		int strike = 0;
 		int ball = 0;
 
-
-		for(int i =0;i<3;i++) //user
+		for (int i = 0; i < 3; i++) // user
 		{
-			for(int j = 0;j<3;j++) // com
+			for (int j = 0; j < 3; j++) // com
 			{
-				if(user[i] == com[j])
-				{
-					if(i==j)
-					{
+				if (user[i] == com[j]) {
+					if (i == j) {
 						strike++;
-					}
-					else
-					{
+					} else {
 						ball++;
 					}
 				}
 
 			}
 		}
-		
+
 		result[0] = strike;
 		result[1] = ball;
-		
+
 		return result;
 	}
 
-	public static boolean ResultPrint(int[] result)
-	{
-		if(result[0] == 3)
-		{
-			System.out.println("È¨·±ÀÔ´Ï´Ù.");
+	public static boolean ResultPrint(int[] result) {
+		if (result[0] == 3) {
+			System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			return false;
+		} else if (result[0] == 0 && result[1] == 0) {
+			System.out.println("outï¿½Ô´Ï´ï¿½.");
+		} else {
+			System.out.println("Strike :" + result[0] + "," + "Ball : " + result[1] + "ï¿½Ô´Ï´ï¿½.");
 		}
-		else if(result[0] == 0 && result[1] == 0)
-		{
-			System.out.println("outÀÔ´Ï´Ù.");
-		}
-		else
-		{
-			System.out.println("Strike :"+result[0]+","+"Ball : "+result[1]+"ÀÔ´Ï´Ù.");
-		}
-		
+
 		return true;
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 
-		//ComRandom
-
+		// ComRandom
 
 		///////////////////////////////////////////
 
-		//UserInput	
-		
+		// UserInput
+
 		/////////////////////////////////////////////////////
 
-		//CheckFunc
-		
-
+		// CheckFunc
 
 		////////////////////////////////////////////////////
 
-		//ResultPrint
-		
+		// ResultPrint
+
 		///////////////////////////////////////////////////////////////////////////
 
-		int[] com =ComRandom();
+		int[] com = ComRandom();
 		boolean check = true;
-		
-		while(check)
-		{
-			check=ResultPrint(CheckFunc(UserInput(), com)) ;
+
+		while (check) {
+			check = ResultPrint(CheckFunc(UserInput(), com));
 		}
 	}
 

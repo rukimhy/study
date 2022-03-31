@@ -1,29 +1,29 @@
-package day22;
+package academy.day22;
 
 import java.io.IOException;
 
 public class SchedulerTest {
 
-	public static void main(String[] args) throws IOException{
-		System.out.println("ÀüÈ­ »ó´ã ÇÒ´ç ¹æ½ÄÀ» ¼±ÅÃÇÏ¼¼¿ä.");
-		System.out.println("R : ÇÑ¸í¾¿ Â÷·Ê·Î ÇÒ´ç ");
-		System.out.println("L : ½¬°í ÀÖ°Å³ª ´ë±â°¡ °¡Àå ÀûÀº »ó´ã¿ø¿¡°Ô ÇÒ´ç ");
-		System.out.println("P : ¿ì¼±¼øÀ§°¡ ³ôÀº °í°´ ¸ÕÀú ÇÒ´ç ");
-		
+	public static void main(String[] args) throws IOException {
+		System.out.println("ï¿½ï¿½È­ ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+		System.out.println("R : ï¿½Ñ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê·ï¿½ ï¿½Ò´ï¿½ ");
+		System.out.println("L : ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°Å³ï¿½ ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ ");
+		System.out.println("P : ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ ");
+
 		int ch = System.in.read();
 		Scheduler scheduler = null;
-		
-		if(ch == 'R' || ch == 'r') {
+
+		if (ch == 'R' || ch == 'r') {
 			scheduler = new RoundRobin();
 		} else if (ch == 'L' || ch == 'l') {
 			scheduler = new LeastJob();
-		} else if(ch == 'P' || ch == 'p') {
+		} else if (ch == 'P' || ch == 'p') {
 			scheduler = new PriorityAllocation();
 		} else {
-			System.out.println("Áö¿øµÇÁö ¾Ê´Â ±â´ÉÀÔ´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			return;
 		}
-		
+
 		scheduler.getNextCall();
 		scheduler.sendCallToAgent();
 	}

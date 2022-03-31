@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,12 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 
-class RadioPanel extends JPanel implements ActionListener{
-	JLabel jl1 = new JLabel("´ç½ÅÀÇ ¼ºº°Àº?");
+class RadioPanel extends JPanel implements ActionListener {
+	JLabel jl1 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?");
 	JLabel jl2 = new JLabel(" ");
+
 	public RadioPanel() {
-		JRadioButton jrb1 = new JRadioButton("³²ÀÚ");
-		JRadioButton jrb2 = new JRadioButton("¿©ÀÚ");
+		JRadioButton jrb1 = new JRadioButton("ï¿½ï¿½ï¿½ï¿½");
+		JRadioButton jrb2 = new JRadioButton("ï¿½ï¿½ï¿½ï¿½");
 		add(jl1);
 		add(jl2);
 		add(jrb1);
@@ -25,40 +26,43 @@ class RadioPanel extends JPanel implements ActionListener{
 		jrb1.addActionListener(this);
 		jrb2.addActionListener(this);
 	}
+
 	public void actionPerformed(ActionEvent ae) {
 		String s = ae.getActionCommand();
 		jl2.setText(s);
 	}
 }
 
-class ComboPanel extends JPanel implements ItemListener{
-	JLabel jl1 = new JLabel("´ç½ÅÀÇ Ç÷¾×ÇüÀº?");
+class ComboPanel extends JPanel implements ItemListener {
+	JLabel jl1 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?");
 	JLabel jl2 = new JLabel(" ");
+
 	public ComboPanel() {
 		JComboBox jcb = new JComboBox();
-		jcb.addItem("AÇü");
-		jcb.addItem("BÇü");
-		jcb.addItem("OÇü");
-		jcb.addItem("ABÇü");
+		jcb.addItem("Aï¿½ï¿½");
+		jcb.addItem("Bï¿½ï¿½");
+		jcb.addItem("Oï¿½ï¿½");
+		jcb.addItem("ABï¿½ï¿½");
 		add(jl1);
 		add(jl2);
 		add(jcb);
 		jcb.addItemListener(this);
-		
+
 	}
+
 	public void itemStateChanged(ItemEvent ie) {
 		Object s = ie.getItem();
 		jl2.setText(s.toString());
 	}
 }
 
-class JTabbedPane1 extends JFrame{
+class JTabbedPane1 extends JFrame {
 	public JTabbedPane1() {
 		JTabbedPane jtp = new JTabbedPane();
 		RadioPanel rp = new RadioPanel();
 		ComboPanel cp = new ComboPanel();
-		jtp.addTab("¼ºº°", rp);
-		jtp.addTab("Ç÷¾×Çü", cp);
+		jtp.addTab("ï¿½ï¿½ï¿½ï¿½", rp);
+		jtp.addTab("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", cp);
 		getContentPane().add(jtp);
 		setTitle("JTabbedPaneTset1");
 		setSize(500, 150);

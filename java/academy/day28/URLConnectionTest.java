@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -10,14 +10,13 @@ public class URLConnectionTest {
 	public static void main(String[] args) throws Exception {
 		URL kbs = new URL("http://www.kbs.co.kr/aboutkbs/history.html");
 		URLConnection kbsCon = kbs.openConnection();
-		System.out.println("¹®¼­ÀÇ Å¸ÀÔ : "+kbsCon.getContentType());
-		System.out.println("==== ¹®¼­ÀÇ ³»¿ë ====");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ : " + kbsCon.getContentType());
+		System.out.println("==== ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ====");
 		InputStream input = kbsCon.getInputStream();
 		int i = 500;
 		int c;
-		while(((c = input.read()) != -1) && (--i > 0))
-		{
-			System.out.println((char)c);
+		while (((c = input.read()) != -1) && (--i > 0)) {
+			System.out.println((char) c);
 		}
 		input.close();
 	}

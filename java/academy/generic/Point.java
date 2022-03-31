@@ -1,3 +1,5 @@
+package academy.generic;
+
 public class Point<T, V> {
 
 	T x;

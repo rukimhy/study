@@ -1,22 +1,22 @@
-package day25;
+package academy.day25;
 
 import java.util.ArrayList;
 
-class MyStack{
+class MyStack {
 	private ArrayList<String> arrayStack = new ArrayList<String>();
-	
+
 	public void push(String data) {
 		arrayStack.add(data);
 	}
-	
+
 	public String pop() {
 		int len = arrayStack.size();
-		if(len == 0) {
-			System.out.println("½ºÅÃÀÌ ºñ¾ú½À´Ï´Ù.");
+		if (len == 0) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return null;
 		}
-		
-		return(arrayStack.remove(len-1));
+
+		return (arrayStack.remove(len - 1));
 	}
 }
 
@@ -27,7 +27,7 @@ public class StackTest {
 		stack.push("A");
 		stack.push("B");
 		stack.push("C");
-		
+
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());

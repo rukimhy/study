@@ -1,13 +1,13 @@
-package day21;
+package academy.day21;
 
 public class CarTest {
 
 	public static void main(String[] args) {
-		System.out.println("===ÀÚÀ² ÁÖÇàÇÏ´Â ÀÚµ¿Â÷===");
+		System.out.println("===ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Úµï¿½ï¿½ï¿½===");
 		Car myCar = new AICar();
 		myCar.run();
-		
-		System.out.println("===»ç¶÷ÀÌ ¿îÀüÇÏ´Â ÀÚµ¿Â÷===");
+
+		System.out.println("===ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Úµï¿½ï¿½ï¿½===");
 		Car hisCar = new ManualCar();
 		hisCar.run();
 	}

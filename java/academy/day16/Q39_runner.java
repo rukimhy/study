@@ -1,24 +1,20 @@
-package day16;
+package academy.day16;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-class Runner
-{
+class Runner {
 	String country;
 	int lane;
 	int m;
 
-	void print() 
-	{
-		System.out.println(lane+"¹ø·¹ÀÎ "+country+" ¼±¼ö°¡ ÇöÀç "+m+"m ÀÔ´Ï´Ù.");
+	void print() {
+		System.out.println(lane + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + country + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + m + "m ï¿½Ô´Ï´ï¿½.");
 	}
 
-	void winner() 
-	{
-		if(m >= 100) 
-		{
-			System.out.println("¿ì½Â±¹Àº "+country+"ÀÔ´Ï´Ù!!!");
+	void winner() {
+		if (m >= 100) {
+			System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ " + country + "ï¿½Ô´Ï´ï¿½!!!");
 		}
 	}
 }
@@ -26,21 +22,22 @@ class Runner
 public class Q39_runner {
 
 	public static void main(String[] args) {
-		/* À°»ó¼±¼ö 4¸íÀÌ ÀÖ´Ù. ÇÑ±¹, Áß±¹, ¹Ì±¹, ·¯½Ã¾Æ ¼±¼ö°¡ ÀÖ´Ù.
-		 * ÅÏÁ¦ °ÔÀÓÀÌ°í, 1ÅÏ¸¶´Ù ·£´ýÀ¸·Î 1~10m¾¿ ÀÌµ¿À» ÇÒ ¼ö ÀÖ´Ù.
-		 * 1¹ø·¹ÀÎ - ÇÑ±¹, 2¹ø·¹ÀÎ - Áß±¹, 3¹ø·¹ÀÎ - ¹Ì±¹, 4¹ø·¹ÀÎ - ·¯½Ã¾Æ
-		 * °¢ ÅÏ¸¶´Ù µ¹¹ß »óÈ²ÀÌ »ý°Ü¼­ ÇÑ ¼±¼ö´Â ÀÌµ¿À» ÇÒ ¼ö°¡ ¾ø´Ù.
-		 * °¢ ÅÏ¸¶´Ù Ãâ·ÂÀÌ µÇ¾ßÇÑ´Ù.
-		 * ¸ÕÀú 100m °á½ÂÁ¡¿¡ µµÂøÇÑ ³ª¶óÀÇ ¼±¼ö°¡ ÀÖÀ¸¸é "¿ì½Â±¹ XXXÀÔ´Ï´Ù!" Ãâ·ÂÇÏ°í °ÔÀÓÀ» Á¾·áÇÑ´Ù.
-		 * µ¿½Ã¿¡ 100m¸¦ ³ÑÀ¸¸é °ªÀÌ ´õ Å« ±¹°¡°¡ ¿ì½ÂÇÑ´Ù.
+		/*
+		 * ï¿½ï¿½ï¿½ó¼±¼ï¿½ 4ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½. ï¿½Ñ±ï¿½, ï¿½ß±ï¿½, ï¿½Ì±ï¿½, ï¿½ï¿½ï¿½Ã¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½, 1ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1~10mï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+		 * 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½Ñ±ï¿½, 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ß±ï¿½, 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½Ì±ï¿½, 4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½Ã¾ï¿½
+		 * ï¿½ï¿½ ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È²ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+		 * ï¿½ï¿½ ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ 100m ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "ï¿½ï¿½Â±ï¿½ XXXï¿½Ô´Ï´ï¿½!" ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½Ã¿ï¿½ 100mï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		Random r = new Random();
-		String[] country = new String[]{"ÇÑ±¹", "Áß±¹", "¹Ì±¹", "·¯½Ã¾Æ"};
-		int[] lane = new int[] {1, 2, 3, 4};
+		String[] country = new String[] { "ï¿½Ñ±ï¿½", "ï¿½ß±ï¿½", "ï¿½Ì±ï¿½", "ï¿½ï¿½ï¿½Ã¾ï¿½" };
+		int[] lane = new int[] { 1, 2, 3, 4 };
 
 		Runner[] runner = new Runner[4];
-		for(int i = 0; i<4; i++) 
-		{
+		for (int i = 0; i < 4; i++) {
 			runner[i] = new Runner();
 			runner[i].country = country[i];
 			runner[i].lane = lane[i];
@@ -48,45 +45,40 @@ public class Q39_runner {
 		}
 
 		int turn = 1;
-		while(true) 
-		{
+		while (true) {
 			int warning = r.nextInt(4);
-			for(int i=0; i<4; i++) 
-			{
-				if(i == warning) continue; // »ç°í°¡ ³ª¼­ ÇÑ ¼±¼ö´Â ÇÑ ÅÏ ½®´Ù.
-				else
-				{
-					int randomMeter = r.nextInt(10)+1;
+			for (int i = 0; i < 4; i++) {
+				if (i == warning)
+					continue; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+				else {
+					int randomMeter = r.nextInt(10) + 1;
 					runner[i].m += randomMeter;
 				}
 			}
-			System.out.println("-------"+turn+"ÅÏ--------");
-			for(int i=0; i<4; i++) 
-			{
+			System.out.println("-------" + turn + "ï¿½ï¿½--------");
+			for (int i = 0; i < 4; i++) {
 				runner[i].print();
 			}
 			System.out.println("-------------------------");
 			turn++;
 
-			if(runner[0].m >= 100 || runner[1].m >= 100 || runner[2].m >= 100 || runner[3].m >= 100) 
-			{
-				
+			if (runner[0].m >= 100 || runner[1].m >= 100 || runner[2].m >= 100 || runner[3].m >= 100) {
+
 				int winIndex = 0;
-				for(int i = 1; i<4; i++) // ´©°¡ ´õ ¸Õ °Å¸®¸¦ ´Þ·È³ª È®ÀÎÇÑ´Ù.
+				for (int i = 1; i < 4; i++) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½Þ·È³ï¿½ È®ï¿½ï¿½ï¿½Ñ´ï¿½.
 				{
-					if(runner[winIndex].m < runner[i].m) 
-					{
+					if (runner[winIndex].m < runner[i].m) {
 						winIndex = i;
 					}
 				}
 				runner[winIndex].winner();
-				
+
 				break;
 			}
 
 			try {
 				TimeUnit.SECONDS.sleep(1);
-			} catch(InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 

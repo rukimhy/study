@@ -1,11 +1,11 @@
-package day25;
+package academy.day25;
 
 public class Plastic extends Material {
 	public void doPrinting() {
-		System.out.println("Plastic Àç·á·Î Ãâ·ÂÇÕ´Ï´Ù.");
+		System.out.println("Plastic ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
-	
+
 	public String toString() {
-		return "Àç·á´Â PlasticÀÔ´Ï´Ù";
+		return "ï¿½ï¿½ï¿½ï¿½ Plasticï¿½Ô´Ï´ï¿½";
 	}
 }

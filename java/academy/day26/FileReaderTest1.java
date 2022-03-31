@@ -1,4 +1,4 @@
-package day26;
+package academy.day26;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,13 +9,12 @@ public class FileReaderTest1 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Scanner stdin = new Scanner(System.in);
-		System.out.print("ÀÐÀ» ÆÄÀÏ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ");
 		String s = stdin.next();
 		FileReader fr = new FileReader(s);
 		int i;
-		while((i=fr.read())!= -1)
-		{
-			System.out.print((char)i);
+		while ((i = fr.read()) != -1) {
+			System.out.print((char) i);
 		}
 		fr.close();
 	}

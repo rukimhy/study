@@ -1,9 +1,8 @@
-package day28;
+package academy.day28;
 
 import java.util.Random;
 
-class Referee
-{
+class Referee {
 	Newplayer n1;
 	Newplayer n2;
 	Newplayer n3;
@@ -17,9 +16,8 @@ class Referee
 		this.n4 = n4;
 	}
 
-	synchronized void stop()
-	{
-		
+	synchronized void stop() {
+
 		n1.setCheck(false);
 		n2.setCheck(false);
 		n3.setCheck(false);
@@ -28,8 +26,7 @@ class Referee
 
 }
 
-class Newplayer extends Thread
-{
+class Newplayer extends Thread {
 	private int number;
 	private String country;
 	private int go;
@@ -68,32 +65,24 @@ class Newplayer extends Thread
 		this.check = check;
 	}
 
-	public void run()
-	{
+	public void run() {
 		Random r = new Random();
-		while(check)
-		{
+		while (check) {
 			int ch = r.nextInt(2);
 
-			if(ch == 1)
-			{
-				go+= r.nextInt(10)+1;
+			if (ch == 1) {
+				go += r.nextInt(10) + 1;
 			}
 
-			System.out.println(getCountry()+"��" + getGo()+"M �Դϴ�.");
+			System.out.println(getCountry() + "��" + getGo() + "M �Դϴ�.");
 
-			if(getGo()>=100)
-			{
+			if (getGo() >= 100) {
 				this.r.stop();
 			}
 		}
 	}
 
-
 }
-
-
-
 
 public class Q52_teacher {
 
@@ -105,7 +94,6 @@ public class Q52_teacher {
 		Newplayer russia = new Newplayer();
 
 		Referee r = new Referee(korea, china, america, russia);
-
 
 		korea.setNumber(1);
 		korea.setCountry("�ѱ�");
@@ -136,28 +124,24 @@ public class Q52_teacher {
 		china.join();
 		america.join();
 		russia.join();
-		
-	    if(korea.getGo()>china.getGo() && korea.getGo()>america.getGo() &&
-	            korea.getGo()>russia.getGo())
-	      {
-	         System.out.println("��±��� �ѱ��Դϴ�.");
-	      }
-	      if(china.getGo()>korea.getGo() && china.getGo()>america.getGo() &&
-	            china.getGo()>russia.getGo())
-	      {
-	         System.out.println("��±��� �߱��Դϴ�.");
-	      }
-	      if(america.getGo()>korea.getGo() && america.getGo()>china.getGo() &&
-	            america.getGo()>russia.getGo())
-	      {
-	         System.out.println("��±��� �̱��Դϴ�.");
-	      }
-	      if(russia.getGo()>china.getGo() && russia.getGo()>america.getGo() &&
-	            russia.getGo()>korea.getGo())
-	      {
-	         System.out.println("��±��� ���þ��Դϴ�.");
-	      }
-		
+
+		if (korea.getGo() > china.getGo() && korea.getGo() > america.getGo() &&
+				korea.getGo() > russia.getGo()) {
+			System.out.println("��±��� �ѱ��Դϴ�.");
+		}
+		if (china.getGo() > korea.getGo() && china.getGo() > america.getGo() &&
+				china.getGo() > russia.getGo()) {
+			System.out.println("��±��� �߱��Դϴ�.");
+		}
+		if (america.getGo() > korea.getGo() && america.getGo() > china.getGo() &&
+				america.getGo() > russia.getGo()) {
+			System.out.println("��±��� �̱��Դϴ�.");
+		}
+		if (russia.getGo() > china.getGo() && russia.getGo() > america.getGo() &&
+				russia.getGo() > korea.getGo()) {
+			System.out.println("��±��� ���þ��Դϴ�.");
+		}
+
 	}
 
 }

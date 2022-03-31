@@ -1,57 +1,45 @@
-package day12;
+package academy.day12;
 
 import java.util.Scanner;
 
 public class Q28_bookingFunc {
 
-	// 1. ¿¹¸Å
+	// 1. ï¿½ï¿½ï¿½ï¿½
 	public static int book(int arr[][], int count) {
 		Scanner scan = new Scanner(System.in);
 
-		for(int i = 0; i < 8; i++) 
-		{
-			for(int j = 0; j < 2; j++) 
-			{
-				if(arr[i][j] == 1) count++;
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 2; j++) {
+				if (arr[i][j] == 1)
+					count++;
 			}
 		}
-		if(count == 16) 
-		{
-			System.out.println("¸ðµç ÁÂ¼®ÀÇ ¿¹¸Å°¡ ³¡³µ½À´Ï´Ù.");
-		} 
-		else 
-		{
-			System.out.print("ÁÂ¼®À» ¼±ÅÃÇØÁÖ¼¼¿ä : ");
+		if (count == 16) {
+			System.out.println("ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		} else {
+			System.out.print("ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 			int x = scan.nextInt();
 			int y = scan.nextInt();
 
-			if(x > 7 || x < 0 || y > 1 || y < 0) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			} 
-			else if(arr[x][y] == 1) 
-			{
-				System.out.println("ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù.");
-			} 
-			else 
-			{
-				System.out.println("ÁÂ¼®ÀÌ ¿¹¾àµÇ¾ú½À´Ï´Ù.");
+			if (x > 7 || x < 0 || y > 1 || y < 0) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else if (arr[x][y] == 1) {
+				System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				System.out.println("ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				arr[x][y] = 1;
 			}
 		}
 		return count;
 	}
 
-	// 2. ºó ÁÂ¼® È®ÀÎ
+	// 2. ï¿½ï¿½ ï¿½Â¼ï¿½ È®ï¿½ï¿½
 	public static void check(int arr[][]) {
-		System.out.println("-----ºñ¾îÀÖ´Â ÁÂ¼®Àº-----");
-		for(int i = 0; i < 8; i++) 
-		{
-			for(int j = 0; j < 2; j++) 
-			{
-				if(arr[i][j] == 0) 
-				{
-					System.out.print(i+"Çà "+j+" ¹ø // ");
+		System.out.println("-----ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½-----");
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 2; j++) {
+				if (arr[i][j] == 0) {
+					System.out.print(i + "ï¿½ï¿½ " + j + " ï¿½ï¿½ // ");
 				}
 			}
 			System.out.println();
@@ -65,31 +53,24 @@ public class Q28_bookingFunc {
 		Scanner scan = new Scanner(System.in);
 		int[][] arr = new int[8][2];
 
-		System.out.println("ºñÇà±â ¿¹¾à ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ô´Ï´ï¿½.");
 
-		while(true) {
+		while (true) {
 			int count = 0;
-			System.out.println("1. ¿¹¸Å");
-			System.out.println("2. ºó ÁÂ¼® È®ÀÎ");
-			System.out.println("3. Á¾·á");
-			System.out.print("¸Þ´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä : ");
+			System.out.println("1. ï¿½ï¿½ï¿½ï¿½");
+			System.out.println("2. ï¿½ï¿½ ï¿½Â¼ï¿½ È®ï¿½ï¿½");
+			System.out.println("3. ï¿½ï¿½ï¿½ï¿½");
+			System.out.print("ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 			int user = scan.nextInt();
 
-			if(user != 1 && user != 2 && user != 3) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			} 
-			else if(user == 3) 
-			{
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			if (user != 1 && user != 2 && user != 3) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else if (user == 3) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			} 
-			else if(user == 2) 
-			{
-				check(arr);	
-			} 
-			else 
-			{
+			} else if (user == 2) {
+				check(arr);
+			} else {
 				count = book(arr, count);
 			}
 			System.out.println();
@@ -98,7 +79,7 @@ public class Q28_bookingFunc {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 18¹ø ¹®Á¦ ÃÖ¼Ò 3°³ ÀÌ»óÀÇ ÇÔ¼ö·Î ±¸Çö
+		// 18ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ 3ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		output();
 	}
 

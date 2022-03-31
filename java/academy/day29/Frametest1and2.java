@@ -1,18 +1,18 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-class FirstFrame1{
+class FirstFrame1 {
 	public FirstFrame1() {
-		JFrame jf = new JFrame("ц╧ ╧Ьб╟ GUI га╥н╠в╥╔"); //га╥╧юс ╟╢ц╪ ╩Щ╪╨ (а╕╦Я аЖа╓)
-		Container ct = jf.getContentPane(); //га╥╧юсю╦╥н╨нем даевюлЁй ╩Щ╪╨
-		JButton jb = new JButton("ев╫╨ф╝╧Жф╟"); // ╧Жф╟ ддфВЁмф╝ ╩Щ╪╨
-		ct.add(jb); //╧Жф╟ю╩ даевюлЁй©║ цъ╟║
-		jf.setSize(400,300); //га╥╧юс е╘╠Б ╪Ёа╓
-		jf.setVisible(true); // га╥╧юсю╩ х╜╦И©║ цБ╥б
+		JFrame jf = new JFrame("ц╧ О©╫О©╫б╟ GUI О©╫О©╫О©╫н╠в╥О©╫"); // О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ц╪ О©╫О©╫О©╫О©╫ (О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫)
+		Container ct = jf.getContentPane(); // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫н╨О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫лЁО©╫ О©╫О©╫О©╫О©╫
+		JButton jb = new JButton("О©╫в╫О©╫ф╝О©╫О©╫ф╟"); // О©╫О©╫ф╟ О©╫О©╫О©╫О©╫О©╫О©╫ф╝ О©╫О©╫О©╫О©╫
+		ct.add(jb); // О©╫О©╫ф╟О©╫О©╫ О©╫О©╫О©╫О©╫О©╫лЁй©О©╫ О©╫ъ╟О©╫
+		jf.setSize(400, 300); // О©╫О©╫О©╫О©╫О©╫О©╫ е╘О©╫О©╫ О©╫О©╫О©╫О©╫
+		jf.setVisible(true); // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ х╜О©╫И©║ О©╫О©╫О©╫
 	}
 }
 

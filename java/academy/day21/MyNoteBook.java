@@ -1,4 +1,4 @@
-package day21;
+package academy.day21;
 
 public class MyNoteBook extends NoteBook {
 	@Override

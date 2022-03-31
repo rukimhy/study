@@ -1,29 +1,29 @@
-package day21;
+package academy.day21;
 
 public class CustomerTest {
 
 	public static void main(String[] args) {
 		Customer customerLee = new Customer();
 		customerLee.setCustomerID(10010);
-		customerLee.setCustomerName("ÀÌ¼ø½Å");
+		customerLee.setCustomerName("ï¿½Ì¼ï¿½ï¿½ï¿½");
 		customerLee.bonusPoint = 1000;
-		
+
 		System.out.println(customerLee.showCustomerInfo());
-		
-		Customer customerKim = new VIPCustomer(10020, "±èÀ¯½Å", 12345);
+
+		Customer customerKim = new VIPCustomer(10020, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 12345);
 		customerKim.bonusPoint = 1000;
-		
+
 		System.out.println(customerKim.showCustomerInfo());
-		System.out.println("============ ÇÒÀÎÀ²°ú º¸³Ê½º Æ÷ÀÎÆ® °è»ê =======");
-		
+		System.out.println("============ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ =======");
+
 		int price = 10000;
 		int leePrice = customerLee.calcPrice(price);
 		int kimPrice = customerKim.calcPrice(price);
-		
-		System.out.println(customerLee.getCustomerName()+"´ÔÀÌ "+leePrice+"¿ø ÁöºÒÇÏ¼Ì½À´Ï´Ù.");
+
+		System.out.println(customerLee.getCustomerName() + "ï¿½ï¿½ï¿½ï¿½ " + leePrice + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
 		System.out.println(customerLee.showCustomerInfo());
-		
-		System.out.println(customerKim.getCustomerName()+"´ÔÀÌ "+kimPrice+"¿ø ÁöºÒÇÏ¼Ì½À´Ï´Ù.");
+
+		System.out.println(customerKim.getCustomerName() + "ï¿½ï¿½ï¿½ï¿½ " + kimPrice + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
 		System.out.println(customerKim.showCustomerInfo());
 	}
 

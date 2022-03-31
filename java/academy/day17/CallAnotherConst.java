@@ -1,16 +1,18 @@
-package day17;
+package academy.day17;
 
-class Person{
+class Person {
 	String name;
 	int age;
-	
-	Person(){
-		this("ÀÌ¸§ ¾øÀ½", 1);
+
+	Person() {
+		this("ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½", 1);
 	}
-	Person(String name, int age){
+
+	Person(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
+
 	Person returnItSelf() {
 		return this;
 	}
@@ -22,7 +24,7 @@ public class CallAnotherConst {
 		Person noName = new Person();
 		System.out.println(noName.name);
 		System.out.println(noName.age);
-		
+
 		Person p = noName.returnItSelf();
 		System.out.println(p);
 		System.out.println(noName);

@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -6,13 +6,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-class GridLayout1 extends JFrame{
+class GridLayout1 extends JFrame {
 	public GridLayout1() {
 		Container ct = getContentPane();
 		GridLayout gl = new GridLayout(4, 5, 10, 10);
 		ct.setLayout(gl);
-		for(int i = 1; i <= 20; i++) {
-			ct.add(new JButton("¹öÆ°"+i));
+		for (int i = 1; i <= 20; i++) {
+			ct.add(new JButton("ï¿½ï¿½Æ°" + i));
 		}
 		setTitle("GridLayout Test1");
 		setSize(800, 800);

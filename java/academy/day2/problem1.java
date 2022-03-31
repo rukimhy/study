@@ -1,23 +1,23 @@
-package day2;
+package academy.day2;
 
 import java.util.Scanner;
 
 public class problem1 {
 
 	public static void main(String[] args) {
-		// µÎ°³ÀÇ ¼ýÀÚ¸¦ ÀÔ·Â ¹Þ´Â´Ù.
-		// µÎ ¼ýÀÚ¸¦ µ¡¼À, °ö¼À, »­¼ÀÀÇ °á°ú°ªÀ» Ãâ·Â
-		
-		Scanner sc1 = new Scanner(System.in); // ½ºÄ³³ÊÀÇ °´Ã¼¸¦ »ý¼º
+		// ï¿½Î°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ ï¿½Þ´Â´ï¿½.
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+
+		Scanner sc1 = new Scanner(System.in); // ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Scanner sc2 = new Scanner(System.in);
-		
-		System.out.println("µÎ °³ÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		
+
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+
 		int a = sc1.nextInt();
 		int b = sc2.nextInt();
-		
-		System.out.println("ÇÕÇÑ °ª :" + (a+b));
-		System.out.println("°öÇÑ °ª :" + (a*b));
-		System.out.println("»« °ª :" + (a-b));
+
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :" + (a + b));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :" + (a * b));
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ :" + (a - b));
 	}
 }

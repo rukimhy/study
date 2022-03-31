@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 public class DoWhileExample {
 
@@ -6,13 +6,13 @@ public class DoWhileExample {
 		// TODO Auto-generated method stub
 		int num = 1;
 		int sum = 0;
-		
+
 		do {
 			sum += num;
 			num++;
-		} while(num <= 10);
-		
-		System.out.println("1ºÎÅÍ 10±îÁöÀÇ ÇÕÀº " + sum + "ÀÔ´Ï´Ù.");
+		} while (num <= 10);
+
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + sum + "ï¿½Ô´Ï´ï¿½.");
 	}
 
 }

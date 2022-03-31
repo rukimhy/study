@@ -1,9 +1,9 @@
-package day27;
+package academy.day27;
 
-class RunnableTest implements Runnable{
+class RunnableTest implements Runnable {
 	public void run() {
-		for(int i=1; i<=10; i++) {
-			System.out.println("Àç¹Õ´Â ÀÚ¹Ù : "+i);
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("ï¿½ï¿½Õ´ï¿½ ï¿½Ú¹ï¿½ : " + i);
 		}
 	}
 }

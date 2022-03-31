@@ -1,26 +1,26 @@
-package day21;
+package academy.day21;
 
-class Animal{
+class Animal {
 	public void move() {
-		System.out.println("µ¿¹°ÀÌ ¿òÁ÷ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 	}
 }
 
-class Human extends Animal{
+class Human extends Animal {
 	public void move() {
-		System.out.println("»ç¶÷ÀÌ µÎ ¹ß·Î °È½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß·ï¿½ ï¿½È½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
-class Tiger extends Animal{
+class Tiger extends Animal {
 	public void move() {
-		System.out.println("È£¶ûÀÌ°¡ ³× ¹ß·Î ¶Ý´Ï´Ù.");
+		System.out.println("È£ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ ï¿½ß·ï¿½ ï¿½Ý´Ï´ï¿½.");
 	}
 }
 
-class Eagle extends Animal{
+class Eagle extends Animal {
 	public void move() {
-		System.out.println("µ¶¼ö¸®°¡ ÇÏ´ÃÀ» ³³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 

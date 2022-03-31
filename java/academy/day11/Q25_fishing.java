@@ -1,161 +1,143 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q25_fishing {
 
-	// 3¹ø(ÁÖ°í ¾È¹Þ°í) ¹°°í±â ·£´ý°ª »ý¼º
-	public static int[][] randomArr()
-	{
+	// 3ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½È¹Þ°ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int[][] randomArr() {
 		Random r = new Random();
 		int[][] arr = new int[5][5];
 		int fish_count = 0;
 
-		while(true) {
+		while (true) {
 			int fishX = r.nextInt(5);
 			int fishY = r.nextInt(5);
-			if(arr[fishX][fishY] == 0) 
-			{
+			if (arr[fishX][fishY] == 0) {
 				arr[fishX][fishY] = 1;
 				fish_count++;
 			}
-			if(fish_count == 3) break;
+			if (fish_count == 3)
+				break;
 		}
 
 		return arr;
 	}
 
-	// 3¹ø(ÁÖ°í ¾È¹Þ°í) Ä³½ºÆÃ 
-	public static int[] casting() 
-	{
+	// 3ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½È¹Þ°ï¿½) Ä³ï¿½ï¿½ï¿½ï¿½
+	public static int[] casting() {
 		Scanner scan = new Scanner(System.in);
 		int x, y;
 		int user_count = 0;
 
-		while(true) {
-			System.out.println("¹°°í±â Àâ±â °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-			System.out.print("ÁÂÇ¥ x, y¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		while (true) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+			System.out.print("ï¿½ï¿½Ç¥ x, yï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			x = scan.nextInt();
 			y = scan.nextInt();
 
-			if(x > 4 || x < 0 || y > 4 || y < 0 ) 
-			{
-				System.out.println("Àß¸øµÈ Ä³½ºÆÃÀÔ´Ï´Ù.");
+			if (x > 4 || x < 0 || y > 4 || y < 0) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 				System.out.println();
-			} else break;
-			
+			} else
+				break;
+
 		}
 
-		int[] new_arr = new int[] {x, y, user_count};
+		int[] new_arr = new int[] { x, y, user_count };
 
 		return new_arr;
 	}
 
-
-	// 2¹ø(¾ÈÁÖ°í ¹Þ°í) ¹°°í±â°¡ ÀÖ´Â À§Ä¡ Ãâ·Â 
+	// 2ï¿½ï¿½(ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½Þ°ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½Ö´ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
 	public static void whereFish(int arr[][]) {
-		for(int i = 0; i < 5; i++) 
-		{
-			for(int j = 0; j < 5; j++) 
-			{
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
 				System.out.print(arr[i][j]);
 			}
 			System.out.println();
 		}
 	}
 
-
-	// 1¹ø(ÁÖ°í ¹Þ°í) ³¬½Ã´ë ÀÌµ¿
+	// 1ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½Þ°ï¿½) ï¿½ï¿½ï¿½Ã´ï¿½ ï¿½Ìµï¿½
 	public static int[] move(int x, int y, int user_count, int[][] arr) {
 		Scanner scan = new Scanner(System.in);
-		
-		
-			System.out.print("[1]À§ [2]¾Æ·¡ [3]¿ÞÂÊ [4]¿À¸¥ÂÊ : ");
-			int choice = scan.nextInt();
 
-			if(choice < 1 || choice > 4) System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			else 
-			{
-				if(choice == 1) 
-				{
-					if(x-1 < 0) 
-					{
-						System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-					} else x--;
-				}
-				else if(choice == 2) 
-				{
-					if(x+1 > 4) 
-					{
-						System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-					} else x++;
-				}
-				else if(choice == 3) 
-				{
-					if(y-1 < 0) 
-					{
-						System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-					} else y--;
-				}
-				else 
-				{
-					if(y+1 > 4) 
-					{
-						System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-					} else y++;
-				}
+		System.out.print("[1]ï¿½ï¿½ [2]ï¿½Æ·ï¿½ [3]ï¿½ï¿½ï¿½ï¿½ [4]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ");
+		int choice = scan.nextInt();
 
+		if (choice < 1 || choice > 4)
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+		else {
+			if (choice == 1) {
+				if (x - 1 < 0) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					x--;
+			} else if (choice == 2) {
+				if (x + 1 > 4) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					x++;
+			} else if (choice == 3) {
+				if (y - 1 < 0) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					y--;
+			} else {
+				if (y + 1 > 4) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					y++;
 			}
 
-			System.out.println();
-			int[] new_arr = new int[] {x, y};
-			return new_arr;
 		}
 
-
-	// 1¹ø(ÁÖ°í ¹Þ°í) ¹°°í±â ÀÖ´Â Ã¼Å© ÇÔ¼ö
-	public static int[] check(int x, int y, int user_count, int[][] arr) {
-		
-		if(arr[x][y] == 1) 
-		{
-			user_count++;
-			System.out.println("¹°°í±â "+user_count+"¸¶¸®¸¦ Àâ¾Ò½À´Ï´Ù.");
-			arr[x][y] = 0;
-		}
-		if(user_count == 3) 
-		{
-			System.out.println("ÃàÇÏÇÕ´Ï´Ù. 3¸¶¸® ´Ù Àâ¾Ò½À´Ï´Ù.");
-		}
-		int[] new_arr = new int[] {arr[x][y], user_count};
+		System.out.println();
+		int[] new_arr = new int[] { x, y };
 		return new_arr;
 	}
 
+	// 1ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½Þ°ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼Å© ï¿½Ô¼ï¿½
+	public static int[] check(int x, int y, int user_count, int[][] arr) {
 
+		if (arr[x][y] == 1) {
+			user_count++;
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + user_count + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
+			arr[x][y] = 0;
+		}
+		if (user_count == 3) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
+		}
+		int[] new_arr = new int[] { arr[x][y], user_count };
+		return new_arr;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ³¬½Ã °ÔÀÓ ÇÔ¼öÈ­ // ÇÔ¼ö ÃÑ 5°³
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½È­ // ï¿½Ô¼ï¿½ ï¿½ï¿½ 5ï¿½ï¿½
 
 		int[][] arr = randomArr();
 		whereFish(arr);
-		
+
 		int[] casting = casting();
 		int[] check_arr = check(casting[0], casting[1], casting[2], arr);
 		int x = casting[0];
 		int y = casting[1];
 		int user_count = check_arr[1];
-		
-		while(true) {
+
+		while (true) {
 			int[] move_arr = move(x, y, user_count, arr);
 			x = move_arr[0];
 			y = move_arr[1];
-			
+
 			check_arr = check(x, y, user_count, arr);
 			arr[x][y] = check_arr[0];
 			user_count = check_arr[1];
-			
-			if(user_count == 3) break;
+
+			if (user_count == 3)
+				break;
 		}
 
 	}

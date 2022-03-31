@@ -1,4 +1,4 @@
-package NetWork;
+package academy.correspondence1;
 
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -6,59 +6,55 @@ import java.net.Socket;
 import java.util.HashMap;
 
 public class MainServer {
-	int port = 7777; // Á¤¼öº¯¼ö port¼±¾ðÈÄ 7777 ´ëÀÔ
-	ServerSocket server = null; // ServerSocketÅ¸ÀÔ server ¼±¾ð ÈÄ null ´ëÀÔ
-	Socket child = null; // SocketÅ¸ÀÔ child ¼±¾ð ÈÄ null ´ëÀÔ
+	int port = 7777; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ portï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7777 ï¿½ï¿½ï¿½ï¿½
+	ServerSocket server = null; // ServerSocketÅ¸ï¿½ï¿½ server ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ null ï¿½ï¿½ï¿½ï¿½
+	Socket child = null; // SocketÅ¸ï¿½ï¿½ child ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ null ï¿½ï¿½ï¿½ï¿½
 
-	HashMap<String, PrintWriter> hm; 
-    //ÄÃ·º¼ÇÀÎ HashMapÅ¸ÀÔÀÇ Å°°ªÀ» String °ªÀº PrintWriterÀÎ hm º¯¼ö ¼±¾ð
+	HashMap<String, PrintWriter> hm;
+	// ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ HashMapÅ¸ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ï¿½ï¿½ String ï¿½ï¿½ï¿½ï¿½ PrintWriterï¿½ï¿½ hm ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	public MainServer() { //ChatServer »ý¼ºÀÚ
+	public MainServer() { // ChatServer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		ChatSverThread sr;
-        //ChatServerThreadÅ¸ÀÔ¿¡ sr º¯¼ö ¼±¾ð
-        //ºê·Îµå Ä³½ºÆÃÀ» ÇÏ±âÀ§ÇÑ ¾²·¹µå °´Ã¼
+		// ChatServerThreadÅ¸ï¿½Ô¿ï¿½ sr ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½Îµï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
 		Thread t;
-        //Thread Å¸ÀÔÀÇ t º¯¼ö ¼±¾ð
+		// Thread Å¸ï¿½ï¿½ï¿½ï¿½ t ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-		try { //½ÃµµÇÏ´Ù
-			server = new ServerSocket( port ); //¼­¹ö¼ÒÄÏÀ» »ý¼ºÇØ¼­ server º¯¼ö¿¡ ´ëÀÔ
+		try { // ï¿½Ãµï¿½ï¿½Ï´ï¿½
+			server = new ServerSocket(port); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ server ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			System.out.println( "**************************************" );//Ãâ·Â
-			System.out.println( "*              Ã¤ÆÃ ¼­¹ö                *" );//Ãâ·Â
-			System.out.println( "**************************************" );//Ãâ·Â
-			System.out.println( "Å¬¶óÀÌ¾ðÆ®ÀÇ Á¢¼ÓÀ» ±â´Ù¸³´Ï´Ù." );//Ãâ·Â
+			System.out.println("**************************************");// ï¿½ï¿½ï¿½
+			System.out.println("*              Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½                *");// ï¿½ï¿½ï¿½
+			System.out.println("**************************************");// ï¿½ï¿½ï¿½
+			System.out.println("Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");// ï¿½ï¿½ï¿½
 
-			hm = new HashMap<String, PrintWriter>(); //hashMap°´Ã¼¸¦ »ý¼ºÇØ¼­ hm º¯¼ö¿¡ ´ëÀÔ
+			hm = new HashMap<String, PrintWriter>(); // hashMapï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ hm ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			while( true ) { // ¹«ÇÑ ¹Ýº¹
-				child = server.accept(); 
-                //ServerSocketÀÇ º¯¼öÀÎ server¸¦ ÀÌ¿ëÇÏ¿© acceptÇÔ¼ö È£ÃâÀ» ÇÏ¿©
-                //Å¬¶óÀÌ¾ðÆ® Á¢¼Ó½Ã±îÁö ´ë±â¸¦ ÇÕ´Ï´Ù.
-                //Á¢¼Ó½Ã¿¡´Â Å¬¶óÀÌ¾ðÆ®¿Í ¿¬°á µË´Ï´Ù.
-                //Å¬¶óÀÌ¾ðÆ®ÀÇ ¼ÒÄÏÀ» ¿¬°á¹Þ½À´Ï´Ù.
-				if( child != null ) { 
-                //SocketÅ¸ÀÔ¿¡ º¯¼öÀÎ child°¡ null °ªÀÌ ¾Æ´Ï¸é ½ÇÇà
-                //child¿¡´Â Å¬¶óÀÌ¾ðÆ® ¼ÒÄÏ°ú ¿¬°áÀ» ÇÒ ¼ö ÀÖ´Â ¼ÒÄÏÀÔ´Ï´Ù.
-					sr = new ChatSverThread( child, hm ); 
-                    //ChatSverThread °´Ã¼¸¦ Socket°ú HashMapÀ» ¹Þ¾Æ¼­ »ý¼º ÈÄ¿¡
-                    //ChatSverThreadÀÇ º¯¼öÀÎ sr¿¡ ´ëÀÔ
-					t = new Thread(sr); 
-                    //Thread°´Ã¼¸¦ ChatSverThreadÀ» ¹Þ¾Æ¼­ »ý¼ºÈÄ 
-                    //ThreadÀÇ º¯¼öÀÎ t¿¡ ´ëÀÔ
-					t.start();//¾²·¹µå ½ÃÀÛ
+			while (true) { // ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+				child = server.accept();
+				// ServerSocketï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ serverï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ acceptï¿½Ô¼ï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¿ï¿½
+				// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½Ó½Ã±ï¿½ï¿½ï¿½ ï¿½ï¿½â¸¦ ï¿½Õ´Ï´ï¿½.
+				// ï¿½ï¿½ï¿½Ó½Ã¿ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë´Ï´ï¿½.
+				// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Þ½ï¿½ï¿½Ï´ï¿½.
+				if (child != null) {
+					// SocketÅ¸ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ childï¿½ï¿½ null ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+					// childï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
+					sr = new ChatSverThread(child, hm);
+					// ChatSverThread ï¿½ï¿½Ã¼ï¿½ï¿½ Socketï¿½ï¿½ HashMapï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½
+					// ChatSverThreadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ srï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+					t = new Thread(sr);
+					// Threadï¿½ï¿½Ã¼ï¿½ï¿½ ChatSverThreadï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					// Threadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ tï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+					t.start();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				}
 			}
-		}
-		catch ( Exception e )	{ //¿¹¿ÜÃ³¸®°¡ ¹ß»ýÇÏ¸é ½ÇÇà
-			e.printStackTrace(); //¿¹¿ÜÃ³¸® Ãâ·Â
+		} catch (Exception e) { // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+			e.printStackTrace(); // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}
 	}
 
-
-
-	public static void main(String[] args) 
-	{
-		new MainServer(); //MainServer °´Ã¼ »ý¼º
+	public static void main(String[] args) {
+		new MainServer(); // MainServer ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 	}
 }

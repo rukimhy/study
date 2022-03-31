@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -6,13 +6,13 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-class Flowlayout1 extends JFrame{
+class Flowlayout1 extends JFrame {
 	public Flowlayout1() {
 		Container ct = getContentPane();
 		FlowLayout fl = new FlowLayout(FlowLayout.RIGHT, 10, 15);
 		ct.setLayout(fl);
-		for(int i = 1; i <= 15; i++) {
-			ct.add(new JButton("¹öÆ°"+i));
+		for (int i = 1; i <= 15; i++) {
+			ct.add(new JButton("ï¿½ï¿½Æ°" + i));
 		}
 		setTitle("Flowlayout Test1");
 		setSize(400, 300);

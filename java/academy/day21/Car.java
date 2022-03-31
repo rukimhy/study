@@ -1,17 +1,18 @@
-package day21;
+package academy.day21;
 
 public abstract class Car {
 	public abstract void drive();
+
 	public abstract void stop();
-	
+
 	public void startCar() {
-		System.out.println("╫ц╣©ю╩ ду╢о╢ы.");
+		System.out.println("О©╫ц╣О©╫О©╫О©╫ О©╫у╢о╢О©╫.");
 	}
-	
+
 	public void turnOff() {
-		System.out.println("╫ц╣©ю╩ ╡Э╢о╢ы.");
+		System.out.println("О©╫ц╣О©╫О©╫О©╫ О©╫О©╫О©╫о╢О©╫.");
 	}
-	
+
 	final public void run() {
 		startCar();
 		drive();

@@ -1,87 +1,91 @@
-package day16;
+package academy.day16;
 
 import java.util.Scanner;
 
-class Plus{
-	Plus(int a, int b){
-		System.out.println("µÎ Á¤¼ö¸¦ ´õÇÑ °ªÀº "+(a+b));
+class Plus {
+	Plus(int a, int b) {
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a + b));
 	}
-	Plus(double a, double b){
-		System.out.println("µÎ ½Ç¼ö¸¦ ´õÇÑ °ªÀº "+(a+b));
+
+	Plus(double a, double b) {
+		System.out.println("ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a + b));
 	}
 }
 
-class Minus{
-	Minus(int a, int b){
-		System.out.println("µÎ Á¤¼ö¸¦ »« °ªÀº "+(a-b));
+class Minus {
+	Minus(int a, int b) {
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a - b));
 	}
-	Minus(double a, double b){
-		System.out.println("µÎ ½Ç¼ö¸¦ »« °ªÀº "+(a-b));
+
+	Minus(double a, double b) {
+		System.out.println("ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a - b));
 	}
 }
 
-class Multiply{
-	Multiply(int a, int b){
-		System.out.println("µÎ Á¤¼ö¸¦ °öÇÑ °ªÀº "+(a*b));
+class Multiply {
+	Multiply(int a, int b) {
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a * b));
 	}
-	Multiply(double a, double b){
-		System.out.println("µÎ ½Ç¼ö¸¦ °öÇÑ °ªÀº "+(a*b));
+
+	Multiply(double a, double b) {
+		System.out.println("ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a * b));
 	}
 }
 
-class Divide{
-	Divide(int a, int b){
-		System.out.println("µÎ Á¤¼ö¸¦ ³ª´« °ªÀº "+(a/b));
+class Divide {
+	Divide(int a, int b) {
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a / b));
 	}
-	Divide(double a, double b){
-		System.out.println("µÎ ½Ç¼ö¸¦ ³ª´« °ªÀº "+(a/b));
+
+	Divide(double a, double b) {
+		System.out.println("ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + (a / b));
 	}
 }
 
 public class Q40_calc {
 
 	public static void main(String[] args) {
-		/* »çÄ¢¿¬»ê ÇÁ·Î±×·¥
-		 * Á¤¼ö¿Í ½Ç¼ö¸¦ ÀÔ·ÂÇßÀ»¶§ ¿¬»êÀÌ ½ÇÇàµÇ´Â ÇÁ·Î±×·¥À» ¸¸µé¾î¶ó.
-		 * ¿À¹ö·Îµù °³³ä ÀÌ¿ë
-		 * Á¤¼ö Á¤¼ö /½Ç¼ö ½Ç¼ö
+		/*
+		 * ï¿½ï¿½Ä¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ /ï¿½Ç¼ï¿½ ï¿½Ç¼ï¿½
 		 */
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("1.Á¤¼ö 2.½Ç¼ö : ");
+		System.out.print("1.ï¿½ï¿½ï¿½ï¿½ 2.ï¿½Ç¼ï¿½ : ");
 		int choice = scan.nextInt();
-		if(choice == 1) {
-			System.out.print("Á¤¼ö µÎ°³¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+		if (choice == 1) {
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 			int a = scan.nextInt();
 			int b = scan.nextInt();
-			System.out.print("+, -, *, / Áß ÀÔ·ÂÇÏ½Ã¿À : ");
+			System.out.print("+, -, *, / ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 			char ch = scan.next().charAt(0);
-			if(ch == '+') {
+			if (ch == '+') {
 				Plus plus = new Plus(a, b);
-			} else if(ch == '-') {
+			} else if (ch == '-') {
 				Minus minus = new Minus(a, b);
-			} else if(ch == '*') {
+			} else if (ch == '*') {
 				Multiply multiply = new Multiply(a, b);
 			} else {
 				Divide divide = new Divide(a, b);
 			}
 		} else {
-			System.out.print("½Ç¼ö µÎ°³¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+			System.out.print("ï¿½Ç¼ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 			double a = scan.nextDouble();
 			double b = scan.nextDouble();
-			System.out.print("+, -, *, / Áß ÀÔ·ÂÇÏ½Ã¿À : ");
+			System.out.print("+, -, *, / ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 			char ch = scan.next().charAt(0);
-			if(ch == '+') {
+			if (ch == '+') {
 				Plus plus = new Plus(a, b);
-			} else if(ch == '-') {
+			} else if (ch == '-') {
 				Minus minus = new Minus(a, b);
-			} else if(ch == '*') {
+			} else if (ch == '*') {
 				Multiply multiply = new Multiply(a, b);
 			} else {
 				Divide divide = new Divide(a, b);
 			}
 		}
-
 
 	}
 

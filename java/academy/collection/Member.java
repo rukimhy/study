@@ -1,9 +1,9 @@
-package collection;
+package academy.collection;
 
 public class Member {
 	private int memberId;
 	private String memberName;
-	
+
 	public Member(int memberId, String memberName) {
 		this.memberId = memberId;
 		this.memberName = memberName;
@@ -24,8 +24,8 @@ public class Member {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	
+
 	public String toString() {
-		return memberName+" È¸¿ø´ÔÀÇ ¾ÆÀÌµð´Â "+memberId+" ÀÔ´Ï´Ù.";
+		return memberName + " È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ " + memberId + " ï¿½Ô´Ï´ï¿½.";
 	}
 }

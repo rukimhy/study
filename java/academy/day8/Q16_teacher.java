@@ -1,4 +1,4 @@
-package day8;
+package academy.day8;
 
 public class Q16_teacher {
 
@@ -8,16 +8,16 @@ public class Q16_teacher {
 		int arrSize = 5;
 		int[][] arr = new int[arrSize][arrSize];
 
-		int R = 0; // Çà
-		int C = -1; // ¿­
-		int K = arrSize; // ¹Ýº¹È½¼ö
-		int SW = 1; // Áõ°¨
-		int N = 1; // °ª
+		int R = 0; // ï¿½ï¿½
+		int C = -1; // ï¿½ï¿½
+		int K = arrSize; // ï¿½Ýºï¿½È½ï¿½ï¿½
+		int SW = 1; // ï¿½ï¿½ï¿½ï¿½
+		int N = 1; // ï¿½ï¿½
 
-		/* ´ÞÆØÀÌ ¸¸µé±â */
+		/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		while (true) {
 
-			for (int i = 0; i < K; i++) { // Çà°íÁ¤ ¿­º¯È­
+			for (int i = 0; i < K; i++) { // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
 				C += SW;
 				arr[R][C] = N++;
 			}
@@ -25,7 +25,7 @@ public class Q16_teacher {
 			if (K == 0)
 				break;
 
-			for (int j = 0; j < K; j++) { // ¿­°íÁ¤ Çàº¯È­
+			for (int j = 0; j < K; j++) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àº¯È­
 				R += SW;
 				arr[R][C] = N++;
 			}

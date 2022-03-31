@@ -1,91 +1,74 @@
-package day12;
+package academy.day12;
 
 import java.util.Scanner;
 
 public class Q28_teacher2 {
 
-	public static int one(int[][] seat,int count )
-	{
-		Scanner sc = new Scanner(System.in);// ÀÔ·Â °´Ã¼
-		//ÇÔ¼ö
-		if(count == 16)
-		{
-			System.out.println("¸ðµç ÁÂ¼®ÀÌ ¿¹¾à µÆ½À´Ï´Ù.");
+	public static int one(int[][] seat, int count) {
+		Scanner sc = new Scanner(System.in);// ï¿½Ô·ï¿½ ï¿½ï¿½Ã¼
+		// ï¿½Ô¼ï¿½
+		if (count == 16) {
+			System.out.println("ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ½ï¿½ï¿½Ï´ï¿½.");
 		}
-		System.out.print("ÁÂ¼®À» ¼±ÅÃÇÏ¼¼¿ä : ");
+		System.out.print("ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
-		if(seat[num1][num2] == 0)
-		{
+		if (seat[num1][num2] == 0) {
 			seat[num1][num2] = 1;
-			System.out.println((num1+1)+"Çà"+(num2+1)+"¹øÂ° ÀÚ¸®°¡ ¿¹¾à µÆ½À´Ï´Ù.");
-			return 1;  //1
-		}
-		else
-		{
-			System.out.println("ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù.");
+			System.out.println((num1 + 1) + "ï¿½ï¿½" + (num2 + 1) + "ï¿½ï¿½Â° ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ½ï¿½ï¿½Ï´ï¿½.");
+			return 1; // 1
+		} else {
+			System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½Ô´Ï´ï¿½.");
 			return 0;
 		}
 	}
-	public static void two(int[][] seat)
-	{
-		//ÇÔ¼ö
-		for(int i =0;i<8;i++)
-		{
-			for(int j =0;j<2;j++)
-			{
-				if(seat[i][j] == 0)
-				{
-					System.out.println((i+1)+"Çà"+(j+1)+"¹øÂ° ÀÚ¸®°¡ ºñ¾îÀÖ½À´Ï´Ù.");
+
+	public static void two(int[][] seat) {
+		// ï¿½Ô¼ï¿½
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 2; j++) {
+				if (seat[i][j] == 0) {
+					System.out.println((i + 1) + "ï¿½ï¿½" + (j + 1) + "ï¿½ï¿½Â° ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 				}
 			}
 		}
 	}
-	public static boolean three()
-	{
-		//ÇÔ¼ö
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+
+	public static boolean three() {
+		// ï¿½Ô¼ï¿½
+		System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 		return false;
 	}
-	public static void four()
-	{
-		//ÇÔ¼ö
-		System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+
+	public static void four() {
+		// ï¿½Ô¼ï¿½
+		System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);// ÀÔ·Â °´Ã¼
-		int[][] seat = new int[8][2]; // ÇÔ¼ö·Î º¸³»¸é ¼Ò½º°¡ ¾î·Á¿ö
-		int count = 0; // ¹«Á¶°Ç
+		Scanner sc = new Scanner(System.in);// ï¿½Ô·ï¿½ ï¿½ï¿½Ã¼
+		int[][] seat = new int[8][2]; // ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+		int count = 0; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		boolean check = true;
-		
-		while(check) //sel Á¶°ÇÀ¸·Î Á¾·áÀÎ 3 ÀÔ·Â½Ã Á¾·á ½ÃÅ°¸é µË´Ï´Ù. true
-		{
-			//ÇÔ¼ö
-			System.out.print("1. ¿¹¸Å 2. ºóÁÂ¼® È®ÀÎ 3. Á¾·á :");
-			int sel = sc.nextInt();
-			
-			if(sel == 1)
-			{
-				count+=one(seat, count);
 
-			}
-			else if(sel == 2)
-			{
+		while (check) // sel ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3 ï¿½Ô·Â½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ë´Ï´ï¿½. true
+		{
+			// ï¿½Ô¼ï¿½
+			System.out.print("1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½Â¼ï¿½ È®ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ :");
+			int sel = sc.nextInt();
+
+			if (sel == 1) {
+				count += one(seat, count);
+
+			} else if (sel == 2) {
 				two(seat);
-			}
-			else if(sel == 3)
-			{
+			} else if (sel == 3) {
 				check = three();
-			}
-			else
-			{
+			} else {
 				four();
 			}
 		}
 
 	}
 }
-
-

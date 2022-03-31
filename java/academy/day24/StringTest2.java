@@ -1,4 +1,4 @@
-package day24;
+package academy.day24;
 
 public class StringTest2 {
 
@@ -6,12 +6,12 @@ public class StringTest2 {
 		String javaStr = new String("java");
 		String androidStr = new String("android");
 		System.out.println(javaStr);
-		System.out.println("Ã³À½ ¹®ÀÚ¿­ ÁÖ¼Ò °ª: "+System.identityHashCode(javaStr));
-		
+		System.out.println("Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½: " + System.identityHashCode(javaStr));
+
 		javaStr = javaStr.concat(androidStr);
-		
+
 		System.out.println(javaStr);
-		System.out.println("¿¬°áµÈ ¹®ÀÚ¿­ ÁÖ¼Ò °ª: "+System.identityHashCode(javaStr));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½: " + System.identityHashCode(javaStr));
 	}
 
 }

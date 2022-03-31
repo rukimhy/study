@@ -1,68 +1,56 @@
-package day18;
+package academy.day18;
 
 import java.util.Scanner;
 
-class Ballon
-{
+class Ballon {
 	String color;
-	
-	void print()
-	{
-		System.out.println("Ç³¼± : " + color);
+
+	void print() {
+		System.out.println("Ç³ï¿½ï¿½ : " + color);
 	}
 }
 
-class Check
-{
-	int indexCheck(String color, Ballon[] b)
-	{
+class Check {
+	int indexCheck(String color, Ballon[] b) {
 		int index = -1;
-		for(int i =0;i<b.length;i++)
-		{
-			if(b[i].color.equals(color))
-			{
+		for (int i = 0; i < b.length; i++) {
+			if (b[i].color.equals(color)) {
 				index = i;
 			}
 		}
-		
+
 		return index;
 	}
 }
 
-class Air
-{
-	Air(Ballon[] b)
-	{
-		String[] color = {"»¡°£", "ÆÄ¶õ", "³ë¶û", "ÁÖÈ²", "ÃÊ·Ï"};
-		for(int i =0;i<b.length;i++)
-		{
+class Air {
+	Air(Ballon[] b) {
+		String[] color = { "ï¿½ï¿½ï¿½ï¿½", "ï¿½Ä¶ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½È²", "ï¿½Ê·ï¿½" };
+		for (int i = 0; i < b.length; i++) {
 			b[i] = new Ballon();
 			b[i].color = color[i];
 		}
 	}
 }
 
-class Run
-{
-	Run()
-	{
+class Run {
+	Run() {
 		Ballon[] b = new Ballon[5];
 		Air a = new Air(b);
 		Check ch = new Check();
-		
+
 		Scanner sc = new Scanner(System.in);
-		System.out.print("»ö±òÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		String color = sc.next();
-		
-		int index=ch.indexCheck(color, b);
-		
-		System.out.println("Ç³¼± "+ color+" ÀÇ ÀÎµ¦½º : "+ index );
+
+		int index = ch.indexCheck(color, b);
+
+		System.out.println("Ç³ï¿½ï¿½ " + color + " ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ : " + index);
 	}
 }
 
 public class TestBallons {
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Run();
 	}
 }

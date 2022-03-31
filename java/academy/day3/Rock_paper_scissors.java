@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,48 +6,49 @@ import java.util.Scanner;
 public class Rock_paper_scissors {
 
 	public static void main(String[] args) {
-		// °¡À§¹ÙÀ§º¸ °ÔÀÓ. ¹®ÀÚ¿­À» ÀÔ·Â ¹Þ¾Æ "°¡À§" "¹ÙÀ§" "º¸". ÄÄÇ»ÅÍ´Â ·£´ýÀ¸·Î °¡À§ ¹ÙÀ§ º¸. "À¯Àú°¡ ÀÌ°å½À´Ï´Ù." "ºñ°å½À´Ï´Ù." "ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù."
-		// ÀÌ¿ÜÀÇ ÀÔ·ÂÀº "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù." Ãâ·Â ÈÄ ¹Ù·Î Á¾·á
-		// 0 = °¡À§, 1 = ¹ÙÀ§, 2 = º¸
-		
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ¾ï¿½ "ï¿½ï¿½ï¿½ï¿½" "ï¿½ï¿½ï¿½ï¿½" "ï¿½ï¿½". ï¿½ï¿½Ç»ï¿½Í´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½." "ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." "ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½."
+		// ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ "ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½." ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// 0 = ï¿½ï¿½ï¿½ï¿½, 1 = ï¿½ï¿½ï¿½ï¿½, 2 = ï¿½ï¿½
+
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
-		
-		System.out.println("ÄÄÇ»ÅÍ¿Í °¡À§ ¹ÙÀ§ º¸ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½ : ");
 		String str = scan.next();
 		int i = -1;
 		int cpu_choice = rand.nextInt(3);
-		
-		if(str.equals("°¡À§")) {
+
+		if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 			i = 0;
-			if(cpu_choice == 0) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
-			} else if(cpu_choice == 1) {
-				System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+			if (cpu_choice == 0) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+			} else if (cpu_choice == 1) {
+				System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			} else {
-				System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-		} else if(str.equals("¹ÙÀ§")) {
+		} else if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 			i = 1;
-			if(cpu_choice == 0) {
-				System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
-			} else if(cpu_choice == 1) {
-				System.out.println("ºñ°å½À´Ï´Ù.");
+			if (cpu_choice == 0) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
+			} else if (cpu_choice == 1) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			} else {
-				System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-		} else if(str.equals("º¸")) {
+		} else if (str.equals("ï¿½ï¿½")) {
 			i = 2;
-			if(cpu_choice == 0) {
-				System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
-			} else if(cpu_choice == 1) {
-				System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
+			if (cpu_choice == 0) {
+				System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
+			} else if (cpu_choice == 1) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			} else {
-				System.out.println("ºñ°å½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
 		} else {
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 	}
 

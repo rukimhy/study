@@ -1,4 +1,4 @@
-package day2;
+package academy.day2;
 
 public class IntergerVariable {
 
@@ -7,7 +7,7 @@ public class IntergerVariable {
 		short sVal = 10;
 		byte bVal = 20;
 		System.out.println(sVal + bVal);
-		
+
 	}
 
 }

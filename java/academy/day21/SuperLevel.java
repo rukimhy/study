@@ -1,23 +1,23 @@
-package day21;
+package academy.day21;
 
 public class SuperLevel extends PlayerLevel {
 	@Override
 	public void run() {
-		System.out.println("¾öÃ» »¡¸® ´Þ¸³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	}
-	
+
 	@Override
 	public void jump() {
-		System.out.println("¾ÆÁÖ ³ôÀÌ jumpÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ jumpï¿½Õ´Ï´ï¿½.");
 	};
-	
+
 	@Override
 	public void turn() {
-		System.out.println("ÇÑ ¹ÙÄû µ½´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
-	
+
 	@Override
 	public void showLevelMessage() {
-		System.out.println("****°í±ÞÀÚ ·¹º§ÀÔ´Ï´Ù.****");
+		System.out.println("****ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.****");
 	};
 }

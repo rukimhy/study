@@ -1,4 +1,4 @@
-package day7;
+package academy.day7;
 
 public class Q15_2dArr2 {
 
@@ -6,39 +6,32 @@ public class Q15_2dArr2 {
 		// TODO Auto-generated method stub
 		int[][] arr = new int[5][5];
 		int count = 1;
-		
-		// ¼ıÀÚ ÀÔ·Â
-		for(int i=0; i<5; i++) 
-		{
-			if(i%2 == 0) 
-			{
-				for(int j=0; j<5; j++) 
-				{
+
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+		for (int i = 0; i < 5; i++) {
+			if (i % 2 == 0) {
+				for (int j = 0; j < 5; j++) {
 					arr[i][j] = count;
 					count++;
 				}
-			}
-			else 
-			{
-				for(int j=4; j>=0; j--) 
-				{
+			} else {
+				for (int j = 4; j >= 0; j--) {
 					arr[i][j] = count;
 					count++;
 				}
 			}
 		}
-		
-		// ¼ıÀÚ Ãâ·Â
-		for(int i=0; i<5; i++) 
-		{
-			for(int j=0; j<5; j++) 
-			{
-				if(i == 0 || i == 1) 
-				{
-					if(i == 1 && j == 0) System.out.print(arr[i][j]+" ");
-					else System.out.print(" "+arr[i][j]+" ");
-				}
-				else System.out.print(arr[i][j]+" ");
+
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (i == 0 || i == 1) {
+					if (i == 1 && j == 0)
+						System.out.print(arr[i][j] + " ");
+					else
+						System.out.print(" " + arr[i][j] + " ");
+				} else
+					System.out.print(arr[i][j] + " ");
 			}
 			System.out.println();
 		}

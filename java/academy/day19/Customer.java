@@ -1,4 +1,4 @@
-package day19;
+package academy.day19;
 
 public class Customer {
 	protected int customerID;
@@ -6,27 +6,28 @@ public class Customer {
 	protected String customerGrade;
 	int bonusPoint;
 	double bonusRatio;
-	
+
 	public Customer() {
 		customerGrade = "SILVER";
 		bonusRatio = 0.01;
-		System.out.println("Customer() »ý¼ºÀÚ È£Ãâ");
+		System.out.println("Customer() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½");
 	}
-	
+
 	public Customer(int customerID, String customerName) {
 		this.customerID = customerID;
 		this.customerName = customerName;
 		customerGrade = "SILVER";
 		bonusRatio = 0.01;
 	}
-	
+
 	public int calcPrice(int price) {
 		bonusPoint += price * bonusRatio;
 		return price;
 	}
-	
+
 	void showCustomerInfo() {
-		System.out.println(customerName+" ´ÔÀÇ µî±ÞÀº "+customerGrade+"ÀÌ¸ç, º¸³Ê½º Æ÷ÀÎÆ®´Â "+bonusPoint+"ÀÔ´Ï´Ù.");
+		System.out
+				.println(customerName + " ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ " + customerGrade + "ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ " + bonusPoint + "ï¿½Ô´Ï´ï¿½.");
 	}
 
 	public int getCustomerID() {

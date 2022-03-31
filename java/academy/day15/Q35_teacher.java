@@ -1,27 +1,21 @@
-package day15;
+package academy.day15;
 
 import java.util.Random;
 
-class Fire
-{
-	
+class Fire {
+
 }
 
-class Monkey
-{
+class Monkey {
 	String color;
 	Fire f = new Fire();;
 
-	void checkFire()
-	{
-		if(f != null)
-		{
-			System.out.println(color+"¿ø¼þÀÌ°¡ ºÒÀ» °¡Áö°í ÀÖ½À´Ï´Ù.");
+	void checkFire() {
+		if (f != null) {
+			System.out.println(color + "ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }
-
-
 
 public class Q35_teacher {
 
@@ -31,10 +25,9 @@ public class Q35_teacher {
 		Monkey[] m = new Monkey[5];
 		Fire f = new Fire();
 
-		String[] monColor = {"»¡°£", "³ë¶û", "ÆÄ¶û","ÃÊ·Ï","°ËÁ¤"};
+		String[] monColor = { "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½Ä¶ï¿½", "ï¿½Ê·ï¿½", "ï¿½ï¿½ï¿½ï¿½" };
 
-		for(int i =0;i<5;i++)
-		{
+		for (int i = 0; i < 5; i++) {
 			m[i] = new Monkey();
 			m[i].color = monColor[i];
 		}
@@ -43,42 +36,36 @@ public class Q35_teacher {
 
 		Random r = new Random();
 
-		int d = r.nextInt(2); // ÁÂ¿ì ¼±ÅÃ
-		int p = r.nextInt(5)+1; // ¸î¹øÀü´Þ µÉÁö
+		int d = r.nextInt(2); // ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int p = r.nextInt(5) + 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-		System.out.println(d+"/"+p);
+		System.out.println(d + "/" + p);
 
-		if(d == 0) // ÁÂ
+		if (d == 0) // ï¿½ï¿½
 		{
 			int j = 4;
 			m[4].f = m[0].f;
 			m[0].f = null;
 			m[4].checkFire();
-			
-			for(int i = 0;i<p-1;i++)
-			{
-				m[j-1].f = m[j].f;
+
+			for (int i = 0; i < p - 1; i++) {
+				m[j - 1].f = m[j].f;
 				m[j].f = null;
 				j--;
 				m[j].checkFire();
 			}
-			
-		}
-		else // ¿ì
+
+		} else // ï¿½ï¿½
 		{
-			for(int i =0;i<p;i++)
-			{
-				if(i+1 == 5)
-				{
+			for (int i = 0; i < p; i++) {
+				if (i + 1 == 5) {
 					m[0].f = m[i].f;
 					m[i].f = null;
 					m[0].checkFire();
-				}
-				else
-				{
-					m[i+1].f = m[i].f;
+				} else {
+					m[i + 1].f = m[i].f;
 					m[i].f = null;
-					m[i+1].checkFire();
+					m[i + 1].checkFire();
 				}
 			}
 		}

@@ -1,11 +1,11 @@
-package day13;
+package academy.day13;
 
 class Animal {
 	String type;
 	String food;
-	
+
 	void output() {
-		System.out.println("Á¾·ù´Â "+type+", ¸ÔÀÌ´Â "+food);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + type + ", ï¿½ï¿½ï¿½Ì´ï¿½ " + food);
 	}
 }
 
@@ -14,31 +14,31 @@ public class Q31_animal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String tmp = "";
-		
+
 		Animal monkey = new Animal();
 		Animal dog = new Animal();
 		Animal chicken = new Animal();
 		Animal pig = new Animal();
-		
-		monkey.type = "¿ø¼þÀÌ";
-		monkey.food = "¹Ù³ª³ª";
-		
-		dog.type = "°³";
-		dog.food = "»À´Ù±Í";
-		
-		chicken.type = "´ß";
-		chicken.food = "¸ðÀÌ";
-		
-		pig.type = "µÅÁö";
-		pig.food = "¿©¹°";
-		
+
+		monkey.type = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+		monkey.food = "ï¿½Ù³ï¿½ï¿½ï¿½";
+
+		dog.type = "ï¿½ï¿½";
+		dog.food = "ï¿½ï¿½ï¿½Ù±ï¿½";
+
+		chicken.type = "ï¿½ï¿½";
+		chicken.food = "ï¿½ï¿½ï¿½ï¿½";
+
+		pig.type = "ï¿½ï¿½ï¿½ï¿½";
+		pig.food = "ï¿½ï¿½ï¿½ï¿½";
+
 		monkey.output();
 		dog.output();
 		chicken.output();
 		pig.output();
-		
+
 		System.out.println("---------");
-		
+
 		tmp = monkey.food;
 		monkey.food = pig.food;
 		pig.food = chicken.food;

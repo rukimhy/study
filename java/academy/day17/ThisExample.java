@@ -1,14 +1,14 @@
-package day17;
+package academy.day17;
 
-class BirthDay{
+class BirthDay {
 	int day;
 	int month;
 	int year;
-	
+
 	public void setYear(int year) {
 		this.year = year;
 	}
-	
+
 	public void printThis() {
 		System.out.println(this);
 	}

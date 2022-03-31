@@ -1,15 +1,15 @@
-package day18;
-/* À¯´Ö¿¡ °¡°Ý, ¿¡³ÊÁö, °ø°Ý·Â, ¹æ¾î·Â, °ø°Ý´ë»ó, ¼Óµµ, À¯ÇüÀÌ ÀÖ´Ù.
- * À¯´ÖÀ» »ó¼Ó¹ÞÀº Å¬·¡½º´Â ÇÁ¸°Æ®ÇÏ´Â ±â´ÉÀÌ ÀÖ´Ù.
- * Àú±Û¸µ - 50, 35, 5, 0, "Áö»ó", 2.612, "Áö»ó, ¼ÒÇü, »ýÃ¼"
- * È÷µå¶ó - 100, 80, 10, 0, "Áö»ó, °øÁß", 1.742, "Áö»ó, ÁßÇü, »ýÃ¼"
- * ·¯Ä¿ - 250, 125, 20, 1, "Áö»ó", 2.813, "Áö»ó, ÁßÇü, »ýÃ¼"
- * ¸¶¸° - 50, 50, 6, 0, "Áö»ó, °øÁß", 1.875, "Áö»ó, ¼ÒÇü, »ýÃ¼"
- * ÆÄÀÌ¾î¹î - 75, 50, 16, 1, "Áö»ó", 1.875, "Áö»ó, ¼ÒÇü, »ýÃ¼"
- * ÇÁ¸°Æ® ±â´É - À§ ³»¿ëÀÌ ´Ù ³ª¿À¸é¼­ À¯´ÖÀÌ¸§ÀÌ ´Ù ³ª¿À°Ô Ãâ·Â
+package academy.day18;
+/* ï¿½ï¿½ï¿½Ö¿ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ý·ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ý´ï¿½ï¿½, ï¿½Óµï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ó¹ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+ * ï¿½ï¿½ï¿½Û¸ï¿½ - 50, 35, 5, 0, "ï¿½ï¿½ï¿½ï¿½", 2.612, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼"
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ - 100, 80, 10, 0, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½", 1.742, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼"
+ * ï¿½ï¿½Ä¿ - 250, 125, 20, 1, "ï¿½ï¿½ï¿½ï¿½", 2.813, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼"
+ * ï¿½ï¿½ï¿½ï¿½ - 50, 50, 6, 0, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½", 1.875, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼"
+ * ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ - 75, 50, 16, 1, "ï¿½ï¿½ï¿½ï¿½", 1.875, "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼"
+ * ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ - ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 
-class unit{
+class unit {
 	int price;
 	int energy;
 	int atk;
@@ -19,83 +19,92 @@ class unit{
 	String type;
 }
 
-class Zergling extends unit{
-	Zergling(){
+class Zergling extends unit {
+	Zergling() {
 		price = 50;
 		energy = 35;
 		atk = 5;
 		def = 0;
-		object = "Áö»ó";
+		object = "ï¿½ï¿½ï¿½ï¿½";
 		speed = 2.612;
-		type = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
-	
+
 	void print() {
-		System.out.println("Àú±Û¸µ "+price+" "+energy+" "+atk+" "+def+" "+object+" "+speed+" "+type);
+		System.out.println(
+				"ï¿½ï¿½ï¿½Û¸ï¿½ " + price + " " + energy + " " + atk + " " + def + " " + object + " " + speed + " " + type);
 	}
 }
 
-class Hydra extends unit{
-	Hydra(){
+class Hydra extends unit {
+	Hydra() {
 		price = 100;
 		energy = 80;
 		atk = 10;
 		def = 0;
-		object = "Áö»ó, °øÁß";
+		object = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½";
 		speed = 1.742;
-		type = "Áö»ó, ÁßÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
+
 	void print() {
-		System.out.println("È÷µå¶ó "+price+" "+energy+" "+atk+" "+def+" "+object+" "+speed+" "+type);
+		System.out.println(
+				"ï¿½ï¿½ï¿½ï¿½ï¿½ " + price + " " + energy + " " + atk + " " + def + " " + object + " " + speed + " " + type);
 	}
 }
 
-class Lurker extends unit{
-	Lurker(){
+class Lurker extends unit {
+	Lurker() {
 		price = 250;
 		energy = 125;
 		atk = 20;
 		def = 1;
-		object = "Áö»ó";
+		object = "ï¿½ï¿½ï¿½ï¿½";
 		speed = 2.813;
-		type = "Áö»ó, ÁßÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
+
 	void print() {
-		System.out.println("·¯Ä¿ "+price+" "+energy+" "+atk+" "+def+" "+object+" "+speed+" "+type);
+		System.out.println(
+				"ï¿½ï¿½Ä¿ " + price + " " + energy + " " + atk + " " + def + " " + object + " " + speed + " " + type);
 	}
 }
 
-class Marine extends unit{
-	Marine(){
+class Marine extends unit {
+	Marine() {
 		price = 50;
 		energy = 50;
 		atk = 6;
 		def = 0;
-		object = "Áö»ó, °øÁß";
+		object = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½";
 		speed = 1.875;
-		type = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
+
 	void print() {
-		System.out.println("¸¶¸° "+price+" "+energy+" "+atk+" "+def+" "+object+" "+speed+" "+type);
+		System.out.println(
+				"ï¿½ï¿½ï¿½ï¿½ " + price + " " + energy + " " + atk + " " + def + " " + object + " " + speed + " " + type);
 	}
 }
 
-class Firebat extends unit{
-	Firebat(){
+class Firebat extends unit {
+	Firebat() {
 		price = 75;
 		energy = 50;
 		atk = 16;
 		def = 1;
-		object = "Áö»ó";
+		object = "ï¿½ï¿½ï¿½ï¿½";
 		speed = 1.875;
-		type = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
+
 	void print() {
-		System.out.println("ÆÄÀÌ¾î¹î "+price+" "+energy+" "+atk+" "+def+" "+object+" "+speed+" "+type);
+		System.out.println(
+				"ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ " + price + " " + energy + " " + atk + " " + def + " " + object + " " + speed + " " + type);
 	}
 }
 
-class Collection{
+class Collection {
 	Zergling zergling = new Zergling();
 	Hydra hydra = new Hydra();
 	Lurker lurker = new Lurker();
@@ -107,18 +116,18 @@ public class Q41_starcraft {
 
 	public static void main(String[] args) {
 		/*
-		Zergling zergling = new Zergling();
-		Hydra hydra = new Hydra();
-		Lurker lurker = new Lurker();
-		Marine marine = new Marine();
-		Firebat firebat = new Firebat();
-		
-		zergling.print();
-		hydra.print();
-		lurker.print();
-		marine.print();
-		firebat.print();
-		*/
+		 * Zergling zergling = new Zergling();
+		 * Hydra hydra = new Hydra();
+		 * Lurker lurker = new Lurker();
+		 * Marine marine = new Marine();
+		 * Firebat firebat = new Firebat();
+		 * 
+		 * zergling.print();
+		 * hydra.print();
+		 * lurker.print();
+		 * marine.print();
+		 * firebat.print();
+		 */
 		Collection collect = new Collection();
 		collect.zergling.print();
 		collect.hydra.print();

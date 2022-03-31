@@ -1,15 +1,15 @@
-package day17;
+package academy.day17;
 
 public class StudentTest2 {
 
 	public static void main(String[] args) {
 		Student2 studentLee = new Student2();
-		studentLee.setStudentName("ÀÌÁö¿ø");
+		studentLee.setStudentName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(studentLee.serialNum);
 		studentLee.serialNum++;
-		
+
 		Student2 studentSon = new Student2();
-		studentSon.setStudentName("¼Õ¼ö°æ");
+		studentSon.setStudentName("ï¿½Õ¼ï¿½ï¿½ï¿½");
 		System.out.println(studentSon.serialNum);
 		System.out.println(studentLee.serialNum);
 	}

@@ -1,17 +1,19 @@
-package day19;
+package academy.day19;
 
 public class OverridingTest1 {
 
 	public static void main(String[] args) {
-		Customer customerLee = new Customer(10010, "ÀÌ¼ø½Å");
+		Customer customerLee = new Customer(10010, "ï¿½Ì¼ï¿½ï¿½ï¿½");
 		customerLee.bonusPoint = 1000;
-		
-		VIPCustomer customerKim = new VIPCustomer(10020, "±èÀ¯½Å", 12345);
+
+		VIPCustomer customerKim = new VIPCustomer(10020, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 12345);
 		customerKim.bonusPoint = 10000;
-		
+
 		int price = 10000;
-		System.out.println(customerLee.getCustomerName()+"´ÔÀÌ ÁöºÒÇØ¾ß ÇÏ´Â ±Ý¾×Àº "+customerLee.calcPrice(price)+"¿øÀÔ´Ï´Ù.");
-		System.out.println(customerKim.getCustomerName()+"´ÔÀÌ ÁöºÒÇØ¾ß ÇÏ´Â ±Ý¾×Àº "+customerKim.calcPrice(price)+"¿øÀÔ´Ï´Ù.");
+		System.out.println(
+				customerLee.getCustomerName() + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ " + customerLee.calcPrice(price) + "ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		System.out.println(
+				customerKim.getCustomerName() + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ " + customerKim.calcPrice(price) + "ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 	}
 
 }

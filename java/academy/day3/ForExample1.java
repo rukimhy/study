@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 public class ForExample1 {
 
@@ -6,11 +6,11 @@ public class ForExample1 {
 		// TODO Auto-generated method stub
 		int i;
 		int sum;
-		for(i = 1, sum = 0; i <= 10; i++) {
+		for (i = 1, sum = 0; i <= 10; i++) {
 			sum += i;
 		}
-		
-		System.out.println("1ºÎÅÍ 10±îÁöÀÇ ÇÕÀº " + sum + "ÀÔ´Ï´Ù.");
+
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + sum + "ï¿½Ô´Ï´ï¿½.");
 	}
 
 }

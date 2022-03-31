@@ -1,43 +1,44 @@
-package day25;
+package academy.day25;
 
-class OutClass{
+class OutClass {
 	private int num = 10;
 	private static int sNum = 20;
-	
+
 	private InClass inClass;
-	
+
 	public OutClass() {
 		inClass = new InClass();
 	}
-	
-	class InClass{
+
+	class InClass {
 		int inNum = 100;
-		
+
 		void inTest() {
-			System.out.println("OutClass num = "+num+"(¿ÜºÎ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö)");
-			System.out.println("OutClass sNum = "+sNum+"(¿ÜºÎ Å¬·¡½ºÀÇ Á¤Àû º¯¼ö)");
+			System.out.println("OutClass num = " + num + "(ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+			System.out.println("OutClass sNum = " + sNum + "(ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
 		}
-		//static void sTest() {};
+		// static void sTest() {};
 	}
+
 	public void usingClass() {
 		inClass.inTest();
 	}
-	
-	static class InStaticClass{
+
+	static class InStaticClass {
 		int inNum = 100;
 		static int sInNum = 200;
-		
+
 		void inTest() {
-			System.out.println("InStaticClass inNum = "+inNum+"(³»ºÎ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö)");
-			System.out.println("InStaticClass sInNum = "+sInNum+"(³»ºÎ Å¬·¡½ºÀÇ Á¤Àû º¯¼ö)");
-			System.out.println("OutClass sNum = "+sNum+"(¿ÜºÎ Å¬·¡½ºÀÇ Á¤Àû º¯¼ö)");
+			System.out.println("InStaticClass inNum = " + inNum + "(ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+			System.out.println("InStaticClass sInNum = " + sInNum + "(ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+			System.out.println("OutClass sNum = " + sNum + "(ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
 		}
-		
+
 		static void sTest() {
-			//num += 10;
-			//inNum += 10;
-			System.out.println("OutClass sNum = "+sNum+"(¿ÜºÎ Å¬·¡½ºÀÇ Á¤Àû º¯¼ö)");
-			System.out.println("InStaticClass sInNum = "+sInNum+"(³»ºÎ Å¬·¡½ºÀÇ Á¤Àû º¯¼ö)");
+			// num += 10;
+			// inNum += 10;
+			System.out.println("OutClass sNum = " + sNum + "(ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+			System.out.println("InStaticClass sInNum = " + sInNum + "(ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
 		}
 	}
 }
@@ -46,16 +47,16 @@ public class InnerTest {
 
 	public static void main(String[] args) {
 		OutClass outClass = new OutClass();
-		System.out.println("¿ÜºÎ Å¬·¡½º ÀÌ¿ëÇÏ¿© ³»ºÎ Å¬·¡½º ±â´É È£Ãâ");
+		System.out.println("ï¿½Üºï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È£ï¿½ï¿½");
 		outClass.usingClass();
 		System.out.println();
-		
+
 		OutClass.InStaticClass sInClass = new OutClass.InStaticClass();
-		System.out.println("Á¤Àû ³»ºÎ Å¬·¡½º ÀÏ¹Ý ¸Þ¼­µå È£Ãâ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¹ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½");
 		sInClass.inTest();
 		System.out.println();
-		
-		System.out.println("Á¤Àû ³»ºÎ Å¬·¡½ºÀÇ Á¤Àû ¸Þ¼­µå È£Ãâ");
+
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½");
 		OutClass.InStaticClass.sTest();
 	}
 

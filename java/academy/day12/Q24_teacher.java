@@ -1,54 +1,44 @@
-package day12;
+package academy.day12;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q24_teacher {
 
-	//3¹ø
-	static int ranbum()
-	{
+	// 3ï¿½ï¿½
+	static int ranbum() {
 		Random r = new Random();
-		return r.nextInt(5)+1;
+		return r.nextInt(5) + 1;
 	}
-	
-	static int userSel()
-	{
+
+	static int userSel() {
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
 	}
-	
-	static boolean check(int bum, int sel)
-	{
-		if(sel<1 || sel >5)
-		{
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+
+	static boolean check(int bum, int sel) {
+		if (sel < 1 || sel > 5) {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			return true;
-		}
-		else if(sel == bum)
-		{
-			System.out.println("¹üÀÎÀ» Àâ¾Ò½À´Ï´Ù.");
+		} else if (sel == bum) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 			return false;
-		}
-		else
-		{
-			System.out.println("¹üÀÎÀ» ÀâÁö ¸øÇß½À´Ï´Ù.");
+		} else {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 			return true;
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		
+
+	public static void main(String[] args) {
+
 		int bum = ranbum();
 		boolean check = true;
-		
-		while(check)
-		{
-			System.out.print("¹üÀÎ ÀÔ·Â(1~5) : ");
+
+		while (check) {
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½(1~5) : ");
 			int sel = userSel();
-			check=check(bum, sel);
+			check = check(bum, sel);
 		}
 	}
-	
+
 }

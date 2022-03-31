@@ -1,28 +1,29 @@
-package day27;
+package academy.day27;
 
-class DoubleThreadTest1 extends Thread{
-	public DoubleThreadTest1 (String str) {
+class DoubleThreadTest1 extends Thread {
+	public DoubleThreadTest1(String str) {
 		setName(str);
 	}
+
 	public void run() {
-		for(int i = 1; i <= 3; i++) {
-			System.out.println(i+getName());
+		for (int i = 1; i <= 3; i++) {
+			System.out.println(i + getName());
 		}
-		System.out.println("³¡" + getName());
+		System.out.println("ï¿½ï¿½" + getName());
 	}
 }
 
 public class DoubleThread1 {
 
 	public static void main(String[] args) throws InterruptedException {
-		DoubleThreadTest1 t1 = new DoubleThreadTest1(" : ¹è¿ì±â ½¬¿î ÀÚ¹Ù");
-		DoubleThreadTest1 t2 = new DoubleThreadTest1(" : ¹è¿ì±â ¾î·Á¿î ÀÚ¹Ù");
-		System.out.println("***** ½º·¹µå ½ÃÀÛ Àü ******");
+		DoubleThreadTest1 t1 = new DoubleThreadTest1(" : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¹ï¿½");
+		DoubleThreadTest1 t2 = new DoubleThreadTest1(" : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¹ï¿½");
+		System.out.println("***** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ******");
 		t1.start();
 		t2.start();
 		t1.join();
-		//t2.join();
-		System.out.println("***** ½º·¹µå ½ÃÀÛ ÈÄ ******");
+		// t2.join();
+		System.out.println("***** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ******");
 	}
 
 }

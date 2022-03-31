@@ -1,4 +1,4 @@
-package NetWork;
+package academy.correspondence1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,107 +7,108 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class  MainClient {
-	String ipAddress; //¹®ÀÚ¿­ º¯¼ö ipAdress ¼±¾ð
-	static final int port=7777; // static final Á¤¼ö º¯¼ö port ¼±¾ðÈÄ 7777 ÃÊ±âÈ­
-	Socket client=null; // Socket º¯¼ö client ¼±¾ð ÈÄ null °ª ÃÊ±âÈ­
-	BufferedReader read; // BufferReader º¯¼ö read ¼±¾ð
-	PrintWriter oos; //PrintWriter º¯¼ö oos ¼±¾ð
-	BufferedReader ois; //BufferReader º¯¼ö ois ¼±¾ð
-	String sendData; // ¹®ÀÚ¿­ º¯¼ö sendDate ¼±¾ð
-	String receiveData; // ¹®ÀÚ¿­ º¯¼ö receiveDate ¼±¾ð
+public class MainClient {
+	String ipAddress; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ipAdress ï¿½ï¿½ï¿½ï¿½
+	static final int port = 7777; // static final ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ port ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7777 ï¿½Ê±ï¿½È­
+	Socket client = null; // Socket ï¿½ï¿½ï¿½ï¿½ client ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ null ï¿½ï¿½ ï¿½Ê±ï¿½È­
+	BufferedReader read; // BufferReader ï¿½ï¿½ï¿½ï¿½ read ï¿½ï¿½ï¿½ï¿½
+	PrintWriter oos; // PrintWriter ï¿½ï¿½ï¿½ï¿½ oos ï¿½ï¿½ï¿½ï¿½
+	BufferedReader ois; // BufferReader ï¿½ï¿½ï¿½ï¿½ ois ï¿½ï¿½ï¿½ï¿½
+	String sendData; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ sendDate ï¿½ï¿½ï¿½ï¿½
+	String receiveData; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveDate ï¿½ï¿½ï¿½ï¿½
 
-	String user_id; // ¹®ÀÚ¿­ º¯¼ö user_id ¼±¾ð
-	ReceiveDataThread rt; // ReceiveDateThread º¯¼ö rt ¼±¾ð
-	boolean endflag=false; // Âü°ÅÁþ º¯¼ö endflag ¼±¾ð ÈÄ false·Î ÃÊ±âÈ­
+	String user_id; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ user_id ï¿½ï¿½ï¿½ï¿½
+	ReceiveDataThread rt; // ReceiveDateThread ï¿½ï¿½ï¿½ï¿½ rt ï¿½ï¿½ï¿½ï¿½
+	boolean endflag = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ endflag ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ falseï¿½ï¿½ ï¿½Ê±ï¿½È­
 
 	public MainClient(String id, String ip) {
-    //MainClient »ý¼ºÀÚ·Î ÀÎÀÚ·Î ¹®ÀÚ¿­ 2°³¸¦ ¹Þ´Â´Ù.
-		user_id=id; // user_id¿¡ id ´ëÀÔ
-		ipAddress=ip; // ipAddress¿¡ ip ´ëÀÔ
-		try{//½ÃµµÇÏ´Ù.
-			System.out.println("**** Å¬¶óÀÌ¾ðÆ®*****");//Ãâ·Â
-			client = new Socket(ipAddress, port); 
-            //client(Socket)¿¡ Socket °´Ã¼¸¦ »ý¼ºÇÏ¿© ´ëÀÔ
-            //Socket°´Ã¼¸¦ »ý¼º ÇÒ¶§ ÀÎÀÚ·Î ¹®ÀÚ¿­ 2°³¸¦ ´ã¾Æ¼­ »ý¼ºÀÚ È£Ãâ
+		// MainClient ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
+		user_id = id; // user_idï¿½ï¿½ id ï¿½ï¿½ï¿½ï¿½
+		ipAddress = ip; // ipAddressï¿½ï¿½ ip ï¿½ï¿½ï¿½ï¿½
+		try {// ï¿½Ãµï¿½ï¿½Ï´ï¿½.
+			System.out.println("**** Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®*****");// ï¿½ï¿½ï¿½
+			client = new Socket(ipAddress, port);
+			// client(Socket)ï¿½ï¿½ Socket ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// Socketï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 
-			read= new BufferedReader(new InputStreamReader(System.in));
-            //BufferReader °´Ã¼¸¦ »ý¼ºÀ» ÇÏ´Âµ¥ InputStrreamReader °´Ã¼¸¦ ¸¸µé¾î¼­ ÀÎÀÚ·Î ¹Þ´Â´Ù.
-            //InputStreamReader´Â System.inÀ» ÀÎÀÚ·Î ¹Þ¾Æ¼­ °´Ã¼¸¦ ¸¸µç´Ù.
-            //BufferReader°´Ã¼°¡ »ý¼ºµÇ¸é read¿¡ ´ëÀÔ
-			ois = new BufferedReader( new InputStreamReader( client.getInputStream() ) );
-            //BufferReader °´Ã¼¸¦ »ý¼º½Ã InputStreamReader °´Ã¼·Î ÀÎÀÚ¸¦ ¹Þ°í
-            //InputStreamReader °´Ã¼¸¦ »ý¼º½Ã¿¡´Â child(Socket)¿¡ getInputStream()ÇÔ¼ö¸¦ È£ÃâÇÏ¸é
-            //InputStreamÀ» ¸®ÅÏÇÏ¿© ÀÎÀÚ·Î ¹Þ°í InputStreamReader °´Ã¼¸¦ »ý¼º
-            // BufferReader·Î »ý¼ºµÈ °´Ã¼¸¦ ois¿¡ ´ëÀÔ
-			oos = new PrintWriter( client.getOutputStream() );
-			//PrintWriter °´Ã¼¸¦ »ý¼º½Ã¿¡´Â child(Socket)¿¡ getOutputStream()ÇÔ¼ö¸¦ È£ÃâÇÏ¸é
-            //OutputStreamÀ» ¸®ÅÏÇÏ¿© ÀÎÀÚ·Î ¹Þ°í PrintWriter °´Ã¼¸¦ »ý¼º
-            //PrintWriter·Î »ý¼ºµÈ °´Ã¼¸¦ oos¿¡ ´ëÀÔ
-			oos.println( user_id );
-            //oos(PrintWriter)ÀÇ printlnÇÔ¼ö¸¦ user_id(¹®ÀÚ¿­)À» ³Ö¾î¼­ È£Ãâ
-            //PrintWriter¿¡ user_id(¹®ÀÚ¿­)ÀÌ ´ã±ä´Ù.
+			read = new BufferedReader(new InputStreamReader(System.in));
+			// BufferReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´Âµï¿½ InputStrreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ´Â´ï¿½.
+			// InputStreamReaderï¿½ï¿½ System.inï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
+			// BufferReaderï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ readï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			ois = new BufferedReader(new InputStreamReader(client.getInputStream()));
+			// BufferReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Þ°ï¿½
+			// InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ child(Socket)ï¿½ï¿½ getInputStream()ï¿½Ô¼ï¿½ï¿½ï¿½
+			// È£ï¿½ï¿½ï¿½Ï¸ï¿½
+			// InputStreamï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ°ï¿½ InputStreamReader ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// BufferReaderï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ oisï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			oos = new PrintWriter(client.getOutputStream());
+			// PrintWriter ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ child(Socket)ï¿½ï¿½ getOutputStream()ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½
+			// OutputStreamï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ°ï¿½ PrintWriter ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// PrintWriterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ oosï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			oos.println(user_id);
+			// oos(PrintWriter)ï¿½ï¿½ printlnï¿½Ô¼ï¿½ï¿½ï¿½ user_id(ï¿½ï¿½ï¿½Ú¿ï¿½)ï¿½ï¿½ ï¿½Ö¾î¼­ È£ï¿½ï¿½
+			// PrintWriterï¿½ï¿½ user_id(ï¿½ï¿½ï¿½Ú¿ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 			oos.flush();
-            //oos(PrintWriter)ÀÇ ÇÔ¼ö flush()¸¦ È£ÃâÇÑ´Ù.
-            //flushÇÔ¼ö¸¦ È£ÃâÇÏ¸é PrintWirter¿¡ ´ã°ÜÀÖ´ø 
-            //¹®ÀÚ¿­À» ¿¬°áµÈ SocketÀ» ÅëÇØ Àü¼ÛÇÏ°Ô µÈ´Ù.
+			// oos(PrintWriter)ï¿½ï¿½ ï¿½Ô¼ï¿½ flush()ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ñ´ï¿½.
+			// flushï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ PrintWirterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Socketï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½È´ï¿½.
 
-			rt= new ReceiveDataThread(client, ois);
-            //ReceiveDataThread °´Ã¼¸¦ »ý¼ºÇÒ¶§ client(Socket)°ú ois(BufferReader)¸¦
-            //ÀÎÀÚ·Î ³Ö¾îÁà¼­ °´Ã¼¸¦ »ý¼ºÇÏ°í rt¿¡ ´ëÀÔ
+			rt = new ReceiveDataThread(client, ois);
+			// ReceiveDataThread ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ client(Socket)ï¿½ï¿½ ois(BufferReader)ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ö¾ï¿½ï¿½à¼­ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ rtï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			Thread t = new Thread(rt);
-            //Thread °´Ã¼¸¦ »ý¼ºÇÒ¶§ ReceiveDateThread¸¦ ÀÎÀÚ·Î ³Ö¾îÁÖ°í »ý¼º ÈÄ¿¡
-            //Thread º¯¼ö t¿¡ ´ëÀÔ
-			t.start(); 
-            //¾²·¹µå ½ÃÀÛ
+			// Thread ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ ReceiveDateThreadï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ö¾ï¿½ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½
+			// Thread ï¿½ï¿½ï¿½ï¿½ tï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			t.start();
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			while(true){
-            //¹«ÇÑ ¹Ýº¹
+			while (true) {
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
 				sendData = read.readLine();
-                //Å°º¸µå ÀÔ·ÂÀ» ¹Þ¾Æ¼­ sendData¿¡ ´ëÀÔ
+				// Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ sendDataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-				oos.println( sendData );
-               //oos(PrintWriter)ÀÇ printlnÇÔ¼ö¸¦ sendData(¹®ÀÚ¿­)À» ³Ö¾î¼­ È£Ãâ
-               //PrintWriter¿¡ sendDate(¹®ÀÚ¿­)ÀÌ ´ã±ä´Ù.
+				oos.println(sendData);
+				// oos(PrintWriter)ï¿½ï¿½ printlnï¿½Ô¼ï¿½ï¿½ï¿½ sendData(ï¿½ï¿½ï¿½Ú¿ï¿½)ï¿½ï¿½ ï¿½Ö¾î¼­ È£ï¿½ï¿½
+				// PrintWriterï¿½ï¿½ sendDate(ï¿½ï¿½ï¿½Ú¿ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 				oos.flush();
-                //oos(PrintWriter)ÀÇ ÇÔ¼ö flush()¸¦ È£ÃâÇÑ´Ù.
-            	//flushÇÔ¼ö¸¦ È£ÃâÇÏ¸é PrintWirter¿¡ ´ã°ÜÀÖ´ø 
-            	//¹®ÀÚ¿­À» ¿¬°áµÈ SocketÀ» ÅëÇØ Àü¼ÛÇÏ°Ô µÈ´Ù.
+				// oos(PrintWriter)ï¿½ï¿½ ï¿½Ô¼ï¿½ flush()ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ñ´ï¿½.
+				// flushï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ PrintWirterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
+				// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Socketï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½È´ï¿½.
 
-				if(sendData.equals( "/quit") ) { 
-                //sendData(¹®ÀÚ¿­)dl /quitÀÌ¸é ¾Æ·¡ ¸í·É¾î ½ÇÇà
-					endflag = true; //Âü°ÅÁþ º¯¼ö endflag¿¡ true¸¦ ´ëÀÔ
-					break;// ¹Ýº¹¹® Å»Ãâ
+				if (sendData.equals("/quit")) {
+					// sendData(ï¿½ï¿½ï¿½Ú¿ï¿½)dl /quitï¿½Ì¸ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½É¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+					endflag = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ endflagï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+					break;// ï¿½Ýºï¿½ï¿½ï¿½ Å»ï¿½ï¿½
 				}
 			}
-			System.out.print("Å¬¶óÀÌÆ®ÀÇ Á¢¼ÓÀ» Á¾·áÇÕ´Ï´Ù. ");//Ãâ·Â
-			System.exit( 0 );//ÇÁ·Î±×·¥ Á¾·á
-		} catch(Exception e){  //¿¹¿ÜÃ³¸®½Ã ½ÇÇà
-			if(!endflag) e.printStackTrace();//¿¹¿ÜÃ³¸®½Ã Ãâ·Â
-		}
-		finally{
-        //À§¿¡ try catch ¾î¶²»óÈ²ÀÌµç ´Ù³¡³ª¸é ½ÇÇà
-			try{//½ÃµµÇÏ´Ù.
+			System.out.print("Å¬ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ");// ï¿½ï¿½ï¿½
+			System.exit(0);// ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½
+		} catch (Exception e) { // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if (!endflag)
+				e.printStackTrace();// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		} finally {
+			// ï¿½ï¿½ï¿½ï¿½ try catch ï¿½î¶²ï¿½ï¿½È²ï¿½Ìµï¿½ ï¿½Ù³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			try {// ï¿½Ãµï¿½ï¿½Ï´ï¿½.
 				ois.close();
-                //BufferReader °´Ã¼ ois close()
+				// BufferReader ï¿½ï¿½Ã¼ ois close()
 				oos.close();
-                //PrintWriter °´Ã¼ oos close()
+				// PrintWriter ï¿½ï¿½Ã¼ oos close()
 				client.close();
-                //Socket °´Ã¼ client close()
-                
-				System.exit(0); //ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.
-                
-			}catch(IOException e2){//¿¹¿ÜÃ³¸®½Ã ½ÇÇà(IOException½Ã)
-				e2.printStackTrace();//¿¹¿ÜÃ³¸®½Ã Ãâ·Â
+				// Socket ï¿½ï¿½Ã¼ client close()
+
+				System.exit(0); // ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+
+			} catch (IOException e2) {// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(IOExceptionï¿½ï¿½)
+				e2.printStackTrace();// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			}
 		}
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in); //½ºÄ³³Ê ÀÔ·Â
-		System.out.print("¾ÆÀÌµð¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");//Ãâ·Â
-		String id = sc.next();//ÀÔ·Â ¹Þ±â
-		new MainClient(id, "¼­¹ö IP");
-        //MainClient°´Ã¼ »ý¼º½Ã ¹®ÀÚ¿­ 2°³¸¦ ³Ö¾î¼­ °´Ã¼¸¦ »ý¼º(id, ip)
+		Scanner sc = new Scanner(System.in); // ï¿½ï¿½Ä³ï¿½ï¿½ ï¿½Ô·ï¿½
+		System.out.print("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");// ï¿½ï¿½ï¿½
+		String id = sc.next();// ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
+		new MainClient(id, "ï¿½ï¿½ï¿½ï¿½ IP");
+		// MainClientï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(id, ip)
 	}
 }

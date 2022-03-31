@@ -1,190 +1,159 @@
-package day23;
+package academy.day23;
 
 import java.util.Random;
 
-class Terran1
-{
+class Terran1 {
 	Unit1[] u = new Unit1[10];
 	A[] sm = new A[2];
-	
+
 	public Terran1() {
 		// TODO Auto-generated constructor stub
 		Random r = new Random();
-		
-		for(int i =0;i<u.length;i++)
-		{
+
+		for (int i = 0; i < u.length; i++) {
 			u[i] = (r.nextInt(2) == 0) ? new Marine1() : new Tank1();
 		}
-		
-		sm[0]= new SCV1();
-		sm[1]= new Medic1();
-		
+
+		sm[0] = new SCV1();
+		sm[1] = new Medic1();
+
 	}
-	
-	boolean check()
-	{
-		for(int i =0;i<u.length;i++)
-		{
-			if(u[i] != null)
-			{
+
+	boolean check() {
+		for (int i = 0; i < u.length; i++) {
+			if (u[i] != null) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
-	
+
 }
 
-interface A
-{
+interface A {
 	void handR(Unit1 u);
 }
 
-class Unit1
-{
+class Unit1 {
 	private String name;
 	private int hp;
 	private int attack;
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getHp() {
 		return hp;
 	}
+
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
+
 	public int getAttack() {
 		return attack;
 	}
+
 	public void setAttack(int attack) {
 		this.attack = attack;
 	}
 
 }
 
-interface Heal1
-{
+interface Heal1 {
 
 }
-interface Repair1
-{
+
+interface Repair1 {
 
 }
-class Marine1 extends Unit1 implements Heal1
-{
-	// ¸¶¸° ¼¼ÆÃ ÀÌ¸§, hp, attack
-	Marine1()
-	{
-		super.setName("¸¶¸°");
+
+class Marine1 extends Unit1 implements Heal1 {
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½, hp, attack
+	Marine1() {
+		super.setName("ï¿½ï¿½ï¿½ï¿½");
 		super.setHp(50);
 		super.setAttack(6);
 	}
-	// °ø°Ý
-	void shootAttack(Unit1 u)
-	{
-		if(u != null)
-		{
-			u.setHp(u.getHp()-super.getAttack());
-			System.out.println(u.getName()+ "ÀÇ ¿¡³ÊÁö°¡ "+ u.getHp() + "ÀÔ´Ï´Ù.");
-		}
-		else
-		{
-			System.out.println("ÀÌ¹Ì Á×¾îÀÖ½À´Ï´Ù.");
+
+	// ï¿½ï¿½ï¿½ï¿½
+	void shootAttack(Unit1 u) {
+		if (u != null) {
+			u.setHp(u.getHp() - super.getAttack());
+			System.out.println(u.getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + u.getHp() + "ï¿½Ô´Ï´ï¿½.");
+		} else {
+			System.out.println("ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 
 }
-class Tank1 extends Unit1 implements Repair1
-{
-	// ÅÊÅ© ¼¼ÆÃ ÀÌ¸§, hp, attack
+
+class Tank1 extends Unit1 implements Repair1 {
+	// ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½, hp, attack
 	Tank1() {
-		super.setName("ÅÊÅ©");
+		super.setName("ï¿½ï¿½Å©");
 		super.setHp(45);
 		super.setAttack(4);
 	}
-	// °ø°Ý
-	void shootAttack(Unit1[] u, int index)
-	{
-		for(int i = index+1;i>=index-1;i--)
-		{
-			if(!(i < 0 || i >= 10))
-			{
-				if(u[i] != null)
-				{
-					u[i].setHp(u[i].getHp()-super.getAttack());
-					System.out.println(u[i].getName()+ "ÀÇ ¿¡³ÊÁö°¡ "+ u[i].getHp() + "ÀÔ´Ï´Ù.");
-					if(u[i].getHp()<=0)
-					{
+
+	// ï¿½ï¿½ï¿½ï¿½
+	void shootAttack(Unit1[] u, int index) {
+		for (int i = index + 1; i >= index - 1; i--) {
+			if (!(i < 0 || i >= 10)) {
+				if (u[i] != null) {
+					u[i].setHp(u[i].getHp() - super.getAttack());
+					System.out.println(u[i].getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + u[i].getHp() + "ï¿½Ô´Ï´ï¿½.");
+					if (u[i].getHp() <= 0) {
 						u[i] = null;
 					}
-				}
-				else
-				{
-					System.out.println("ÀÌ¹Ì Á×¾îÀÖ½À´Ï´Ù.");
+				} else {
+					System.out.println("ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 				}
 			}
 		}
 	}
 }
 
-class Medic1 implements A
-{
-	
-	public void handR(Unit1 u)
-	{
-		if(u != null)
-		{
-			if(u instanceof Marine1)
-			{
-				u.setHp(u.getHp()+5);
-				if(u.getHp()>50)
-				{
+class Medic1 implements A {
+
+	public void handR(Unit1 u) {
+		if (u != null) {
+			if (u instanceof Marine1) {
+				u.setHp(u.getHp() + 5);
+				if (u.getHp() > 50) {
 					u.setHp(50);
 				}
-				System.out.println("¸ÅµñÀÌ" + u.getName()+"ÀÇ ¿¡³ÊÁö¸¦ "+u.getHp()+"·Î Ä¡·á¸¦ Çß½À´Ï´Ù.");
+				System.out.println("ï¿½Åµï¿½ï¿½ï¿½" + u.getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + u.getHp() + "ï¿½ï¿½ Ä¡ï¿½á¸¦ ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+			} else {
+				System.out.println("ï¿½ï¿½Å©ï¿½ï¿½ Ä¡ï¿½á¸¦ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-			else
-			{
-				System.out.println("ÅÊÅ©¶ó Ä¡·á¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			}
-		}
-		else
-		{
-			System.out.println("ÀÌ¹Ì Á×¾ú½À´Ï´Ù.");
+		} else {
+			System.out.println("ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
-	
+
 }
 
-class SCV1 implements A
-{
-	//¸®Æä¾î
-	public void handR(Unit1 u)
-	{
-		if(u != null)
-		{
-			if(u instanceof Tank1)
-			{
-				u.setHp(u.getHp()+5);
-				if(u.getHp()>45)
-				{
+class SCV1 implements A {
+	// ï¿½ï¿½ï¿½ï¿½ï¿½
+	public void handR(Unit1 u) {
+		if (u != null) {
+			if (u instanceof Tank1) {
+				u.setHp(u.getHp() + 5);
+				if (u.getHp() > 45) {
 					u.setHp(45);
 				}
-				System.out.println("SCV°¡" + u.getName()+"ÀÇ ¿¡³ÊÁö¸¦ "+u.getHp()+"·Î ¼ö¸®¸¦ Çß½À´Ï´Ù.");
+				System.out.println("SCVï¿½ï¿½" + u.getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + u.getHp() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+			} else {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-			else
-			{
-				System.out.println("¸¶¸°ÀÌ¶ó ¼ö¸®¸¦ ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			}
-		}
-		else
-		{
-			System.out.println("ÀÌ¹Ì Á×¾ú½À´Ï´Ù.");
+		} else {
+			System.out.println("ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }
@@ -195,91 +164,72 @@ public class Q48_teacher {
 		// TODO Auto-generated method stub
 
 		Terran1[] t = new Terran1[2];
-		
-		for(int i = 0;i<t.length;i++)
-		{
+
+		for (int i = 0; i < t.length; i++) {
 			t[i] = new Terran1();
 		}
-		
-		// 1. °ø°Ý 2. Èú¶Ç´Â ¼ö¸® 3. null Ã¼Å© 4. marine ¿¡³ÊÁö¸¦ È®ÀÎÇØ¼­ null set
-		
+
+		// 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ 3. null Ã¼Å© 4. marine ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ø¼ï¿½ null set
+
 		int turn = 1;
-		
+
 		Random r = new Random();
-		
-		while(true)
-		{
+
+		while (true) {
 			int attck = r.nextInt(10);
 			int horR = r.nextInt(10);
 			int def = r.nextInt(10);
 			int selSM = r.nextInt(2);
-			
-			System.out.println("ÅÏ : "+ turn + "ÀÔ´Ï´Ù.");
-			
-			if(turn % 2 == 1)
-			{
-				System.out.println("ÆÀ1 °ø°Ý");
-				if(t[0].u[attck] instanceof Marine1)
-				{
-					Marine1 m=(Marine1)t[0].u[attck];
+
+			System.out.println("ï¿½ï¿½ : " + turn + "ï¿½Ô´Ï´ï¿½.");
+
+			if (turn % 2 == 1) {
+				System.out.println("ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½");
+				if (t[0].u[attck] instanceof Marine1) {
+					Marine1 m = (Marine1) t[0].u[attck];
 					m.shootAttack(t[1].u[def]);
-					
-					if(t[1].u[def]!=null&&t[1].u[def].getHp() <= 0)
-					{
+
+					if (t[1].u[def] != null && t[1].u[def].getHp() <= 0) {
 						t[1].u[def] = null;
-					}		
+					}
 					t[0].sm[selSM].handR(t[0].u[horR]);
-					
-				}
-				else
-				{
-					System.out.println("ÆÀ2 °ø°Ý");
-					Tank1 tank=(Tank1)t[0].u[attck];
-					if(tank != null)
-					{
-						tank.shootAttack(t[1].u,def);
+
+				} else {
+					System.out.println("ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½");
+					Tank1 tank = (Tank1) t[0].u[attck];
+					if (tank != null) {
+						tank.shootAttack(t[1].u, def);
 					}
 					t[0].sm[selSM].handR(t[0].u[horR]);
 				}
-				
-				
-			}
-			else
-			{
-				if(t[1].u[attck] instanceof Marine1)
-				{
-					Marine1 m=(Marine1)t[1].u[attck];
+
+			} else {
+				if (t[1].u[attck] instanceof Marine1) {
+					Marine1 m = (Marine1) t[1].u[attck];
 					m.shootAttack(t[0].u[def]);
-					
-					if(t[0].u[def]!=null &&t[0].u[def].getHp() <= 0)
-					{
+
+					if (t[0].u[def] != null && t[0].u[def].getHp() <= 0) {
 						t[0].u[def] = null;
 					}
 					t[1].sm[selSM].handR(t[1].u[horR]);
-				}
-				else
-				{
-					Tank1 tank=(Tank1)t[1].u[attck];
-					if(tank != null)
-					{
-						tank.shootAttack(t[0].u,def);
+				} else {
+					Tank1 tank = (Tank1) t[1].u[attck];
+					if (tank != null) {
+						tank.shootAttack(t[0].u, def);
 					}
 					t[1].sm[selSM].handR(t[1].u[horR]);
 				}
 			}
-			
-			
-			if(t[0].check())
-			{
-				System.out.println("Å×¶õ 2ÆÀÀÌ ½Â¸®Çß½À´Ï´Ù.");
+
+			if (t[0].check()) {
+				System.out.println("ï¿½×¶ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				break;
 			}
-			if(t[1].check())
-			{
-				System.out.println("Å×¶õ 1ÆÀÀÌ ½Â¸®Çß½À´Ï´Ù.");
+			if (t[1].check()) {
+				System.out.println("ï¿½×¶ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				break;
 			}
-			
+
 			turn++;
 		}
 	}

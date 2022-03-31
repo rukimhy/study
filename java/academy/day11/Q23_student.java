@@ -1,117 +1,113 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q23_student {
-	public static int Random () 
-	{
-		Random r = new Random();   
-		int a,b,c;
-		while(true) 
-		{
+	public static int Random() {
+		Random r = new Random();
+		int a, b, c;
+		while (true) {
 			a = r.nextInt(10);
 			b = r.nextInt(10);
 			c = r.nextInt(10);
-			if(a == 0)
-			{//ran1ÀÇ°ªÀÌ 0ÀÌ¸é ´Ù½Ã ·£´ý
+			if (a == 0) {// ran1ï¿½Ç°ï¿½ï¿½ï¿½ 0ï¿½Ì¸ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				a = r.nextInt(10);
-			}
-			else if(b==a || b==c || b == 0) 
-			{//ran2ÀÇ°ªÀÌ 0,ran2°¡ ran1 ran3°ú °°´Ù¸é ran2 ´Ù½Ã ·£´ý
+			} else if (b == a || b == c || b == 0) {// ran2ï¿½Ç°ï¿½ï¿½ï¿½ 0,ran2ï¿½ï¿½ ran1 ran3ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ran2 ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				b = r.nextInt(10);
-			}else if(c==a || c ==b || c == 0) 
-			{//ran3ÀÇ°ªÀÌ 0,ran3°¡ ran2 ran1°ú °°´Ù¸é ran3 ´Ù½Ã ·£´ý
+			} else if (c == a || c == b || c == 0) {// ran3ï¿½Ç°ï¿½ï¿½ï¿½ 0,ran3ï¿½ï¿½ ran2 ran1ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ran3 ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				c = r.nextInt(10);
-			}else 
-			{ //°¢°¢ ¼ýÀÚ°¡ ´Ù ´Ù¸¦°æ¿ì while Å»Ãâ
+			} else { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ while Å»ï¿½ï¿½
 				break;
-			}	
+			}
 		}
-		System.out.println("·£´ý"+a+""+b+""+c);
-		
-		int RAN = (100*a)+(10*b)+c;
+		System.out.println("ï¿½ï¿½ï¿½ï¿½" + a + "" + b + "" + c);
+
+		int RAN = (100 * a) + (10 * b) + c;
 		return RAN;
 	}
-	public static int num01 () 
-	{	
+
+	public static int num01() {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Ã¹¹øÂ°¼ýÀÚ ÀÔ·Â:");
+
+		System.out.println("Ã¹ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½:");
 		int num1 = sc.nextInt();
-		
+
 		return num1;
 	}
-	public static int num02 () 
-	{	
+
+	public static int num02() {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("µÎ¹øÂ°¼ýÀÚ ÀÔ·Â:");
+
+		System.out.println("ï¿½Î¹ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½:");
 		int num2 = sc.nextInt();
-		
+
 		return num2;
 	}
-	public static int num03 () 
-	{	
+
+	public static int num03() {
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("¼¼¹øÂ°¼ýÀÚ ÀÔ·Â:");
+
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½:");
 		int num3 = sc.nextInt();
-		
+
 		return num3;
 	}
 
-	public static void game (int a,int b,int c) 
-	{
+	public static void game(int a, int b, int c) {
 		Scanner sc = new Scanner(System.in);
-		
-		while(true) 
-		{			
-			
-			int num1 = num01();	
+
+		while (true) {
+
+			int num1 = num01();
 			int num2 = num02();
 			int num3 = num03();
 			int strike = 0;
 			int ball = 0;
-			if(num1 == num2 ||num2 == num3 ||num1 == num3 ) {//°°Àº ¼ýÀÚÀÇ ÀÔ·ÂÀÌ µé¾î¿ÔÀ»¶§ ´Ù½ÃÀÔ·Â
-				System.out.println("°¢°¢ ´Ù¸¥¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			if (num1 == num2 || num2 == num3 || num1 == num3) {// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ï¿½Ô·ï¿½
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
 				continue;
 			}
-			//¼ýÀÚ´Â °°Áö¸¸ ÀÚ¸®¼ö°¡ ´Ù¸¥°æ¿ì
-			if(a == num2 || a == num3){ball++;}
-			if(b == num1 || b == num3){ball++;}
-			if(c == num1 || c == num2){ball++;}
-			//¼ýÀÚ¿Í ÀÚ¸®°¡ ¸ðµÎ°°Àº°æ¿ì
-			if(a == num1){strike++;}
-			if(b == num2){strike++;}
-			if(c == num3){strike++;}
-			if(strike==3) {
-				System.out.println("È¨·±ÀÔ´Ï´Ù.");
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
-				break;
-			}else if(strike == 0 && ball == 0){
-				System.out.println("¾Æ¿ôÀÔ´Ï´Ù.");
+			// ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½
+			if (a == num2 || a == num3) {
+				ball++;
 			}
-			else {
-				System.out.println(strike+"½ºÆ®¶óÀÌÅ©"+ball+"º¼");
+			if (b == num1 || b == num3) {
+				ball++;
+			}
+			if (c == num1 || c == num2) {
+				ball++;
+			}
+			// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if (a == num1) {
+				strike++;
+			}
+			if (b == num2) {
+				strike++;
+			}
+			if (c == num3) {
+				strike++;
+			}
+			if (strike == 3) {
+				System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+				break;
+			} else if (strike == 0 && ball == 0) {
+				System.out.println("ï¿½Æ¿ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				System.out.println(strike + "ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½Å©" + ball + "ï¿½ï¿½");
 			}
 		}
-	
 
 	}
 
-
 	public static void main(String[] args) {
-			
+
 		int ran = Random();
 		int ran1 = ran / 100;
-		int ran2 = (ran-(ran1*100))/ 10;
-		int ran3 = (ran-((100*ran1)+(10*ran2)));	
-		game(ran1,ran2,ran3);
-		
-		
-
-
+		int ran2 = (ran - (ran1 * 100)) / 10;
+		int ran3 = (ran - ((100 * ran1) + (10 * ran2)));
+		game(ran1, ran2, ran3);
 
 	}
 }

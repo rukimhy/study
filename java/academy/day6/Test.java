@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 public class Test {
 
@@ -7,8 +7,8 @@ public class Test {
 		String[] str = new String[5];
 		str[0] = "12345";
 		str[1] = "23456";
-		
-		for(int i=0; i<str.length; i++) {
+
+		for (int i = 0; i < str.length; i++) {
 			System.out.println(str[i]);
 		}
 	}

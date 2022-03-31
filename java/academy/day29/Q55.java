@@ -1,5 +1,5 @@
-package day29;
-//GUI ¼ýÀÚ¾ß±¸°ÔÀÓ ¸¸µé±â
+package academy.day29;
+//GUI ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,232 +19,213 @@ import javax.swing.JTextField;
 
 class Game {
 	int cpu[] = new int[3];
-	int user[] = new int[] {123, 124, 125};
+	int user[] = new int[] { 123, 124, 125 };
 	int strike, ball;
-	
-	//cpu ·£´ý ¼ýÀÚ ±¸Çö
-	public void randomCpu() 
-	{
+
+	// cpu ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void randomCpu() {
 		Random r = new Random();
 
-		while(true) 
-		{
-			for(int i=0; i<3; i++) 
-			{
-				cpu[i] = r.nextInt(9)+1;
+		while (true) {
+			for (int i = 0; i < 3; i++) {
+				cpu[i] = r.nextInt(9) + 1;
 			}
-			if(cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2]) break;
+			if (cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2])
+				break;
 		}
 	}
 
-	//user 3°³ ÀÔ·Â ±¸Çö
-	public void input() 
-	{
+	// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void input() {
 		Scanner scan = new Scanner(System.in);
 
-	//	System.out.println("¼­·Î ´Ù¸¥ ¼ýÀÚ 3°³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		// System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
 
-		for(int i=0; i<3; i++) 
-		{
-	//		System.out.print(i+1+"¹øÂ° ¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		for (int i = 0; i < 3; i++) {
+			// System.out.print(i+1+"ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 			user[i] = scan.nextInt();
 
-			while(true) 
-			{
-				if(!(user[i] >= 1 && user[i] <=9)) 
-				{
-	//				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-	//				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			while (true) {
+				if (!(user[i] >= 1 && user[i] <= 9)) {
+					// System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					// System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					user[i] = scan.nextInt();
-				} 
-				else if(user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) 
-				{
-	//				System.out.println("°°Àº ¼ýÀÚ´Â ÀÔ·ÂÇÏ¸é ¾ÈµË´Ï´Ù.");
-	//				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				} else if (user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) {
+					// System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµË´Ï´ï¿½.");
+					// System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					user[i] = scan.nextInt();
-				} 
-				else break;
+				} else
+					break;
 			}
 		}
 	}
 
-	//°ÔÀÓ ±¸Çö
-	public void output() 
-	{
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void output() {
 		randomCpu();
-		//while(true) 
-		//{
-			System.out.println();
-			//user 3°³ ÀÔ·Â ±¸Çö
+		// while(true)
+		// {
+		System.out.println();
+		// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			//°ÔÀÓ ±¸Çö
-			strike = 0;
-			ball = 0;
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		strike = 0;
+		ball = 0;
 
-			for(int i = 0; i < 3; i++) 
-			{
-				if(user[i] == cpu[i]) strike ++;
-			}
+		for (int i = 0; i < 3; i++) {
+			if (user[i] == cpu[i])
+				strike++;
+		}
 
-			if(user[0] == cpu[1] || user[0] == cpu[2])
-			{
-				ball++;
-			}
-			if(user[1] == cpu[0] || user[1] == cpu[2])
-			{
-				ball++;
-			}
-			if(user[2] == cpu[0] || user[2] == cpu[1])
-			{
-				ball++;
-			}
+		if (user[0] == cpu[1] || user[0] == cpu[2]) {
+			ball++;
+		}
+		if (user[1] == cpu[0] || user[1] == cpu[2]) {
+			ball++;
+		}
+		if (user[2] == cpu[0] || user[2] == cpu[1]) {
+			ball++;
+		}
 
-			if(strike == 3)
-			{
-				//System.out.println("È¨·±ÀÔ´Ï´Ù.");
-				//break;
-			}
-			else if(strike == 0 && ball == 0)
-			{
-				//System.out.println("outÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				//System.out.println("Strike :"+strike+" // "+"Ball : "+ball+"ÀÔ´Ï´Ù.");
-			}
+		if (strike == 3) {
+			// System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			// break;
+		} else if (strike == 0 && ball == 0) {
+			// System.out.println("outï¿½Ô´Ï´ï¿½.");
+		} else {
+			// System.out.println("Strike :"+strike+" // "+"Ball : "+ball+"ï¿½Ô´Ï´ï¿½.");
+		}
 
-		//}
+		// }
 	}
 }
 
-class Layout extends JFrame implements ActionListener{
+class Layout extends JFrame implements ActionListener {
 	Game g = new Game();
 	JTextField jf;
 	Circle p2;
 	int num1, num2, num3;
-	
+
 	public Layout() {
 		g.output();
 		Container ct = getContentPane();
 		ct.setLayout(new BorderLayout());
-		
+
 		JPanel p1 = new JPanel();
-		jf = new JTextField("=== Á¤´ä >> cpu[0]="+g.cpu[0]+" // cpu[1]="+g.cpu[1]+" // cpu[2]="+g.cpu[2]+" ===");
+		jf = new JTextField(
+				"=== ï¿½ï¿½ï¿½ï¿½ >> cpu[0]=" + g.cpu[0] + " // cpu[1]=" + g.cpu[1] + " // cpu[2]=" + g.cpu[2] + " ===");
 		p1.add(jf);
 		ct.add(p1, BorderLayout.NORTH);
-		
+
 		p2 = new Circle();
 		p2.setLayout(new FlowLayout());
 		ct.add(p2, BorderLayout.CENTER);
-		
+
 		JPanel p3 = new JPanel();
 		p3.setLayout(new GridLayout(4, 2, 10, 10));
-		for(int i = 1; i <= 8; i++) {
-			if(i == 1) {
-				p3.add(new JButton("¼ýÀÚ 1"));
-			} else if(i == 2) {
-				p3.add(new JButton("¹öÆ°"+i));
-			} else if(i == 3) {
-				p3.add(new JButton("¼ýÀÚ 2"));
-			} else if(i == 4) {
-				p3.add(new JButton("¹öÆ°"+i));
-			} else if(i == 5) {
-				p3.add(new JButton("¼ýÀÚ 3"));
-			} else if(i == 6) {
-				p3.add(new JButton("¹öÆ°"+i));
-			} else if(i == 7) {
-				
-			} else if(i == 8) {
-				p3.add(new JButton("ÀÔ·Â"));
+		for (int i = 1; i <= 8; i++) {
+			if (i == 1) {
+				p3.add(new JButton("ï¿½ï¿½ï¿½ï¿½ 1"));
+			} else if (i == 2) {
+				p3.add(new JButton("ï¿½ï¿½Æ°" + i));
+			} else if (i == 3) {
+				p3.add(new JButton("ï¿½ï¿½ï¿½ï¿½ 2"));
+			} else if (i == 4) {
+				p3.add(new JButton("ï¿½ï¿½Æ°" + i));
+			} else if (i == 5) {
+				p3.add(new JButton("ï¿½ï¿½ï¿½ï¿½ 3"));
+			} else if (i == 6) {
+				p3.add(new JButton("ï¿½ï¿½Æ°" + i));
+			} else if (i == 7) {
+
+			} else if (i == 8) {
+				p3.add(new JButton("ï¿½Ô·ï¿½"));
 			}
-			
+
 		}
 		ct.add(p3, BorderLayout.SOUTH);
-		
-		setTitle("¼ýÀÚ¾ß±¸°ÔÀÓ");
+
+		setTitle("ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½");
 		setSize(800, 800);
 		setVisible(true);
 	}
-	
-	public void actionPerformed(ActionEvent e)
-	{
-	
+
+	public void actionPerformed(ActionEvent e) {
+
 	}
 }
 
-class Circle extends JPanel
-{
+class Circle extends JPanel {
 	int select = -1;
-	
-	public void paintComponent(Graphics g)
-	{
+
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if(select == -1) {
+		if (select == -1) {
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		} else if(select == 0) {
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 0) {
 			g.setColor(Color.RED);
-			g.fillOval(150,100,80,80);
+			g.fillOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		} else if(select == 1) {
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 1) {
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.fillOval(70,190,80,80);
+			g.fillOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		} else if(select == 2) {
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 2) {
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.fillOval(220,190,80,80);
+			g.fillOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		} else if(select == 3) {
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 3) {
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.fillOval(100,300,80,80);
+			g.fillOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		} else if(select == 4) {
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 4) {
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.fillOval(210,300,80,80);
+			g.fillOval(210, 300, 80, 80);
 		}
 	}
 }

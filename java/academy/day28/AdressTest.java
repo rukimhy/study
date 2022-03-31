@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -7,12 +7,12 @@ public class AdressTest {
 
 	public static void main(String[] args) throws UnknownHostException {
 		InetAddress Address = InetAddress.getLocalHost();
-		System.out.println("·ÎÄÃ ÄÄÇ»ÅÍÀÇ ÀÌ¸§ : "+ Address.getHostName());
-		System.out.println("·ÎÄÃ ÄÄÇ»ÅÍÀÇ IP ÁÖ¼Ò : "+ Address.getHostAddress());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ : " + Address.getHostName());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ IP ï¿½Ö¼ï¿½ : " + Address.getHostAddress());
 		Address = InetAddress.getByName("java.sun.com");
-		System.out.println("java.sun.comÀÇ ÄÄÇ»ÅÍ ÀÌ¸§°ú IP ÁÖ¼Ò : "+ Address);
+		System.out.println("java.sun.comï¿½ï¿½ ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ IP ï¿½Ö¼ï¿½ : " + Address);
 		InetAddress all[] = InetAddress.getAllByName("www.naver.com");
-		for(int i = 0; i<all.length; i++) {
+		for (int i = 0; i < all.length; i++) {
 			System.out.println(all[i]);
 		}
 	}

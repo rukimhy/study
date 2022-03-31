@@ -1,4 +1,4 @@
-package day12;
+package academy.day12;
 
 public class StudentView {
 
@@ -6,12 +6,12 @@ public class StudentView {
 		// TODO Auto-generated method stub
 		Student s = new Student();
 		Student s1 = new Student();
-		
-		s.studentName = "È«±æµ¿";
-		s.address = "ÁÖ¾È";
-		s1.studentName = "È£¶ûÀÌ";
-		s1.address = "ºÎÆò";
-		
+
+		s.studentName = "È«ï¿½æµ¿";
+		s.address = "ï¿½Ö¾ï¿½";
+		s1.studentName = "È£ï¿½ï¿½ï¿½ï¿½";
+		s1.address = "ï¿½ï¿½ï¿½ï¿½";
+
 		s.showStudentInfo();
 		s1.showStudentInfo();
 	}

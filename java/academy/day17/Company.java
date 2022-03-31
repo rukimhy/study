@@ -1,12 +1,13 @@
-package day17;
+package academy.day17;
 
 public class Company {
 	private static Company instance = new Company();
-	
-	private Company() {}
-	
+
+	private Company() {
+	}
+
 	public static Company getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new Company();
 		}
 		return instance;

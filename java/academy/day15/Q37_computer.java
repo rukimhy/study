@@ -1,14 +1,14 @@
-package day15;
+package academy.day15;
 
 import java.util.Scanner;
 
-class Computer{
+class Computer {
 	String maker;
 	String type;
 	int price;
 
 	void output() {
-		System.out.println("Á¦Á¶»ç°¡ "+maker+"ÀÌ°í, "+type+" CPU ÄÄÇ»ÅÍ¸¦ »ç¿ëÇÑ´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + maker + "ï¿½Ì°ï¿½, " + type + " CPU ï¿½ï¿½Ç»ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.");
 	}
 }
 
@@ -18,31 +18,31 @@ class AirConditioner {
 	int price;
 
 	void output() {
-		System.out.println("Á¦Á¶»ç°¡ "+maker+"ÀÌ°í, "+type+" ¿¡¾îÄÁÀ» »ç¿ëÇÑ´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + maker + "ï¿½Ì°ï¿½, " + type + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.");
 	}
 }
 
-class Refrigerator{
+class Refrigerator {
 	String maker;
 	String type;
 	int liter;
 	int price;
 
 	void output() {
-		System.out.println("Á¦Á¶»ç°¡ "+maker+"ÀÌ°í, "+type+", "+liter+"L ³ÃÀå°í°¡ ½ÄÇ°À» °ü¸®ÇÑ´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + maker + "ï¿½Ì°ï¿½, " + type + ", " + liter + "L ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.");
 	}
 }
 
-class AirCleaner{
+class AirCleaner {
 	String maker;
 	int price;
 
 	void output() {
-		System.out.println("Á¦Á¶»ç°¡ "+maker+"ÀÎ °ø±âÃ»Á¤±â°¡ °ø±â¸¦ ±ú²ýÇÏ°Ô ÇÑ´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ " + maker + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ñ´ï¿½.");
 	}
 }
 
-class Buyer{
+class Buyer {
 	int money;
 	Computer[] computer = new Computer[10];
 	AirConditioner[] air_conditioner = new AirConditioner[10];
@@ -53,31 +53,39 @@ class Buyer{
 public class Q37_computer {
 
 	public static void main(String[] args) {
-		/* ÄÄÇ»ÅÍ - Á¦Á¶»ç, CPU, °¡°Ý, ±â´É("Á¦Á¶»ç°¡ XXXÀÌ°í, XXX CPU ÄÄÇ»ÅÍ¸¦ »ç¿ëÇÑ´Ù.")
-		 * ¿¡¾îÄÁ - Á¦Á¶»ç, Á¾·ù, °¡°Ý, ±â´É("Á¦Á¶»ç°¡ XXXÀÌ°í, XXÇü ¿¡¾îÄÁÀ» »ç¿ëÇÑ´Ù.")
-		 * ³ÃÀå°í - Á¦Á¶»ç, ¹®, ¸®ÅÍ, °¡°Ý, ±â´É("Á¦Á¶»ç°¡ XXXÀÌ°í, XXÇü, ¸îL ³ÃÀå°í°¡ ½ÄÇ°À» °ü¸®ÇÑ´Ù.")
-		 * °ø±âÃ»Á¤±â - Á¦Á¶»ç, °¡°Ý, ±â´É("Á¦Á¶»ç°¡ XXXÀÎ °ø±âÃ»Á¤±â°¡ °ø±â¸¦ ±ú²ýÇÏ°Ô ÇÑ´Ù.")
-		 *  
-		 * ¸ÅÀå
-		 * ÄÄÇ»ÅÍ 10°³°¡ ÀÖ´Ù. 5°³´Â »ï¼º, i7, 200¿ø / 5°³´Â LG, i5, 150¿ø
-		 * ¿¡¾îÄÁ 10´ë°¡ ÀÖ´Ù. 5°³´Â º®°ÉÀÌ, »ï¼º, 100¿ø / 5°³´Â ½ºÅÄµå, LG, 250¿ø
-		 * ³ÃÀå°í 10´ë°¡ ÀÖ´Ù. 5°³´Â »ï¼º, ¾ç¹®, 600L, 200¿ø / 5°³´Â LG, 4µµ¾î, 800L, 350¿ø
-		 * °ø±âÃ»Á¤±â 10´ë°¡ ÀÖ´Ù. 5°³´Â LG, 80¿ø / 5°³´Â ´ÙÀÌ½¼, 60¿ø
+		/*
+		 * ï¿½ï¿½Ç»ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, CPU, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ XXXï¿½Ì°ï¿½, XXX CPU ï¿½ï¿½Ç»ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.")
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ XXXï¿½Ì°ï¿½, XXï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.")
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½,
+		 * ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ XXXï¿½Ì°ï¿½, XXï¿½ï¿½, ï¿½ï¿½L ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.")
+		 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½ï¿½ç°¡ XXXï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ñ´ï¿½.")
 		 * 
-		 * ¹ÙÀÌ¾î - µ·, 10°³ ´ã´Â ÄÄÇ»ÅÍ, ¿¡¾îÄÁ, ³ÃÀå°í, °ø±âÃ»Á¤±â ¹è¿­
-		 * ¹ÙÀÌ¾î´Â ÃÑ 3¸íÀÌ ÀÖ´Ù. ¹ÙÀÌ¾î´Â °¢°¢ µ·À» ÀÔ·Â¹Þ¾Æ¼­ µ·À» °¡Áö°í ÀÖ°í °ÔÀÓÀÌ ½ÃÀÛµÈ´Ù.
-		 * 3¸íÀÇ ¹ÙÀÌ¾î´Â 1¹øºÎÅÍ ¼øÂ÷ÀûÀ¸·Î ¹°°ÇÀ» »ê´Ù. ÇÏÁö¸¸ ¹ÙÀÌ¾î°¡ µ·ÀÌ 60 ¹Ì¸¸ÀÌ¸é »óÇ°À» ±¸¸ÅÇÒ ¼ö ¾ø±â ¶§¹®¿¡ ±× ´ÙÀ½ ¹ÙÀÌ¾î·Î ³Ñ¾î°£´Ù.
-		 * °ÔÀÓÀÌ ½ÃÀÛ(Ã¹È­¸é) -> XXX ¹ÙÀÌ¾î 1.ÄÄÇ»ÅÍ 2.¿¡¾îÄÁ 3.³ÃÀå°í 4.°ø±âÃ»Á¤±â : (¼ýÀÚ ÀÔ·Â)
-		 * ¼ýÀÚ ÀÔ·ÂÇÏ¸é 1.ÄÄÇ»ÅÍ -> Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(i7) 2.LG(i5) : (¼ýÀÚ ÀÔ·Â)
-		 * 				 2.¿¡¾îÄÁ -> Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(º®°ÉÀÌÇü) 2.LG(½ºÅÄµåÇü) : (¼ýÀÚ ÀÔ·Â)
-		 * 			     3.³ÃÀå°í -> Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(¾ç¹®, 600L) 2.LG(4µµ¾î, 800L) : (¼ýÀÚ ÀÔ·Â)
-		 *               4.°ø±âÃ»Á¤±â -> Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.LG 2.´ÙÀÌ½¼ : (¼ýÀÚ ÀÔ·Â)
-		 * ¹ÙÀÌ¾î°¡ µ·ÀÌ ÀÖ°í Á¦Ç°ÀÌ ÀÖÀ¸¸é ¹ÙÀÌ¾î¿¡ ºñ¾îÀÖ´Â ¹è¿­¿¡ ´ã¾ÆÁÖ¸é µÈ´Ù.
-		 * ¸¸¾à µ·ÀÌ ºÎÁ·ÇÏ¸é "µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù." Ãâ·ÂÇÏ°í ´ÙÀ½ ¹ÙÀÌ¾îÀÇ Ã¹È­¸éÀ¸·Î ÀÌµ¿ÇÑ´Ù.
-		 * ¸¸¾à ¸ÅÀå¿¡ Á¦Ç°ÀÌ ¾ø´Ù¸é "Àç°í°¡ ¾ø½À´Ï´Ù." Ãâ·ÂÇÏ°í ´ÙÀ½ ¹ÙÀÌ¾îÀÇ Ã¹È­¸éÀ¸·Î ÀÌµ¿ÇÑ´Ù.
-		 * ¸¸¾à ¹ÙÀÌ¾î°¡ 3000¿øÀÌ ÀÖ´Âµ¥ ÄÄÇ»ÅÍ »ï¼º°ÍÀ» »òÀ¸¸é ¹ÙÀÌ¾îÀÇ µ·Àº 2800¿øÀÌ ³²°Ô µÇ¾î¾ß ÇÑ´Ù.
-		 * ÀÌ·¸°Ô 3¸íÀÇ ¹ÙÀÌ¾îÀÇ µ·ÀÌ ¸ðµÎ 60¿ø ¹Ì¸¸ÀÌ µÇ¸é ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù.
-		 * ÇÁ·Î±×·¥ÀÌ Á¾·áµÈ ÀÌÈÄ 1~3¹ø ¹ÙÀÌ¾î°¡ »ê ¹°Ç°ÀÇ ±â´ÉÀ» Ãâ·ÂÇÑ´Ù.
+		 * ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½Ç»ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½. 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º, i7, 200ï¿½ï¿½ / 5ï¿½ï¿½ï¿½ï¿½ LG, i5, 150ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ë°¡ ï¿½Ö´ï¿½. 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¼º, 100ï¿½ï¿½ / 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Äµï¿½, LG, 250ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ë°¡ ï¿½Ö´ï¿½. 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¼º, ï¿½ç¹®, 600L, 200ï¿½ï¿½ / 5ï¿½ï¿½ï¿½ï¿½ LG, 4ï¿½ï¿½ï¿½ï¿½, 800L, 350ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ 10ï¿½ë°¡ ï¿½Ö´ï¿½. 5ï¿½ï¿½ï¿½ï¿½ LG, 80ï¿½ï¿½ / 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½, 60ï¿½ï¿½
+		 * 
+		 * ï¿½ï¿½ï¿½Ì¾ï¿½ - ï¿½ï¿½, 10ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
+		 * ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½. ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¹Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÈ´ï¿½.
+		 * 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ 60 ï¿½Ì¸ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½Ñ¾î°£ï¿½ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Ã¹È­ï¿½ï¿½) -> XXX ï¿½ï¿½ï¿½Ì¾ï¿½ 1.ï¿½ï¿½Ç»ï¿½ï¿½ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.ï¿½ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ : (ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ô·ï¿½)
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ 1.ï¿½ï¿½Ç»ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(i7) 2.LG(i5) : (ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ô·ï¿½)
+		 * 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) 2.LG(ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½) : (ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ô·ï¿½)
+		 * 3.ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ç¹®, 600L) 2.LG(4ï¿½ï¿½ï¿½ï¿½, 800L) :
+		 * (ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½)
+		 * 4.ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.LG 2.ï¿½ï¿½ï¿½Ì½ï¿½ : (ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½)
+		 * ï¿½ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î¿¡ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ ï¿½È´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½." ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Ã¹È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½å¿¡ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ "ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Ã¹È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î°¡ 3000ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Âµï¿½ ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¼ºï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2800ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½
+		 * ï¿½Ñ´ï¿½.
+		 * ï¿½Ì·ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 60ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1~3ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		Scanner scan = new Scanner(System.in);
 
@@ -90,25 +98,25 @@ public class Q37_computer {
 		Refrigerator[] lg_refrigerator = new Refrigerator[5];
 		AirCleaner[] daison_air_cleaner = new AirCleaner[5];
 
-		for(int i=0; i<5; i++) {
+		for (int i = 0; i < 5; i++) {
 			samsung_computer[i] = new Computer();
 			samsung_air_conditioner[i] = new AirConditioner();
 			samsung_refrigerator[i] = new Refrigerator();
 			lg_air_cleaner[i] = new AirCleaner();
-			samsung_computer[i].maker = "»ï¼º";
-			samsung_air_conditioner[i].maker = "»ï¼º";
-			samsung_refrigerator[i].maker = "»ï¼º";
+			samsung_computer[i].maker = "ï¿½ï¼º";
+			samsung_air_conditioner[i].maker = "ï¿½ï¼º";
+			samsung_refrigerator[i].maker = "ï¿½ï¼º";
 			lg_air_cleaner[i].maker = "LG";
 			samsung_computer[i].price = 200;
 			samsung_air_conditioner[i].price = 100;
 			samsung_refrigerator[i].price = 200;
 			lg_air_cleaner[i].price = 80;
 			samsung_computer[i].type = "i7";
-			samsung_air_conditioner[i].type = "º®°ÉÀÌÇü";
-			samsung_refrigerator[i].type = "¾ç¹®Çü";
+			samsung_air_conditioner[i].type = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+			samsung_refrigerator[i].type = "ï¿½ç¹®ï¿½ï¿½";
 			samsung_refrigerator[i].liter = 600;
 		}
-		for(int i=0; i<5; i++) {
+		for (int i = 0; i < 5; i++) {
 			lg_computer[i] = new Computer();
 			lg_air_conditioner[i] = new AirConditioner();
 			lg_refrigerator[i] = new Refrigerator();
@@ -116,26 +124,26 @@ public class Q37_computer {
 			lg_computer[i].maker = "LG";
 			lg_air_conditioner[i].maker = "LG";
 			lg_refrigerator[i].maker = "LG";
-			daison_air_cleaner[i].maker = "´ÙÀÌ½¼";
+			daison_air_cleaner[i].maker = "ï¿½ï¿½ï¿½Ì½ï¿½";
 			lg_computer[i].price = 150;
 			lg_air_conditioner[i].price = 250;
 			lg_refrigerator[i].price = 350;
 			daison_air_cleaner[i].price = 60;
 			lg_computer[i].type = "i5";
-			lg_air_conditioner[i].type = "½ºÅÄµåÇü";
-			lg_refrigerator[i].type = "4µµ¾îÇü";
+			lg_air_conditioner[i].type = "ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½";
+			lg_refrigerator[i].type = "4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 			lg_refrigerator[i].liter = 800;
 		}
 
-		// ¹ÙÀÌ¾î °´Ã¼ »ý¼º
+		// ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 		Buyer[] buyer = new Buyer[3];
-		for(int i = 0; i<3; i++) {
+		for (int i = 0; i < 3; i++) {
 			buyer[i] = new Buyer();
-			System.out.print((i+1)+"¹ø buyer°¡ °¡Áú ±Ý¾×À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			buyer[i].money = scan.nextInt();
 		}
 
-		//ÃÊ±âÈ­
+		// ï¿½Ê±ï¿½È­
 		int buyer_number = 0;
 
 		int samsung_computer_count = 0;
@@ -148,35 +156,35 @@ public class Q37_computer {
 		int lg_refrigerator_count = 0;
 		int daison_aircleaner_count = 0;
 
-		//°ÔÀÓ½ÃÀÛ ¹«ÇÑ¹Ýº¹
-		while(true) {
-			if(buyer[buyer_number].money < 60) {
+		// ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ¹Ýºï¿½
+		while (true) {
+			if (buyer[buyer_number].money < 60) {
 				buyer_number++;
 				continue;
 			} else {
-				//¹ÙÀÌ¾îµéÀÌ °¡Áø ±Ý¾× Ãâ·Â
+				// ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ ï¿½ï¿½ï¿½
 				System.out.println("-------------------");
-				for(int i = 0; i<3; i++) {
-					System.out.println((i+1)+"¹ø buyer°¡ °¡Áø ±Ý¾× : "+buyer[i].money);
+				for (int i = 0; i < 3; i++) {
+					System.out.println((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ : " + buyer[i].money);
 				}
 				System.out.println("-------------------");
 			}
 
-			//¸ÞÀÎ Ã¹È­¸é
-			System.out.print(buyer_number+1+"¹ø buyer > 1.ÄÄÇ»ÅÍ 2.¿¡¾îÄÁ 3.³ÃÀå°í 4.°ø±âÃ»Á¤±â : ");
+			// ï¿½ï¿½ï¿½ï¿½ Ã¹È­ï¿½ï¿½
+			System.out.print(buyer_number + 1 + "ï¿½ï¿½ buyer > 1.ï¿½ï¿½Ç»ï¿½ï¿½ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.ï¿½ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ : ");
 			int main_choice = scan.nextInt();
 
-			//ÄÄÇ»ÅÍ ¼±ÅÃ
-			if(main_choice == 1) {
-				System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(i7) 2.LG(i5) : ");
+			// ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			if (main_choice == 1) {
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(i7) 2.LG(i5) : ");
 				int computer_choice = scan.nextInt();
 
-				//»ï¼º ÄÄÇ»ÅÍ ¼±ÅÃ
-				if(computer_choice == 1) {
-					if(samsung_computer_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					}  else {
-						if(buyer[buyer_number].money-samsung_computer[samsung_computer_count].price >= 0) {
+				// ï¿½ï¼º ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if (computer_choice == 1) {
+					if (samsung_computer_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - samsung_computer[samsung_computer_count].price >= 0) {
 							buyer[buyer_number].money -= samsung_computer[samsung_computer_count].price;
 							buyer[buyer_number].computer[samsung_computer_count] = new Computer();
 							buyer[buyer_number].computer[samsung_computer_count] = samsung_computer[samsung_computer_count];
@@ -184,94 +192,91 @@ public class Q37_computer {
 							samsung_computer_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
-				} 
-				//LG ÄÄÇ»ÅÍ ¼±ÅÃ
-				else if(computer_choice == 2) {
-					if(lg_computer_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
+				}
+				// LG ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				else if (computer_choice == 2) {
+					if (lg_computer_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					} else {
-						if(buyer[buyer_number].money-lg_computer[lg_computer_count].price >= 0) {
+						if (buyer[buyer_number].money - lg_computer[lg_computer_count].price >= 0) {
 							buyer[buyer_number].money -= lg_computer[lg_computer_count].price;
-							buyer[buyer_number].computer[lg_computer_count+5] = new Computer();
-							buyer[buyer_number].computer[lg_computer_count+5] = lg_computer[lg_computer_count]; 
+							buyer[buyer_number].computer[lg_computer_count + 5] = new Computer();
+							buyer[buyer_number].computer[lg_computer_count + 5] = lg_computer[lg_computer_count];
 							lg_computer[lg_computer_count] = null;
 							lg_computer_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
-				} 
-				else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 					buyer_number++;
 				}
-			} 
-			//¿¡¾îÄÁ ¼±ÅÃ
-			else if(main_choice == 2) {
-				System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(º®°ÉÀÌÇü) 2.LG(½ºÅÄµåÇü) : ");
+			}
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			else if (main_choice == 2) {
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) 2.LG(ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½) : ");
 				int aircon_choice = scan.nextInt();
 
-				//»ï¼º ¿¡¾îÄÁ ¼±ÅÃ
-				if(aircon_choice == 1) {
-					if(samsung_aircon_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					}
-					else {
-						if(buyer[buyer_number].money-samsung_air_conditioner[samsung_aircon_count].price >= 0) {
+				// ï¿½ï¼º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if (aircon_choice == 1) {
+					if (samsung_aircon_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - samsung_air_conditioner[samsung_aircon_count].price >= 0) {
 							buyer[buyer_number].money -= samsung_air_conditioner[samsung_aircon_count].price;
 							buyer[buyer_number].air_conditioner[samsung_aircon_count] = new AirConditioner();
-							buyer[buyer_number].air_conditioner[samsung_aircon_count] = samsung_air_conditioner[samsung_aircon_count]; 
+							buyer[buyer_number].air_conditioner[samsung_aircon_count] = samsung_air_conditioner[samsung_aircon_count];
 							samsung_air_conditioner[samsung_aircon_count] = null;
 							samsung_aircon_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
-				} 
-				//LG ¿¡¾îÄÁ ¼±ÅÃ
-				else if(aircon_choice == 2) {
-					if(lg_aircon_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					}else {
-						if(buyer[buyer_number].money-lg_air_conditioner[lg_aircon_count].price >= 0) {
+				}
+				// LG ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				else if (aircon_choice == 2) {
+					if (lg_aircon_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - lg_air_conditioner[lg_aircon_count].price >= 0) {
 							buyer[buyer_number].money -= lg_air_conditioner[lg_aircon_count].price;
-							buyer[buyer_number].air_conditioner[lg_aircon_count+5] = new AirConditioner();
-							buyer[buyer_number].air_conditioner[lg_aircon_count+5] = lg_air_conditioner[lg_aircon_count]; 
+							buyer[buyer_number].air_conditioner[lg_aircon_count + 5] = new AirConditioner();
+							buyer[buyer_number].air_conditioner[lg_aircon_count
+									+ 5] = lg_air_conditioner[lg_aircon_count];
 							lg_air_conditioner[lg_aircon_count] = null;
 							lg_aircon_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
-				} 
-				else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 					buyer_number++;
 				}
 
-			} 
-			//³ÃÀå°í ¼±ÅÃ
-			else if(main_choice == 3) {
-				System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.»ï¼º(¾ç¹®, 600L) 2.LG(4µµ¾î, 800L) : ");
+			}
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			else if (main_choice == 3) {
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.ï¿½ï¼º(ï¿½ç¹®, 600L) 2.LG(4ï¿½ï¿½ï¿½ï¿½, 800L) : ");
 				int refrigerator_choice = scan.nextInt();
 
-				//»ï¼º ³ÃÀå°í ¼±ÅÃ
-				if(refrigerator_choice == 1) {
-					if(samsung_refrigerator_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					} 
-					else {
-						if(buyer[buyer_number].money-samsung_refrigerator[samsung_refrigerator_count].price >= 0) {
+				// ï¿½ï¼º ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				if (refrigerator_choice == 1) {
+					if (samsung_refrigerator_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - samsung_refrigerator[samsung_refrigerator_count].price >= 0) {
 							buyer[buyer_number].money -= samsung_refrigerator[samsung_refrigerator_count].price;
 							buyer[buyer_number].refrigerator[samsung_refrigerator_count] = new Refrigerator();
 							buyer[buyer_number].refrigerator[samsung_refrigerator_count] = samsung_refrigerator[samsung_refrigerator_count];
@@ -279,110 +284,111 @@ public class Q37_computer {
 							samsung_refrigerator_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
 				}
 
-				//LG ³ÃÀå°í ¼±ÅÃ
-				else if(refrigerator_choice == 2) {
-					if(lg_refrigerator_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
+				// LG ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				else if (refrigerator_choice == 2) {
+					if (lg_refrigerator_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					} else {
-						if(buyer[buyer_number].money-lg_refrigerator[lg_refrigerator_count].price >= 0) {
+						if (buyer[buyer_number].money - lg_refrigerator[lg_refrigerator_count].price >= 0) {
 							buyer[buyer_number].money -= lg_refrigerator[lg_refrigerator_count].price;
-							buyer[buyer_number].refrigerator[lg_refrigerator_count+5] = new Refrigerator();
-							buyer[buyer_number].refrigerator[lg_refrigerator_count+5] = lg_refrigerator[lg_refrigerator_count]; 
+							buyer[buyer_number].refrigerator[lg_refrigerator_count + 5] = new Refrigerator();
+							buyer[buyer_number].refrigerator[lg_refrigerator_count
+									+ 5] = lg_refrigerator[lg_refrigerator_count];
 							lg_refrigerator[lg_refrigerator_count] = null;
 							lg_refrigerator_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
-					} 
-				}
-				else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+					}
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 					buyer_number++;
 				}
 			}
-			//°ø±âÃ»Á¤±â ¼±ÅÃ
-			else if(main_choice == 4) {
-				System.out.print("Á¦Á¶»ç ¹× »ç¾çÀ» ¼±ÅÃÇØÁÖ¼¼¿ä 1.LG 2.´ÙÀÌ½¼ : ");
+			// ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			else if (main_choice == 4) {
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ 1.LG 2.ï¿½ï¿½ï¿½Ì½ï¿½ : ");
 				int aircleaner_choice = scan.nextInt();
 
-				//LG °ø±âÃ»Á¤±â ¼±ÅÃ
+				// LG ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-				if(aircleaner_choice == 1) {
-					if(lg_aircleaner_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					}else {
-						if(buyer[buyer_number].money-lg_air_cleaner[lg_aircleaner_count].price >= 0) {
+				if (aircleaner_choice == 1) {
+					if (lg_aircleaner_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - lg_air_cleaner[lg_aircleaner_count].price >= 0) {
 							buyer[buyer_number].money -= lg_air_cleaner[lg_aircleaner_count].price;
 							buyer[buyer_number].air_cleaner[lg_aircleaner_count] = new AirCleaner();
-							buyer[buyer_number].air_cleaner[lg_aircleaner_count] = lg_air_cleaner[lg_aircleaner_count];  
+							buyer[buyer_number].air_cleaner[lg_aircleaner_count] = lg_air_cleaner[lg_aircleaner_count];
 							lg_air_cleaner[lg_aircleaner_count] = null;
 							lg_aircleaner_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
 				}
 
-				//´ÙÀÌ½¼ °ø±âÃ»Á¤±â ¼±ÅÃ
-				else if(aircleaner_choice == 2) {
-					if(daison_aircleaner_count == 5) {
-						System.out.println("Àç°í°¡ ¾ø½À´Ï´Ù.");
-					}else {
-						if(buyer[buyer_number].money-daison_air_cleaner[daison_aircleaner_count].price >= 0) {
+				// ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				else if (aircleaner_choice == 2) {
+					if (daison_aircleaner_count == 5) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+					} else {
+						if (buyer[buyer_number].money - daison_air_cleaner[daison_aircleaner_count].price >= 0) {
 							buyer[buyer_number].money -= daison_air_cleaner[daison_aircleaner_count].price;
-							buyer[buyer_number].air_cleaner[daison_aircleaner_count+5] = new AirCleaner();
-							buyer[buyer_number].air_cleaner[daison_aircleaner_count+5] = daison_air_cleaner[daison_aircleaner_count]; 
+							buyer[buyer_number].air_cleaner[daison_aircleaner_count + 5] = new AirCleaner();
+							buyer[buyer_number].air_cleaner[daison_aircleaner_count
+									+ 5] = daison_air_cleaner[daison_aircleaner_count];
 							daison_air_cleaner[daison_aircleaner_count] = null;
 							daison_aircleaner_count++;
 							buyer_number++;
 						} else {
-							System.out.println("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+							System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 							buyer_number++;
 						}
 					}
-				} 
-				else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 					buyer_number++;
 				}
-			} 
-			//Àß¸øµÈ ÀÔ·Â
+			}
+			// ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 			else {
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				buyer_number++;
 			}
 
-			// ÃÊ±âÈ­
-			if(buyer_number == 3) buyer_number = 0;
+			// ï¿½Ê±ï¿½È­
+			if (buyer_number == 3)
+				buyer_number = 0;
 
-			//°á°úÃâ·Â
-			if(buyer[0].money < 60 && buyer[1].money < 60 && buyer[2].money < 60) {
-				for(int i = 0; i<3; i++) {
-					for(int j = 0; j<10; j++) {
-						if(buyer[i].computer[j] != null) {
-							System.out.print((i+1)+"¹ø buyer´Â ");
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if (buyer[0].money < 60 && buyer[1].money < 60 && buyer[2].money < 60) {
+				for (int i = 0; i < 3; i++) {
+					for (int j = 0; j < 10; j++) {
+						if (buyer[i].computer[j] != null) {
+							System.out.print((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ");
 							buyer[i].computer[j].output();
 						}
-						if(buyer[i].air_conditioner[j] != null) {
-							System.out.print((i+1)+"¹ø buyer´Â ");
+						if (buyer[i].air_conditioner[j] != null) {
+							System.out.print((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ");
 							buyer[i].air_conditioner[j].output();
 						}
-						if(buyer[i].refrigerator[j] != null) {
-							System.out.print((i+1)+"¹ø buyer´Â ");
+						if (buyer[i].refrigerator[j] != null) {
+							System.out.print((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ");
 							buyer[i].refrigerator[j].output();
 						}
-						if(buyer[i].air_cleaner[j] != null) {
-							System.out.print((i+1)+"¹ø buyer´Â ");
+						if (buyer[i].air_cleaner[j] != null) {
+							System.out.print((i + 1) + "ï¿½ï¿½ buyerï¿½ï¿½ ");
 							buyer[i].air_cleaner[j].output();
 						}
 					}

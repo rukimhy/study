@@ -1,17 +1,17 @@
-package day17;
+package academy.day17;
 
 public class StudentTest4 {
 
 	public static void main(String[] args) {
 		Student4 studentLee = new Student4();
-		studentLee.setStudentName("ÀÌÁö¿ø");
+		studentLee.setStudentName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(Student4.getSerialNum());
-		System.out.println(studentLee.studentName+" ÇÐ¹ø:"+studentLee.studentID);
-		
+		System.out.println(studentLee.studentName + " ï¿½Ð¹ï¿½:" + studentLee.studentID);
+
 		Student4 studentSon = new Student4();
-		studentSon.setStudentName("¼Õ¼ö°æ");
+		studentSon.setStudentName("ï¿½Õ¼ï¿½ï¿½ï¿½");
 		System.out.println(Student4.getSerialNum());
-		System.out.println(studentSon.studentName+" ÇÐ¹ø:"+studentSon.studentID);
+		System.out.println(studentSon.studentName + " ï¿½Ð¹ï¿½:" + studentSon.studentID);
 	}
 
 }

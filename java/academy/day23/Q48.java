@@ -1,25 +1,30 @@
-package day23;
+package academy.day23;
 
 import java.util.Random;
 
-interface Repairable{}
-interface Heal{}
+interface Repairable {
+}
 
-class Unit{
+interface Heal {
+}
+
+class Unit {
 	int hitPoint;
 	final int MAX_HP;
 	final int MAX_ATK;
-	Unit(int hp, int atk){
+
+	Unit(int hp, int atk) {
 		MAX_HP = hp;
 		MAX_ATK = atk;
 	}
+
 	void attack(Unit u, int count) {
 
 	};
 }
 
-class Tank extends Unit implements Repairable{
-	Tank(){
+class Tank extends Unit implements Repairable {
+	Tank() {
 		super(45, 4);
 		hitPoint = MAX_HP;
 	}
@@ -31,12 +36,13 @@ class Tank extends Unit implements Repairable{
 	@Override
 	void attack(Unit u, int count) {
 		u.hitPoint -= super.MAX_ATK;
-		System.out.println(this.toString()+"ÀÇ °ø°Ý! "+u.toString()+"["+count+"]"+"¿¡°Ô "+super.MAX_ATK+"¸¸Å­ ÇÇÇØ¸¦ ÁÖ¾ú´Ù.");
+		System.out.println(this.toString() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½! " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ï¿½ï¿½ " + super.MAX_ATK
+				+ "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½Ø¸ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½.");
 	}
 }
 
-class Marine extends Unit implements Heal{
-	Marine(){
+class Marine extends Unit implements Heal {
+	Marine() {
 		super(50, 6);
 		hitPoint = MAX_HP;
 	}
@@ -48,28 +54,31 @@ class Marine extends Unit implements Heal{
 	@Override
 	void attack(Unit u, int count) {
 		u.hitPoint -= super.MAX_ATK;
-		System.out.println(this.toString()+"ÀÇ °ø°Ý! "+u.toString()+"["+count+"]"+"¿¡°Ô "+super.MAX_ATK+"¸¸Å­ ÇÇÇØ¸¦ ÁÖ¾ú´Ù.");
+		System.out.println(this.toString() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½! " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ï¿½ï¿½ " + super.MAX_ATK
+				+ "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½Ø¸ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½.");
 	}
 }
 
-class SCV extends Unit implements Repairable{
-	SCV(){
+class SCV extends Unit implements Repairable {
+	SCV() {
 		super(100, 100);
 	}
 
 	void repair(Repairable r, int count) {
-		if(r instanceof Unit) {
-			Unit u = (Unit)r;
-			if(u.hitPoint != u.MAX_HP) {
-				if(u.MAX_HP - u.hitPoint < 5) {
+		if (r instanceof Unit) {
+			Unit u = (Unit) r;
+			if (u.hitPoint != u.MAX_HP) {
+				if (u.MAX_HP - u.hitPoint < 5) {
 					u.hitPoint = u.MAX_HP;
-					System.out.println(this.toString()+"°¡ "+u.toString()+"["+count+"]"+"ÀÇ Ã¼·ÂÀ» +"+(u.MAX_HP - u.hitPoint)+" È¸º¹Çß½À´Ï´Ù.");
+					System.out.println(this.toString() + "ï¿½ï¿½ " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ +"
+							+ (u.MAX_HP - u.hitPoint) + " È¸ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				} else {
 					u.hitPoint += 5;
-					System.out.println(this.toString()+"°¡ "+u.toString()+"["+count+"]"+"ÀÇ Ã¼·ÂÀ» +5 È¸º¹Çß½À´Ï´Ù.");
+					System.out.println(
+							this.toString() + "ï¿½ï¿½ " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ +5 È¸ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				}
 			} else {
-				System.out.println("ÀÌ¹Ì ¿¡³ÊÁö°¡ °¡µæ Â÷ÀÖ½À´Ï´Ù.");
+				System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 		}
 	}
@@ -79,27 +88,30 @@ class SCV extends Unit implements Repairable{
 	}
 }
 
-class Medic extends Unit implements Heal{
-	Medic(){
+class Medic extends Unit implements Heal {
+	Medic() {
 		super(100, 100);
 	}
 
 	void heal(Heal h, int count) {
-		if(h instanceof Unit) {
-			Unit u = (Unit)h;
-			if(u.hitPoint != u.MAX_HP) {
-				if(u.MAX_HP - u.hitPoint < 5) {
+		if (h instanceof Unit) {
+			Unit u = (Unit) h;
+			if (u.hitPoint != u.MAX_HP) {
+				if (u.MAX_HP - u.hitPoint < 5) {
 					u.hitPoint = u.MAX_HP;
-					System.out.println(this.toString()+"°¡ "+u.toString()+"["+count+"]"+"ÀÇ Ã¼·ÂÀ» +"+(u.MAX_HP - u.hitPoint)+" È¸º¹Çß½À´Ï´Ù.");
+					System.out.println(this.toString() + "ï¿½ï¿½ " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ +"
+							+ (u.MAX_HP - u.hitPoint) + " È¸ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				} else {
 					u.hitPoint += 5;
-					System.out.println(this.toString()+"°¡ "+u.toString()+"["+count+"]"+"ÀÇ Ã¼·ÂÀ» +5 È¸º¹Çß½À´Ï´Ù.");
+					System.out.println(
+							this.toString() + "ï¿½ï¿½ " + u.toString() + "[" + count + "]" + "ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ +5 È¸ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				}
 			} else {
-				System.out.println("ÀÌ¹Ì ¿¡³ÊÁö°¡ °¡µæ Â÷ÀÖ½À´Ï´Ù.");
+				System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 		}
 	}
+
 	public String toString() {
 		return "Medic";
 	}
@@ -117,18 +129,18 @@ public class Q48 {
 		Medic medic_1 = new Medic();
 		Medic medic_2 = new Medic();
 
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			int random = r.nextInt(2);
-			if(random == 0) {
+			if (random == 0) {
 				team_1[i] = new Tank();
 			} else {
 				team_1[i] = new Marine();
 			}
 		}
 
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			int random = r.nextInt(2);
-			if(random == 0) {
+			if (random == 0) {
 				team_2[i] = new Tank();
 			} else {
 				team_2[i] = new Marine();
@@ -139,84 +151,83 @@ public class Q48 {
 		int team_1_dead = 0;
 		int team_2_dead = 0;
 
-		while(true) {
-			System.out.println("==="+count+"¹øÂ° ÅÏ===========================");
+		while (true) {
+			System.out.println("===" + count + "ï¿½ï¿½Â° ï¿½ï¿½===========================");
 			int random_heal = r.nextInt(10);
 			int scv_or_medic = r.nextInt(2);
 			int random_attack = r.nextInt(10);
 			int random_damage = r.nextInt(10);
 
-			//team_1 ÅÏ			
-			if(count % 2 == 1) {
+			// team_1 ï¿½ï¿½
+			if (count % 2 == 1) {
 
-				System.out.println("team_1ÀÇ ÅÏ");
+				System.out.println("team_1ï¿½ï¿½ ï¿½ï¿½");
 
-				while(team_1[random_heal] == null)
-				{
+				while (team_1[random_heal] == null) {
 					random_heal = r.nextInt(10);
 				}
-				//scv°¡ ¸®Æä¾î
-				if(scv_or_medic == 0) 
-				{ 
-					if(team_1[random_heal] instanceof Tank) {
-						Tank t = (Tank)team_1[random_heal];
+				// scvï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+				if (scv_or_medic == 0) {
+					if (team_1[random_heal] instanceof Tank) {
+						Tank t = (Tank) team_1[random_heal];
 						scv_1.repair(t, random_heal);
 					} else {
-						System.out.println(scv_1.toString()+"ÀÌ "+team_1[random_heal].toString()+"["+random_heal+"]"+"À» ¸®Æä¾îÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println(scv_1.toString() + "ï¿½ï¿½ " + team_1[random_heal].toString() + "[" + random_heal
+								+ "]" + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
 				}
 
-				//medicÀÌ Èú
-				else { 
-					if(team_1[random_heal] instanceof Marine) {
-						Marine m = (Marine)team_1[random_heal];
+				// medicï¿½ï¿½ ï¿½ï¿½
+				else {
+					if (team_1[random_heal] instanceof Marine) {
+						Marine m = (Marine) team_1[random_heal];
 						medic_1.heal(m, random_heal);
 					} else {
-						System.out.println(medic_1.toString()+"ÀÌ "+team_1[random_heal].toString()+"["+random_heal+"]"+"À» Ä¡·áÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println(medic_1.toString() + "ï¿½ï¿½ " + team_1[random_heal].toString() + "["
+								+ random_heal + "]" + "ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
 				}
 
-
-				while(team_1[random_attack] == null) {
+				while (team_1[random_attack] == null) {
 					random_attack = r.nextInt(10);
 				}
-				while(team_2[random_damage] == null) {
+				while (team_2[random_damage] == null) {
 					random_damage = r.nextInt(10);
 				}
 
-				//°ø°Ý
-				if(team_1[random_attack] instanceof Tank) {
-					if(random_damage == 0) {
+				// ï¿½ï¿½ï¿½ï¿½
+				if (team_1[random_attack] instanceof Tank) {
+					if (random_damage == 0) {
 						team_1[random_attack].attack(team_2[random_damage], random_damage);
-						if(team_2[random_damage+1] != null) {
-							team_1[random_attack].attack(team_2[random_damage+1], random_damage+1);
-							if(team_2[random_damage+1].hitPoint <= 0) {
-								team_2[random_damage+1] = null;
+						if (team_2[random_damage + 1] != null) {
+							team_1[random_attack].attack(team_2[random_damage + 1], random_damage + 1);
+							if (team_2[random_damage + 1].hitPoint <= 0) {
+								team_2[random_damage + 1] = null;
 								team_2_dead++;
 							}
 						}
-					}else if(random_damage == 9) {
+					} else if (random_damage == 9) {
 						team_1[random_attack].attack(team_2[random_damage], random_damage);
-						if(team_2[random_damage-1] != null) {
-							team_1[random_attack].attack(team_2[random_damage-1], random_damage-1);
-							if(team_2[random_damage-1].hitPoint <= 0) {
-								team_2[random_damage-1] = null;
+						if (team_2[random_damage - 1] != null) {
+							team_1[random_attack].attack(team_2[random_damage - 1], random_damage - 1);
+							if (team_2[random_damage - 1].hitPoint <= 0) {
+								team_2[random_damage - 1] = null;
 								team_2_dead++;
 							}
 						}
-					}else {
+					} else {
 						team_1[random_attack].attack(team_2[random_damage], random_damage);
-						if(team_2[random_damage-1] != null) {
-							team_1[random_attack].attack(team_2[random_damage-1], random_damage-1);
-							if(team_2[random_damage-1].hitPoint <= 0) {
-								team_2[random_damage-1] = null;
+						if (team_2[random_damage - 1] != null) {
+							team_1[random_attack].attack(team_2[random_damage - 1], random_damage - 1);
+							if (team_2[random_damage - 1].hitPoint <= 0) {
+								team_2[random_damage - 1] = null;
 								team_2_dead++;
 							}
 						}
-						if(team_2[random_damage+1] != null) {
-							team_1[random_attack].attack(team_2[random_damage+1], random_damage+1);
-							if(team_2[random_damage+1].hitPoint <= 0) {
-								team_2[random_damage+1] = null;
+						if (team_2[random_damage + 1] != null) {
+							team_1[random_attack].attack(team_2[random_damage + 1], random_damage + 1);
+							if (team_2[random_damage + 1].hitPoint <= 0) {
+								team_2[random_damage + 1] = null;
 								team_2_dead++;
 							}
 						}
@@ -224,81 +235,82 @@ public class Q48 {
 				} else {
 					team_1[random_attack].attack(team_2[random_damage], random_damage);
 				}
-				if(team_2[random_damage].hitPoint <= 0) {
+				if (team_2[random_damage].hitPoint <= 0) {
 					team_2[random_damage] = null;
 					team_2_dead++;
 				}
 
-			} 
+			}
 
-			//team_2 ÅÏ			
+			// team_2 ï¿½ï¿½
 			else {
 
-				System.out.println("team_2ÀÇ ÅÏ");
+				System.out.println("team_2ï¿½ï¿½ ï¿½ï¿½");
 
-				while(team_2[random_heal] == null) {
+				while (team_2[random_heal] == null) {
 					random_heal = r.nextInt(10);
 				}
-				//scv°¡ ¸®Æä¾î
-				if(scv_or_medic == 0) { 
-					if(team_2[random_heal] instanceof Tank) {
-						Tank t = (Tank)team_2[random_heal];
+				// scvï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+				if (scv_or_medic == 0) {
+					if (team_2[random_heal] instanceof Tank) {
+						Tank t = (Tank) team_2[random_heal];
 						scv_2.repair(t, random_heal);
 					} else {
-						System.out.println(scv_2.toString()+"ÀÌ "+team_2[random_heal].toString()+"["+random_heal+"]"+"À» ¸®Æä¾îÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println(scv_2.toString() + "ï¿½ï¿½ " + team_2[random_heal].toString() + "[" + random_heal
+								+ "]" + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
-				} 
+				}
 
-				//medicÀÌ Èú
-				else { 
-					if(team_2[random_heal] instanceof Marine) {
-						Marine m = (Marine)team_2[random_heal];
+				// medicï¿½ï¿½ ï¿½ï¿½
+				else {
+					if (team_2[random_heal] instanceof Marine) {
+						Marine m = (Marine) team_2[random_heal];
 						medic_2.heal(m, random_heal);
 					} else {
-						System.out.println(medic_2.toString()+"ÀÌ "+team_2[random_heal].toString()+"["+random_heal+"]"+"À» Ä¡·áÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println(medic_2.toString() + "ï¿½ï¿½ " + team_2[random_heal].toString() + "["
+								+ random_heal + "]" + "ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
 				}
 
-
-				//°ø°Ý
-				while(team_2[random_attack] == null) {
+				// ï¿½ï¿½ï¿½ï¿½
+				while (team_2[random_attack] == null) {
 					random_attack = r.nextInt(10);
 				}
-				while(team_1[random_damage] == null) {
+				while (team_1[random_damage] == null) {
 					random_damage = r.nextInt(10);
 				}
-				if(team_2[random_attack] instanceof Tank) {
-					if(random_damage == 0) {
+				if (team_2[random_attack] instanceof Tank) {
+					if (random_damage == 0) {
 						team_2[random_attack].attack(team_1[random_damage], random_damage);
-						if(team_1[random_damage+1] != null) {
-							team_2[random_attack].attack(team_1[random_damage+1], random_damage+1);
-							if(team_1[random_damage+1].hitPoint <= 0) {
-								team_1[random_damage+1] = null;
+						if (team_1[random_damage + 1] != null) {
+							team_2[random_attack].attack(team_1[random_damage + 1], random_damage + 1);
+							if (team_1[random_damage + 1].hitPoint <= 0) {
+								team_1[random_damage + 1] = null;
 								team_1_dead++;
 							}
 						}
-					}else if(random_damage == 9) {
+					} else if (random_damage == 9) {
 						team_2[random_attack].attack(team_1[random_damage], random_damage);
-						if(team_1[random_damage-1] != null) {
-							team_2[random_attack].attack(team_1[random_damage-1], random_damage-1);
-							if(team_1[random_damage-1].hitPoint <= 0) {
-								team_1[random_damage-1] = null;
+						if (team_1[random_damage - 1] != null) {
+							team_2[random_attack].attack(team_1[random_damage - 1], random_damage - 1);
+							if (team_1[random_damage - 1].hitPoint <= 0) {
+								team_1[random_damage - 1] = null;
 								team_1_dead++;
 							}
 						}
-					}else {
+					} else {
 						team_2[random_attack].attack(team_1[random_damage], random_damage);
-						if(team_1[random_damage-1] != null) {
-							team_2[random_attack].attack(team_1[random_damage-1], random_damage-1);
-							if(team_1[random_damage-1].hitPoint <= 0) {
-								team_1[random_damage-1] = null;
+						if (team_1[random_damage - 1] != null) {
+							team_2[random_attack].attack(team_1[random_damage - 1], random_damage - 1);
+							if (team_1[random_damage - 1].hitPoint <= 0) {
+								team_1[random_damage - 1] = null;
 								team_1_dead++;
 							}
 						}
-						if(team_1[random_damage+1] != null) {
-							team_2[random_attack].attack(team_1[random_damage+1], random_damage+1);
-							if(team_1[random_damage+1].hitPoint <= 0) {
-								team_1[random_damage+1] = null;
+						if (team_1[random_damage + 1] != null) {
+							team_2[random_attack].attack(team_1[random_damage + 1], random_damage + 1);
+							if (team_1[random_damage + 1].hitPoint <= 0) {
+								team_1[random_damage + 1] = null;
 								team_1_dead++;
 							}
 						}
@@ -306,33 +318,33 @@ public class Q48 {
 				} else {
 					team_2[random_attack].attack(team_1[random_damage], random_damage);
 				}
-				if(team_1[random_damage].hitPoint <= 0) {
+				if (team_1[random_damage].hitPoint <= 0) {
 					team_1[random_damage] = null;
 					team_1_dead++;
 				}
 
 			}
 
-			if(team_1_dead == 10 || team_2_dead == 10) {
-				if(team_1_dead == 10) {
-					System.out.println("team_2°¡ ½Â¸®Çß½À´Ï´Ù.");
+			if (team_1_dead == 10 || team_2_dead == 10) {
+				if (team_1_dead == 10) {
+					System.out.println("team_2ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				} else {
-					System.out.println("team_1°¡ ½Â¸®Çß½À´Ï´Ù.");
+					System.out.println("team_1ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				}
 				break;
 			}
-			System.out.print("team_1ÀÇ Ã¼·Â = ");
-			for(int i=0; i<10; i++) {
-				if(team_1[i] != null) {
-					System.out.print(team_1[i].toString()+"["+i+"] "+team_1[i].hitPoint+" / ");
+			System.out.print("team_1ï¿½ï¿½ Ã¼ï¿½ï¿½ = ");
+			for (int i = 0; i < 10; i++) {
+				if (team_1[i] != null) {
+					System.out.print(team_1[i].toString() + "[" + i + "] " + team_1[i].hitPoint + " / ");
 				}
 			}
 			System.out.println();
 
-			System.out.print("team_2ÀÇ Ã¼·Â = ");
-			for(int i=0; i<10; i++) {
-				if(team_2[i] != null) {
-					System.out.print(team_2[i].toString()+"["+i+"] "+team_2[i].hitPoint+" / ");
+			System.out.print("team_2ï¿½ï¿½ Ã¼ï¿½ï¿½ = ");
+			for (int i = 0; i < 10; i++) {
+				if (team_2[i] != null) {
+					System.out.print(team_2[i].toString() + "[" + i + "] " + team_2[i].hitPoint + " / ");
 				}
 			}
 			System.out.println();

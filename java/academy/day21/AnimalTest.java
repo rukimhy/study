@@ -1,73 +1,71 @@
-package day21;
+package academy.day21;
+
 import java.util.ArrayList;
 
-class Animal1{
+class Animal1 {
 	public void move() {
-		System.out.println("µ¿¹°ÀÌ ¿òÁ÷ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 	}
 }
 
-class Human1 extends Animal1{
+class Human1 extends Animal1 {
 	public void move() {
-		System.out.println("»ç¶÷ÀÌ µÎ ¹ß·Î °È½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß·ï¿½ ï¿½È½ï¿½ï¿½Ï´ï¿½.");
 	}
-	
+
 	public void readBook() {
-		System.out.println("»ç¶÷ÀÌ Ã¥À» ÀÐ½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¥ï¿½ï¿½ ï¿½Ð½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
-class Tiger1 extends Animal1{
+class Tiger1 extends Animal1 {
 	public void move() {
-		System.out.println("È£¶ûÀÌ°¡ ³× ¹ß·Î ¶Ý´Ï´Ù.");
+		System.out.println("È£ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ ï¿½ß·ï¿½ ï¿½Ý´Ï´ï¿½.");
 	}
-	
+
 	public void hunting() {
-		System.out.println("È£¶ûÀÌ°¡ »ç³ÉÀ» ÇÕ´Ï´Ù.");
+		System.out.println("È£ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	}
 }
 
-class Eagle1 extends Animal1{
+class Eagle1 extends Animal1 {
 	public void move() {
-		System.out.println("µ¶¼ö¸®°¡ ÇÏ´ÃÀ» ³³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
-	
+
 	public void flying() {
-		System.out.println("µ¶¼ö¸®°¡ ³¯°³¸¦ Âß Æì°í ¸Ö¸® ³¯¾Æ°©´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 public class AnimalTest {
-	
+
 	ArrayList<Animal1> aniList = new ArrayList<Animal1>();
-	
+
 	public void addAnimal() {
 		aniList.add(new Human1());
 		aniList.add(new Tiger1());
 		aniList.add(new Eagle1());
-		
-		for(Animal1 ani : aniList) {
+
+		for (Animal1 ani : aniList) {
 			ani.move();
 		}
 	}
-	
+
 	public void testCasting() {
-		for(int i=0; i<aniList.size(); i++) {
+		for (int i = 0; i < aniList.size(); i++) {
 			Animal1 ani = aniList.get(i);
-			if(ani instanceof Human1) {
-				Human1 h = (Human1)ani;
+			if (ani instanceof Human1) {
+				Human1 h = (Human1) ani;
 				h.readBook();
-			}
-			else if(ani instanceof Tiger1) {
-				Tiger1 t = (Tiger1)ani;
+			} else if (ani instanceof Tiger1) {
+				Tiger1 t = (Tiger1) ani;
 				t.hunting();
-			}
-			else if(ani instanceof Eagle1) {
-				Eagle1 e = (Eagle1)ani;
+			} else if (ani instanceof Eagle1) {
+				Eagle1 e = (Eagle1) ani;
 				e.flying();
-			}
-			else {
-				System.out.println("Áö¿øµÇÁö ¾Ê´Â ÇüÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
 	}
@@ -75,7 +73,7 @@ public class AnimalTest {
 	public static void main(String[] args) {
 		AnimalTest aTest = new AnimalTest();
 		aTest.addAnimal();
-		System.out.println("¿ø·¡ ÇüÀ¸·Î ´Ù¿î Ä³½ºÆÃ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½");
 		aTest.testCasting();
 	}
 

@@ -1,15 +1,18 @@
-package day21;
+package academy.day21;
 
-abstract class Car2{
+abstract class Car2 {
 	abstract void start();
+
 	abstract void drive();
+
 	abstract void stop();
+
 	abstract void turnoff();
-	
+
 	void washCar() {
-		System.out.println("¼¼Â÷¸¦ ÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	}
-	
+
 	final void run() {
 		start();
 		drive();
@@ -19,63 +22,75 @@ abstract class Car2{
 	}
 }
 
-class Sonata extends Car2{
+class Sonata extends Car2 {
 	void start() {
-		System.out.println("Sonata ½Ãµ¿À» ÄÕ´Ï´Ù.");
+		System.out.println("Sonata ï¿½Ãµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	};
+
 	void drive() {
-		System.out.println("Sonata ´Þ¸³´Ï´Ù.");
+		System.out.println("Sonata ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void stop() {
-		System.out.println("Sonata ¸ØÃä´Ï´Ù.");
+		System.out.println("Sonata ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void turnoff() {
-		System.out.println("Sonata ½Ãµ¿À» ²ü´Ï´Ù.");
+		System.out.println("Sonata ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
 }
 
-class Avante extends Car2{
+class Avante extends Car2 {
 	void start() {
-		System.out.println("Avante ½Ãµ¿À» ÄÕ´Ï´Ù.");
+		System.out.println("Avante ï¿½Ãµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	};
+
 	void drive() {
-		System.out.println("Avante ´Þ¸³´Ï´Ù.");
+		System.out.println("Avante ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void stop() {
-		System.out.println("Avante ¸ØÃä´Ï´Ù.");
+		System.out.println("Avante ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void turnoff() {
-		System.out.println("Avante ½Ãµ¿À» ²ü´Ï´Ù.");
+		System.out.println("Avante ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
 }
 
-class Grandeur extends Car2{
+class Grandeur extends Car2 {
 	void start() {
-		System.out.println("Grandeur ½Ãµ¿À» ÄÕ´Ï´Ù.");
+		System.out.println("Grandeur ï¿½Ãµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	};
+
 	void drive() {
-		System.out.println("Grandeur ´Þ¸³´Ï´Ù.");
+		System.out.println("Grandeur ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void stop() {
-		System.out.println("Grandeur ¸ØÃä´Ï´Ù.");
+		System.out.println("Grandeur ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void turnoff() {
-		System.out.println("Grandeur ½Ãµ¿À» ²ü´Ï´Ù.");
+		System.out.println("Grandeur ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
 }
 
-class Genesis extends Car2{
+class Genesis extends Car2 {
 	void start() {
-		System.out.println("Genesis ½Ãµ¿À» ÄÕ´Ï´Ù.");
+		System.out.println("Genesis ï¿½Ãµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.");
 	};
+
 	void drive() {
-		System.out.println("Genesis ´Þ¸³´Ï´Ù.");
+		System.out.println("Genesis ï¿½Þ¸ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void stop() {
-		System.out.println("Genesis ¸ØÃä´Ï´Ù.");
+		System.out.println("Genesis ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
+
 	void turnoff() {
-		System.out.println("Genesis ½Ãµ¿À» ²ü´Ï´Ù.");
+		System.out.println("Genesis ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	};
 }
 
@@ -87,8 +102,8 @@ public class CarTest2 {
 		carList[1] = new Grandeur();
 		carList[2] = new Avante();
 		carList[3] = new Genesis();
-		
-		for(int i=0; i<carList.length; i++) {
+
+		for (int i = 0; i < carList.length; i++) {
 			carList[i].run();
 			System.out.println("=================");
 		}

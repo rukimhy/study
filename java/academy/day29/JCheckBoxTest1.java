@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 class JCheckBox1 extends JFrame implements ItemListener {
 	JTextField jtf;
 	int count = 0;
+
 	public JCheckBox1() {
 		jtf = new JTextField(10);
 		JCheckBox jc1 = new JCheckBox("JSP");
@@ -33,9 +34,10 @@ class JCheckBox1 extends JFrame implements ItemListener {
 		setSize(250, 100);
 		setVisible(true);
 	}
+
 	public void itemStateChanged(ItemEvent ie) {
-		jtf.setText(((JCheckBox)ie.getItem()).getText());
-		//jtf.setText(Integer.toString(count++));
+		jtf.setText(((JCheckBox) ie.getItem()).getText());
+		// jtf.setText(Integer.toString(count++));
 	}
 }
 

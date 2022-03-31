@@ -1,36 +1,35 @@
-package Twentyeight;
+package academy.twentyEight;
 
 import java.io.IOException;
 import java.net.Socket;
+
 public class MC { // Main Client
 
    public static void main(String[] args) {
       // TODO Auto-generated method stub
-      
-      try 
-      {
-    	 //1. ¼ÒÄÏ»ý¼º Æ¯Â¡ ¼­¹ö ip°¡ ÇÊ¿ä, Æ÷Æ®
-         Socket c_socket = new Socket("192.168.219.103",8888);
-         
-         //2. ¸®½Ãºê ½º·¡µå »ý¼º
+
+      try {
+         // 1. ï¿½ï¿½ï¿½Ï»ï¿½ï¿½ï¿½ Æ¯Â¡ ï¿½ï¿½ï¿½ï¿½ ipï¿½ï¿½ ï¿½Ê¿ï¿½, ï¿½ï¿½Æ®
+         Socket c_socket = new Socket("192.168.219.103", 8888);
+
+         // 2. ï¿½ï¿½ï¿½Ãºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          RT rec_thread = new RT();
-         //3. ¸®½Ãºê ½º·¡µå¿¡ ¼ÒÄÏ Àü´Þ
+         // 3. ï¿½ï¿½ï¿½Ãºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          rec_thread.setSocket(c_socket);
-         
-         //4. »÷µå ½º·¡µå »ý¼º
+
+         // 4. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          ST send_thread = new ST();
-         //5. »÷µå ½º·¡µå¿¡ ¼ÒÄÏ Àü´Þ
+         // 5. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          send_thread.setSocket(c_socket);
-         
-         //6. »÷µå ½º·¡µå ½ÃÀÛ
+
+         // 6. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          send_thread.start();
-         //7. ¸®½Ãºê ½º·¡µå ½ÃÀÛ
+         // 7. ï¿½ï¿½ï¿½Ãºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          rec_thread.start();
       }
-      
-      catch(IOException e) 
-      {
-         //ÀÔÃâ·Â ¿¹¿Ü ¹ß»ý½Ã ½ÇÇà
+
+      catch (IOException e) {
+         // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          e.printStackTrace();
       }
 

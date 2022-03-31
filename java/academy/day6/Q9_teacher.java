@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -9,84 +9,69 @@ import java.util.Scanner;
 public class Q9_teacher {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);//½ºÄ³³Ê °´Ã¼ »ý¼º
-		Random r = new Random(); //·£´ý °´Ã¼»ý¼º
+		Scanner sc = new Scanner(System.in);// ï¿½ï¿½Ä³ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+		Random r = new Random(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½
 
-		int com1 = r.nextInt(9)+1; //ÄÄÇ»ÅÍÀÇ ·£´ý°ª
-		int com2 = r.nextInt(9)+1;//µÎ¹øÂ° ·£´ý°ª
-		
+		int com1 = r.nextInt(9) + 1; // ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int com2 = r.nextInt(9) + 1;// ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
 		int strike = 0;
 		int ball = 0;
-		
-		while(com1 == com2) //·£´ý°ª Áßº¹ ¹æÁö¸¦ À§ÇÑ ½Ä
+
+		while (com1 == com2) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		{
-			com1 = r.nextInt(9)+1; 
+			com1 = r.nextInt(9) + 1;
 		}
-		
-		int com3 = r.nextInt(9)+1;//¼¼¹øÂ° ·£´ý°ª
-		while(com1 == com3 || com2 == com3) //¼¼¹øÂ° ·£´ý°ªµµ Áßº¹ ¹æÁö¸¦ À§ÇÑ ½Ä
+
+		int com3 = r.nextInt(9) + 1;// ï¿½ï¿½ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		while (com1 == com3 || com2 == com3) // ï¿½ï¿½ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		{
-			com3 = r.nextInt(9)+1; 
+			com3 = r.nextInt(9) + 1;
 		}
-		System.out.println(com1 + " " + com2 +" " + com3); // Á¤ÇØÁø ·£´ý°ª Ãâ·Â
-		
-		
-		while(true)
-		{
-			
+		System.out.println(com1 + " " + com2 + " " + com3); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+
+		while (true) {
+
 			strike = 0;
 			ball = 0;
-			
-			System.out.print("¼ýÀÚ 1 ÀÔ·Â: ");
-			int user1 = sc.nextInt();
-			System.out.print("¼ýÀÚ 2 ÀÔ·Â: ");
-			int user2 = sc.nextInt();
-			System.out.print("¼ýÀÚ 3 ÀÔ·Â: ");
-			int user3 = sc.nextInt();
-			
-			if(user1 == com1)
-			{
-				strike++;
-			}
-			if(user2 == com2)
-			{
-				strike++;
-			}
-			if(user3 == com3)
-			{
-				strike++;
-			}
-			if(user1 == com2 || user1 == com3)
-			{
-				ball++;
-			}
-			if(user2 == com1 || user2 == com3)
-			{
-				ball++;
-			}
-			if(user3 == com1 || user3 == com2)
-			{
-				ball++;
-			}
-			
-			if(strike == 3)
-			{
-				System.out.println("È¨·±ÀÔ´Ï´Ù.");
-				break;
-			}
-			else if(strike == 0 && ball == 0)
-			{
-				System.out.println("outÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				System.out.println("Strike :"+strike+","+"Ball : "+ball+"ÀÔ´Ï´Ù.");
-			}
-			
-		}
-		
 
-	}	
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ 1 ï¿½Ô·ï¿½: ");
+			int user1 = sc.nextInt();
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ 2 ï¿½Ô·ï¿½: ");
+			int user2 = sc.nextInt();
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ 3 ï¿½Ô·ï¿½: ");
+			int user3 = sc.nextInt();
+
+			if (user1 == com1) {
+				strike++;
+			}
+			if (user2 == com2) {
+				strike++;
+			}
+			if (user3 == com3) {
+				strike++;
+			}
+			if (user1 == com2 || user1 == com3) {
+				ball++;
+			}
+			if (user2 == com1 || user2 == com3) {
+				ball++;
+			}
+			if (user3 == com1 || user3 == com2) {
+				ball++;
+			}
+
+			if (strike == 3) {
+				System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+				break;
+			} else if (strike == 0 && ball == 0) {
+				System.out.println("outï¿½Ô´Ï´ï¿½.");
+			} else {
+				System.out.println("Strike :" + strike + "," + "Ball : " + ball + "ï¿½Ô´Ï´ï¿½.");
+			}
+
+		}
+
+	}
 
 }
-

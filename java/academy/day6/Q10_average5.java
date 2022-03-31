@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 import java.util.Scanner;
 
@@ -6,22 +6,22 @@ public class Q10_average5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 5¸íÀÇ Á¡¼ö¸¦ °¢°¢ ÀÔ·ÂÀ» ¹Þ¾Æ¼­ Æò±ÕÀ» Ãâ·Â
-		
+		// 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+
 		Scanner scan = new Scanner(System.in);
 		double[] scoreArray = new double[5];
-		
-		for(int i=0; i<5; i++) {
-			System.out.print((i+1)+"¹øÂ° Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		for (int i = 0; i < 5; i++) {
+			System.out.print((i + 1) + "ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			scoreArray[i] = scan.nextDouble();
 		}
-		
+
 		System.out.println("--------------");
 		double sum = 0.0;
-		for(int i=0; i<5; i++) {
+		for (int i = 0; i < 5; i++) {
 			sum += scoreArray[i];
 		}
-		System.out.println("5¸íÀÇ Æò±Õ = "+(sum/5));
+		System.out.println("5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ = " + (sum / 5));
 	}
 
 }

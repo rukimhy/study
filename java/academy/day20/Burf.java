@@ -1,30 +1,29 @@
-package day20;
+package academy.day20;
 
 import java.util.Random;
 
-public class Burf{
+public class Burf {
 
 	void burf(Unit unit, Random r) {
-		int random_burf = r.nextInt(3); // 0 °ø°Ý·Â¾÷, 1 Ã¼·Â¾÷, 2 Ã¼·Â´Ù¿î
-		int random_atk = r.nextInt(51)+50;
-		int random_energy = r.nextInt(101)+100;
+		int random_burf = r.nextInt(3); // 0 ï¿½ï¿½ï¿½Ý·Â¾ï¿½, 1 Ã¼ï¿½Â¾ï¿½, 2 Ã¼ï¿½Â´Ù¿ï¿½
+		int random_atk = r.nextInt(51) + 50;
+		int random_energy = r.nextInt(101) + 100;
 
-		//atkUP
-		if(random_burf == 0) {
-			System.out.println("¹öÇÁ : "+unit.name+"ÀÇ °ø°Ý·ÂÀÌ "+random_atk+"¸¸Å­ Áõ°¡Çß´Ù.");
-			unit.set = unit.atk + random_atk; 
-		} 
-		//energyUP
-		else if(random_burf == 1) {
+		// atkUP
+		if (random_burf == 0) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + unit.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ " + random_atk + "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½.");
+			unit.set = unit.atk + random_atk;
+		}
+		// energyUP
+		else if (random_burf == 1) {
 			unit.energy += random_energy;
-			System.out.println("¹öÇÁ : "+unit.name+"ÀÇ ¿¡³ÊÁö°¡ "+random_energy+"¸¸Å­ Áõ°¡Çß´Ù.");
-		} 
-		//energyDOWN
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + unit.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + random_energy + "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½.");
+		}
+		// energyDOWN
 		else {
 			unit.energy -= random_energy;
-			System.out.println("µð¹öÇÁ : "+unit.name+"ÀÇ ¿¡³ÊÁö°¡ "+random_energy+"¸¸Å­ °¨¼ÒÇß´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ : " + unit.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + random_energy + "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½.");
 		}
 
 	}
 }
-

@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,24 +15,22 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-//1. ¹öÆ° Å¬¸¯½Ã »ö±òÀÌ °°Àº ¿ø¸¸ ²Ë Ã¤¿ö¼­ Ãâ·Â
-//2. ¿ø¼þÀÌ °ÔÀÓÀÌ ½ÇÇàµÇ°Ô ¸¸µé±â
+//1. ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+//2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
-
-class B extends JFrame implements ActionListener
-{
+class B extends JFrame implements ActionListener {
 	Random r = new Random();
 	int x = r.nextInt(5);
 	Mframe2 p1;
 	JTextField jf;
-	B()
-	{
+
+	B() {
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		p1 = new Mframe2();
 		p1.setLayout(new FlowLayout());
 		JPanel p2 = new JPanel();
-		p2.setLayout(new GridLayout(1,5,4,4));
+		p2.setLayout(new GridLayout(1, 5, 4, 4));
 		JButton b1 = new JButton("Red");
 		JButton b2 = new JButton("Yellow");
 		JButton b3 = new JButton("Blue");
@@ -43,193 +41,152 @@ class B extends JFrame implements ActionListener
 		b3.addActionListener(this);
 		b4.addActionListener(this);
 		b5.addActionListener(this);
-		jf = new JTextField("¹Ù¹Ù³ª¸¦ °¡Áö°í ÀÖ´Â ¿ø¼þÀÌ´Â?");
+		jf = new JTextField("ï¿½Ù¹Ù³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½?");
 		p2.add(b1);
 		p2.add(b2);
 		p2.add(b3);
 		p2.add(b4);
 		p2.add(b5);
-		p1.add(jf,BorderLayout.NORTH);
+		p1.add(jf, BorderLayout.NORTH);
 		c.add(p1);
 		c.add(p2, BorderLayout.SOUTH);
-		setSize(415,550);
+		setSize(415, 550);
 		setVisible(true);
 	}
 
-	public void actionPerformed(ActionEvent e)
-	{
-		// e.getActionCommand().equals("Red") ·¹µå ¹öÆ°ÀÌ ´­¸² ¹Ù³ª³ª ´©°¡°¡Áö°í ÀÖ´ÂÁö¿¡ »ç¿ë
-		//p1.repaint(); ±×¸²À» ´Ù½Ã±×·Á ¹öÆ° ³î·ÈÀ»¶§ ¿ø Ã¤¿ì±â ±â´É »ç¿ë
+	public void actionPerformed(ActionEvent e) {
+		// e.getActionCommand().equals("Red") ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½
+		// p1.repaint(); ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ù½Ã±×·ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-		if(e.getActionCommand().equals("Red"))
-		{
-			if(x == 0)
-			{
-				jf.setText("Á¤´äÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				jf.setText("Á¦°¡ ¾È°¡Áö°í ÀÖ½À´Ï´Ù.");
+		if (e.getActionCommand().equals("Red")) {
+			if (x == 0) {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 			p1.select = 1;
 			p1.repaint();
-		}
-		else if(e.getActionCommand().equals("Yellow"))
-		{
-			if(x == 1)
-			{
-				jf.setText("Á¤´äÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				jf.setText("Á¦°¡ ¾È°¡Áö°í ÀÖ½À´Ï´Ù.");
+		} else if (e.getActionCommand().equals("Yellow")) {
+			if (x == 1) {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 			p1.select = 2;
 			p1.repaint();
-		}
-		else if(e.getActionCommand().equals("Blue"))
-		{
-			if(x == 2)
-			{
-				jf.setText("Á¤´äÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				jf.setText("Á¦°¡ ¾È°¡Áö°í ÀÖ½À´Ï´Ù.");
+		} else if (e.getActionCommand().equals("Blue")) {
+			if (x == 2) {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 			p1.select = 3;
 			p1.repaint();
-		}
-		else if(e.getActionCommand().equals("Green"))
-		{
-			if(x == 3)
-			{
-				jf.setText("Á¤´äÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				jf.setText("Á¦°¡ ¾È°¡Áö°í ÀÖ½À´Ï´Ù.");
+		} else if (e.getActionCommand().equals("Green")) {
+			if (x == 3) {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 			p1.select = 4;
 			p1.repaint();
-		}
-		else if(e.getActionCommand().equals("Pink"))
-		{
-			if(x == 4)
-			{
-				jf.setText("Á¤´äÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				jf.setText("Á¦°¡ ¾È°¡Áö°í ÀÖ½À´Ï´Ù.");
+		} else if (e.getActionCommand().equals("Pink")) {
+			if (x == 4) {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else {
+				jf.setText("ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 			}
 			p1.select = 5;
 			p1.repaint();
-		}
-		else
-		{
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+		} else {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 
 	}
 }
 
-class Mframe2 extends JPanel
-{
+class Mframe2 extends JPanel {
 	int select = 0;
-	public void paintComponent(Graphics g)
-	{
-		if(select == 0)
-		{
+
+	public void paintComponent(Graphics g) {
+		if (select == 0) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		}
-		else if(select == 1)
-		{
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 1) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.fillOval(150,100,80,80);
+			g.fillOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		}
-		else if(select == 2)
-		{
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 2) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.fillOval(70,190,80,80);
+			g.fillOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		}
-		else if(select == 3)
-		{
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 3) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.fillOval(220,190,80,80);
+			g.fillOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		}
-		else if(select == 4)
-		{
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 4) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.fillOval(100,300,80,80);
+			g.fillOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.drawOval(210,300,80,80);
-		}
-		else if(select == 5)
-		{
+			g.drawOval(210, 300, 80, 80);
+		} else if (select == 5) {
 			super.paintComponent(g);
 			g.setColor(Color.RED);
-			g.drawOval(150,100,80,80);
+			g.drawOval(150, 100, 80, 80);
 			g.setColor(Color.YELLOW);
-			g.drawOval(70,190,80,80);
+			g.drawOval(70, 190, 80, 80);
 			g.setColor(Color.GREEN);
-			g.drawOval(100,300,80,80);
+			g.drawOval(100, 300, 80, 80);
 			g.setColor(Color.BLUE);
-			g.drawOval(220,190,80,80);
+			g.drawOval(220, 190, 80, 80);
 			g.setColor(Color.PINK);
-			g.fillOval(210,300,80,80);
-		}
-		else
-		{
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			g.fillOval(210, 300, 80, 80);
+		} else {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 	}
 }
-
 
 public class GUITEST1_teacher {
 

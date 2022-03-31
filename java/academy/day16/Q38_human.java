@@ -1,23 +1,19 @@
-package day16;
+package academy.day16;
 
 import java.util.Random;
 import java.util.Scanner;
 
-class Gun{}
+class Gun {
+}
 
-class Human
-{
+class Human {
 	Gun gun;
-	
-	void print() 
-	{
-		if(gun != null) 
-		{
-			System.out.println("ÃÑÀ» °¡Áö°í ÀÖ½À´Ï´Ù.");
-		} 
-		else 
-		{
-			System.out.println("ÃÑÀÌ ¾ø½À´Ï´Ù.");
+
+	void print() {
+		if (gun != null) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
+		} else {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }
@@ -25,31 +21,31 @@ class Human
 public class Q38_human {
 
 	public static void main(String[] args) {
-		/* »ç¶÷ÀÌ ÃÑ 5¸í ÀÖ´Ù. ±× Áß ·£´ýÀ¸·Î ÇÑ¸íÀÌ ±ÇÃÑÀ» µé°í ÀÖ´Ù.
-		 * ±ÇÃÑÀ» °¡Áö°í ÀÖ´Â »ç¶÷À» Ã£À¸¸é ³¡³ª´Â °ÔÀÓÀ» ¸¸µé¾î¶ó.
+		/*
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 5ï¿½ï¿½ ï¿½Ö´ï¿½. ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 		 */
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
 		Human[] human = new Human[5];
 		Gun gun = new Gun();
-		
+
 		int gunRandom = r.nextInt(5);
-		System.out.println((gunRandom+1)+"¹øÀÌ ÃÑÀ» °¡Á³´Ù.");
-		
-		for(int i = 0; i < 5; i++) 
-		{
+		System.out.println((gunRandom + 1) + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.");
+
+		for (int i = 0; i < 5; i++) {
 			human[i] = new Human();
 		}
-		
+
 		human[gunRandom].gun = gun;
 		gun = null;
-		
-		while(true) 
-		{
-			System.out.print("1~5ÀÇ ¼ýÀÚ Áß ÃÑÀ» °¡Áø »ç¶÷À» Ã£À¸¼¼¿ä : ");
+
+		while (true) {
+			System.out.print("1~5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ");
 			int choice = scan.nextInt();
-			human[choice-1].print();
-			if(human[choice-1].gun != null) break;
+			human[choice - 1].print();
+			if (human[choice - 1].gun != null)
+				break;
 		}
 	}
 

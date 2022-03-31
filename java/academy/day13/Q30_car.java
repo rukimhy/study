@@ -1,21 +1,21 @@
-package day13;
+package academy.day13;
 
 class Car {
 	String color;
 	String maker;
 	int max_speed;
-	
+
 	void riding() {
-		System.out.println("Â÷´Â "+color+"»öÀÌ°í, Á¦Á¶»ç´Â "+maker+"ÀÌ¸ç, ÃÖ°í ¼Óµµ´Â "+max_speed+"ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ " + color + "ï¿½ï¿½ï¿½Ì°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + maker + "ï¿½Ì¸ï¿½, ï¿½Ö°ï¿½ ï¿½Óµï¿½ï¿½ï¿½ " + max_speed + "ï¿½Ô´Ï´ï¿½.");
 	}
 }
 
 class Bicycle {
 	String function;
 	String maker;
-	
+
 	void riding() {
-		System.out.println("ÀÚÀü°ÅÀÇ Á¦Á¶»ç´Â "+maker+"ÀÌ¸ç, ±â´ÉÀº "+function+"ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + maker + "ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ " + function + "ï¿½Ô´Ï´ï¿½.");
 	}
 }
 
@@ -23,9 +23,9 @@ class Bike {
 	String color;
 	String maker;
 	int max_speed;
-	
+
 	void riding() {
-		System.out.println("¿ÀÅä¹ÙÀÌ´Â "+color+"»öÀÌ°í, Á¦Á¶»ç´Â "+maker+"ÀÌ¸ç, ÃÖ°í ¼Óµµ´Â "+max_speed+"ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ " + color + "ï¿½ï¿½ï¿½Ì°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + maker + "ï¿½Ì¸ï¿½, ï¿½Ö°ï¿½ ï¿½Óµï¿½ï¿½ï¿½ " + max_speed + "ï¿½Ô´Ï´ï¿½.");
 	}
 }
 
@@ -45,52 +45,52 @@ public class Q30_car {
 		// TODO Auto-generated method stub
 		User1 user1 = new User1();
 		User2 user2 = new User2();
-		
+
 		Car car1 = new Car();
 		Car car2 = new Car();
 		Car car3 = new Car();
 		Car car4 = new Car();
-		
-		car1.color = "Àº";
-		car2.color = "°ËÁ¤";
-		car3.color = "ÇÏ¾á";
-		car4.color = "Çü±¤";
-		
+
+		car1.color = "ï¿½ï¿½";
+		car2.color = "ï¿½ï¿½ï¿½ï¿½";
+		car3.color = "ï¿½Ï¾ï¿½";
+		car4.color = "ï¿½ï¿½ï¿½ï¿½";
+
 		car1.maker = "Ford";
 		car2.maker = "BMW";
-		car3.maker = "»ï¼º";
-		car4.maker = "Çö´ë";
-		
+		car3.maker = "ï¿½ï¼º";
+		car4.maker = "ï¿½ï¿½ï¿½ï¿½";
+
 		car1.max_speed = 220;
 		car2.max_speed = 240;
 		car3.max_speed = 200;
 		car4.max_speed = 180;
-		
+
 		Bicycle bicycle1 = new Bicycle();
 		Bicycle bicycle2 = new Bicycle();
-		
-		bicycle1.maker = "»ïÃµ¸®";
-		bicycle2.maker = "ÀÚÀÌ¾ðÆ®";
-		
-		bicycle1.function = "»ê¾Ç¿ë";
-		bicycle2.function = "Á¢ÀÌ½Ä¿ë";
-		
+
+		bicycle1.maker = "ï¿½ï¿½Ãµï¿½ï¿½";
+		bicycle2.maker = "ï¿½ï¿½ï¿½Ì¾ï¿½Æ®";
+
+		bicycle1.function = "ï¿½ï¿½Ç¿ï¿½";
+		bicycle2.function = "ï¿½ï¿½ï¿½Ì½Ä¿ï¿½";
+
 		Bike bike = new Bike();
-		
-		bike.color = "»¡°£";
-		bike.maker = "´ë¸²";
+
+		bike.color = "ï¿½ï¿½ï¿½ï¿½";
+		bike.maker = "ï¿½ë¸²";
 		bike.max_speed = 180;
-		
+
 		user1.car2 = car2;
 		car2 = null;
 		user1.car4 = car4;
 		car4 = null;
-		
+
 		user2.bike = bike;
 		bike = null;
 		user2.bicycle1 = bicycle1;
 		bicycle1 = null;
-		
+
 		user1.car2.riding();
 		user1.car4.riding();
 		user2.bicycle1.riding();

@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,17 +13,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-class A extends JFrame implements ActionListener
-{
+class A extends JFrame implements ActionListener {
 	JPanel p1;
-	A()
-	{
+
+	A() {
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		p1 = new Mframe();
 		p1.setLayout(new FlowLayout());
 		JPanel p2 = new JPanel();
-		p2.setLayout(new GridLayout(1,5,4,4));
+		p2.setLayout(new GridLayout(1, 5, 4, 4));
 		JButton b1 = new JButton("Red");
 		JButton b2 = new JButton("Yellow");
 		JButton b3 = new JButton("Blue");
@@ -41,37 +40,32 @@ class A extends JFrame implements ActionListener
 		p2.add(b5);
 		c.add(p1);
 		c.add(p2, BorderLayout.SOUTH);
-		setSize(415,550);
+		setSize(415, 550);
 		setVisible(true);
 	}
-	
-	public void actionPerformed(ActionEvent e)
-	{
-		// e.getActionCommand().equals("Red") ·¹µå ¹öÆ°ÀÌ ´­¸²
-		//p1.repaint(); ±×¸²À» ´Ù½Ã±×·Á
-		
-		
+
+	public void actionPerformed(ActionEvent e) {
+		// e.getActionCommand().equals("Red") ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// p1.repaint(); ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ù½Ã±×·ï¿½
+
 	}
 }
 
-class Mframe extends JPanel
-{
-	public void paintComponent(Graphics g)
-	{
+class Mframe extends JPanel {
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.RED);
-		g.drawOval(150,100,80,80);
+		g.drawOval(150, 100, 80, 80);
 		g.setColor(Color.YELLOW);
-		g.drawOval(70,190,80,80);
+		g.drawOval(70, 190, 80, 80);
 		g.setColor(Color.GREEN);
-		g.drawOval(100,300,80,80);
+		g.drawOval(100, 300, 80, 80);
 		g.setColor(Color.BLUE);
-		g.drawOval(220,190,80,80);
+		g.drawOval(220, 190, 80, 80);
 		g.setColor(Color.PINK);
-		g.drawOval(210,300,80,80);
+		g.drawOval(210, 300, 80, 80);
 	}
 }
-
 
 public class GUITEST_teacher {
 

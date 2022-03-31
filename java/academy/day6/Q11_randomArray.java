@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,51 +7,48 @@ public class Q11_randomArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* »ç¿ëÀÚ°¡ Á¤¼ö ÀÔ·ÂÇÏ¸é ±× ¼ö ¸¸Å­ÀÇ ¹è¿­ »ý¼º
-		 * ÀüÃ¼ ¹è¿­¿¡ 0~100 Áß ·£´ý°ªÀ¸·Î Ã¤¿öÁØ´Ù.
-		 * ±× ÀÌÈÄ °¡Àå Å«°ªÀÇ ÀÎµ¦½º¿Í °¡Àå ÀÛÀº °ªÀÇ ÀÎµ¦½º¸¦ Ãâ·Â 
+		/*
+		 * ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å­ï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½Ã¼ ï¿½è¿­ï¿½ï¿½ 0~100 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½Ø´ï¿½.
+		 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å«ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		 */
 
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
 
-		System.out.print("¿øÇÏ´Â ¹è¿­ Å©±â¸¦ ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½è¿­ Å©ï¿½â¸¦ ï¿½Ô·ï¿½ : ");
 		int num = scan.nextInt();
 
 		int[] arr = new int[num];
 
-		for(int i=0; i<arr.length; i++) 
-		{
+		for (int i = 0; i < arr.length; i++) {
 			arr[i] = r.nextInt(101);
-			System.out.print(arr[i]+" ");
+			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 
 		int max = 0;
 		int min = 100;
 
-		for(int i=0; i<arr.length; i++) 
-		{
-			if(arr[i] > max) max = arr[i];
-			if(arr[i] < min) min = arr[i];
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max)
+				max = arr[i];
+			if (arr[i] < min)
+				min = arr[i];
 		}
-		
+
 		System.out.println("-----------------");
-		for(int i=0; i<arr.length; i++) 
-		{
-			if(arr[i] == max) 
-			{
-				System.out.println("°¡Àå Å« °ªÀÇ ÀÎµ¦½º : "+i);
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == max) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ : " + i);
 				break;
 			}
 
 		}
-		
-		for(int i=0; i<arr.length; i++) 
-		{
-			if(arr[i] == min) 
-			{
-				System.out.println("°¡Àå ÀÛÀº °ªÀÇ ÀÎµ¦½º : "+i);
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == min) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ : " + i);
 				break;
 			}
 		}

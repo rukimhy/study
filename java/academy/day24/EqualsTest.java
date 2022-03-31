@@ -1,14 +1,14 @@
-package day24;
+package academy.day24;
 
-class Student{
+class Student {
 	int studentId;
 	String studentName;
-	
-	Student(int studentId, String studentName){
+
+	Student(int studentId, String studentName) {
 		this.studentId = studentId;
 		this.studentName = studentName;
 	}
-	
+
 	public String toString() {
 		return studentId + "," + studentName;
 	}
@@ -17,36 +17,32 @@ class Student{
 public class EqualsTest {
 
 	public static void main(String[] args) {
-		Student studentLee = new Student(100, "ÀÌ»ó¿ø");
+		Student studentLee = new Student(100, "ï¿½Ì»ï¿½ï¿½");
 		Student studentLee2 = studentLee;
-		Student studentSang = new Student(100, "ÀÌ»ó¿ø");
-		
-		if(studentLee == studentLee2) {
-			System.out.println("studentLee¿Í studentLee2ÀÇ ÁÖ¼Ò´Â °°½À´Ï´Ù.");
+		Student studentSang = new Student(100, "ï¿½Ì»ï¿½ï¿½");
+
+		if (studentLee == studentLee2) {
+			System.out.println("studentLeeï¿½ï¿½ studentLee2ï¿½ï¿½ ï¿½Ö¼Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		} else {
+			System.out.println("studentLeeï¿½ï¿½ studentLee2ï¿½ï¿½ ï¿½Ö¼Ò´ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
 		}
-		else {
-			System.out.println("studentLee¿Í studentLee2ÀÇ ÁÖ¼Ò´Â ´Ù¸¨´Ï´Ù.");
+
+		if (studentLee.equals(studentLee2)) {
+			System.out.println("studentLeeï¿½ï¿½ studentLee2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		} else {
+			System.out.println("studentLeeï¿½ï¿½ studentLee2ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
 		}
-		
-		if(studentLee.equals(studentLee2)) {
-			System.out.println("studentLee¿Í studentLee2´Â µ¿ÀÏÇÕ´Ï´Ù.");
+
+		if (studentLee == studentSang) {
+			System.out.println("studentLeeï¿½ï¿½ studentSangï¿½ï¿½ ï¿½Ö¼Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		} else {
+			System.out.println("studentLeeï¿½ï¿½ studentSangï¿½ï¿½ ï¿½Ö¼Ò´ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
 		}
-		else {
-			System.out.println("studentLee¿Í studentLee2´Â ´Ù¸¨´Ï´Ù.");
-		}
-		
-		if(studentLee == studentSang) {
-			System.out.println("studentLee¿Í studentSangÀÇ ÁÖ¼Ò´Â °°½À´Ï´Ù.");
-		}
-		else {
-			System.out.println("studentLee¿Í studentSangÀÇ ÁÖ¼Ò´Â ´Ù¸¨´Ï´Ù.");
-		}
-		
-		if(studentLee.equals(studentSang)) {
-			System.out.println("studentLee¿Í studentSang´Â µ¿ÀÏÇÕ´Ï´Ù.");
-		}
-		else {
-			System.out.println("studentLee¿Í studentSang´Â ´Ù¸¨´Ï´Ù.");
+
+		if (studentLee.equals(studentSang)) {
+			System.out.println("studentLeeï¿½ï¿½ studentSangï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		} else {
+			System.out.println("studentLeeï¿½ï¿½ studentSangï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 

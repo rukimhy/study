@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,10 +41,10 @@ class Server extends Thread{
 
  */
 
-class SocketArrayList extends Thread{
+class SocketArrayList extends Thread {
 	ArrayList<Socket> list;
 
-	SocketArrayList(){
+	SocketArrayList() {
 		list = new ArrayList<Socket>();
 	}
 
@@ -68,25 +68,23 @@ class SocketArrayList extends Thread{
 			BufferedReader receiver = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			String receiveString;
 
-			while(true) {
+			while (true) {
 				sendString = tmpbuf.readLine();
-				
-				if(sendString.equals("exit")) {
+
+				if (sendString.equals("exit")) {
 					break;
-				} 
-				else {
+				} else {
 					sendWriter.println(sendString);
 					sendWriter.flush();
 				}
 
 				receiveString = receiver.readLine();
-				if(receiveString == null) {
-					System.out.println("»ó´ë¿Í ¿¬°áÀÌ ²÷°å½À´Ï´Ù.");
+				if (receiveString == null) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					break;
-				} 
-				else {
-					for(int i = 0; i<list.size(); i++) {
-						
+				} else {
+					for (int i = 0; i < list.size(); i++) {
+
 					}
 				}
 			}
@@ -100,7 +98,6 @@ class SocketArrayList extends Thread{
 
 public class MS {
 
-
 	public static void main(String[] args) {
 
 		SocketArrayList SAL = new SocketArrayList();
@@ -108,7 +105,7 @@ public class MS {
 		try {
 			ServerSocket s_socket = new ServerSocket(8888);
 
-			while(true) {
+			while (true) {
 				Socket c_socket = s_socket.accept();
 				SAL.addSocket(c_socket);
 				SAL.setSocket(c_socket);
@@ -123,7 +120,7 @@ public class MS {
 				rec_thread.start();
 			}
 
-		} catch(IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

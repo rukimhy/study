@@ -1,58 +1,55 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q24_random1to5 {
 
-	//cpu ·£´ý°ª ¹Þ´Â ÇÔ¼ö (3¹ø)
-	public static int randomCpu() 
-	{
+	// cpu ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½Ô¼ï¿½ (3ï¿½ï¿½)
+	public static int randomCpu() {
 		Random r = new Random();
-		int cpu = r.nextInt(5)+1;
+		int cpu = r.nextInt(5) + 1;
 		return cpu;
 	}
 
-	//user ÀÔ·Â ¹Þ´Â ÇÔ¼ö (3¹ø)
-	public static int input() 
-	{
+	// user ï¿½Ô·ï¿½ ï¿½Þ´ï¿½ ï¿½Ô¼ï¿½ (3ï¿½ï¿½)
+	public static int input() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("1~5 Áß ¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("1~5 ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 		int user = scan.nextInt();
 		return user;
 	}
 
-	//°á°ú°ª ¸®ÅÏÇÏ´Â ÇÔ¼ö (1¹ø)
-	public static int output(int cpu, int user) 
-	{
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½ (1ï¿½ï¿½)
+	public static int output(int cpu, int user) {
 		int result = 0;
-		if(cpu == user) result = 1;
+		if (cpu == user)
+			result = 1;
 		return result;
 	}
 
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* ·£´ýÀ¸·Î 1~5±îÁö ÀÔ·Â ¹Þ°í ±× ¹øÈ£´Â ¹üÀÎ
-		 * À¯Àú´Â 1~5±îÁö °è¼Ó ÀÔ·ÂÇØ¼­ ¹üÀÎÀ» Ã£´Â °ÔÀÓ. ¹üÀÎÀ» Ã£À» ¶§±îÁö ¹Ýº¹
-		 * ¹üÀÎÀÌ ¾Æ´Ñ °ªÀ» ÀÔ·ÂÇÏ¸é ¹üÀÎÀ» ÀâÁö ¸øÇß½À´Ï´Ù.
-		 * ¹üÀÎ¹øÈ£¸¦ ÀÔ·ÂÇÏ¸é ¹üÀÎÀ» Àâ¾Ò½À´Ï´Ù Ãâ·Â ÈÄ¿¡ ÇÁ·Î±×·¥ Á¾·á
-		 * ÇÔ¼ö 3°³, 1¹ø(ÁÖ°í ¹Þ°í)°ú 3¹ø(ÁÖ°í ¾È¹Þ°í)¸¸ »ç¿ë
+		/*
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1~5ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ°ï¿½ ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1~5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.
+		 * ï¿½ï¿½ï¿½Î¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ô¼ï¿½ 3ï¿½ï¿½, 1ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½Þ°ï¿½)ï¿½ï¿½ 3ï¿½ï¿½(ï¿½Ö°ï¿½ ï¿½È¹Þ°ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½
 		 */
-		
+
 		int cpu = randomCpu();
-		
+
 		System.out.println(cpu);
-		
-		while(true) {
+
+		while (true) {
 			int user = input();
 
-			if(output(cpu, user) == 1) 
-			{
-				System.out.println("¹üÀÎÀ» Àâ¾Ò½À´Ï´Ù.");
+			if (output(cpu, user) == 1) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 				break;
-			} 
-			else System.out.println("¹üÀÎÀ» ÀâÁö ¸øÇß½À´Ï´Ù.");
+			} else
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 

@@ -1,5 +1,4 @@
-
-package day28;
+package academy.day28;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,67 +8,64 @@ import java.net.Socket;
 
 class ST extends Thread {
 	private Socket socket;
-	
+
 	public void setSocket(Socket socket) {
 		this.socket = socket;
 	}
 
 	public void run() {
 		super.run();
-		
+
 		try {
 			BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(System.in));
 			PrintWriter sendWriter = new PrintWriter(socket.getOutputStream());
 			String sendString;
-			
-			
-			while(true) {
+
+			while (true) {
 				sendString = tmpbuf.readLine();
-				if(sendString.equals("exit")) {
+				if (sendString.equals("exit")) {
 					break;
 				}
 				sendWriter.println(sendString);
 				sendWriter.flush();
-				
+
 			}
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 }
 
-class RT extends Thread{
+class RT extends Thread {
 	private Socket socket;
 
 	public void setSocket(Socket socket) {
 		this.socket = socket;
 	}
-	
-	
+
 	public void run() {
 		super.run();
-		
+
 		try {
 			BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			String receiveString;
-			
-			while(true) {
+
+			while (true) {
 				receiveString = tmpbuf.readLine();
-				
-				if(receiveString == null) {
-					System.out.println("»ó´ë¿Í ¿¬°áÀÌ ²÷°å½À´Ï´Ù.");
-					
+
+				if (receiveString == null) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+
 					break;
 				} else {
 					System.out.println(receiveString);
 				}
 			}
-			
-		} catch(IOException e) {
+
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

@@ -1,4 +1,4 @@
-package day26;
+package academy.day26;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,12 +9,12 @@ public class FileWriterTest1 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Scanner stdin = new Scanner(System.in);
-		String source = "¾È³çÇÏ¼¼¿ä. ÀÎÃµÁ÷¾÷´É·Â°³¹ß¿ø ÀÔ´Ï´Ù.";
+		String source = "ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½. ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½É·Â°ï¿½ï¿½ß¿ï¿½ ï¿½Ô´Ï´ï¿½.";
 		String s = stdin.next();
 		FileWriter fw = new FileWriter(s);
 		fw.write(source);
 		fw.close();
-		System.out.print(s + "ÆÄÀÏÀÌ »ý¼ºµÇ¾ú½À´Ï´Ù.");
+		System.out.print(s + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 
 }

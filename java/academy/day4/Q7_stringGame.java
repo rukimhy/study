@@ -1,4 +1,4 @@
-package day4;
+package academy.day4;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,47 +7,42 @@ public class Q7_stringGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* ¹®ÀÚ¿­ º¯¼ö¿¡ "ÀÎÃµÁ÷¾÷´É·Â°³¹ß¿ø" 
-		 * ·£´ı ÀÌ¿ëÇØ¼­ ¹®ÀÚ ÇÏ³ª ÃßÃâÇØ¼­ ÄÄÇ»ÅÍ°¡ °¡Áö°í ÀÖ´Â´Ù.
-		 * À¯Àú°¡ ±ÛÀÚ¸¦ ÀÔ·ÂÇØ¼­ ¸ÂÃâ ¶§±îÁö °ÔÀÓÀ» ÇÕ´Ï´Ù.
-		 * °ÔÀÓÀÌ ³¡³ª¸é ÄÄÇ»ÅÍ°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚ¿Í ¸î ¹øÀÇ ½Ãµµ¸¸¿¡ ¸ÂÃçÁö´ÂÁö Ãâ·Â
-		 * ÀÎÃµÁ÷¾÷´É·Â°³¹ß¿ø ¹®ÀÚ°¡ ¾Æ´Ï¸é ½Ãµµ È½¼ö¿¡ Æ÷ÇÔµÇÁö ¾ÊÀ½
+		/*
+		 * ë¬¸ìì—´ ë³€ìˆ˜ì— "ì¸ì²œì§ì—…ëŠ¥ë ¥ê°œë°œì›"
+		 * ëœë¤ ì´ìš©í•´ì„œ ë¬¸ì í•˜ë‚˜ ì¶”ì¶œí•´ì„œ ì»´í“¨í„°ê°€ ê°€ì§€ê³  ìˆëŠ”ë‹¤.
+		 * ìœ ì €ê°€ ê¸€ìë¥¼ ì…ë ¥í•´ì„œ ë§ì¶œ ë•Œê¹Œì§€ ê²Œì„ì„ í•©ë‹ˆë‹¤.
+		 * ê²Œì„ì´ ëë‚˜ë©´ ì»´í“¨í„°ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì™€ ëª‡ ë²ˆì˜ ì‹œë„ë§Œì— ë§ì¶°ì§€ëŠ”ì§€ ì¶œë ¥
+		 * ì¸ì²œì§ì—…ëŠ¥ë ¥ê°œë°œì› ë¬¸ìê°€ ì•„ë‹ˆë©´ ì‹œë„ íšŸìˆ˜ì— í¬í•¨ë˜ì§€ ì•ŠìŒ
 		 */
-		
-		String str = "ÀÎÃµÁ÷¾÷´É·Â°³¹ß¿ø";
+
+		String str = "ì¸ì²œì§ì—…ëŠ¥ë ¥ê°œë°œì›";
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
-		
+
 		int cpu_r = r.nextInt(9); // 0~8
 		char cpu_char = str.charAt(cpu_r);
 		int usr_count = 0;
-		
+
 		System.out.println("----------------------------------------");
-		System.out.println("ÄÄÇ»ÅÍ¿Í ÇÏ´Â ¹®ÀÚ ¸ÂÃß±â °ÔÀÓÀÔ´Ï´Ù.");
-		System.out.println("[ÀÎ.Ãµ.Á÷.¾÷.´É.·Â.°³.¹ß.¿ø] Áß Á¤´äÀ» ¸ÂÃß¼¼¿ä.");
+		System.out.println("ì»´í“¨í„°ì™€ í•˜ëŠ” ë¬¸ì ë§ì¶”ê¸° ê²Œì„ì…ë‹ˆë‹¤.");
+		System.out.println("[ì¸.ì²œ.ì§.ì—….ëŠ¥.ë ¥.ê°œ.ë°œ.ì›] ì¤‘ ì •ë‹µì„ ë§ì¶”ì„¸ìš”.");
 		System.out.println("----------------------------------------");
-		
-		while(true) 
-		{
-			System.out.print("»ı°¢ÇÏ´Â ´äÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+
+		while (true) {
+			System.out.print("ìƒê°í•˜ëŠ” ë‹µì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			char choice = scan.next().charAt(0);
-			
-			if(!(choice == 'ÀÎ' || choice == 'Ãµ' || choice == 'Á÷' || choice == '¾÷' || choice == '´É' || choice == '·Â' || choice == '°³' || choice == '¹ß' || choice == '¿ø')) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			} 
-			else 
-			{
-				if(choice != cpu_char) 
-				{
-					System.out.println("Á¤´äÀÌ ¾Æ´Õ´Ï´Ù!");
+
+			if (!(choice == 'ì¸' || choice == 'ì²œ' || choice == 'ì§' || choice == 'ì—…' || choice == 'ëŠ¥' || choice == 'ë ¥'
+					|| choice == 'ê°œ' || choice == 'ë°œ' || choice == 'ì›')) {
+				System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
+			} else {
+				if (choice != cpu_char) {
+					System.out.println("ì •ë‹µì´ ì•„ë‹™ë‹ˆë‹¤!");
 					usr_count++;
-				} 
-				else 
-				{
-					System.out.println("ÃàÇÏµå¸³´Ï´Ù. Á¤´äÀÔ´Ï´Ù!");
-					System.out.println("Á¤´ä : "+ cpu_char);
-					System.out.println("Æ²¸° È½¼ö : "+ usr_count);
+				} else {
+					System.out.println("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤. ì •ë‹µì…ë‹ˆë‹¤!");
+					System.out.println("ì •ë‹µ : " + cpu_char);
+					System.out.println("í‹€ë¦° íšŸìˆ˜ : " + usr_count);
 					break;
 				}
 			}

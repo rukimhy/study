@@ -1,8 +1,8 @@
-package day20;
+package academy.day20;
 
 public class Knight extends Unit {
-	Knight(){
-		super.name = "±â»ç";
+	Knight() {
+		super.name = "ï¿½ï¿½ï¿½";
 		super.atk = 100;
 		super.energy = 1000;
 		super.set = super.atk;

@@ -1,25 +1,25 @@
-package day2;
+package academy.day2;
 
 public class SwitchCase2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		String medal = "Gold";
-		
-		switch(medal) {
-		case "Gold":
-			System.out.println("±Ý¸Þ´ÞÀÔ´Ï´Ù.");
-			break;
-		case "Silver":
-			System.out.println("Àº¸Þ´ÞÀÔ´Ï´Ù.");
-			break;
-		case "Bronze":
-			System.out.println("µ¿¸Þ´ÞÀÔ´Ï´Ù.");
-			break;
-		default:
-			System.out.println("¸Þ´ÞÀÌ ¾ø½À´Ï´Ù.");
-			break;
+
+		switch (medal) {
+			case "Gold":
+				System.out.println("ï¿½Ý¸Þ´ï¿½ï¿½Ô´Ï´ï¿½.");
+				break;
+			case "Silver":
+				System.out.println("ï¿½ï¿½ï¿½Þ´ï¿½ï¿½Ô´Ï´ï¿½.");
+				break;
+			case "Bronze":
+				System.out.println("ï¿½ï¿½ï¿½Þ´ï¿½ï¿½Ô´Ï´ï¿½.");
+				break;
+			default:
+				System.out.println("ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				break;
 		}
 
 	}

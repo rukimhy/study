@@ -1,4 +1,4 @@
-package day4;
+package academy.day4;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,56 +7,60 @@ public class Q3_RSP_R {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// À¯Àú½Â °¡À§0/º¸2 ¹ÙÀ§1/°¡À§0 º¸2/¹ÙÀ§1 => À¯Àú - ÄÄÇ»ÅÍ = 1 or -2
-		
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½0/ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½1/ï¿½ï¿½ï¿½ï¿½0 ï¿½ï¿½2/ï¿½ï¿½ï¿½ï¿½1 => ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½Ç»ï¿½ï¿½ = 1 or -2
+
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
-		
-		 // 0 = °¡À§, 1 = ¹ÙÀ§, 2 = º¸
+
+		// 0 = ï¿½ï¿½ï¿½ï¿½, 1 = ï¿½ï¿½ï¿½ï¿½, 2 = ï¿½ï¿½
 		int usr_win = 0, usr_defeat = 0, usr_draw = 0;
-		
+
 		System.out.println("----------------------------------------");
-		System.out.println("ÄÄÇ»ÅÍ¿Í ÇÏ´Â °¡À§ ¹ÙÀ§ º¸ °ÔÀÓÀÔ´Ï´Ù.");
-		System.out.println("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.println("[Á¾·á]¶ó°í ÀÔ·ÂÇÏ¸é °ÔÀÓÀÌ ³¡³³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í¿ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+		System.out.println("[ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		System.out.println("----------------------------------------");
 
-		while(true) {
+		while (true) {
 			int cpu_choice = r.nextInt(3);
-			int usr_number; int sum;
-			
-			System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			int usr_number;
+			int sum;
+
+			System.out.print("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			String usr_choice = scan.next();
-			
-			if(usr_choice.equals("Á¾·á")) {
-				System.out.println("Á¾·áÇÕ´Ï´Ù.");
+
+			if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½")) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				System.out.println("----------------------------------------");
-				System.out.println("À¯ÀúÀÇ ½Â : "+ usr_win);
-				System.out.println("¹«½ÂºÎ : "+ usr_draw);
-				System.out.println("À¯ÀúÀÇ ÆÐ : "+ usr_defeat);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + usr_win);
+				System.out.println("ï¿½ï¿½ï¿½Âºï¿½ : " + usr_draw);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + usr_defeat);
 				System.out.println("----------------------------------------");
 				break;
-				
+
 			} else {
-				if(!(usr_choice.equals("°¡À§") || usr_choice.equals("¹ÙÀ§") || usr_choice.equals("º¸"))) {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-					System.out.println("Á¾·áÇÕ´Ï´Ù.");
+				if (!(usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½"))) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 					break;
 				} else {
-					if(usr_choice.equals("°¡À§")) usr_number = 0;
-					else if(usr_choice.equals("¹ÙÀ§")) usr_number = 1;
-					else usr_number = 2;
-					
+					if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 0;
+					else if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 1;
+					else
+						usr_number = 2;
+
 					sum = usr_number - cpu_choice;
-					
-					if(sum == 1 || sum == -2) {
-						System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
+
+					if (sum == 1 || sum == -2) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 						usr_win++;
-					} else if(sum == 0) {
-						System.out.println("ºñ°å½À´Ï´Ù.");
+					} else if (sum == 0) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 						usr_draw++;
 					} else {
-						System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+						System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 						usr_defeat++;
 					}
 				}

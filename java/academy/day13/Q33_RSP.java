@@ -1,70 +1,70 @@
-package day13;
+package academy.day13;
 
 import java.util.Random;
 import java.util.Scanner;
 
-class Win{
+class Win {
 	int count;
+
 	void print() {
-		System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 class Draw {
 	int count;
+
 	void print() {
-		System.out.println("ºñ°å½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 class Lose {
 	int count;
+
 	void print() {
-		System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 public class Q33_RSP {
 
-	//ÄÄÇ»ÅÍ ·£´ý ±¸Çö
+	// ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static int cpu_random() {
 		Random r = new Random();
 		int cpu_choice = r.nextInt(3);
 		return cpu_choice;
 	}
 
-
-	//usr_input ÀÔ·Â
+	// usr_input ï¿½Ô·ï¿½
 	public static String usr_input_input() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		String usr_choice = scan.next();
 
 		return usr_choice;
 	}
 
-	//usr_input ÆÇº°
+	// usr_input ï¿½Çºï¿½
 	public static int usr_input_check() {
 		int usr_number;
-		while(true) {
+		while (true) {
 			String usr_choice = usr_input_input();
-			if(usr_choice.equals("Á¾·á")) 
-			{
+			if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				usr_number = -1;
 				break;
-			} 
-			else 
-			{
-				if(!(usr_choice.equals("°¡À§") || usr_choice.equals("¹ÙÀ§") || usr_choice.equals("º¸"))) 
-				{
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù."); 
-				} 
+			} else {
+				if (!(usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½"))) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+				}
 
-				else 
-				{
-					if(usr_choice.equals("°¡À§")) usr_number = 0;
-					else if(usr_choice.equals("¹ÙÀ§")) usr_number = 1;
-					else usr_number = 2;
+				else {
+					if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 0;
+					else if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 1;
+					else
+						usr_number = 2;
 					break;
 				}
 			}
@@ -72,23 +72,22 @@ public class Q33_RSP {
 		return usr_number;
 	}
 
-	//°ÔÀÓ ½ÃÀÛ
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void game_start() {
 		System.out.println("----------------------------------------");
-		System.out.println("ÄÄÇ»ÅÍ¿Í ÇÏ´Â °¡À§ ¹ÙÀ§ º¸ °ÔÀÓÀÔ´Ï´Ù.");
-		System.out.println("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.println("[Á¾·á]¶ó°í ÀÔ·ÂÇÏ¸é °ÔÀÓÀÌ ³¡³³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í¿ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+		System.out.println("[ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		System.out.println("----------------------------------------");
 	}
 
-	//°¡À§¹ÙÀ§º¸ ÆÇº°
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Çºï¿½
 	public static int[] RCP(int usr_sum[]) {
 
 		return usr_sum;
 	}
 
-
-	//°ÔÀÓ ±¸Çö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void output() {
 		// TODO Auto-generated method stub
 		Win win = new Win();
@@ -101,31 +100,23 @@ public class Q33_RSP {
 
 		game_start();
 
-		while(true) {
+		while (true) {
 
 			int usr_number = usr_input_check();
-			if(usr_number == -1) 
-			{
-				System.out.println("½Â¸® : "+win.count+" // ºñ±è : "+draw.count+" // ÆÐ¹è : "+lose.count);
+			if (usr_number == -1) {
+				System.out.println("ï¿½Â¸ï¿½ : " + win.count + " // ï¿½ï¿½ï¿½ : " + draw.count + " // ï¿½Ð¹ï¿½ : " + lose.count);
 				break;
-			}
-			else 
-			{
+			} else {
 				int cpu_choice = cpu_random();
-				int usr_sum = usr_number - cpu_choice; 
+				int usr_sum = usr_number - cpu_choice;
 
-				if(usr_sum == 1 || usr_sum == -2) 
-				{
+				if (usr_sum == 1 || usr_sum == -2) {
 					win.print();
 					win.count++;
-				} 
-				else if(usr_sum == 0) 
-				{
+				} else if (usr_sum == 0) {
 					draw.print();
 					draw.count++;
-				} 
-				else 
-				{
+				} else {
 					lose.print();
 					lose.count++;
 				}
@@ -133,8 +124,6 @@ public class Q33_RSP {
 		}
 		System.out.println("");
 	}
-
-
 
 	public static void main(String[] args) {
 		output();

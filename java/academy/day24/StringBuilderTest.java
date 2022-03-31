@@ -1,22 +1,22 @@
-package day24;
+package academy.day24;
 
 public class StringBuilderTest {
 
 	public static void main(String[] args) {
 		String javaStr = new String("java");
-		System.out.println("javaStr ¹®ÀÚ¿­ ÁÖ¼Ò : "+System.identityHashCode(javaStr));
+		System.out.println("javaStr ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½ : " + System.identityHashCode(javaStr));
 
 		StringBuilder buffer = new StringBuilder(javaStr);
-		System.out.println("¿¬»ê Àü buffer ¸Þ¸ð¸® ÁÖ¼Ò : "+System.identityHashCode(buffer));
-		
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ buffer ï¿½Þ¸ï¿½ ï¿½Ö¼ï¿½ : " + System.identityHashCode(buffer));
+
 		buffer.append(" and");
 		buffer.append(" android");
 		buffer.append(" programming is fun!!!");
-		System.out.println("¿¬»ê ÈÄ buffer ¸Þ¸ð¸® ÁÖ¼Ò : "+System.identityHashCode(buffer));
-		
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ buffer ï¿½Þ¸ï¿½ ï¿½Ö¼ï¿½ : " + System.identityHashCode(buffer));
+
 		javaStr = buffer.toString();
 		System.out.println(javaStr);
-		System.out.println("¿¬°áµÈ ¹®ÀÚ¿­ ÁÖ¼Ò °ª: "+System.identityHashCode(javaStr));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½: " + System.identityHashCode(javaStr));
 
 	}
 

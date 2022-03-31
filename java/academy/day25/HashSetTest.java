@@ -1,4 +1,4 @@
-package day25;
+package academy.day25;
 
 import java.util.HashSet;
 
@@ -6,12 +6,12 @@ public class HashSetTest {
 
 	public static void main(String[] args) {
 		HashSet<String> hashSet = new HashSet<String>();
-		hashSet.add(new String("ÀÓÁ¤¼ø"));
-		hashSet.add(new String("¹ÚÇöÁ¤"));
-		hashSet.add(new String("È«¿¬ÀÇ"));
-		hashSet.add(new String("°­°¨Âù"));
-		hashSet.add(new String("°­°¨Âù"));
-		
+		hashSet.add(new String("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+		hashSet.add(new String("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+		hashSet.add(new String("È«ï¿½ï¿½ï¿½ï¿½"));
+		hashSet.add(new String("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+		hashSet.add(new String("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+
 		System.out.println(hashSet);
 	}
 

@@ -1,159 +1,145 @@
-package day25;
+package academy.day25;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Contact{
-	//ÀÌ¸§, ÀüÈ­¹øÈ£, ÁÖ¼Ò ¸ðµÎ String
+class Contact {
+	// ï¿½Ì¸ï¿½, ï¿½ï¿½È­ï¿½ï¿½È£, ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ String
 	private String name;
 	private String tel;
 	private String address;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getTel() {
 		return tel;
 	}
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	@Override
-    public String toString() {
-		//ÁÖ¼Ò°¡ ¾Æ´Ï¶ó ¹®ÀÚ¿­À» ÁÖ·Á°í ÇÒ¶§ 
-		//Object¿¡ toStringÀ» ¿À¹ö¶óÀÌµù ÇÑ´Ù.
-        return name + "ÀÇ ¹øÈ£´Â " + tel + "ÀÌ°í ÁÖ¼Ò´Â " + address + "ÀÔ´Ï´Ù.";
-    }
-	
+	public String toString() {
+		// ï¿½Ö¼Ò°ï¿½ ï¿½Æ´Ï¶ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½
+		// Objectï¿½ï¿½ toStringï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ñ´ï¿½.
+		return name + "ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ " + tel + "ï¿½Ì°ï¿½ ï¿½Ö¼Ò´ï¿½ " + address + "ï¿½Ô´Ï´ï¿½.";
+	}
+
 }
 
-class ContactArrayList
-{
-    private ArrayList<Contact> arrayList;
+class ContactArrayList {
+	private ArrayList<Contact> arrayList;
 
-    public ContactArrayList() {
-        arrayList = new ArrayList<Contact>();
-    }
+	public ContactArrayList() {
+		arrayList = new ArrayList<Contact>();
+	}
 
-    //Ãß°¡
-    public void addContact(Contact contact) {
-        arrayList.add(contact);
-    }
+	// ï¿½ß°ï¿½
+	public void addContact(Contact contact) {
+		arrayList.add(contact);
+	}
 
-    //»èÁ¦
-    public void removeContact(String name) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            Contact contact = arrayList.get(i);
-            String tempName = contact.getName();
-            if (tempName.equals(name)) {
-                arrayList.remove(i);
-                return;
-            }
-        }
-        System.out.println(name + "°¡ Á¸ÀçÇÏÁö¾Ê½À´Ï´Ù.");
-    }
+	// ï¿½ï¿½ï¿½ï¿½
+	public void removeContact(String name) {
+		for (int i = 0; i < arrayList.size(); i++) {
+			Contact contact = arrayList.get(i);
+			String tempName = contact.getName();
+			if (tempName.equals(name)) {
+				arrayList.remove(i);
+				return;
+			}
+		}
+		System.out.println(name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
+	}
 
-    //ÀüÃ¼Ãâ·Â
-    public void showAllContact() {
-        for (Contact contact : arrayList) {
-        	//°´Ã¼¸¦ Ãâ·ÂÇÏ¸é ÀüÈ­¹øÈ£ºÎ°¡ ´Ù ³ª¿À°Ô ÇÏ·Á¸é?
-            System.out.println(contact);
-        }
-        System.out.println();
-    }
-    
-    //°Ë»öÃâ·Â
-    public void showSerchContact(String name)
-    {
-    	for(int i =0;i<arrayList.size();i++)
-    	{
-    		Contact temp = arrayList.get(i);
-    		if(temp.getName().equals(name))
-    		{
-    			System.out.println(temp);
-    			return;
-    		}
-    	}
-    	System.out.println("°Ë»öÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.");
-    }
+	// ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½
+	public void showAllContact() {
+		for (Contact contact : arrayList) {
+			// ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½È­ï¿½ï¿½È£ï¿½Î°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½?
+			System.out.println(contact);
+		}
+		System.out.println();
+	}
+
+	// ï¿½Ë»ï¿½ï¿½ï¿½ï¿½
+	public void showSerchContact(String name) {
+		for (int i = 0; i < arrayList.size(); i++) {
+			Contact temp = arrayList.get(i);
+			if (temp.getName().equals(name)) {
+				System.out.println(temp);
+				return;
+			}
+		}
+		System.out.println("ï¿½Ë»ï¿½ï¿½Ï´ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+	}
 }
-
-
 
 public class Q49_teacher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		Scanner sc = new Scanner(System.in);
 		ContactArrayList ca = new ContactArrayList();
-		
-		while(true)
-		{
-			System.out.print("1.Ãß°¡ 2. »èÁ¦ 3. °Ë»ö 4. Á¾·á :");
+
+		while (true) {
+			System.out.print("1.ï¿½ß°ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½Ë»ï¿½ 4. ï¿½ï¿½ï¿½ï¿½ :");
 			int sel = sc.nextInt();
-			if(sel == 1) // Ãß°¡
+			if (sel == 1) // ï¿½ß°ï¿½
 			{
-				System.out.print("ÀÌ¸§ : ");
+				System.out.print("ï¿½Ì¸ï¿½ : ");
 				String name = sc.next();
-				System.out.print("¹øÈ£ : ");
+				System.out.print("ï¿½ï¿½È£ : ");
 				String number = sc.next();
-				System.out.print("ÁÖ¼Ò : ");
+				System.out.print("ï¿½Ö¼ï¿½ : ");
 				String address = sc.next();
 				Contact c = new Contact();
 				c.setName(name);
 				c.setTel(number);
 				c.setAddress(address);
 				ca.addContact(c);
-			}
-			else if(sel == 2) // »èÁ¦
+			} else if (sel == 2) // ï¿½ï¿½ï¿½ï¿½
 			{
-				System.out.print("ÀÌ¸§ : ");
+				System.out.print("ï¿½Ì¸ï¿½ : ");
 				String name = sc.next();
 				ca.removeContact(name);
-			}
-			else if(sel == 3) // °Ë»ö
+			} else if (sel == 3) // ï¿½Ë»ï¿½
 			{
-				System.out.print("1. ÀüÃ¼°Ë»ö 2. ÀÌ¸§°Ë»ö");
+				System.out.print("1. ï¿½ï¿½Ã¼ï¿½Ë»ï¿½ 2. ï¿½Ì¸ï¿½ï¿½Ë»ï¿½");
 				int twoSel = sc.nextInt();
-				if(twoSel == 1)
-				{
+				if (twoSel == 1) {
 					ca.showAllContact();
-				}
-				else if(twoSel == 2)
-				{
-					System.out.print("ÀÌ¸§ : ");
+				} else if (twoSel == 2) {
+					System.out.print("ï¿½Ì¸ï¿½ : ");
 					String name = sc.next();
 					ca.showSerchContact(name);
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				}
-				else
-				{
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-				}
-			}
-			else if(sel == 4)
-			{
-				System.out.println("ÀüÈ­¹øÈ£ ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			} else if (sel == 4) {
+				System.out.println("ï¿½ï¿½È­ï¿½ï¿½È£ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
-		
-		
+
 	}
 
 }

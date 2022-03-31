@@ -1,4 +1,4 @@
-package day2;
+package academy.day2;
 
 import java.util.Scanner;
 
@@ -6,16 +6,14 @@ public class example {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
-		//¹®ÀÚ¿­ ÀÔ·Â
+
+		// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ô·ï¿½
 		Scanner sc = new Scanner(System.in);
 		String name = sc.next();
 		System.out.println(name);
-		
-		
-		//¼ýÀÚ¸¦ ÀÔ·Â
-		Scanner sc1 = new Scanner(System.in); // ½ºÄ³³ÊÀÇ °´Ã¼¸¦ »ý¼º
+
+		// ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½
+		Scanner sc1 = new Scanner(System.in); // ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int a = sc1.nextInt();
 		System.out.println(a);
 

@@ -1,18 +1,18 @@
-package day18;
-/* ¸¶¸° 10¸¶¸®, Àú±Û¸µ 10¸¶¸®
- * °ø°ÝÃâ·Â ÇÔ¼ö, ÇöÀç ¿¡³ÊÁö »óÈ² Ãâ·Â ÇÔ¼ö
- * ·£´ýÀ¸·Î °ø°ÝÇÏ´Â Á¾Á· ¼±ÅÃ // Àú±× or Å×¶õ
- * ±× ¾È¿¡¼­ ¾î¶² À¯´ÖÀ¸·Î °ø°ÝÇÒ Áö ¼±ÅÃÇØ¼­ °ø°ÝÇÑ´Ù. °ø°Ý ´ë»óµµ ·£´ý.
- * ¿¡³ÊÁö°¡ 0ÀÌ µÇ´Â À¯´ÖÀÌ ÀÖÀ¸¸é °´Ã¼ ¼Ò¸ê
- * ¸¸¾à °ø°Ý ´ë»ó °´Ã¼°¡ ¾øÀ¸¸é ±× ´ÙÀ½ Á¾Á·À¸·Î ³Ñ¾î°£´Ù.
- * Á¾Á·ÀÇ °´Ã¼°¡ 0ÀÌ µÇ¸é Á¾·áÇÏ°í ½Â¸®ÇÑ Á¾Á· Ãâ·Â
+package academy.day18;
+/* ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Û¸ï¿½ 10ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È² ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ // ï¿½ï¿½ï¿½ï¿½ or ï¿½×¶ï¿½
+ * ï¿½ï¿½ ï¿½È¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Ò¸ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°£ï¿½ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ 0ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Â¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-class Unit10{
+class Unit10 {
 	int price;
 	int energy;
 	int atk;
@@ -22,37 +22,37 @@ class Unit10{
 	String type;
 }
 
-class Zergling10 extends Unit10{
-	Zergling10(){
+class Zergling10 extends Unit10 {
+	Zergling10() {
 		price = 50;
 		energy = 35;
 		atk = 5;
 		def = 0;
-		object = "Áö»ó";
+		object = "ï¿½ï¿½ï¿½ï¿½";
 		speed = 2.612;
-		type = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
-	
+
 	void damage(int a, int i) {
 		this.energy -= a;
-		System.out.println(i+"¹ø Àú±Û¸µÀÌ "+a+"ÀÇ µ¥¹ÌÁö¸¦ ÀÔ¾ú´Ù.");
+		System.out.println(i + "ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ " + a + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½.");
 	}
 }
 
-class Marine10 extends Unit10{
-	Marine10(){
+class Marine10 extends Unit10 {
+	Marine10() {
 		price = 50;
 		energy = 50;
 		atk = 6;
 		def = 0;
-		object = "Áö»ó, °øÁß";
+		object = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½";
 		speed = 1.875;
-		type = "Áö»ó, ¼ÒÇü, »ýÃ¼";
+		type = "ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼";
 	}
-	
+
 	void damage(int a, int i) {
 		this.energy -= a;
-		System.out.println(i+"¹ø ¸¶¸°ÀÌ "+a+"ÀÇ µ¥¹ÌÁö¸¦ ÀÔ¾ú´Ù.");
+		System.out.println(i + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + a + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½.");
 	}
 }
 
@@ -64,105 +64,87 @@ public class Q42_star5 {
 		Zergling10[] zergling = new Zergling10[10];
 		Marine10[] marine = new Marine10[10];
 
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			zergling[i] = new Zergling10();
 			marine[i] = new Marine10();
 		}
 
 		int count = 1;
-		
+
 		int marine_count = 0;
 		int zergling_count = 0;
 		int choice = r.nextInt(2);
-		while(true) {
-			
-			System.out.println("---"+count+"ÅÏÂ° »óÈ²--------------");
-			//°ø°ÝÀÌ Å×¶õ
-			if(choice == 0) 
-			{
+		while (true) {
+
+			System.out.println("---" + count + "ï¿½ï¿½Â° ï¿½ï¿½È²--------------");
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¶ï¿½
+			if (choice == 0) {
 				int random;
-				while(true) {
+				while (true) {
 					int attack_r = r.nextInt(10);
-					if(marine[attack_r] != null) {
+					if (marine[attack_r] != null) {
 						random = attack_r;
 						break;
-					} 
+					}
 				}
 				int attack = r.nextInt(10);
-				if(zergling[attack] != null) 
-				{
+				if (zergling[attack] != null) {
 					zergling[attack].damage(marine[random].atk, attack);
 
-					if(zergling[attack].energy <= 0) 
-					{
-						System.out.println(attack+"¹ø Àú±Û¸µÀÌ Á×¾ú´Ù.");
+					if (zergling[attack].energy <= 0) {
+						System.out.println(attack + "ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½.");
 						zergling[attack] = null;
 						zergling_count++;
 					}
-				} 
-				else 
-				{
-					System.out.println(attack+"¹ø Àú±Û¸µÀº ÀÌ¹Ì Á×¾îÀÖ´Ù.");
+				} else {
+					System.out.println(attack + "ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½Ö´ï¿½.");
 				}
 				choice = 1;
 			}
-			//°ø°ÝÀÌ Àú±×
-			else
-			{
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			else {
 				int random;
-				while(true) {
+				while (true) {
 					int attack_r = r.nextInt(10);
-					if(zergling[attack_r] != null) {
+					if (zergling[attack_r] != null) {
 						random = attack_r;
 						break;
-					} 
+					}
 				}
 				int attack = r.nextInt(10);
-				if(marine[attack] != null) 
-				{
+				if (marine[attack] != null) {
 					marine[attack].damage(zergling[random].atk, attack);
-					
-					if(marine[attack].energy <= 0) 
-					{
-						System.out.println(attack+"¹ø ¸¶¸°ÀÌ Á×¾ú´Ù.");
+
+					if (marine[attack].energy <= 0) {
+						System.out.println(attack + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½.");
 						marine[attack] = null;
 						marine_count++;
 					}
-				} 
-				else 
-				{
-					System.out.println(attack+"¹ø ¸¶¸°Àº ÀÌ¹Ì Á×¾îÀÖ´Ù.");
+				} else {
+					System.out.println(attack + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½×¾ï¿½ï¿½Ö´ï¿½.");
 				}
 				choice = 0;
 			}
 
-			if(marine_count == 10 || zergling_count == 10) 
-			{
-				if(marine_count == 10) 
-				{
-					System.out.println("Àú±×°¡ ½Â¸®Çß´Ù!");
+			if (marine_count == 10 || zergling_count == 10) {
+				if (marine_count == 10) {
+					System.out.println("ï¿½ï¿½ï¿½×°ï¿½ ï¿½Â¸ï¿½ï¿½ß´ï¿½!");
 					break;
-				} 
-				else 
-				{
-					System.out.println("Å×¶õÀÌ ½Â¸®Çß´Ù!");
+				} else {
+					System.out.println("ï¿½×¶ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½ï¿½ß´ï¿½!");
 					break;
 				}
 			}
 
-			for(int i=0; i<10; i++) 
-			{
-				if(marine[i] != null) 
-				{
-					System.out.print(i+"¹ø ¸¶¸° "+marine[i].energy+"/ ");
+			for (int i = 0; i < 10; i++) {
+				if (marine[i] != null) {
+					System.out.print(i + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + marine[i].energy + "/ ");
 				}
 			}
 			System.out.println();
-			for(int i=0; i<10; i++) 
-			{
-				if(zergling[i] != null) 
-				{
-					System.out.print(i+"¹ø Àú±Û¸µ "+zergling[i].energy+"/ ");
+			for (int i = 0; i < 10; i++) {
+				if (zergling[i] != null) {
+					System.out.print(i + "ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ " + zergling[i].energy + "/ ");
 				}
 			}
 			System.out.println();
@@ -170,12 +152,12 @@ public class Q42_star5 {
 
 			count++;
 			/*
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-			}
-			*/
+			 * try {
+			 * TimeUnit.SECONDS.sleep(1);
+			 * } catch(InterruptedException e) {
+			 * e.printStackTrace();
+			 * }
+			 */
 		}
 
 	}

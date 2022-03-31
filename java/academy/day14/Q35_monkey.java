@@ -1,76 +1,70 @@
-package day14;
+package academy.day14;
 
 import java.util.Random;
 
-class Monkey{
+class Monkey {
 	Fire fire_check;
 	String color;
+
 	void print() {
-		if(fire_check != null) {
-			System.out.println(color+" ¿ø¼þÀÌ°¡ ºÒÀ» °¡Áö°í ÀÖ½À´Ï´Ù.");
+		if (fire_check != null) {
+			System.out.println(color + " ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }
 
-class Fire{
-	
+class Fire {
+
 }
 
 public class Q35_monkey {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* ¿ø¼þÀÌ ºÒ¼ö°Ç µ¹¸®±â °ÔÀÓ
-		 * ¿ø¼þÀÌ 5¸¶¸®°¡ ÀÖ´Ù. °¢°¢ »¡°£»ö, ³ë¶õ»ö, ÆÄ¶õ»ö, ÃÊ·Ï»ö, °ËÁ¤»ö
-		 * ·£´ýÀ¸·Î ¼ýÀÚ µÎ °³ ¹Þ´Â´Ù. ÇÏ³ª´Â 0(¿ÞÂÊ) 1(¿À¸¥ÂÊ) / ÇÏ³ª´Â 1~5±îÁö Áß ·£´ý
-		 * ¿ø¼þÀÌ´Â ½Ã°è¹æÇâÀ¸·Î »¡³ëÆÄÃÊ°Ë, ºÒÀº °´Ã¼È­ÇÑ´Ù.
-		 * ¸ÞÀÎ¹®¿¡¼­ µÎ ·£´ý°ªÀ» Ãâ·ÂÇÑ´Ù.
-		 * ¿ø¼þÀÌ´Â ºÒÀÌ ÀÚ±âÇÑÅ× ¿À¸é "XXX ¿ø¼þÀÌ°¡ ºÒÀ» °¡Áö°í ÀÖ½À´Ï´Ù."°¡ Ãâ·ÂµÇ¾ßÇÑ´Ù.
+		/*
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ä¶ï¿½ï¿½ï¿½, ï¿½Ê·Ï»ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ´Â´ï¿½. ï¿½Ï³ï¿½ï¿½ï¿½ 0(ï¿½ï¿½ï¿½ï¿½) 1(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) / ï¿½Ï³ï¿½ï¿½ï¿½ 1~5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê°ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼È­ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ "XXX ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½."ï¿½ï¿½ ï¿½ï¿½ÂµÇ¾ï¿½ï¿½Ñ´ï¿½.
 		 */
-		
+
 		Random r = new Random();
 		int direction = r.nextInt(2);
-		int count = r.nextInt(5)+1;
-		
+		int count = r.nextInt(5) + 1;
+
 		Fire fire = new Fire();
-				
+
 		Monkey[] monkey = new Monkey[5];
-		for(int i = 0; i < 5; i++) 
-		{
+		for (int i = 0; i < 5; i++) {
 			monkey[i] = new Monkey();
 		}
-		monkey[0].color = "»¡°£»ö";
-		monkey[1].color = "³ë¶õ»ö";
-		monkey[2].color = "ÆÄ¶õ»ö";
-		monkey[3].color = "ÃÊ·Ï»ö";
-		monkey[4].color = "°ËÁ¤»ö";
-		
-		System.out.println("¹æÇâ°ª : "+direction+" // ÀÌµ¿°ª : "+count);
+		monkey[0].color = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+		monkey[1].color = "ï¿½ï¿½ï¿½ï¿½ï¿½";
+		monkey[2].color = "ï¿½Ä¶ï¿½ï¿½ï¿½";
+		monkey[3].color = "ï¿½Ê·Ï»ï¿½";
+		monkey[4].color = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
-		if(direction == 1) {
-			for(int i = 1; i <= count; i++) 
-			{
-				if(i % 5 != 0) 
-				{
+		System.out.println("ï¿½ï¿½ï¿½â°ª : " + direction + " // ï¿½Ìµï¿½ï¿½ï¿½ : " + count);
+
+		if (direction == 1) {
+			for (int i = 1; i <= count; i++) {
+				if (i % 5 != 0) {
 					monkey[i].fire_check = new Fire();
-					
+
 					monkey[i].print();
 					monkey[i].fire_check = null;
-				}
-				else 
-				{
+				} else {
 					monkey[0].fire_check = new Fire();
 					monkey[0].print();
 					monkey[0].fire_check = null;
 
 				}
 			}
-			
-		} 
-		else 
-		{
-			for(int i = 4; i > 4-count; i--) 
-			{
+
+		} else {
+			for (int i = 4; i > 4 - count; i--) {
 				monkey[i].fire_check = new Fire();
 				monkey[i].print();
 				monkey[i].fire_check = null;

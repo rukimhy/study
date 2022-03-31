@@ -1,56 +1,51 @@
-package day27;
+package academy.day27;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.plaf.synth.SynthColorChooserUI;
 
-//¿Ã¸²ÇÈ °ÔÀÓÀ» ¾²·¹µå¸¦ ÀÌ¿ëÇØ¼­ µ¿ÀÛÇÏ°Ô ±¸Çö
+//ï¿½Ã¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½å¸¦ ï¿½Ì¿ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-
-class Check{
+class Check {
 	int chk1;
 	boolean chk2 = true;
 }
 
-class Runner extends Thread
-{
+class Runner extends Thread {
 	String country;
 	int lane;
 	Random r;
 	int m;
 	Check chk;
 
-	Runner(Random r, Check c){
+	Runner(Random r, Check c) {
 		this.r = r;
 		this.m = 0;
 		this.chk = c;
 	}
 
-	void print() 
-	{
-		System.out.println(lane+"¹ø·¹ÀÎ "+country+" ¼±¼ö°¡ ÇöÀç "+m+"m ÀÔ´Ï´Ù.");
+	void print() {
+		System.out.println(lane + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + country + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + m + "m ï¿½Ô´Ï´ï¿½.");
 	}
 
-	synchronized void winner() 
-	{
-		if(m >= 100) 
-		{
-			System.out.println("¿ì½Â±¹Àº "+country+"ÀÔ´Ï´Ù!!!");
+	synchronized void winner() {
+		if (m >= 100) {
+			System.out.println("ï¿½ï¿½Â±ï¿½ï¿½ï¿½ " + country + "ï¿½Ô´Ï´ï¿½!!!");
 			chk.chk2 = false;
 		}
 	}
 
 	public void run() {
-		while(chk.chk2) {
+		while (chk.chk2) {
 			chk.chk1 = r.nextInt(2);
-			if(chk.chk1 == 1) {
-				m += r.nextInt(10)+1;
-				System.out.println(country+"ÀÇ ¼±¼ö°¡ ³Ñ¾îÁ³½À´Ï´Ù~");
-			} 
+			if (chk.chk1 == 1) {
+				m += r.nextInt(10) + 1;
+				System.out.println(country + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½~");
+			}
 			print();
 			winner();
-		
+
 		}
 	}
 
@@ -60,32 +55,26 @@ public class Q52 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Random r = new Random();
-		String[] country = new String[]{"ÇÑ±¹", "Áß±¹", "¹Ì±¹", "·¯½Ã¾Æ"};
-		int[] lane = new int[] {1, 2, 3, 4};
+		String[] country = new String[] { "ï¿½Ñ±ï¿½", "ï¿½ß±ï¿½", "ï¿½Ì±ï¿½", "ï¿½ï¿½ï¿½Ã¾ï¿½" };
+		int[] lane = new int[] { 1, 2, 3, 4 };
 		Check chk = new Check();
 
 		Runner[] runner = new Runner[4];
-		for(int i = 0; i<4; i++) 
-		{
+		for (int i = 0; i < 4; i++) {
 			runner[i] = new Runner(r, chk);
 			runner[i].country = country[i];
 			runner[i].lane = lane[i];
 		}
 
-
-		for(int i=0; i<4; i++) 
-		{
+		for (int i = 0; i < 4; i++) {
 			runner[i].start();
 
 		}
 
-		for(int i=0; i<4; i++) 
-		{
+		for (int i = 0; i < 4; i++) {
 			runner[i].join();
 
 		}
-
-
 
 	}
 

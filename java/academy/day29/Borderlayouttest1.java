@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -6,16 +6,16 @@ import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-class BorderLayout1 extends JFrame{
+class BorderLayout1 extends JFrame {
 	public BorderLayout1() {
 		Container ct = getContentPane();
 		BorderLayout bl = new BorderLayout(10, 10);
 		ct.setLayout(bl);
-		ct.add(new JButton("¿À¸¥ÂÊ ¹öÆ°"), BorderLayout.EAST);
-		ct.add(new JButton("¿ÞÂÊ ¹öÆ°"), BorderLayout.WEST);
-		ct.add(new JButton("À§ÂÊ ¹öÆ°"), BorderLayout.NORTH);
-		ct.add(new JButton("¾Æ·¡ÂÊ ¹öÆ°"), BorderLayout.SOUTH);
-		ct.add(new JButton("Áß¾ÓÂÊ ¹öÆ°"), BorderLayout.CENTER);
+		ct.add(new JButton("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°"), BorderLayout.EAST);
+		ct.add(new JButton("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°"), BorderLayout.WEST);
+		ct.add(new JButton("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°"), BorderLayout.NORTH);
+		ct.add(new JButton("ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°"), BorderLayout.SOUTH);
+		ct.add(new JButton("ï¿½ß¾ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°"), BorderLayout.CENTER);
 		setTitle("BorderLayout Test1");
 		setSize(400, 300);
 		setVisible(true);

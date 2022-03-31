@@ -1,4 +1,4 @@
-package day28;
+package academy.day28;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -7,11 +7,11 @@ public class URLTest {
 
 	public static void main(String[] args) throws MalformedURLException {
 		URL kbs = new URL("http://www.kbs.co.kr/aboutkbs/history.html");
-		System.out.println("ÇÁ·ÎÅäÄÝ : "+kbs.getProtocol());
-		System.out.println("Æ÷Æ® : "+kbs.getPort());
-		System.out.println("È£½ºÆ® : "+kbs.getHost());
-		System.out.println("ÆÄÀÏ(°æ·ÎÆ÷ÇÔ) : "+kbs.getFile());
-		System.out.println("ÀüÃ¼ URL : "+kbs.toExternalForm());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + kbs.getProtocol());
+		System.out.println("ï¿½ï¿½Æ® : " + kbs.getPort());
+		System.out.println("È£ï¿½ï¿½Æ® : " + kbs.getHost());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) : " + kbs.getFile());
+		System.out.println("ï¿½ï¿½Ã¼ URL : " + kbs.toExternalForm());
 	}
 
 }

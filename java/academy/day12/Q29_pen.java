@@ -1,71 +1,77 @@
-package day12;
+package academy.day12;
 
 class Pencil {
 	String color;
-	
+
 	public void print() {
-		System.out.println(color+"»ö ¿¬ÇÊ·Î Àû½À´Ï´Ù.");
+		System.out.println(color + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ê·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 class Eraser {
 	String maker;
+
 	public void print() {
-		System.out.println(maker+"ÀÇ Á¦Ç°À¸·Î Áö¿ó´Ï´Ù.");
+		System.out.println(maker + "ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 class Pen {
 	String color;
 	String maker;
+
 	public void print() {
-		System.out.println(maker+"Á¦Ç°ÀÇ "+color+"»öÀ¸·Î ¾¹´Ï´Ù.");
+		System.out.println(maker + "ï¿½ï¿½Ç°ï¿½ï¿½ " + color + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
 	}
 }
 
 public class Q29_pen {
 
 	public static void main(String[] args) {
-		
+
 		// TODO Auto-generated method stub
-		/* ¿¬ÇÊ, Áö¿ì°³, ÆæÀÌ ÀÖ´Ù.
-		 * ¿¬ÇÊÀ» »ö±òÀ» °¡Áö°í ÀÖ°í ¾²´Â ±â´ÉÀ» ÇÑ´Ù. -> "XXX»ö ¿¬ÇÊ·Î Àû½À´Ï´Ù." Ãâ·Â (»¡°­, ÆÄ¶û, ÁÖÈ², ³ë¶û)
-		 * Áö¿ì°³´Â Á¦Á¶»ç¸¦ °¡Áö°í ÀÖ°í Áö¿ì´Â ±â´ÉÀ» ÇÑ´Ù. -> "XXXÀÇ Á¦Ç°À¸·Î Áö¿ó´Ï´Ù." Ãâ·Â (ÀáÀÚ¸®, ¸ð´×±Û·Î¸®)
-		 * ÆæÀº »ö±ò°ú Á¦Á¶»ç¸¦ °¡Áö°í ÀÖ°í ¤¶´À´Â ±â´ÉÀ» ÇÑ´Ù. -> "XXX Á¦Ç°ÀÇ XXX»öÀ¸·Î ¾¹´Ï´Ù." Ãâ·Â (°ËÁ¤-¸ð³ª¹Ì, ÃÊ·Ï-Á¦Æ®½ºÆ®¸², º£ÀÌºñºí·ç-¿öÅÍ¸Ç)
+		/*
+		 * ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ì°³, ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. -> "XXXï¿½ï¿½ ï¿½ï¿½ï¿½Ê·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½,
+		 * ï¿½Ä¶ï¿½, ï¿½ï¿½È², ï¿½ï¿½ï¿½)
+		 * ï¿½ï¿½ï¿½ì°³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. -> "XXXï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." ï¿½ï¿½ï¿½
+		 * (ï¿½ï¿½ï¿½Ú¸ï¿½, ï¿½ï¿½×±Û·Î¸ï¿½)
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. ->
+		 * "XXX ï¿½ï¿½Ç°ï¿½ï¿½ XXXï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½." ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½-ï¿½ð³ª¹ï¿½, ï¿½Ê·ï¿½-ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½, ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½Í¸ï¿½)
 		 */
-		
+
 		Pencil pencil_1 = new Pencil();
-		pencil_1.color = "»¡°£";
+		pencil_1.color = "ï¿½ï¿½ï¿½ï¿½";
 		Pencil pencil_2 = new Pencil();
-		pencil_2.color = "ÆÄ¶õ";
+		pencil_2.color = "ï¿½Ä¶ï¿½";
 		Pencil pencil_3 = new Pencil();
-		pencil_3.color = "ÁÖÈ²";
+		pencil_3.color = "ï¿½ï¿½È²";
 		Pencil pencil_4 = new Pencil();
-		pencil_4.color = "³ë¶û";
-		
+		pencil_4.color = "ï¿½ï¿½ï¿½";
+
 		Eraser eraser_1 = new Eraser();
-		eraser_1.maker = "ÀáÀÚ¸®";
+		eraser_1.maker = "ï¿½ï¿½ï¿½Ú¸ï¿½";
 		Eraser eraser_2 = new Eraser();
-		eraser_2.maker = "¸ð´×±Û·Î¸®";
-		
+		eraser_2.maker = "ï¿½ï¿½×±Û·Î¸ï¿½";
+
 		Pen pen_1 = new Pen();
-		pen_1.color = "°ËÁ¤";
-		pen_1.maker = "¸ð³ª¹Ì";
+		pen_1.color = "ï¿½ï¿½ï¿½ï¿½";
+		pen_1.maker = "ï¿½ð³ª¹ï¿½";
 		Pen pen_2 = new Pen();
-		pen_2.color = "ÃÊ·Ï";
-		pen_2.maker = "Á¦Æ®½ºÆ®¸²";
+		pen_2.color = "ï¿½Ê·ï¿½";
+		pen_2.maker = "ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½";
 		Pen pen_3 = new Pen();
-		pen_3.color = "º£ÀÌºñºí·ç";
-		pen_3.maker = "¿öÅÍ¸Ç";
-		
+		pen_3.color = "ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½";
+		pen_3.maker = "ï¿½ï¿½ï¿½Í¸ï¿½";
+
 		pencil_1.print();
 		pencil_2.print();
 		pencil_3.print();
 		pencil_4.print();
-		
+
 		eraser_1.print();
 		eraser_2.print();
-		
+
 		pen_1.print();
 		pen_2.print();
 		pen_3.print();

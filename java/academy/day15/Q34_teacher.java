@@ -1,42 +1,36 @@
-package day15;
+package academy.day15;
 
 import java.util.Random;
 
-class Dog
-{
+class Dog {
 	String sort;
 	String size;
 	String color;
 
-	public void bark()
-	{
-		System.out.println("°­¾ÆÁöÀÇ Á¾·ù´Â " + sort + "ÀÌ°í Å©±â´Â " + size + "ÀÌ¸ç »öÀº " +  color + ", Çàµ¿Àº Â¢´Ù");
+	public void bark() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + sort + "ï¿½Ì°ï¿½ Å©ï¿½ï¿½ï¿½ " + size + "ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ " + color + ", ï¿½àµ¿ï¿½ï¿½ Â¢ï¿½ï¿½");
 	}
-	
+
 }
 
-class Cat
-{
+class Cat {
 	String sort;
 	String size;
 	String color;
 
-	public void scratch()
-	{
-		System.out.println("°í¾çÀÌÀÇ Á¾·ù´Â " + sort + "ÀÌ°í Å©±â´Â " + size + "ÀÌ¸ç »öÀº " +  color + ", Çàµ¿Àº ÇÒÄý´Ù");
+	public void scratch() {
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + sort + "ï¿½Ì°ï¿½ Å©ï¿½ï¿½ï¿½ " + size + "ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ " + color + ", ï¿½àµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
-	
+
 }
 
-class Hamster
-{
+class Hamster {
 	String sort;
 	String size;
 	String color;
 
-	public void hamster()
-	{
-		System.out.println("ÇÜ½ºÅÍÀÇ Á¾·ù´Â " + sort + "ÀÌ°í Å©±â´Â " + size + "ÀÌ¸ç »öÀº " +  color + ", Çàµ¿Àº ÂïÂïÇÏ°í ¿î´Ù");
+	public void hamster() {
+		System.out.println("ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + sort + "ï¿½Ì°ï¿½ Å©ï¿½ï¿½ï¿½ " + size + "ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ " + color + ", ï¿½àµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½");
 	}
 }
 
@@ -49,42 +43,40 @@ public class Q34_teacher {
 		Cat c[] = new Cat[2];
 		Hamster h = new Hamster();
 
-		h.sort = "Á¤±Û¸®¾È";
+		h.sort = "ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½";
 		h.size = "40g~60g";
-		h.color = "È¸»ö";
+		h.color = "È¸ï¿½ï¿½";
 
 		Random r = new Random();
 
-		String[] dog_sort = {"ÄÚÄ« ½ºÆÄ´Ï¿¤", "Æ÷¸Þ¶ó´Ï¾È", "¹Ì´ÏÇÉ"};
-		String[] dog_size = {"9~16kg", "1.3~3.2kg", "4~5kg"};
-		String[] dog_color = {"°ËÁ¤»ö", "ÇÏ¾á»ö", "°¥»ö"};
+		String[] dog_sort = { "ï¿½ï¿½Ä« ï¿½ï¿½ï¿½Ä´Ï¿ï¿½", "ï¿½ï¿½ï¿½Þ¶ï¿½Ï¾ï¿½", "ï¿½Ì´ï¿½ï¿½ï¿½" };
+		String[] dog_size = { "9~16kg", "1.3~3.2kg", "4~5kg" };
+		String[] dog_color = { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ï¾ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½" };
 
-		for (int i=0; i<3; i++)
-		{	
+		for (int i = 0; i < 3; i++) {
 			d[i] = new Dog();
-			
+
 			d[i].sort = dog_sort[i];
 			d[i].size = dog_size[i];
 			d[i].color = dog_color[i];
-			
+
 			d[i].bark();
 		}
-		
-		String[] cat_sort = {"¸ÕÄ¡Å²", "½ºÇÎÅ©½º"};
-		String[] cat_size = {"3~5kg", "4~5kg"};
-		String[] cat_color = {"°ËÁ¤»ö", "ÇÏ¾á»ö"};
-		
-		for (int i=0; i<2; i++)
-		{	
+
+		String[] cat_sort = { "ï¿½ï¿½Ä¡Å²", "ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½" };
+		String[] cat_size = { "3~5kg", "4~5kg" };
+		String[] cat_color = { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ï¾ï¿½ï¿½" };
+
+		for (int i = 0; i < 2; i++) {
 			c[i] = new Cat();
-			
+
 			c[i].sort = cat_sort[i];
 			c[i].size = cat_size[i];
 			c[i].color = cat_color[i];
-			
+
 			c[i].scratch();
 		}
-			
+
 		h.hamster();
 
 	}

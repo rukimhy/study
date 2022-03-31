@@ -1,4 +1,4 @@
-package day10;
+package academy.day10;
 
 import java.util.Scanner;
 
@@ -6,66 +6,47 @@ public class Q18_teacher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);// ÀÔ·Â °´Ã¼
-		int[][] seat = new int[8][2]; //8ÁÙ 2°³ÀÇ ÁÂ¼® ÃÊ±â °ªÀº 0À¸·Î ¼¼ÆÃ
-		//°è¼ÓÀûÀ¸·Î ¹Ýº¹¹®À» µ¹·Á¼­ ÇöÀç ³²¾ÆÀÖ´Â ÀÚ¸´ ¼ö¸¦ ±¸ÇÏ´Â°Ô Çö¸íÇÑ°¡¿ä?
-		//º¯¼ö¸¦ ¸¸µé¾î¼­ °è¼Ó Ä«¿îÆÃ ÇÏ´Â°Ô Çö¸íÇÒ±î¿ä?
+		Scanner sc = new Scanner(System.in);// ï¿½Ô·ï¿½ ï¿½ï¿½Ã¼
+		int[][] seat = new int[8][2]; // 8ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½ï¿½?
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò±ï¿½ï¿½?
 		int count = 0;
-		
-		while(true)
-		{
-			System.out.print("1. ¿¹¸Å 2. ºóÁÂ¼® È®ÀÎ 3. Á¾·á :");
+
+		while (true) {
+			System.out.print("1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½Â¼ï¿½ È®ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ :");
 			int sel = sc.nextInt();
-			if(sel == 1)
-			{
-				if(count == 16)
-				{
-					System.out.println("¸ðµç ÁÂ¼®ÀÌ ¿¹¾à µÆ½À´Ï´Ù.");
-				}
-				else
-				{
-					System.out.print("ÁÂ¼®À» ¼±ÅÃÇÏ¼¼¿ä : ");
+			if (sel == 1) {
+				if (count == 16) {
+					System.out.println("ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ½ï¿½ï¿½Ï´ï¿½.");
+				} else {
+					System.out.print("ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 					int num1 = sc.nextInt();
 					int num2 = sc.nextInt();
-					
-					if(seat[num1][num2] == 0)
-					{
+
+					if (seat[num1][num2] == 0) {
 						seat[num1][num2] = 1;
-						System.out.println((num1+1)+"Çà"+(num2+1)+"¹øÂ° ÀÚ¸®°¡ ¿¹¾à µÆ½À´Ï´Ù.");
+						System.out.println((num1 + 1) + "ï¿½ï¿½" + (num2 + 1) + "ï¿½ï¿½Â° ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ½ï¿½ï¿½Ï´ï¿½.");
 						count++;
-					}
-					else
-					{
-						System.out.println("ÀÌ¹Ì ¿¹¾àµÈ ÁÂ¼®ÀÔ´Ï´Ù.");
+					} else {
+						System.out.println("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½Ô´Ï´ï¿½.");
 					}
 				}
-			}
-			else if(sel == 2)
-			{
-				for(int i =0;i<8;i++)
-				{
-					for(int j =0;j<2;j++)
-					{
-						if(seat[i][j] == 0)
-						{
-							System.out.println((i+1)+"Çà"+(j+1)+"¹øÂ° ÀÚ¸®°¡ ºñ¾îÀÖ½À´Ï´Ù.");
+			} else if (sel == 2) {
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 2; j++) {
+						if (seat[i][j] == 0) {
+							System.out.println((i + 1) + "ï¿½ï¿½" + (j + 1) + "ï¿½ï¿½Â° ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
 						}
 					}
 				}
-			}
-			else if(sel == 3)
-			{
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			} else if (sel == 3) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
-		
-		
-	
+
 	}
 
 }

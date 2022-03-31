@@ -1,59 +1,55 @@
-package day12;
+package academy.day12;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q27_andQfunc {
 
-	//À¯Àú ¹®ÀÚ ÀÔ·Â
-	public static int input() 
-	{
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+	public static int input() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("A~Z Áß ¹®ÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("A~Z ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 		char a2z = scan.next().charAt(0);
-		
-		while(true) 
-		{
-			if(!((int)a2z >= 65 && (int)a2z <= 90)) 
-			{
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-				System.out.print("A~Z Áß ¹®ÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+
+		while (true) {
+			if (!((int) a2z >= 65 && (int) a2z <= 90)) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½Ô·ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
+				System.out.print("A~Z ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 				a2z = scan.next().charAt(0);
-			} 
-			else break;
+			} else
+				break;
 		}
 
-		return (int)a2z;
+		return (int) a2z;
 	}
-	
-	//ÄÄÇ»ÅÍ ·£´ı ¹®ÀÚ¿­
-	public static void cpuRandom(int input) 
-	{
+
+	// ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
+	public static void cpuRandom(int input) {
 		Random r = new Random();
 
 		int count = 0;
 
-		while(true) 
-		{
+		while (true) {
 			int alphabet = 65;
 			int random_a = r.nextInt(25);
 
 			int sum = alphabet + random_a;
 
-			if(sum == input) count++;
+			if (sum == input)
+				count++;
 
-			if(sum == 81) break;
+			if (sum == 81)
+				break;
 
-			System.out.print((char)sum);
+			System.out.print((char) sum);
 		}
-		System.out.println("\n"+(char)input+"ÀÇ °³¼ö´Â "+count+"°³ ÀÔ´Ï´Ù.");
+		System.out.println("\n" + (char) input + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + count + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");
 
 	}
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 5¹ø ¹®Á¦ ÃÖ¼Ò 2°³ ÀÌ»óÀÇ ÇÔ¼ö·Î ±¸Çö
+		// 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ 2ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		cpuRandom(input());
 	}

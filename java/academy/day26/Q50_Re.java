@@ -1,4 +1,4 @@
-package test;
+package academy.day26;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class Student{
+class Student {
 	private String studentName;
 	private String kor;
 	private String eng;
@@ -19,7 +19,7 @@ class Student{
 	private String avg;
 	private String no;
 
-	Student(String studentName, String kor, String eng, String math, String com, String avg, String no){
+	Student(String studentName, String kor, String eng, String math, String com, String avg, String no) {
 		this.studentName = studentName;
 		this.kor = kor;
 		this.eng = eng;
@@ -29,13 +29,14 @@ class Student{
 		this.no = no;
 	}
 
-	Student(String studentName, String kor, String eng, String math, String com){
+	Student(String studentName, String kor, String eng, String math, String com) {
 		this.studentName = studentName;
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
 		this.com = com;
-		this.avg = Integer.toString((Integer.parseInt(kor) + Integer.parseInt(eng) + Integer.parseInt(math) + Integer.parseInt(com)) / 4);
+		this.avg = Integer.toString(
+				(Integer.parseInt(kor) + Integer.parseInt(eng) + Integer.parseInt(math) + Integer.parseInt(com)) / 4);
 	}
 
 	public String getStudentName() {
@@ -95,7 +96,7 @@ class Student{
 	}
 
 	public String toString() {
-		return studentName+"\t"+kor+"\t"+eng+"\t"+math+"\t"+com+"\t"+avg+"\t"+no+"\n";
+		return studentName + "\t" + kor + "\t" + eng + "\t" + math + "\t" + com + "\t" + avg + "\t" + no + "\n";
 	}
 }
 
@@ -110,91 +111,92 @@ class StudentArrayList {
 		arrayList = new ArrayList<Student>();
 	}
 
-	//arrlist¿¡ Ãß°¡
+	// arrlistï¿½ï¿½ ï¿½ß°ï¿½
 	public void addStudent(Student student) {
 		arrayList.add(student);
 	}
 
-	//arrlist¿¡¼­ »èÁ¦
+	// arrlistï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public boolean removeStudent(String studentName) {
-		for(int i = 0; i< arrayList.size(); i++) {
+		for (int i = 0; i < arrayList.size(); i++) {
 			Student student = arrayList.get(i);
 			String tempName = student.getStudentName();
-			if(tempName.equals(studentName)) {
+			if (tempName.equals(studentName)) {
 				arrayList.remove(i);
 				return true;
 			}
 		}
-		System.out.println("¾ø´Â ÀÌ¸§ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ô´Ï´ï¿½.");
 		return false;
 	}
 
-	//arrlist ÀüÃ¼ Ãâ·Â
+	// arrlist ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½
 	public void showAllStudent() {
-		for(Student student : arrayList) {
+		for (Student student : arrayList) {
 			System.out.println(student);
 		}
 	}
 
-	//arrlist °Ë»ö
+	// arrlist ï¿½Ë»ï¿½
 	public boolean searchStudent(String studentName) {
-		for(int i = 0; i< arrayList.size(); i++) {
+		for (int i = 0; i < arrayList.size(); i++) {
 			Student student = arrayList.get(i);
 			String tempName = student.getStudentName();
-			if(tempName.equals(studentName)) {
+			if (tempName.equals(studentName)) {
 				System.out.println(student.toString());
 				return true;
 			}
 		}
-		System.out.println("¾ø´Â ÀÌ¸§ÀÔ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ô´Ï´ï¿½.");
 		return false;
 	}
-	
-	//ÅØ½ºÆ®¿¡¼­ »èÁ¦
+
+	// ï¿½Ø½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void removeText(FileWriter fw) throws IOException {
-		for(Student student : arrayList) {
+		for (Student student : arrayList) {
 			fw.write(student.toString());
 		}
 	}
-	
-	//¼øÀ§ Á¤·Ä
-	public void sortText() throws IOException, NumberFormatException{
+
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void sortText() throws IOException, NumberFormatException {
 		int num = 1;
-		for(Student student : arrayList) {
-			if(student.getStudentName().equals("ÀÌ¸§")) continue;
+		for (Student student : arrayList) {
+			if (student.getStudentName().equals("ï¿½Ì¸ï¿½"))
+				continue;
 			student.setNo(Integer.toString(num));
 			num++;
 		}
-		
+
 		int i, j;
-		
-		for(i = 1; i < arrayList.size(); i++) {
+
+		for (i = 1; i < arrayList.size(); i++) {
 			int count = 0;
 			Student studentI = arrayList.get(i);
-			for(j = 1; j < arrayList.size(); j++) {
+			for (j = 1; j < arrayList.size(); j++) {
 				Student studentJ = arrayList.get(j);
 				int intStudentI = Integer.parseInt(studentI.getAvg());
 				int intStudentJ = Integer.parseInt(studentJ.getAvg());
-				
-				if(intStudentI > intStudentJ) {
+
+				if (intStudentI > intStudentJ) {
 					count++;
 				}
 			}
-			studentI.setNo(Integer.toString(arrayList.size() - count -1));
+			studentI.setNo(Integer.toString(arrayList.size() - count - 1));
 		}
-		
+
 	}
 
 }
 
 public class Q50_Re {
 
-	public static void main(String[] args) throws IOException, NumberFormatException{
+	public static void main(String[] args) throws IOException, NumberFormatException {
 		Scanner scan = new Scanner(System.in);
 		StudentArrayList sal = new StudentArrayList();
 
 		File f = new File("student.txt");
-		if(f.exists()) {
+		if (f.exists()) {
 			String[] splitedStr = null;
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(f), "euc-kr"));
 			String line = null;
@@ -208,56 +210,56 @@ public class Q50_Re {
 					splitedStr[i] = splitedStr[i].trim();
 				}
 
-				//ÀÚ¸¥ µ¥ÀÌÅÍ¸¦ ¿øÇÏ´Â Çü½Ä¿¡ ¸Â°Ô ³Ö±â
-				sal.addStudent(new Student(splitedStr[0], splitedStr[1], splitedStr[2], splitedStr[3], splitedStr[4], splitedStr[5], splitedStr[6]));	
-				
+				// ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½Â°ï¿½ ï¿½Ö±ï¿½
+				sal.addStudent(new Student(splitedStr[0], splitedStr[1], splitedStr[2], splitedStr[3], splitedStr[4],
+						splitedStr[5], splitedStr[6]));
+
 			}
 			reader.close();
 
 		} else {
-			String source = "ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇÐ\tÄÄÇ»ÅÍ\tÆò±Õ\t¼øÀ§\n";
-			Student student = new Student("ÀÌ¸§", "±¹¾î", "¿µ¾î", "¼öÇÐ", "ÄÄÇ»ÅÍ", "Æò±Õ", "¼øÀ§");
+			String source = "ï¿½Ì¸ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\tï¿½ï¿½Ç»ï¿½ï¿½\tï¿½ï¿½ï¿½\tï¿½ï¿½ï¿½ï¿½\n";
+			Student student = new Student("ï¿½Ì¸ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Ç»ï¿½ï¿½", "ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½");
 			sal.addStudent(student);
 			FileWriter fw = new FileWriter("student.txt");
 			fw.write(source);
 			fw.close();
 		}
 
-		while(true) {
-			System.out.print("1.ÀÔ·Â 2.Á¶È¸ 3.»èÁ¦ 4.Á¾·á : ");
+		while (true) {
+			System.out.print("1.ï¿½Ô·ï¿½ 2.ï¿½ï¿½È¸ 3.ï¿½ï¿½ï¿½ï¿½ 4.ï¿½ï¿½ï¿½ï¿½ : ");
 			String select = scan.nextLine();
 
-			if(select.equals("4") ) 
-			{
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+			if (select.equals("4")) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				break;
-			} 
+			}
 
-			//ÀÔ·Â
-			else if(select.equals("1")) {
-				System.out.print("ÀÌ¸§ : ");
+			// ï¿½Ô·ï¿½
+			else if (select.equals("1")) {
+				System.out.print("ï¿½Ì¸ï¿½ : ");
 				String name = scan.nextLine();
-				
+
 				String kor, eng, math, com;
 				do {
-					System.out.print("±¹¾î : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					kor = scan.nextLine();
-				} while(Integer.parseInt(kor) < 0 || Integer.parseInt(kor) > 100);
+				} while (Integer.parseInt(kor) < 0 || Integer.parseInt(kor) > 100);
 
 				do {
-					System.out.print("¿µ¾î : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					eng = scan.nextLine();
-				} while(Integer.parseInt(eng) < 0 || Integer.parseInt(eng) > 100);
+				} while (Integer.parseInt(eng) < 0 || Integer.parseInt(eng) > 100);
 
 				do {
-					System.out.print("¼öÇÐ : ");
+					System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 					math = scan.nextLine();
-				} while(Integer.parseInt(math) < 0 || Integer.parseInt(math) > 100);
+				} while (Integer.parseInt(math) < 0 || Integer.parseInt(math) > 100);
 
 				do {
-					System.out.print("ÄÄÇ»ÅÍ : ");
-					com = scan.nextLine();	
-				} while(Integer.parseInt(com) < 0 || Integer.parseInt(com) > 100);
+					System.out.print("ï¿½ï¿½Ç»ï¿½ï¿½ : ");
+					com = scan.nextLine();
+				} while (Integer.parseInt(com) < 0 || Integer.parseInt(com) > 100);
 
 				Student student = new Student(name, kor, eng, math, com);
 				sal.addStudent(student);
@@ -265,57 +267,52 @@ public class Q50_Re {
 				FileWriter fw = new FileWriter("student.txt", true);
 				fw.write(student.toString());
 				fw.close();
-				System.out.println("Ãß°¡µÇ¾ú½À´Ï´Ù.");
-			} 
+				System.out.println("ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+			}
 
-
-			//Á¶È¸
-			else if(select.equals("2")) {
-				System.out.print("1.ÀüÃ¼Á¶È¸ 2.¼±ÅÃÁ¶È¸ : ");
+			// ï¿½ï¿½È¸
+			else if (select.equals("2")) {
+				System.out.print("1.ï¿½ï¿½Ã¼ï¿½ï¿½È¸ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ : ");
 				String select_2 = scan.nextLine();
 
-				//ÀüÃ¼ Á¶È¸
-				if(select_2.equals("1")) 
-				{
+				// ï¿½ï¿½Ã¼ ï¿½ï¿½È¸
+				if (select_2.equals("1")) {
 					sal.showAllStudent();
-				} 
-				//¼±ÅÃ Á¶È¸
-				else if(select_2.equals("2")) 
-				{
-					System.out.print("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				}
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
+				else if (select_2.equals("2")) {
+					System.out.print("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					String name = scan.nextLine();
 					sal.searchStudent(name);
 
 				} else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				}
 
-			} 
+			}
 
-			//»èÁ¦
-			else if(select.equals("3")) 
-			{
-				System.out.print("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			// ï¿½ï¿½ï¿½ï¿½
+			else if (select.equals("3")) {
+				System.out.print("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 				String name = scan.nextLine();
 				sal.removeStudent(name);
 				sal.sortText();
-				
+
 				FileWriter fw = new FileWriter("tmp.txt");
 				fw.close();
 				fw = new FileWriter("tmp.txt", true);
-				
+
 				sal.removeText(fw);
 				fw.close();
-				
+
 				File file = new File("tmp.txt");
 				File file2 = new File("student.txt");
 				file2.delete();
 				file.renameTo(new File("student.txt"));
 			}
 
-			else 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 		}
 	}

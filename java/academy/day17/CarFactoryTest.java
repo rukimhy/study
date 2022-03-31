@@ -1,26 +1,30 @@
-package day17;
+package academy.day17;
 
-class Car{
+class Car {
 	static int carNum = 10000;
-	
+
 	int getCarNum() {
 		this.carNum++;
 		return carNum;
 	}
 }
 
-class CarFactory{
-	private CarFactory() {}
+class CarFactory {
+	private CarFactory() {
+	}
+
 	private static CarFactory instance = new CarFactory();
+
 	public static CarFactory getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new CarFactory();
 		}
 		return instance;
 	}
+
 	Car createCar() {
 		Car car = new Car();
-		
+
 		return car;
 	}
 }

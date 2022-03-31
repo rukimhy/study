@@ -1,4 +1,4 @@
-package day7;
+package academy.day7;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,95 +7,79 @@ public class Q13_baseballArr {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¼ıÀÚ¾ß±¸°ÔÀÓ ¹è¿­È­
+		// ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­È­
 
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
 
 		int[] cpu = new int[3];
 
-
 		int strike, ball;
 
-		System.out.println("¼ıÀÚ¾ß±¸°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.println("1ºÎÅÍ 9±îÁöÀÇ ¼ıÀÚ¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 
-		//cpu 3°³ ·£´ı ¼ıÀÚ ±¸Çö
-		while(true) 
-		{
-			for(int i=0; i<3; i++) 
-			{
-				cpu[i] = r.nextInt(9)+1;
+		// cpu 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		while (true) {
+			for (int i = 0; i < 3; i++) {
+				cpu[i] = r.nextInt(9) + 1;
 			}
-			if(cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2]) break;
+			if (cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2])
+				break;
 		}
-		System.out.println("cpu[0] = "+cpu[0]+" // cpu[1] = "+cpu[1]+" // cpu[2] = "+cpu[2]);
+		System.out.println("cpu[0] = " + cpu[0] + " // cpu[1] = " + cpu[1] + " // cpu[2] = " + cpu[2]);
 
-		while(true) 
-		{
+		while (true) {
 			System.out.println();
-			int[] user = new int[] {123, 124, 125};
-			//user 3°³ ÀÔ·Â ±¸Çö
-			System.out.println("¼­·Î ´Ù¸¥ ¼ıÀÚ 3°³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-			for(int i=0; i<3; i++) 
-			{
-				System.out.print(i+1+"¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			int[] user = new int[] { 123, 124, 125 };
+			// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
+			for (int i = 0; i < 3; i++) {
+				System.out.print(i + 1 + "ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 				user[i] = scan.nextInt();
 
-				while(true) 
-				{
-					if(!(user[i] >= 1 && user[i] <=9)) 
-					{
-						System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-						System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				while (true) {
+					if (!(user[i] >= 1 && user[i] <= 9)) {
+						System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+						System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 						user[i] = scan.nextInt();
-					} 
-					else if(user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) 
-					{
-						System.out.println("°°Àº ¼ıÀÚ´Â ÀÔ·ÂÇÏ¸é ¾ÈµË´Ï´Ù.");
-						System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+					} else if (user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) {
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµË´Ï´ï¿½.");
+						System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 						user[i] = scan.nextInt();
-					} 
-					else break;
+					} else
+						break;
 				}
 			}
-			
-			//°ÔÀÓ ±¸Çö
+
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			strike = 0;
 			ball = 0;
-			
-			for(int i = 0; i < 3; i++) 
-			{
-				if(user[i] == cpu[i]) strike ++;
+
+			for (int i = 0; i < 3; i++) {
+				if (user[i] == cpu[i])
+					strike++;
 			}
-			
-			if(user[0] == cpu[1] || user[0] == cpu[2])
-			{
+
+			if (user[0] == cpu[1] || user[0] == cpu[2]) {
 				ball++;
 			}
-			if(user[1] == cpu[0] || user[1] == cpu[2])
-			{
+			if (user[1] == cpu[0] || user[1] == cpu[2]) {
 				ball++;
 			}
-			if(user[2] == cpu[0] || user[2] == cpu[1])
-			{
+			if (user[2] == cpu[0] || user[2] == cpu[1]) {
 				ball++;
 			}
-			
-			if(strike == 3)
-			{
-				System.out.println("È¨·±ÀÔ´Ï´Ù.");
+
+			if (strike == 3) {
+				System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 				break;
+			} else if (strike == 0 && ball == 0) {
+				System.out.println("outï¿½Ô´Ï´ï¿½.");
+			} else {
+				System.out.println("Strike :" + strike + " // " + "Ball : " + ball + "ï¿½Ô´Ï´ï¿½.");
 			}
-			else if(strike == 0 && ball == 0)
-			{
-				System.out.println("outÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				System.out.println("Strike :"+strike+" // "+"Ball : "+ball+"ÀÔ´Ï´Ù.");
-			}
-			
+
 		}
 	}
 }

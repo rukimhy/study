@@ -1,13 +1,13 @@
-package day22;
+package academy.day22;
 
 public class LeastJob implements Scheduler {
 	@Override
 	public void getNextCall() {
-		System.out.println("»ó´ã ÀüÈ­¸¦ ¼ø¼­´ë·Î ´ë±â¿­¿¡¼­ °¡Á®¿É´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½â¿­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É´Ï´ï¿½.");
 	}
-	
+
 	@Override
 	public void sendCallToAgent() {
-		System.out.println("ÇöÀç »ó´ã ¾÷¹«°¡ ¾ø°Å³ª ´ë±â°¡ °¡Àå ÀûÀº »ó´ã¿ø¿¡°Ô ÇÒ´çÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½ ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
 }

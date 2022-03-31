@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,29 +7,28 @@ public class Q5_endQ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* A = 65 ~ Z = 90
-		 * 0~25±îÁö ·£´ýÀ¸·Î ¹®ÀÚ¸¦ ¹Þ´Â´Ù
-		 * ¹®ÀÚ Áß Q(65+16=81)°¡ ³ª¿À±â Àü±îÁö ·£´ýÀ» µ¹·Á¼­ ¹®ÀÚ¿­À» ¸¸µç´Ù
-		 * ¹Ýº¹¹®ÀÌ Á¾·áµÇ°í ÇöÀç±îÁö ¸¸µé¾îÁø ¹®ÀÚ¿­À» Ãâ·Â
+		/*
+		 * A = 65 ~ Z = 90
+		 * 0~25ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Þ´Â´ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Q(65+16=81)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		 */
-		
+
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
-		
-		
-		
-		while(true) 
-		{
+
+		while (true) {
 			int alphabet = 65;
 			int random_a = r.nextInt(25);
-			
+
 			int sum = alphabet + random_a;
-			
-			if(sum == 81) break;
-			
-			System.out.print((char)sum);
+
+			if (sum == 81)
+				break;
+
+			System.out.print((char) sum);
 		}
-		
+
 	}
 
 }

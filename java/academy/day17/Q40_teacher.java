@@ -1,43 +1,40 @@
-package day17;
+package academy.day17;
 
 import java.util.Scanner;
 
-class OP
-{
-	void add(int a, int b)
-	{
-		System.out.println(a+b);
+class OP {
+	void add(int a, int b) {
+		System.out.println(a + b);
 	}
-	void add(double a, double b)
-	{
-		System.out.println(a+b);
+
+	void add(double a, double b) {
+		System.out.println(a + b);
 	}
-	void min(int a, int b)
-	{
-		System.out.println(a-b);
+
+	void min(int a, int b) {
+		System.out.println(a - b);
 	}
-	void min(double a, double b)
-	{
-		System.out.println(a-b);
+
+	void min(double a, double b) {
+		System.out.println(a - b);
 	}
-	void mul(int a, int b)
-	{
-		System.out.println(a*b);
+
+	void mul(int a, int b) {
+		System.out.println(a * b);
 	}
-	void mul(double a, double b)
-	{
-		System.out.println(a*b);
+
+	void mul(double a, double b) {
+		System.out.println(a * b);
 	}
-	void div(int a, int b)
-	{
-		System.out.println(a/b);
+
+	void div(int a, int b) {
+		System.out.println(a / b);
 	}
-	void div(double a, double b)
-	{
-		System.out.println(a/b);
+
+	void div(double a, double b) {
+		System.out.println(a / b);
 	}
 }
-
 
 public class Q40_teacher {
 
@@ -45,77 +42,53 @@ public class Q40_teacher {
 		// TODO Auto-generated method stub
 		OP op = new OP();
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("1. Á¤¼ö 2. ½Ç¼ö : ");
+
+		System.out.println("1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½Ç¼ï¿½ : ");
 		int select = sc.nextInt();
-		
-		if(select == 1)
-		{
-			System.out.println("¼ýÀÚ 1 ÀÔ·Â : ");
+
+		if (select == 1) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ 1 ï¿½Ô·ï¿½ : ");
 			int num1 = sc.nextInt();
-			System.out.println("¼ýÀÚ 2 ÀÔ·Â : ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ 2 ï¿½Ô·ï¿½ : ");
 			int num2 = sc.nextInt();
-			System.out.println("¿¬»êÀÚ ÀÔ·Â : ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 			char ch = sc.next().charAt(0);
-			
-			if(ch == '+')
-			{
+
+			if (ch == '+') {
 				op.add(num1, num2);
-			}
-			else if(ch == '-')
-			{
+			} else if (ch == '-') {
 				op.min(num1, num1);
-			}
-			else if(ch == '*')
-			{
+			} else if (ch == '*') {
 				op.mul(num1, num2);
-			}
-			else if(ch == '/')
-			{
+			} else if (ch == '/') {
 				op.div(num1, num2);
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			}
-			
-		}
-		else if(select == 2)
-		{
-			System.out.println("¼ýÀÚ 1 ÀÔ·Â : ");
+
+		} else if (select == 2) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ 1 ï¿½Ô·ï¿½ : ");
 			double num1 = sc.nextDouble();
-			System.out.println("¼ýÀÚ 2 ÀÔ·Â : ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ 2 ï¿½Ô·ï¿½ : ");
 			double num2 = sc.nextDouble();
-			System.out.println("¿¬»êÀÚ ÀÔ·Â : ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 			char ch = sc.next().charAt(0);
-			
-			if(ch == '+')
-			{
+
+			if (ch == '+') {
 				op.add(num1, num2);
-			}
-			else if(ch == '-')
-			{
+			} else if (ch == '-') {
 				op.min(num1, num1);
-			}
-			else if(ch == '*')
-			{
+			} else if (ch == '*') {
 				op.mul(num1, num2);
-			}
-			else if(ch == '/')
-			{
+			} else if (ch == '/') {
 				op.div(num1, num2);
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-			}
+		} else {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
-		else
-		{
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-		}
-		
-		
+
 	}
 
 }

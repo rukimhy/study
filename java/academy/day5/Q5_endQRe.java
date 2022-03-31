@@ -1,4 +1,4 @@
-package day5;
+package academy.day5;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,41 +7,44 @@ public class Q5_endQRe {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* A = 65 ~ Z = 90
-		 * 0~25±îÁö ·£´ıÀ¸·Î ¹®ÀÚ¸¦ ¹Ş´Â´Ù
-		 * ¹®ÀÚ Áß Q(65+16=81)°¡ ³ª¿À±â Àü±îÁö ·£´ıÀ» µ¹·Á¼­ ¹®ÀÚ¿­À» ¸¸µç´Ù
-		 * ¹İº¹¹®ÀÌ Á¾·áµÇ°í ÇöÀç±îÁö ¸¸µé¾îÁø ¹®ÀÚ¿­À» Ãâ·Â
-		 * ¹®ÀÚ ÀÔ·Â ¹Ş¾Æ¼­ ³¡³¯ ¶§ ±× ¹®ÀÚ°¡ ¹®ÀÚ¿­¿¡ ¸î°³ ÀÖ´ÂÁö °³¼ö Ãâ·Â
+		/*
+		 * A = 65 ~ Z = 90
+		 * 0~25ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ş´Â´ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Q(65+16=81)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½İºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ş¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î°³ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		 */
-		
+
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
-		System.out.print("A~Z Áß ¹®ÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("A~Z ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 		char a2z = scan.next().charAt(0);
-		
-		while(true) {
-			if(!((int)a2z >= 65 && (int)a2z <= 90)) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-				System.out.print("A~Z Áß ¹®ÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+
+		while (true) {
+			if (!((int) a2z >= 65 && (int) a2z <= 90)) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½Ô·ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
+				System.out.print("A~Z ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 				a2z = scan.next().charAt(0);
-			} else break;
+			} else
+				break;
 		}
-		
+
 		int count = 0;
-		
-		while(true) 
-		{
+
+		while (true) {
 			int alphabet = 65;
 			int random_a = r.nextInt(25);
-			
+
 			int sum = alphabet + random_a;
-			
-			if(sum == a2z) count++;
-			
-			if(sum == 81) break;
-			
-			System.out.print((char)sum);
+
+			if (sum == a2z)
+				count++;
+
+			if (sum == 81)
+				break;
+
+			System.out.print((char) sum);
 		}
-		System.out.println("\n"+a2z+"ÀÇ °³¼ö´Â "+count+"°³ ÀÔ´Ï´Ù.");
+		System.out.println("\n" + a2z + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + count + "ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.");
 	}
 }

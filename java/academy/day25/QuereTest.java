@@ -1,21 +1,21 @@
-package day25;
+package academy.day25;
 
 import java.util.ArrayList;
 
-class MyQueue{
+class MyQueue {
 	private ArrayList<String> arrayQueue = new ArrayList<String>();
-	
+
 	public void enQueue(String data) {
 		arrayQueue.add(data);
 	}
-	
+
 	public String deQueue() {
 		int len = arrayQueue.size();
-		if(len == 0) {
-			System.out.println("Å¥°¡ ºñ¾ú½À´Ï´Ù.");
+		if (len == 0) {
+			System.out.println("Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			return null;
 		}
-		return(arrayQueue.remove(0));
+		return (arrayQueue.remove(0));
 	}
 }
 
@@ -26,7 +26,7 @@ public class QuereTest {
 		queue.enQueue("A");
 		queue.enQueue("B");
 		queue.enQueue("C");
-		
+
 		System.out.println(queue.deQueue());
 		System.out.println(queue.deQueue());
 		System.out.println(queue.deQueue());

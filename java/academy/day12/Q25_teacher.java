@@ -1,185 +1,159 @@
-package day12;
+package academy.day12;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q25_teacher {
 
-	//3¹øÀ¯Çü
-	public static int [][] fishRandom()
-	{
+	// 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public static int[][] fishRandom() {
 		Random rand = new Random();
-		int [][] hosu = new int[5][5];
-		for(int i = 0;i<3;i++) // 0 1
+		int[][] hosu = new int[5][5];
+		for (int i = 0; i < 3; i++) // 0 1
 		{
-			int y=rand.nextInt(5);  //3  3 
-			int x=rand.nextInt(5);  //2  2
-			if(hosu[y][x] == 0)
-			{
+			int y = rand.nextInt(5); // 3 3
+			int x = rand.nextInt(5); // 2 2
+			if (hosu[y][x] == 0) {
 				hosu[y][x] = 1;
-				
-				System.out.println(y+", "+x);
-			}
-			else
-			{
+
+				System.out.println(y + ", " + x);
+			} else {
 				i--;
 			}
 		}
-		
+
 		return hosu;
 	}
-	
-	
-	//3¹ø À¯Çü
-	public static int[] casting()
-	{
+
+	// 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int[] casting() {
 		Scanner sc = new Scanner(System.in);
-		int[] temp = new int[2]; //Y, X °ªÀ» µ¿½Ã¿¡ ¸®ÅÏÀ» ÇØÁÖ±â À§ÇØ¼­ ¹è¿­À» ÀÌ¿ëÇØ¼­ º¸³»¾ßÇÑ´Ù.
-		//ÇÑ¹ø ÇÏ³ª¹Û¿¡ º¸³¾ ¼ö ¾øÀ¸´Ï±î °ªÀ» 2°³ÀÌ»ó ´ãÀ» ¼ö ÀÖ´Â ¹è¿­À» »ç¿ëÇÑ´Ù.
+		int[] temp = new int[2]; // Y, X ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+		// ï¿½Ñ¹ï¿½ ï¿½Ï³ï¿½ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		int userX = -1;
 		int userY = -1;
-		
-		while(userX <0 || userX >4 || userY <0 || userY >4)
-		{
-			System.out.print("ÁÂÇ¥ y, x¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		while (userX < 0 || userX > 4 || userY < 0 || userY > 4) {
+			System.out.print("ï¿½ï¿½Ç¥ y, xï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			userY = sc.nextInt();
 			userX = sc.nextInt();
-			
-			if(userX <0 || userX >4 || userY <0 || userY >4)
-			{
-				System.out.println("ÁÂÇ¥ÀÇ °ªÀÌ 0º¸´Ù ÀÛ°Å³ª 4º¸´Ù Å®´Ï´Ù. Àß¸øµÈ Ä³½ºÆÃÀÔ´Ï´Ù.");
+
+			if (userX < 0 || userX > 4 || userY < 0 || userY > 4) {
+				System.out.println("ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Û°Å³ï¿½ 4ï¿½ï¿½ï¿½ï¿½ Å®ï¿½Ï´ï¿½. ï¿½ß¸ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
-			
+
 		}
-		//Ä³½ºÆÃ µÈ userY¿Í userX¸¦ temp ¹è¿­¿¡ [0] [1]°¢°¢ ´ã¾Æ¼­ ¸®ÅÏÇÑ´Ù.
+		// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ userYï¿½ï¿½ userXï¿½ï¿½ temp ï¿½è¿­ï¿½ï¿½ [0] [1]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		temp[0] = userY;
 		temp[1] = userX;
 		return temp;
 	}
-	
-	
-	//2¹ø À¯Çü
-	public static void fishPrint(int [][] hosu)
-	{
-		for(int i =0;i<5;i++)
-		{
-			for(int j =0;j<5;j++)
-			{
-				System.out.print(hosu[i][j]+"	");
+
+	// 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static void fishPrint(int[][] hosu) {
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.print(hosu[i][j] + "	");
 			}
 			System.out.println();
 		}
 	}
-	
-	//1¹ø À¯Çü
-	public static int[] move(int move, int userY, int userX)
-	{
-		int[] temp = new int[2]; //ÇÔ¼ö´Â ÇÏ³ª¸¸ º¸³¾ ¼ö ÀÖ±â ¶§¹®¿¡ µÎ°³ÀÇ userY¿Í userX¸¦ º¸³»¾ß ÇÏ±â ¶§¹®¿¡
-		//¹è¿­À» »ý¼º
-		if(move == 1) //À§
+
+	// 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int[] move(int move, int userY, int userX) {
+		int[] temp = new int[2]; // ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ userYï¿½ï¿½ userXï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if (move == 1) // ï¿½ï¿½
 		{
 			userY--;
-			if(userY == -1)
-			{
+			if (userY == -1) {
 				userY = 0;
-				System.out.println("´õÀÌ»ó À§·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-			
-		}
-		else if(move == 2)//¾Æ·¡
+
+		} else if (move == 2)// ï¿½Æ·ï¿½
 		{
 			userY++;
-			if(userY == 5)
-			{
+			if (userY == 5) {
 				userY = 4;
-				System.out.println("´õÀÌ»ó ¾Æ·¡·Î·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½Æ·ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-		}
-		else if(move == 3)//¿ÞÂÊ
+		} else if (move == 3)// ï¿½ï¿½ï¿½ï¿½
 		{
 			userX--;
-			if(userX == -1)
-			{
+			if (userX == -1) {
 				userX = 0;
-				System.out.println("´õÀÌ»ó ¿ÞÂÊÀ¸·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
-		}
-		else if(move == 4)//¿À¸¥ÂÊ
+		} else if (move == 4)// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			userX++;
-			if(userX == 5)
-			{
+			if (userX == 5) {
 				userX = 4;
-				System.out.println("´õÀÌ»ó ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÏ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			}
+		} else {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
-		else
-		{
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-		}
-		
+
 		temp[0] = userY; // temp[0] -> userY
 		temp[1] = userX; // temp[1] -> userX
-		return temp; //temp¹è¿­À» ¸®ÅÏ
+		return temp; // tempï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
-	
-	//1¹ø À¯Çü
-	public static int check(int[][] hosu, int userY, int userX)
-	{
-		
-		if(hosu[userY][userX] == 1) //È£¼ö ¹è¿­¿¡ ¹°°í±â°¡ ÀÖ´ÂÁö È®ÀÎ
+
+	// 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int check(int[][] hosu, int userY, int userX) {
+
+		if (hosu[userY][userX] == 1) // È£ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 		{
-			hosu[userY][userX] = 0; // È£¼ö ¹è¿­ÀÇ °ªÀ» 0À¸·Î ¼¼ÆÃÇØ¼­ ¹°°í±â¸¦ ÀâÀ½
-			return 1;//1À» ¸®ÅÏ
+			hosu[userY][userX] = 0; // È£ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½
+			return 1;// 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
-		return 0;//0À» ¸®ÅÏ
+		return 0;// 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
-	
-	
+
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 
-		int [][] hosu = fishRandom();
+		int[][] hosu = fishRandom();
 		fishPrint(hosu);
 		int userY = 0;
 		int userX = 0;
-		int fishCount = 0; 
-		
-		int[] cast = casting(); //Ä³½ºÆÃ ÇÔ¼ö¿¡¼­ ¸®ÅÏÇÑ ¹è¿­À» cast¹è¿­ÀÌ ¹Þ´Â´Ù.
-		
-		userY = cast[0]; //cast ¹è¿­[0]¿¡ ÀÖ´Â °ªÀ» userY¿¡ ´ëÀÔ
-		userX = cast[1]; //cast ¹è¿­[1]¿¡ ÀÖ´Â °ªÀ» userX¿¡ ´ëÀÔ
-		
-		//Ä³½ºÆÃ ÇßÀ»¶§ ¹Ù·Î ¹°°í±â°¡ ÀÖ´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
-		if(hosu[userY][userX] == 1)
-		{
+		int fishCount = 0;
+
+		int[] cast = casting(); // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ castï¿½è¿­ï¿½ï¿½ ï¿½Þ´Â´ï¿½.
+
+		userY = cast[0]; // cast ï¿½è¿­[0]ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ userYï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		userX = cast[1]; // cast ï¿½è¿­[1]ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ userXï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+		// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
+		if (hosu[userY][userX] == 1) {
 			fishCount++;
 			hosu[userY][userX] = 0;
-			System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 		}
-		
-		//¹°°í±â°¡ 3¸¶¸® ÀâÈú¶§ ±îÁö °è¼Ó ¹Ýº¹
-		while(fishCount <3)
-		{
-			System.out.print("1. À§ 2. ¾Æ·¡ 3. ¿ÞÂÊ 4. ¿À¸¥ÂÊ : ");
+
+		// ï¿½ï¿½ï¿½ï¿½ï¿½â°¡ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+		while (fishCount < 3) {
+			System.out.print("1. ï¿½ï¿½ 2. ï¿½Æ·ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ");
 			int move = sc.nextInt();
-			
-			int[] temp = move(move, userY, userX); // ³¬½Ã´ë ¿òÁ÷¿©¼­ ³ª¿Â °á°ú °ªÀ» temp¹è¿­ÀÌ ¹Þ½À´Ï´Ù.
+
+			int[] temp = move(move, userY, userX); // ï¿½ï¿½ï¿½Ã´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ tempï¿½è¿­ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½Ï´ï¿½.
 			userY = temp[0]; // temp[0] -> userY
-			userX = temp[1]; // temp[1] -> userX 
-			
-			System.out.println("y : "+userY+", x :"+userX);
-			//Ã¼Å©ÇÔ¼ö¸¦ È£ÃâÇØ¼­ ¹°°í±â¸¦ Àâ¾Ò´ÂÁö È®ÀÎ
-			int num = check(hosu, userY, userX); //Ã¼Å©¿¡ ´ëÇÑ °á°ú °ªÀ» numº¯¼ö°¡ ¹Þ½À´Ï´Ù.
-			
-			if(num == 1) //numÀÌ 1ÀÌ¸é ¹°°í±â¸¦ ÀâÀº °ÍÀÓ
+			userX = temp[1]; // temp[1] -> userX
+
+			System.out.println("y : " + userY + ", x :" + userX);
+			// Ã¼Å©ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+			int num = check(hosu, userY, userX); // Ã¼Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ numï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½Ï´ï¿½.
+
+			if (num == 1) // numï¿½ï¿½ 1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			{
-				fishCount += num;// ¹°°í±â Ä«¿îÅÍ¸¦ 1 Áõ°¡
-				System.out.println("¹°°í±â¸¦ "+fishCount+"¸¦ Àâ¾Ò½À´Ï´Ù."); //Ãâ·Â
+				fishCount += num;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½Í¸ï¿½ 1 ï¿½ï¿½ï¿½ï¿½
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ " + fishCount + "ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½."); // ï¿½ï¿½ï¿½
 			}
-			
+
 		}
-		
+
 	}
 }

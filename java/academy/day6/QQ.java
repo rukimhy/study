@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 import java.util.Scanner;
 
@@ -6,76 +6,80 @@ public class QQ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		Scanner scan = new Scanner(System.in);
-		
-		//1¹ø ¹®Á¦
-		System.out.print("1¹ø) ¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		// 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		System.out.print("1ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int num1 = scan.nextInt();
-		
-		if(num1 >= 90) System.out.println("ÃàÇÏÇÕ´Ï´Ù. AÇÐÁ¡À» ÃëµæÇÏ¼Ì½À´Ï´Ù.");
-		System.out.println("°¨»çÇÕ´Ï´Ù.");
-		
-		//2¹ø ¹®Á¦
-		System.out.print("2¹ø) ¼ýÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		if (num1 >= 90)
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+
+		// 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		System.out.print("2ï¿½ï¿½) ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int num2 = scan.nextInt();
-		
-		if(num2 < 0) System.out.println("À½¼öÀÔ´Ï´Ù.");
-		else if(num2 == 0) System.out.println("0ÀÔ´Ï´Ù.");
-		else System.out.println("¾ç¼öÀÔ´Ï´Ù.");
-		
-		//3¹ø ¹®Á¦
-		System.out.print("3¹ø) A~F Áß ÇÐÁ¡À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		if (num2 < 0)
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		else if (num2 == 0)
+			System.out.println("0ï¿½Ô´Ï´ï¿½.");
+		else
+			System.out.println("ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+
+		// 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		System.out.print("3ï¿½ï¿½) A~F ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		char char1 = scan.next().charAt(0);
-		
-		if(!(char1 == 'A' || char1 == 'B' || char1 == 'C' || char1 == 'D' || char1 == 'F')) {
-			System.out.println("Á¤È®ÇÑ ¼ºÀûÀÌ ¾Æ´Õ´Ï´Ù.");
+
+		if (!(char1 == 'A' || char1 == 'B' || char1 == 'C' || char1 == 'D' || char1 == 'F')) {
+			System.out.println("ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½.");
 		} else {
-			if(char1 == 'A' || char1 == 'B') {
-				System.out.println("¿ì¼öÇÑ ¼ºÀûÀÔ´Ï´Ù.");
-			} else if(char1 == 'C' || char1 == 'D') {
-				System.out.println("ºÐ¹ßÇÏ½Ê¼î");
-			} else System.out.println("¸¹Àº ³ë·ÂÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
+			if (char1 == 'A' || char1 == 'B') {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			} else if (char1 == 'C' || char1 == 'D') {
+				System.out.println("ï¿½Ð¹ï¿½ï¿½Ï½Ê¼ï¿½");
+			} else
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Õ´Ï´ï¿½.");
 		}
-		
-		//4¹ø ¹®Á¦
-		System.out.print("4¹ø) Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		// 4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		System.out.print("4ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int num4 = scan.nextInt();
 		int sum4 = 0;
-		for(int i=1; i<=num4; i++) {
-			if(i%2 == 0) {
+		for (int i = 1; i <= num4; i++) {
+			if (i % 2 == 0) {
 				sum4 += i;
 			}
 		}
-		System.out.println(num4+"±îÁöÀÇ Â¦¼öÀÇ ÇÕÀº "+sum4);
-		
-		//5¹ø ¹®Á¦
-		System.out.print("5¹ø) Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println(num4 + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Â¦ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + sum4);
+
+		// 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		System.out.print("5ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int num5 = scan.nextInt();
-		
-		System.out.print(num5+"ÀÇ ¾à¼ö : ");
-		for(int i=1; i<=num5; i++) {
-			if(num5 % i == 0) {
+
+		System.out.print(num5 + "ï¿½ï¿½ ï¿½ï¿½ï¿½ : ");
+		for (int i = 1; i <= num5; i++) {
+			if (num5 % i == 0) {
 				System.out.print(i + " ");
 			}
 		}
 		System.out.println();
-		
-		//6¹ø ¹®Á¦
+
+		// 6ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int num6, sum;
-		while(true) {
+		while (true) {
 			sum = 0;
-			System.out.print("6¹ø) Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(Á¾·á = -1) : ");
+			System.out.print("6ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ = -1) : ");
 			num6 = scan.nextInt();
-			if(num6 == -1) {
+			if (num6 == -1) {
 				break;
-			}
-			else {
-				System.out.print("1ºÎÅÍ "+num6+"±îÁöÀÇ °á°ú : ");
-				for(int i=1; i<=num6; i++) {
+			} else {
+				System.out.print("1ï¿½ï¿½ï¿½ï¿½ " + num6 + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : ");
+				for (int i = 1; i <= num6; i++) {
 					sum += i;
 				}
-				System.out.println(num6+"±îÁöÀÇ ÇÕÀº "+sum);
+				System.out.println(num6 + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + sum);
 			}
 		}
 	}

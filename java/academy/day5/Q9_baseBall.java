@@ -1,4 +1,4 @@
-package day5;
+package academy.day5;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,238 +7,166 @@ public class Q9_baseBall {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* ¼ıÀÚ¾ß±¸°ÔÀÓ
-		 * cpu°¡ 1~9 Áß 3°³ÀÇ ¼ıÀÚ¸¦ ·£´ıÀ¸·Î ¹Ş½À´Ï´Ù. (´Ü, ·£´ı ¼ıÀÚ°¡ ´Ù ´Ş¶ó¾ß ÇÔ)
-		 * user°¡ 1~9 Áß 3°³ÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÕ´Ï´Ù. (¶È°°Àº ÀÔ·ÂÀÌ¸é Àß¸øµÈ ÀÔ·ÂÀÌ¶ó°í ¾Ë·ÁÁÖ°í ´Ù½Ã ÀÔ·Â ¹Ş´Â´Ù.)
+		/*
+		 * ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * cpuï¿½ï¿½ 1~9 ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş½ï¿½ï¿½Ï´ï¿½. (ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ ï¿½Ş¶ï¿½ï¿½ ï¿½ï¿½)
+		 * userï¿½ï¿½ 1~9 ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½È°ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ì¸ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ö°ï¿½ ï¿½Ù½ï¿½ ï¿½Ô·ï¿½
+		 * ï¿½Ş´Â´ï¿½.)
 		 * cpu 3 2 1 user 2 7 9 => 1ball
 		 * cpu 3 2 1 user 1 3 2 => 3ball
 		 * cpu 3 2 1 user 3 9 6 => 1strike
 		 * cpu 3 2 1 user 4 5 6 => out
-		 * cpu 3 2 1 user 3 2 1 => È¨·±ÀÔ´Ï´Ù. => ÇÁ·Î±×·¥ Á¾·á µË´Ï´Ù.
+		 * cpu 3 2 1 user 3 2 1 => È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½. => ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë´Ï´ï¿½.
 		 */
 		Scanner scan = new Scanner(System.in);
 		Random r = new Random();
 		int cpu1, cpu2, cpu3;
-		
-		System.out.println("¼ıÀÚ¾ß±¸°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.println("1ºÎÅÍ 9±îÁöÀÇ ¼ıÀÚ¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
-		
-		//cpu 3°³ ·£´ı ¼ıÀÚ ±¸Çö
-		cpu1 = r.nextInt(9)+1;
-		while(true) 
-		{
-			cpu2 = r.nextInt(9)+1;
-			if(cpu1 != cpu2) 
-			{
-				break;
-			}
-		}
-		while(true) 
-		{
-			cpu3 = r.nextInt(9)+1;
-			if(cpu1 != cpu3 && cpu2 != cpu3) 
-			{
-				break;
-			}
-		}
-		System.out.println("cpu1 = "+cpu1+" cpu2 = "+cpu2+" cpu3 = "+cpu3);
-		
-		
-		while(true) 
-		{
-		//user 3°³ ÀÔ·Â ±¸Çö		
-		System.out.print("1¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-		int user1 = scan.nextInt();
-		while(true) 
-		{
-			if(!(user1 >= 1 && user1 <=9)) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-				user1 = scan.nextInt();
-			} 
-			else 
-			{
-				break;
-			}
-		}
 
-			
-		System.out.print("2¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-		int user2 = scan.nextInt();
-		
-		while(true) 
-		{
-			if(user2 == user1) 
-			{
-				System.out.println("°°Àº ¼ıÀÚ´Â ÀÔ·ÂÇÏ¸é ¾ÈµË´Ï´Ù.");
-				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-				user2 = scan.nextInt();
-			} 
-			else if(!(user2 >= 1 && user2 <=9)) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-				user2 = scan.nextInt();
-			} 
-			else 
-			{
+		System.out.println("ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+
+		// cpu 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		cpu1 = r.nextInt(9) + 1;
+		while (true) {
+			cpu2 = r.nextInt(9) + 1;
+			if (cpu1 != cpu2) {
 				break;
 			}
 		}
-
-		
-		System.out.print("3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-		int user3 = scan.nextInt();
-	
-		while(true) 
-		{
-			if(user3 == user1 || user3 == user2) 
-			{
-				System.out.println("°°Àº ¼ıÀÚ´Â ÀÔ·ÂÇÏ¸é ¾ÈµË´Ï´Ù.");
-				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-				user3 = scan.nextInt();
-			} 
-			else if(!(user3 >= 1 && user3 <=9)) 
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-				System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
-				user3 = scan.nextInt();
-			} 
-			else 
-			{
+		while (true) {
+			cpu3 = r.nextInt(9) + 1;
+			if (cpu1 != cpu3 && cpu2 != cpu3) {
 				break;
 			}
 		}
+		System.out.println("cpu1 = " + cpu1 + " cpu2 = " + cpu2 + " cpu3 = " + cpu3);
 
-		//°ÔÀÓ ±¸Çö
+		while (true) {
+			// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
+			System.out.print("1ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+			int user1 = scan.nextInt();
+			while (true) {
+				if (!(user1 >= 1 && user1 <= 9)) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+					user1 = scan.nextInt();
+				} else {
+					break;
+				}
+			}
 
-		if(user1 == cpu1 && user2 == cpu2 && user3 == cpu3) 
-		{
-			System.out.println("È¨·±ÀÔ´Ï´Ù.");
-			System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
-			break;
-		} 
-		else 
-		{
-			//2sÀÏ °æ¿ì
-			if((user1 == cpu1 && user2 == cpu2) || (user1 == cpu1 && user3 == cpu3) || (user2 == cpu2 && user3 == cpu3)) 
-			{
-				System.out.println("2strike ÀÔ´Ï´Ù.");
-			} 
-			else 
-			{
-				//1sÀÏ °æ¿ì
-				if(user1 == cpu1) 
-				{
-					if(user2 == cpu3 && user3 == cpu2) 
-					{
-						System.out.println("1strike 2ball ÀÔ´Ï´Ù.");
-					} 
-					else if(user2 == cpu3 || user3 == cpu2) 
-					{
-						System.out.println("1strike 1ball ÀÔ´Ï´Ù.");
-					} 
-					else 
-					{
-						System.out.println("1strike 0ball ÀÔ´Ï´Ù.");
-					}					
-				} 
-				else if(user2 == cpu2) 
-				{
-					if(user1 == cpu3 && user3 == cpu1) 
-					{
-						System.out.println("1strike 2ball ÀÔ´Ï´Ù.");
-					} 
-					else if(user1 == cpu3 || user3 == cpu1) 
-					{
-						System.out.println("1strike 1ball ÀÔ´Ï´Ù.");
-					} 
-					else 
-					{
-						System.out.println("1strike 0ball ÀÔ´Ï´Ù.");
-					}
-				} 
-				else if(user3 == cpu3) 
-				{
-					if(user1 == cpu2 && user2 == cpu1) 
-					{
-						System.out.println("1strike 2ball ÀÔ´Ï´Ù.");
-					} 
-					else if(user1 == cpu2 || user2 == cpu1) 
-					{
-						System.out.println("1strike 1ball ÀÔ´Ï´Ù.");
-					} 
-					else 
-					{
-						System.out.println("1strike 0ball ÀÔ´Ï´Ù.");
-					}
-				} 
-				else 
-				{
-					//0s 3bÀÏ °æ¿ì
-					if((user1 == cpu3 && user2 == cpu1 && user3 == cpu2) || (user1 == cpu2 && user2 == cpu3 && user3 == cpu1)) 
-					{
-						System.out.println("0strike 3ball ÀÔ´Ï´Ù.");
-					} 
-					else 
-					{
-						//0s 2bÀÏ °æ¿ì
-						if(user2 == cpu3) 
-						{
-							if(user1 == cpu2) 
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							} 
-							else if(user3 == cpu2) 
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							} 
-							else if(user3 == cpu1)
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							}
-						} 
-						else if(user1 == cpu3) 
-						{
-							if(user2 == cpu1) 
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							} 
-							else if(user3 == cpu2)
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
+			System.out.print("2ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+			int user2 = scan.nextInt();
+
+			while (true) {
+				if (user2 == user1) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµË´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+					user2 = scan.nextInt();
+				} else if (!(user2 >= 1 && user2 <= 9)) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+					user2 = scan.nextInt();
+				} else {
+					break;
+				}
+			}
+
+			System.out.print("3ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+			int user3 = scan.nextInt();
+
+			while (true) {
+				if (user3 == user1 || user3 == user2) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµË´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+					user3 = scan.nextInt();
+				} else if (!(user3 >= 1 && user3 <= 9)) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
+					user3 = scan.nextInt();
+				} else {
+					break;
+				}
+			}
+
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+			if (user1 == cpu1 && user2 == cpu2 && user3 == cpu3) {
+				System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+				break;
+			} else {
+				// 2sï¿½ï¿½ ï¿½ï¿½ï¿½
+				if ((user1 == cpu1 && user2 == cpu2) || (user1 == cpu1 && user3 == cpu3)
+						|| (user2 == cpu2 && user3 == cpu3)) {
+					System.out.println("2strike ï¿½Ô´Ï´ï¿½.");
+				} else {
+					// 1sï¿½ï¿½ ï¿½ï¿½ï¿½
+					if (user1 == cpu1) {
+						if (user2 == cpu3 && user3 == cpu2) {
+							System.out.println("1strike 2ball ï¿½Ô´Ï´ï¿½.");
+						} else if (user2 == cpu3 || user3 == cpu2) {
+							System.out.println("1strike 1ball ï¿½Ô´Ï´ï¿½.");
+						} else {
+							System.out.println("1strike 0ball ï¿½Ô´Ï´ï¿½.");
+						}
+					} else if (user2 == cpu2) {
+						if (user1 == cpu3 && user3 == cpu1) {
+							System.out.println("1strike 2ball ï¿½Ô´Ï´ï¿½.");
+						} else if (user1 == cpu3 || user3 == cpu1) {
+							System.out.println("1strike 1ball ï¿½Ô´Ï´ï¿½.");
+						} else {
+							System.out.println("1strike 0ball ï¿½Ô´Ï´ï¿½.");
+						}
+					} else if (user3 == cpu3) {
+						if (user1 == cpu2 && user2 == cpu1) {
+							System.out.println("1strike 2ball ï¿½Ô´Ï´ï¿½.");
+						} else if (user1 == cpu2 || user2 == cpu1) {
+							System.out.println("1strike 1ball ï¿½Ô´Ï´ï¿½.");
+						} else {
+							System.out.println("1strike 0ball ï¿½Ô´Ï´ï¿½.");
+						}
+					} else {
+						// 0s 3bï¿½ï¿½ ï¿½ï¿½ï¿½
+						if ((user1 == cpu3 && user2 == cpu1 && user3 == cpu2)
+								|| (user1 == cpu2 && user2 == cpu3 && user3 == cpu1)) {
+							System.out.println("0strike 3ball ï¿½Ô´Ï´ï¿½.");
+						} else {
+							// 0s 2bï¿½ï¿½ ï¿½ï¿½ï¿½
+							if (user2 == cpu3) {
+								if (user1 == cpu2) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								} else if (user3 == cpu2) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								} else if (user3 == cpu1) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								}
+							} else if (user1 == cpu3) {
+								if (user2 == cpu1) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								} else if (user3 == cpu2) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								} else {
+									System.out.println("0strike 1ball ï¿½Ô´Ï´ï¿½.");
+								}
+							} else if (user1 == cpu2) {
+								if (user3 == cpu1) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								} else if (user2 == cpu1) {
+									System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+								}
+							} else if (user2 == cpu1 && user3 == cpu2) {
+								System.out.println("0strike 2ball ï¿½Ô´Ï´ï¿½.");
+							} else if (user1 == cpu2 || user1 == cpu3 || user2 == cpu1 || user2 == cpu3 || user3 == cpu1
+									|| user3 == cpu2) {
+								System.out.println("0strike 1ball ï¿½Ô´Ï´ï¿½.");
 							} else {
-								System.out.println("0strike 1ball ÀÔ´Ï´Ù.");
+								System.out.println("OUT ï¿½Ô´Ï´ï¿½.");
 							}
-						} 
-						else if(user1 == cpu2) 
-						{
-							if(user3 == cpu1) 
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							} 
-							else if(user2 == cpu1) 
-							{
-								System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-							}
-						} 
-						else if(user2 == cpu1 && user3 == cpu2) 
-						{
-							System.out.println("0strike 2ball ÀÔ´Ï´Ù.");
-						} 
-						else if(user1 == cpu2 || user1 == cpu3 || user2 == cpu1 || user2 == cpu3 || user3 == cpu1 || user3 == cpu2) 
-						{
-							System.out.println("0strike 1ball ÀÔ´Ï´Ù.");
-						} 
-						else 
-						{
-							System.out.println("OUT ÀÔ´Ï´Ù.");
 						}
 					}
 				}
 			}
-		}
 		}
 	}
 }

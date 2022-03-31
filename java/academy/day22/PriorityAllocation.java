@@ -1,13 +1,13 @@
-package day22;
+package academy.day22;
 
-public class PriorityAllocation implements Scheduler{
+public class PriorityAllocation implements Scheduler {
 	@Override
 	public void getNextCall() {
-		System.out.println("°í°´ µî±ÞÀÌ ³ôÀº °í°´ÀÇ ÀüÈ­¸¦ ¸ÕÀú °¡Á®¿É´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É´Ï´ï¿½.");
 	}
-	
+
 	@Override
 	public void sendCallToAgent() {
-		System.out.println("¾÷¹« skill °ªÀÌ ³ôÀº »ó´ã¿ø¿¡°Ô ¿ì¼±ÀûÀ¸·Î ¹èºÐÇÕ´Ï´Ù.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ skill ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
 }

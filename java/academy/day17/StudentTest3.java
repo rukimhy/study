@@ -1,25 +1,25 @@
-package day17;
+package academy.day17;
 
 public class StudentTest3 {
 
 	public static void main(String[] args) {
 		Student3 studentLee = new Student3();
-		studentLee.setStudentName("ÀÌÁö¿ø");
+		studentLee.setStudentName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(studentLee.serialNum);
-		System.out.println(studentLee.studentName+" ÇÐ¹ø:"+studentLee.studentID);
-		
+		System.out.println(studentLee.studentName + " ï¿½Ð¹ï¿½:" + studentLee.studentID);
+
 		Student3 studentSon = new Student3();
-		studentSon.setStudentName("¼Õ¼ö°æ");
+		studentSon.setStudentName("ï¿½Õ¼ï¿½ï¿½ï¿½");
 		System.out.println(studentSon.serialNum);
-		System.out.println(studentSon.studentName+" ÇÐ¹ø:"+studentSon.studentID);
-		
-		studentLee.setStudentName("ÀÌÁö¿ø");
+		System.out.println(studentSon.studentName + " ï¿½Ð¹ï¿½:" + studentSon.studentID);
+
+		studentLee.setStudentName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(Student3.serialNum);
-		System.out.println(studentLee.studentName+" ÇÐ¹ø:"+studentLee.studentID);
-		
-		studentSon.setStudentName("¼Õ¼ö°æ");
+		System.out.println(studentLee.studentName + " ï¿½Ð¹ï¿½:" + studentLee.studentID);
+
+		studentSon.setStudentName("ï¿½Õ¼ï¿½ï¿½ï¿½");
 		System.out.println(Student3.serialNum);
-		System.out.println(studentSon.studentName+" ÇÐ¹ø:"+studentSon.studentID);
+		System.out.println(studentSon.studentName + " ï¿½Ð¹ï¿½:" + studentSon.studentID);
 	}
 
 }

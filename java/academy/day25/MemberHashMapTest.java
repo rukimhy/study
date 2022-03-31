@@ -1,24 +1,24 @@
-package day25;
+package academy.day25;
 
-import collection.Member;
+import academy.collection.Member;
 
 public class MemberHashMapTest {
 
 	public static void main(String[] args) {
 		MemberHashMap memberHashMap = new MemberHashMap();
-		
-		Member memberLee = new Member(1001, "ÀÌÁö¿ø");
-		Member memberSon = new Member(1002, "¼Õ¹Î±¹");
-		Member memberPark = new Member(1003, "¹Ú¼­ÈÍ");
-		Member memberHong = new Member(1004, "È«±æµ¿");
-		
+
+		Member memberLee = new Member(1001, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		Member memberSon = new Member(1002, "ï¿½Õ¹Î±ï¿½");
+		Member memberPark = new Member(1003, "ï¿½Ú¼ï¿½ï¿½ï¿½");
+		Member memberHong = new Member(1004, "È«ï¿½æµ¿");
+
 		memberHashMap.addMember(memberLee);
 		memberHashMap.addMember(memberSon);
 		memberHashMap.addMember(memberPark);
 		memberHashMap.addMember(memberHong);
-		
+
 		memberHashMap.showAllMember();
-		
+
 		memberHashMap.removeMember(1004);
 		memberHashMap.showAllMember();
 	}

@@ -1,8 +1,8 @@
-package day20;
+package academy.day20;
 
 public class Villain extends Unit {
-	Villain(){
-		super.name = "¾Ç´ç";
+	Villain() {
+		super.name = "ï¿½Ç´ï¿½";
 		super.atk = 100;
 		super.energy = 1000;
 		super.set = super.atk;

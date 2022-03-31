@@ -1,19 +1,20 @@
-package day3;
+package academy.day3;
 
 public class ContinueExample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		int total = 0;
 		int num;
-		
-		for(num = 1; num <= 100; num++) {
-			if(num % 2 == 0) continue;
+
+		for (num = 1; num <= 100; num++) {
+			if (num % 2 == 0)
+				continue;
 			total += num;
-			
+
 		}
-		System.out.println("1ºÎÅÍ 100±îÁöÀÇ È¦¼öÀÇ ÇÕÀº : " + total + "ÀÔ´Ï´Ù.");
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¦ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + total + "ï¿½Ô´Ï´ï¿½.");
 
 	}
 

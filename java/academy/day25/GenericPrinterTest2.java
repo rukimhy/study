@@ -1,4 +1,4 @@
-package day25;
+package academy.day25;
 
 public class GenericPrinterTest2 {
 
@@ -6,7 +6,7 @@ public class GenericPrinterTest2 {
 		GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>();
 		powderPrinter.setMaterial(new Powder());
 		powderPrinter.printing();
-		
+
 		GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
 		plasticPrinter.setMaterial(new Plastic());
 		plasticPrinter.printing();

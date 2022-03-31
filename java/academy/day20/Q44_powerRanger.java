@@ -1,93 +1,82 @@
-package day20;
-/* ºÎ¸ð : ·Îº¿ / ÀÚ½Ä : ·¹µå, ºí·ç, ±×¸°, ¿»·Î¿ì, ÇÎÅ©
- * ºÎ¸ð·Î 5¹è¿­ ¸¸µç´Ù. °´Ã¼¸¦ »ý¼ºÇØ¼­ ·Îº¿ ¹è¿­¿¡ Ã¤¿î´Ù.
- * 0~4 ·£´ý°ªÀ» ¹Þ¾Æ¼­ 0ÀÌ¸é ·¹µå, 1ÀÌ¸é ºí·ç, 2¸é ±×¸°, 3ÀÌ¸é ¿»·Î¿ì, 4¸é ÇÎÅ©
- * ·£´ýÀ¸·Î °´Ã¼ Ã¤¿ì´Ùº¸¸é Áßº¹µÉ °æ¿ì°¡ ÀÖ´Ù
- * ·¹µå ºí·ç ±×¸° ¿»·Î¿ì ÇÎÅ© ¼ø¼­ »ó°ü¾øÀÌ µé¾î°¡¸é ÇÁ·Î±×·¥ Á¾·á
- * ºÎ¸ð ¹è¿­ Ã¤¿ï¶§¸¶´Ù 0~4 ÀÎµ¦½º ¾È¿¡ ¾î¶² °´Ã¼°¡ ÀÖ´ÂÁö Ãâ·Â
+package academy.day20;
+/* ï¿½Î¸ï¿½ : ï¿½Îºï¿½ / ï¿½Ú½ï¿½ : ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½×¸ï¿½, ï¿½ï¿½ï¿½Î¿ï¿½, ï¿½ï¿½Å©
+ * ï¿½Î¸ï¿½ï¿½ 5ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Îºï¿½ ï¿½è¿­ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½.
+ * 0~4 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½, 1ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½, 2ï¿½ï¿½ ï¿½×¸ï¿½, 3ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½, 4ï¿½ï¿½ ï¿½ï¿½Å©
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ Ã¤ï¿½ï¿½Ùºï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ì°¡ ï¿½Ö´ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Î¸ï¿½ ï¿½è¿­ Ã¤ï¿½ï¶§ï¿½ï¿½ï¿½ï¿½ 0~4 ï¿½Îµï¿½ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½î¶² ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 
 import java.util.Random;
 
-class Robot{}
-class Red extends Robot{}
-class Blue extends Robot{}
-class Green extends Robot{}
-class Yellow extends Robot{}
-class Pink extends Robot{}
+class Robot {
+}
+
+class Red extends Robot {
+}
+
+class Blue extends Robot {
+}
+
+class Green extends Robot {
+}
+
+class Yellow extends Robot {
+}
+
+class Pink extends Robot {
+}
 
 public class Q44_powerRanger {
 
 	public static void main(String[] args) {
 		Random r = new Random();
 		Robot[] robot = new Robot[5];
-		
-		while(true) 
-		{
+
+		while (true) {
 			int redCount = 0;
 			int blueCount = 0;
 			int greenCount = 0;
 			int yellowCount = 0;
 			int pinkCount = 0;
-			
-			for(int i = 0; i<5; i++) 
-			{
+
+			for (int i = 0; i < 5; i++) {
 				int random = r.nextInt(5);
-				if(random == 0) 
-				{
+				if (random == 0) {
 					robot[i] = new Red();
 					redCount++;
-				} 
-				else if(random == 1) 
-				{
+				} else if (random == 1) {
 					robot[i] = new Blue();
 					blueCount++;
-				} 
-				else if(random == 2) 
-				{
+				} else if (random == 2) {
 					robot[i] = new Green();
 					greenCount++;
-				} 
-				else if(random == 3) 
-				{
+				} else if (random == 3) {
 					robot[i] = new Yellow();
 					yellowCount++;
-				} 
-				else 
-				{
+				} else {
 					robot[i] = new Pink();
 					pinkCount++;
 				}
 			}
-			
-			for(int i = 0; i < 5; i++) 
-			{
-				if(robot[i] instanceof Red) 
-				{
-					System.out.print(i+"=·¹µå // ");
-				} 
-				else if(robot[i] instanceof Blue) 
-				{
-					System.out.print(i+"=ºí·ç // ");
-				} 
-				else if(robot[i] instanceof Green) 
-				{
-					System.out.print(i+"=±×¸° // ");
-				} 
-				else if(robot[i] instanceof Yellow) 
-				{
-					System.out.print(i+"=¿»·Î¿ì // ");
-				} 
-				else 
-				{
-					System.out.print(i+"=ÇÎÅ© // ");
+
+			for (int i = 0; i < 5; i++) {
+				if (robot[i] instanceof Red) {
+					System.out.print(i + "=ï¿½ï¿½ï¿½ï¿½ // ");
+				} else if (robot[i] instanceof Blue) {
+					System.out.print(i + "=ï¿½ï¿½ï¿½ï¿½ // ");
+				} else if (robot[i] instanceof Green) {
+					System.out.print(i + "=ï¿½×¸ï¿½ // ");
+				} else if (robot[i] instanceof Yellow) {
+					System.out.print(i + "=ï¿½ï¿½ï¿½Î¿ï¿½ // ");
+				} else {
+					System.out.print(i + "=ï¿½ï¿½Å© // ");
 				}
 			}
 			System.out.println();
-			
-			if(redCount == 1 && blueCount == 1 && greenCount == 1 && yellowCount == 1 && pinkCount == 1) 
-			{
-				System.out.println("ÇÕÃ¼¼º°ø");
+
+			if (redCount == 1 && blueCount == 1 && greenCount == 1 && yellowCount == 1 && pinkCount == 1) {
+				System.out.println("ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½");
 				break;
 			}
 		}

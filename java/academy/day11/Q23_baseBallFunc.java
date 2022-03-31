@@ -1,127 +1,108 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q23_baseBallFunc {
-	
-	//cpu ·£´ý ¼ýÀÚ ±¸Çö
-	public static int[] randomCpu() 
-	{
+
+	// cpu ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int[] randomCpu() {
 		Random r = new Random();
 		int[] cpu = new int[3];
-		
-		while(true) 
-		{
-			for(int i=0; i<3; i++) 
-			{
-				cpu[i] = r.nextInt(9)+1;
+
+		while (true) {
+			for (int i = 0; i < 3; i++) {
+				cpu[i] = r.nextInt(9) + 1;
 			}
-			if(cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2]) break;
+			if (cpu[0] != cpu[1] && cpu[0] != cpu[2] && cpu[1] != cpu[2])
+				break;
 		}
-		System.out.println("cpu[0] = "+cpu[0]+" // cpu[1] = "+cpu[1]+" // cpu[2] = "+cpu[2]);
-		
+		System.out.println("cpu[0] = " + cpu[0] + " // cpu[1] = " + cpu[1] + " // cpu[2] = " + cpu[2]);
+
 		return cpu;
 	}
-	
-	//user 3°³ ÀÔ·Â ±¸Çö
-	public static int[] input() 
-	{
+
+	// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static int[] input() {
 		Scanner scan = new Scanner(System.in);
-		
-		int[] user = new int[] {123, 124, 125};
-		
-		System.out.println("¼­·Î ´Ù¸¥ ¼ýÀÚ 3°³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		
-		for(int i=0; i<3; i++) 
-		{
-			System.out.print(i+1+"¹øÂ° ¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+
+		int[] user = new int[] { 123, 124, 125 };
+
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
+
+		for (int i = 0; i < 3; i++) {
+			System.out.print(i + 1 + "ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 			user[i] = scan.nextInt();
 
-			while(true) 
-			{
-				if(!(user[i] >= 1 && user[i] <=9)) 
-				{
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-					System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			while (true) {
+				if (!(user[i] >= 1 && user[i] <= 9)) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					user[i] = scan.nextInt();
-				} 
-				else if(user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) 
-				{
-					System.out.println("°°Àº ¼ýÀÚ´Â ÀÔ·ÂÇÏ¸é ¾ÈµË´Ï´Ù.");
-					System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+				} else if (user[0] == user[1] || user[0] == user[2] || user[1] == user[2]) {
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµË´Ï´ï¿½.");
+					System.out.print("ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ : ");
 					user[i] = scan.nextInt();
-				} 
-				else break;
+				} else
+					break;
 			}
 		}
-		
+
 		return user;
 	}
-	
-	//°ÔÀÓ ±¸Çö
-	public static void output() 
-	{
+
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static void output() {
 		int strike, ball;
 
-		System.out.println("¼ýÀÚ¾ß±¸°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-		System.out.println("1ºÎÅÍ 9±îÁöÀÇ ¼ýÀÚ¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
-		
-		//cpu ·£´ý ±¸Çö
+		System.out.println("ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ 9ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+
+		// cpu ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int cpu[] = randomCpu();
 
-		while(true) 
-		{
+		while (true) {
 			System.out.println();
-			//user 3°³ ÀÔ·Â ±¸Çö
+			// user 3ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
 			int user[] = input();
 
-			//°ÔÀÓ ±¸Çö
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			strike = 0;
 			ball = 0;
 
-			for(int i = 0; i < 3; i++) 
-			{
-				if(user[i] == cpu[i]) strike ++;
+			for (int i = 0; i < 3; i++) {
+				if (user[i] == cpu[i])
+					strike++;
 			}
 
-			if(user[0] == cpu[1] || user[0] == cpu[2])
-			{
+			if (user[0] == cpu[1] || user[0] == cpu[2]) {
 				ball++;
 			}
-			if(user[1] == cpu[0] || user[1] == cpu[2])
-			{
+			if (user[1] == cpu[0] || user[1] == cpu[2]) {
 				ball++;
 			}
-			if(user[2] == cpu[0] || user[2] == cpu[1])
-			{
+			if (user[2] == cpu[0] || user[2] == cpu[1]) {
 				ball++;
 			}
 
-			if(strike == 3)
-			{
-				System.out.println("È¨·±ÀÔ´Ï´Ù.");
+			if (strike == 3) {
+				System.out.println("È¨ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 				break;
-			}
-			else if(strike == 0 && ball == 0)
-			{
-				System.out.println("outÀÔ´Ï´Ù.");
-			}
-			else
-			{
-				System.out.println("Strike :"+strike+" // "+"Ball : "+ball+"ÀÔ´Ï´Ù.");
+			} else if (strike == 0 && ball == 0) {
+				System.out.println("outï¿½Ô´Ï´ï¿½.");
+			} else {
+				System.out.println("Strike :" + strike + " // " + "Ball : " + ball + "ï¿½Ô´Ï´ï¿½.");
 			}
 
 		}
 	}
-	
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¼ýÀÚ¾ß±¸°ÔÀÓÀ» ÇÔ¼ö 3°³ ÀÌ»óÀ¸·Î ±¸Çö
+		// ï¿½ï¿½ï¿½Ú¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ 3ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		output();
-		
+
 	}
 
 }

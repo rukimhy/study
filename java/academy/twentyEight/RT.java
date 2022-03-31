@@ -1,62 +1,57 @@
-package Twentyeight;
+package academy.twentyEight;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class RT extends Thread{
-   //¼ÒÄ¹ º¯¼ö »ý¼º
-   private Socket  m_Socket; // Client socket µé¾î°¨.
-   // Thread Å¬·¡½º run ÇÔ¼ö ¿À¹ö¶óÀÌµù
+public class RT extends Thread {
+   // ï¿½ï¿½Ä¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+   private Socket m_Socket; // Client socket ï¿½ï¿½î°¨.
+   // Thread Å¬ï¿½ï¿½ï¿½ï¿½ run ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
+
    public void run() {
-      //1. ºÎ¸ð ¾²·¡µå run ½ÃÀÛ
+      // 1. ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ run ï¿½ï¿½ï¿½ï¿½
       super.run();
-      
-      try 
-      {
-    	 //2. ¹öÆÛ¸®´õ »ý¼º -&gt; m_Socket.getInputStream()(¼ÒÄ¹À» ÀÌ¿ëÇÑ ¹öÆÛ¸®´õ »ý¼º), ¿ÏÃæÀåÄ¡, ¾ó¸¶Å­ ¿ÃÁö ¸ð¸£´Ï±ñ
+
+      try {
+         // 2. ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -&gt; m_Socket.getInputStream()(ï¿½ï¿½Ä¹ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½),
+         // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡, ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ð¸£´Ï±ï¿½
          BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(m_Socket.getInputStream()));
-         
-         //¹®ÀÚ¿­ º¯¼ö ¼±¾ð
+
+         // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          String receiveString;
-         
-         //¹«ÇÑ¹Ýº¹
-         while(true)
-         {
-        	//¹®ÀÚ¿­ º¯¼ö  receiveString &lt;- ¹öÆÛ¸®´õ ¸®µå¶óÀÎ ÇÑÁÙ¾¿ ÀúÀå
+
+         // ï¿½ï¿½ï¿½Ñ¹Ýºï¿½
+         while (true) {
+            // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveString &lt;- ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¾ï¿½ ï¿½ï¿½ï¿½ï¿½
             receiveString = tmpbuf.readLine();
-            
-            //¸¸¾à¿¡ receiveString ³ÎÀÌ¸é ½ÇÇà
-            if(receiveString ==null)
-            {
-               System.out.println("»ó´ë¹æ ¿¬°áÀÌ ²÷°å½À´Ï´Ù");
-               //Ãâ·Â
+
+            // ï¿½ï¿½ï¿½à¿¡ receiveString ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+            if (receiveString == null) {
+               System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
+               // ï¿½ï¿½ï¿½
                break;
-               //¹Ýº¹Å»Ãâ
-            }
-            else
-            {
-                // receiveStringÀ» Ãâ·Â
-            	System.out.println("»ó´ë¹æ :"+receiveString);
+               // ï¿½Ýºï¿½Å»ï¿½ï¿½
+            } else {
+               // receiveStringï¿½ï¿½ ï¿½ï¿½ï¿½
+               System.out.println("ï¿½ï¿½ï¿½ï¿½ :" + receiveString);
             }
          }
-         //¹Ýº¹¹®ÀÌ ³¡³ª¸é ¹öÆÛ¸®´õ Á¾·á
-         tmpbuf.close();  
+         // ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+         tmpbuf.close();
       }
-      
-      catch(IOException e)
-      {
-    	 //ÀÔÃâ·Â ¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà
+
+      catch (IOException e) {
+         // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          e.printStackTrace();
       }
    }
-   //¸ÞÀÎ¹®¿¡¼­ ¼ÒÄÏ °´Ã¼ ¹Þ¾Æ¼­ ³» º¯¼ö¿¡ ´ëÀÔ
-   public void setSocket(Socket _socket)
-   {
-	   //m_Socket¿¡ main¿¡¼­ ¸¸µç ¼ÒÄÏ ´ëÀÔ
+
+   // ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+   public void setSocket(Socket _socket) {
+      // m_Socketï¿½ï¿½ mainï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
       m_Socket = _socket;
    }
-   
 
 }

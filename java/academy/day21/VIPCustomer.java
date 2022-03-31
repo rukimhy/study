@@ -1,9 +1,9 @@
-package day21;
+package academy.day21;
 
 public class VIPCustomer extends Customer {
 	private int agentID;
 	double saleRatio;
-	
+
 	public VIPCustomer(int customerID, String customerName, int agentID) {
 		super(customerID, customerName);
 		customerGrade = "VIP";
@@ -11,16 +11,16 @@ public class VIPCustomer extends Customer {
 		saleRatio = 0.1;
 		this.agentID = agentID;
 	}
-	
+
 	public int calcPrice(int price) {
 		bonusPoint += price * bonusRatio;
-		return price - (int)(price * saleRatio);
+		return price - (int) (price * saleRatio);
 	}
-	
+
 	public String showCustomerInfo() {
-		return super.showCustomerInfo() + " ´ã´ç »ó´ã¿ø ¹øÈ£´Â "+ agentID+"ÀÔ´Ï´Ù.";
+		return super.showCustomerInfo() + " ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ " + agentID + "ï¿½Ô´Ï´ï¿½.";
 	}
-	
+
 	public int getAgentID() {
 		return agentID;
 	}

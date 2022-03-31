@@ -1,44 +1,42 @@
-package day10;
+package academy.day10;
 
 import java.util.Scanner;
 
-
 public class Q21_calc {
-	
-	
-	//1¹ø ÁÖ°í ¹Þ°í
+
+	// 1ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½Þ°ï¿½
 	public static int add(int a, int b) {
 		int sum = a + b;
 		return sum;
 	}
-	
-	//2¹ø ¾ÈÁÖ°í ¹Þ°í
+
+	// 2ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½Þ°ï¿½
 	public static void minus(int a, int b) {
-		System.out.println("°á°ú°ªÀº "+(a-b));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + (a - b));
 	}
-	
-	//3¹ø ÁÖ°í ¾È¹Þ°í
+
+	// 3ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½È¹Þ°ï¿½
 	public static int multiply() {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("¼ýÀÚ1 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½1 ï¿½Ô·ï¿½ : ");
 		int num1 = scan.nextInt();
-		System.out.print("¼ýÀÚ2 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½2 ï¿½Ô·ï¿½ : ");
 		int num2 = scan.nextInt();
 
-		return num1*num2;
+		return num1 * num2;
 	}
-	
-	//4¹ø ¾ÈÁÖ°í ¾È¹Þ°í
+
+	// 4ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½ ï¿½È¹Þ°ï¿½
 	public static void devide() {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("¼ýÀÚ1 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½1 ï¿½Ô·ï¿½ : ");
 		int num1 = scan.nextInt();
-		System.out.print("¼ýÀÚ2 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½2 ï¿½Ô·ï¿½ : ");
 		int num2 = scan.nextInt();
 
-		System.out.println("°á°ú°ªÀº "+num1/num2);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + num1 / num2);
 	}
 
 	public static void main(String[] args) {
@@ -47,28 +45,25 @@ public class Q21_calc {
 		Scanner scan = new Scanner(System.in);
 		char calc;
 
-		System.out.print("¿¬»êÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä (+,-,*,/) : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ (+,-,*,/) : ");
 		calc = scan.next().charAt(0);
 
-		if(calc == '+') {
-			System.out.print("¼ýÀÚ1 ÀÔ·Â : ");
+		if (calc == '+') {
+			System.out.print("ï¿½ï¿½ï¿½ï¿½1 ï¿½Ô·ï¿½ : ");
 			int num1 = scan.nextInt();
-			System.out.print("¼ýÀÚ2 ÀÔ·Â : ");
+			System.out.print("ï¿½ï¿½ï¿½ï¿½2 ï¿½Ô·ï¿½ : ");
 			int num2 = scan.nextInt();
 
-			System.out.println("°á°ú°ªÀº "+add(num1, num2));
-		}
-		else if(calc == '-') {
-			System.out.print("¼ýÀÚ1 ÀÔ·Â : ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + add(num1, num2));
+		} else if (calc == '-') {
+			System.out.print("ï¿½ï¿½ï¿½ï¿½1 ï¿½Ô·ï¿½ : ");
 			int num1 = scan.nextInt();
-			System.out.print("¼ýÀÚ2 ÀÔ·Â : ");
+			System.out.print("ï¿½ï¿½ï¿½ï¿½2 ï¿½Ô·ï¿½ : ");
 			int num2 = scan.nextInt();
 			minus(num1, num2);
-		}
-		else if(calc == '*') {
-			System.out.println("°á°ú°ªÀº "+multiply());
-		}
-		else if(calc == '/') {
+		} else if (calc == '*') {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + multiply());
+		} else if (calc == '/') {
 			devide();
 		}
 	}

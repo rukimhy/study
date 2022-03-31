@@ -1,79 +1,59 @@
-package day12;
+package academy.day12;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q26_teacher {
 
-	public static int comRan()
-	{
+	public static int comRan() {
 		Random r = new Random();
 		return r.nextInt(3);
 	}
-	
-	public static String userInput()
-	{
+
+	public static String userInput() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("°¡À§ ¹ÙÀ§ º¸¸¦ ÀÔ·Â : ");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		return sc.next();
-		
+
 	}
-	
-	public static int changeUserValue(String str)
-	{
+
+	public static int changeUserValue(String str) {
 		int user;
-		if(!(str.equals("°¡À§") ||str.equals("¹ÙÀ§") || str.equals("º¸")))
-		{
-			System.out.println("Àß¸øµÈÀÔ·ÂÀÔ´Ï´Ù.");
+		if (!(str.equals("ï¿½ï¿½ï¿½ï¿½") || str.equals("ï¿½ï¿½ï¿½ï¿½") || str.equals("ï¿½ï¿½"))) {
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			return -1;
-		}
-		else
-		{
-			//equals("°¡À§") => ÇÔ¼ö String¾È¿¡ ÀÖ´Â ÇÔ¼ö int ±âº»Çü ÇÔ¼ö ÀÚÃ¼°¡ ¾ø½À´Ï´Ù.
-			if(str.equals("°¡À§"))
-			{
+		} else {
+			// equals("ï¿½ï¿½ï¿½ï¿½") => ï¿½Ô¼ï¿½ Stringï¿½È¿ï¿½ ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½ int ï¿½âº»ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
+			if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				user = 0;
-			}
-			else if(str.equals("¹ÙÀ§"))
-			{
+			} else if (str.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				user = 1;
-			}
-			else
-			{
+			} else {
 				user = 2;
 			}
 		}
-		
+
 		return user;
 	}
-	
-	
-	public static void check(int user, int ran)
-	{
-		
-		if(user != -1)
-		{
-			int value = user - ran ;
-			
-			if(value == 1 || value == -2)
-			{
-				System.out.println("À¯Àú½Â");
-			}
-			else
-			{
-				if(value == 0)
-				{
-					System.out.println("¹«½ÂºÎ");
-				}
-				else
-				{
-					System.out.println("ÄÄÇ»ÅÍ ½Â");
+
+	public static void check(int user, int ran) {
+
+		if (user != -1) {
+			int value = user - ran;
+
+			if (value == 1 || value == -2) {
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			} else {
+				if (value == 0) {
+					System.out.println("ï¿½ï¿½ï¿½Âºï¿½");
+				} else {
+					System.out.println("ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½");
 				}
 			}
 		}
-	
+
 	}
-		
+
 	public static void main(String[] args) {
 		check(changeUserValue(userInput()), comRan());
 	}

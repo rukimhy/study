@@ -1,124 +1,115 @@
-package day14;
+package academy.day14;
 
 import java.util.Random;
 import java.util.Scanner;
 
-class Fish{}
+class Fish {
+}
 
-class Fisher{
-	
-	//¹°°í±â °¡µÎ¸®
+class Fisher {
+
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½
 	Fish[] fish = new Fish[3];
-	
-	//Ä³½ºÆÃ 
-	public static int[] casting() 
-	{
+
+	// Ä³ï¿½ï¿½ï¿½ï¿½
+	public static int[] casting() {
 		Scanner scan = new Scanner(System.in);
 		int x, y;
 		int user_count = 0;
 
-		while(true) {
-			System.out.println("¹°°í±â Àâ±â °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
-			System.out.print("ÁÂÇ¥ x, y¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		while (true) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+			System.out.print("ï¿½ï¿½Ç¥ x, yï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 			x = scan.nextInt();
 			y = scan.nextInt();
 
-			if(x > 4 || x < 0 || y > 4 || y < 0 ) 
-			{
-				System.out.println("Àß¸øµÈ Ä³½ºÆÃÀÔ´Ï´Ù.");
+			if (x > 4 || x < 0 || y > 4 || y < 0) {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 				System.out.println();
-			} else break;
+			} else
+				break;
 
 		}
 
-		int[] new_arr = new int[] {x, y, user_count};
+		int[] new_arr = new int[] { x, y, user_count };
 
 		return new_arr;
 	}
 
-	//³¬½Ã´ë ÀÌµ¿
+	// ï¿½ï¿½ï¿½Ã´ï¿½ ï¿½Ìµï¿½
 	public static int[] move(int x, int y) {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("[1]À§ [2]¾Æ·¡ [3]¿ÞÂÊ [4]¿À¸¥ÂÊ : ");
+		System.out.print("[1]ï¿½ï¿½ [2]ï¿½Æ·ï¿½ [3]ï¿½ï¿½ï¿½ï¿½ [4]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ");
 		int choice = scan.nextInt();
 
-		if(choice < 1 || choice > 4) System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-		else 
-		{
-			if(choice == 1) 
-			{
-				if(x-1 < 0) 
-				{
-					System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-				} else x--;
-			}
-			else if(choice == 2) 
-			{
-				if(x+1 > 4) 
-				{
-					System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-				} else x++;
-			}
-			else if(choice == 3) 
-			{
-				if(y-1 < 0) 
-				{
-					System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-				} else y--;
-			}
-			else 
-			{
-				if(y+1 > 4) 
-				{
-					System.out.println("´õ ÀÌ»ó ÀÌµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-				} else y++;
+		if (choice < 1 || choice > 4)
+			System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+		else {
+			if (choice == 1) {
+				if (x - 1 < 0) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					x--;
+			} else if (choice == 2) {
+				if (x + 1 > 4) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					x++;
+			} else if (choice == 3) {
+				if (y - 1 < 0) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					y--;
+			} else {
+				if (y + 1 > 4) {
+					System.out.println("ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else
+					y++;
 			}
 
 		}
 
 		System.out.println();
-		int[] new_arr = new int[] {x, y};
+		int[] new_arr = new int[] { x, y };
 		return new_arr;
 	}
 }
 
-class Lake{	
-	//¹°°í±â ·£´ý°ª »ý¼º
-	public static Fish[][] random_arr(){
+class Lake {
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public static Fish[][] random_arr() {
 		Random r = new Random();
 		Fish[][] arr = new Fish[5][5];
 		int fish_count = 0;
 
-		while(true) {
+		while (true) {
 			int fishX = r.nextInt(5);
 			int fishY = r.nextInt(5);
-			if(arr[fishX][fishY] == null) 
-			{
+			if (arr[fishX][fishY] == null) {
 				arr[fishX][fishY] = new Fish();
 				fish_count++;
 			}
-			if(fish_count == 3) break;
+			if (fish_count == 3)
+				break;
 		}
 
 		return arr;
 	}
 
-	//¹°°í±â ÀÖ´Â Ã¼Å© ÇÔ¼ö
-	public static int[] check(int x, int y, int user_count, Fish[][] arr, Fish[] fish) { 
-		
-		if(arr[x][y] != null) 
-		{
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼Å© ï¿½Ô¼ï¿½
+	public static int[] check(int x, int y, int user_count, Fish[][] arr, Fish[] fish) {
+
+		if (arr[x][y] != null) {
 			fish[user_count] = new Fish();
 			user_count++;
-			System.out.println("¹°°í±â "+user_count+"¸¶¸®¸¦ Àâ¾Ò½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + user_count + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 			arr[x][y] = null;
 		}
-		if(user_count == 3) 
-		{
-			System.out.println("ÃàÇÏÇÕ´Ï´Ù. 3¸¶¸® ´Ù Àâ¾Ò½À´Ï´Ù.");
+		if (user_count == 3) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
 		}
-		int[] new_arr = new int[] {x, y, user_count};
+		int[] new_arr = new int[] { x, y, user_count };
 		return new_arr;
 	}
 }
@@ -138,8 +129,8 @@ public class Q36_fishing {
 		int[] check_arr = lake.check(x, y, casting[2], arr, fisher.fish);
 		int user_count = check_arr[2];
 
-		while(true) {
-			
+		while (true) {
+
 			int[] move_arr = fisher.move(x, y);
 			x = move_arr[0];
 			y = move_arr[1];
@@ -147,7 +138,8 @@ public class Q36_fishing {
 			check_arr = lake.check(x, y, user_count, arr, fisher.fish);
 			user_count = check_arr[2];
 
-			if(fisher.fish[0] != null && fisher.fish[1] != null && fisher.fish[2] != null) break;
+			if (fisher.fish[0] != null && fisher.fish[1] != null && fisher.fish[2] != null)
+				break;
 		}
 
 	}

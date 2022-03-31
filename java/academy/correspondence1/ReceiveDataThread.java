@@ -1,44 +1,43 @@
-package NetWork;
+package academy.correspondence1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.Socket;
 
-class ReceiveDataThread implements Runnable{
-	Socket client; //Socket º¯¼ö client ¼±¾ð
-	BufferedReader ois; // BufferReader º¯¼ö ois ¼±¾ð
-	String receiveData; // ¹®ÀÚ¿­ º¯¼ö receiveData ¼±¾ð
+class ReceiveDataThread implements Runnable {
+	Socket client; // Socket ï¿½ï¿½ï¿½ï¿½ client ï¿½ï¿½ï¿½ï¿½
+	BufferedReader ois; // BufferReader ï¿½ï¿½ï¿½ï¿½ ois ï¿½ï¿½ï¿½ï¿½
+	String receiveData; // ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveData ï¿½ï¿½ï¿½ï¿½
 
-	public ReceiveDataThread(Socket s, BufferedReader ois){ 
-    //ReceiveDataThread »ý¼ºÀÚ ÀÌ°í Socket°ú BufferReaderÀ» ÀÎÀÚ·Î ¹Þ´Â´Ù.
+	public ReceiveDataThread(Socket s, BufferedReader ois) {
+		// ReceiveDataThread ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ Socketï¿½ï¿½ BufferReaderï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Þ´Â´ï¿½.
 		client = s;
-        //ÀÎÀÚ s¸¦ client¿¡ ´ëÀÔ
+		// ï¿½ï¿½ï¿½ï¿½ sï¿½ï¿½ clientï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		this.ois = ois;
-        //ÀÎÀÚ ois¸¦ ÀÎ½ºÅÏ½º º¯¼ö ois¿¡ ´ëÀÔ
+		// ï¿½ï¿½ï¿½ï¿½ oisï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ oisï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 
-  public void run(){
-  //¹Þ´Â°Ô ¾ø°í ÁÖÁöµµ ¾Ê´Â run ÇÔ¼ö
-	try{//½ÃµµÇÏ´Ù
-		while( ( receiveData = ois.readLine() ) != null ) 
-        //oisÀÇ readLine ÇÔ¼ö¸¦ È£ÃâÇÏ¿© ¹®ÀÚ¿­ ÇÑÁÙ ¾¿À» receiveDate¿¡ ´ëÀÔÀ» ÇÏ¸é
-        //receiveDate°¡ nullÀÌ ¾Æ´Ï¸é °è¼Ó ¹Ýº¹
-			System.out.println( receiveData );
-            //receiveData Ãâ·Â
-		
-	}catch(Exception e){//¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà
-		e.printStackTrace();  //¿¹¿ÜÃ³¸®½Ã Ãâ·Â
-    }
-    finally{
-    //À§¿¡ try catch ¾î¶²»óÈ²ÀÌµç ´Ù³¡³ª¸é ½ÇÇà
-		try{//½ÃµµÇÏ´Ù.
-            ois.close();
-            //BufferReader °´Ã¼ ois close()
-			client.close();
-            //Socket °´Ã¼ client close()
-		}catch(IOException e2){ //¿¹¿ÜÃ³¸® ¹ß»ý½Ã ½ÇÇà(IOException ½Ã)
-			e2.printStackTrace();//¿¹¿ÜÃ³¸® Ãâ·Â
+	public void run() {
+		// ï¿½Þ´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ run ï¿½Ô¼ï¿½
+		try {// ï¿½Ãµï¿½ï¿½Ï´ï¿½
+			while ((receiveData = ois.readLine()) != null)
+				// oisï¿½ï¿½ readLine ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ receiveDateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½
+				// receiveDateï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+				System.out.println(receiveData);
+			// receiveData ï¿½ï¿½ï¿½
+
+		} catch (Exception e) {// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			e.printStackTrace(); // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		} finally {
+			// ï¿½ï¿½ï¿½ï¿½ try catch ï¿½î¶²ï¿½ï¿½È²ï¿½Ìµï¿½ ï¿½Ù³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			try {// ï¿½Ãµï¿½ï¿½Ï´ï¿½.
+				ois.close();
+				// BufferReader ï¿½ï¿½Ã¼ ois close()
+				client.close();
+				// Socket ï¿½ï¿½Ã¼ client close()
+			} catch (IOException e2) { // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(IOException ï¿½ï¿½)
+				e2.printStackTrace();// ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½
+			}
 		}
-    }
-  }
+	}
 }

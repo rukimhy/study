@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -10,13 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
-class JScrollPane1 extends JFrame{
+class JScrollPane1 extends JFrame {
 	public JScrollPane1() {
 		Container ct = getContentPane();
 		JPanel jp = new JPanel();
 		jp.setLayout(new GridLayout(20, 5));
-		for(int i = 1; i <= 100; i++) {
-			jp.add(new JButton(i+"¹ø"));
+		for (int i = 1; i <= 100; i++) {
+			jp.add(new JButton(i + "ï¿½ï¿½"));
 		}
 		int v = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
 		int h = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;

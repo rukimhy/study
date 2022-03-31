@@ -1,117 +1,116 @@
-package day23;
+package academy.day23;
 
 import java.util.Random;
 
 /*
- * Å×¶õ ´ë Å×¶õ
- * °¢ ÆÀ¿ø : ¸Þµñ 1¸í SCV 1¸í ( º´¿ø )
- * ·£´ýÀ¸·Î ÅÊÅ©¿Í ¸¶¸°À¸·Î 10¸í¾¿ »ý¼ºÀÌ µÈ´Ù.
- * 1ÆÀ -> 2ÆÀ ¼øÀ¸·Î ÅÏÁ¦·Î °ÔÀÓÀ» ÁøÇàÇÑ´Ù.
- * ÀÚ±â ÅÏÀÏ ¶§ °ø°Ý°ú ¼ö¸® ¶Ç´Â ÈúÀ» ÇÑ´Ù. -> °ø°Ý + (¼ö¸® or Èú)
- * °ø°ÝÀº ·£´ýÀ¸·Î Á¤ÇØÁö´Â ÀÎµ¦½º¿¡ ÀÖ´Â À¯´ÖÀÌ °ø°ÝÀ» ÇÑ´Ù.
- * ¼ö¸® ¶Ç´Â ÈúÀº ·£´ýÀ¸·Î Á¤ÇØÁö´Â ÀÎµ¦½º À¯´ÖÀÌ ¼ö¸® ¶Ç´Â ÈúÀ» ÇÕ´Ï´Ù.
- * ¼ö¸®¿Í Èú¿¡ ´ëÇÑ ¼±ÅÃµµ ·£´ýÀ¸·Î ÇÑ´Ù.
- * ¼ö¸®¿Í ÈúÀº °¢°¢ 5¾¿ Áõ°¡ ½ÃÄÑÁÝ´Ï´Ù.
- * ¸¸¾à ¿¡³ÊÁö°¡ Ç®ÀÌ¸é ÁøÇàÇÏÁö ¾Ê½À´Ï´Ù.
+ * ï¿½×¶ï¿½ ï¿½ï¿½ ï¿½×¶ï¿½
+ * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½Þµï¿½ 1ï¿½ï¿½ SCV 1ï¿½ï¿½ ( ï¿½ï¿½ï¿½ï¿½ )
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
+ * 1ï¿½ï¿½ -> 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+ * ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ý°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. -> ï¿½ï¿½ï¿½ï¿½ + (ï¿½ï¿½ï¿½ï¿½ or ï¿½ï¿½)
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ý´Ï´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.
  * 
- * ¸¶¸° : ¿¡³ÊÁö(50), °ø°Ý·Â(6)
- * ÅÊÅ© : ¿¡³ÊÁö(45), °ø°Ý·Â(4) -> ½ºÇÃ·¡½¬ µ¥¹ÌÁö, °ø°Ý´ë»ó ÀÎµ¦½º À§,¾Æ·¡ ¸ðµÎ °ø°ÝÀ» ¹Þ½À´Ï´Ù.
- * ¸¶Áö¸·±îÁö »ì¾Æ³²Àº ÆÀÀÌ ¿ì½ÂÀÔ´Ï´Ù.
- * Å×¶õ 1ÆÀ
- * Å×¶õ 2ÆÀ
+ * ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(50), ï¿½ï¿½ï¿½Ý·ï¿½(6)
+ * ï¿½ï¿½Å© : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(45), ï¿½ï¿½ï¿½Ý·ï¿½(4) -> ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½Ï´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
+ * ï¿½×¶ï¿½ 1ï¿½ï¿½
+ * ï¿½×¶ï¿½ 2ï¿½ï¿½
  * */
 
-class Terran2{
+class Terran2 {
 	AttUnit[] unit = new AttUnit[10];
 	Backup[] backup = new Backup[2];
-	
+
 	Terran2() {
 		Random r = new Random();
-		
-		for(int i = 0; i < unit.length ; i++) {
+
+		for (int i = 0; i < unit.length; i++) {
 			unit[i] = (r.nextInt(2) == 0) ? new Marine2() : new Tank2();
 		}
-		
+
 		backup[0] = new Medic2();
 		backup[1] = new SCV2();
 	}
-	
+
 	void attack(AttUnit[] enemy) {
 		Random r = new Random();
-		
+
 		int i = r.nextInt(unit.length);
-		
-		if(unit[i] != null) {
+
+		if (unit[i] != null) {
 			unit[i].attack(enemy);
-		}
-		else {
-			System.out.println(" >> °ø°Ý ½ÇÆÐ : ¿ì¸® ÆÀÀÇ À¯´ÖÀÌ ÀÌ¹Ì Á×Àº »óÅÂÀÔ´Ï´Ù.");
+		} else {
+			System.out.println(" >> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ì¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 	}
+
 	void healOrRepair() {
 		Random r = new Random();
 		int bIndex = r.nextInt(2);
 		int aIndex = r.nextInt(unit.length);
-		if(unit[aIndex] != null) {
-			backup[bIndex].healOrRepair(unit[aIndex]);			
+		if (unit[aIndex] != null) {
+			backup[bIndex].healOrRepair(unit[aIndex]);
 		}
-		
+
 	}
 
 }
 
-interface Backup{
+interface Backup {
 	void healOrRepair(AttUnit object);
 }
-class Medic2 implements Backup{
+
+class Medic2 implements Backup {
 	public void healOrRepair(AttUnit object) {
-		if(object instanceof Marine2) {
-			if(object.getEnergy() != 50) {
+		if (object instanceof Marine2) {
+			if (object.getEnergy() != 50) {
 				object.setEnergy(object.getEnergy() + 5);
-				
-				if(object.getEnergy() > 50) {
+
+				if (object.getEnergy() > 50) {
 					object.setEnergy(50);
 				}
-				System.out.println(" > ¸ÞµñÀÌ ¸¶¸°À» Ä¡·áÇß½À´Ï´Ù.");
+				System.out.println(" > ï¿½Þµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+			} else {
+				System.out.println("\t >> ï¿½Ø´ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ fullï¿½Ô´Ï´ï¿½.");
 			}
-			else {
-				System.out.println("\t >> ÇØ´ç °³Ã¼ÀÇ ¿¡³ÊÁö°¡ ÀÌ¹Ì fullÀÔ´Ï´Ù.");
-			}
-		}
-		else {
-			System.out.println("\t >> ¸ÞµñÀº ÅÊÅ©¸¦ ¼ö¸®ÇÒ ¼ö ¾ø½À´Ï´Ù.");
-		}
-	}
-}
-class SCV2 implements Backup{
-	public void healOrRepair(AttUnit object) {
-		if(object instanceof Tank2) {
-			if(object.getEnergy() != 45) {
-				object.setEnergy(object.getEnergy() + 5);
-				
-				if(object.getEnergy() > 45) {
-					object.setEnergy(45);
-				}
-				System.out.println(" > SCVÀÌ ÅÊÅ©¸¦ ¼ö¸®Çß½À´Ï´Ù.");
-			}
-			else {
-				System.out.println("\t >> ÇØ´ç °³Ã¼ÀÇ ¿¡³ÊÁö°¡ ÀÌ¹Ì fullÀÔ´Ï´Ù.");
-			}
-		}
-		else {
-			System.out.println("\t >> SCV´Â ¸¶¸°À» Ä¡·á ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		} else {
+			System.out.println("\t >> ï¿½Þµï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 }
 
-abstract class AttUnit{
+class SCV2 implements Backup {
+	public void healOrRepair(AttUnit object) {
+		if (object instanceof Tank2) {
+			if (object.getEnergy() != 45) {
+				object.setEnergy(object.getEnergy() + 5);
+
+				if (object.getEnergy() > 45) {
+					object.setEnergy(45);
+				}
+				System.out.println(" > SCVï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+			} else {
+				System.out.println("\t >> ï¿½Ø´ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ fullï¿½Ô´Ï´ï¿½.");
+			}
+		} else {
+			System.out.println("\t >> SCVï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		}
+	}
+}
+
+abstract class AttUnit {
 	String name;
 	int energy;
 	int power;
-	
+
 	public int getEnergy() {
 		return energy;
 	}
+
 	public void setEnergy(int energy) {
 		this.energy = energy;
 	}
@@ -119,92 +118,93 @@ abstract class AttUnit{
 	public String getName() {
 		return name;
 	}
-	
+
 	abstract void attack(AttUnit[] object);
 }
 
-class Marine2 extends AttUnit{
-	Marine2(){
-		super.name = "¸¶¸°";
+class Marine2 extends AttUnit {
+	Marine2() {
+		super.name = "ï¿½ï¿½ï¿½ï¿½";
 		super.energy = 50;
 		super.power = 6;
 	}
-	
+
 	void attack(AttUnit[] enemy) {
 		Random r = new Random();
 		int i = r.nextInt(10);
-		System.out.println(" > " + this.name + "ÀÇ °ø°Ý!");
-		if(enemy[i] != null) {
+		System.out.println(" > " + this.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
+		if (enemy[i] != null) {
 			enemy[i].setEnergy(enemy[i].getEnergy() - this.power);
-			System.out.println("\t »ó´ë " + enemy[i].getName() + "ÀÇ ¿¡³ÊÁö°¡ " + enemy[i].getEnergy() + "¸¸Å­ ³²¾Ò½À´Ï´Ù.");
-			if(enemy[i].getEnergy() < 0) {
-				System.out.println(" << »ó´ë" + enemy[i].getName() + "ÀÌ/°¡ Á×¾ú½À´Ï´Ù.>>");
-			}			
-		}
-		else {
-			System.out.println("\t >> °ø°Ý ½ÇÆÐ : »ó´ë À¯´ÖÀÌ ÀÌ¹Ì Á×Àº »óÅÂÀÔ´Ï´Ù.");
+			System.out
+					.println("\t ï¿½ï¿½ï¿½ " + enemy[i].getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + enemy[i].getEnergy() + "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
+			if (enemy[i].getEnergy() < 0) {
+				System.out.println(" << ï¿½ï¿½ï¿½" + enemy[i].getName() + "ï¿½ï¿½/ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.>>");
+			}
+		} else {
+			System.out.println("\t >> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 		}
 	}
 }
 
-class Tank2 extends AttUnit{
+class Tank2 extends AttUnit {
 	Tank2() {
-		super.name = "ÅÊÅ©";
+		super.name = "ï¿½ï¿½Å©";
 		super.energy = 45;
 		super.power = 4;
 	}
+
 	void attack(AttUnit[] enemy) {
 		Random r = new Random();
 		int choice = r.nextInt(10);
-		
-		for(int i = choice+1; i >= choice-1 ; i--) {
-			if(i >= 0 && i < 10) {
-				System.out.println(" > " + this.name + "ÀÇ °ø°Ý!");
-				if(enemy[i] != null) {
+
+		for (int i = choice + 1; i >= choice - 1; i--) {
+			if (i >= 0 && i < 10) {
+				System.out.println(" > " + this.name + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
+				if (enemy[i] != null) {
 					enemy[i].setEnergy(enemy[i].getEnergy() - this.power);
-					System.out.println("\t »ó´ë " + enemy[i].getName() + "[" + i +"] ÀÇ ¿¡³ÊÁö°¡ " + enemy[i].getEnergy() + "¸¸Å­ ³²¾Ò½À´Ï´Ù.");
-					if(enemy[i].getEnergy() < 0) {
-						System.out.println(" << »ó´ë" + enemy[i].getName() + "ÀÌ/°¡ Á×¾ú½À´Ï´Ù.>>");
+					System.out.println("\t ï¿½ï¿½ï¿½ " + enemy[i].getName() + "[" + i + "] ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "
+							+ enemy[i].getEnergy() + "ï¿½ï¿½Å­ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ï´ï¿½.");
+					if (enemy[i].getEnergy() < 0) {
+						System.out.println(" << ï¿½ï¿½ï¿½" + enemy[i].getName() + "ï¿½ï¿½/ï¿½ï¿½ ï¿½×¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.>>");
 						enemy[i] = null;
-					}									
-				}
-				else {
-					System.out.println("\t >> °ø°Ý ½ÇÆÐ : »ó´ë À¯´ÖÀÌ ÀÌ¹Ì Á×Àº »óÅÂÀÔ´Ï´Ù.");
+					}
+				} else {
+					System.out.println("\t >> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 				}
 			}
 		}
-		
+
 	}
 }
 
-class Game{
-	Game(){
+class Game {
+	Game() {
 		Terran2[] team = new Terran2[2];
-		
-		for(int i = 0; i < team.length ; i++) {
+
+		for (int i = 0; i < team.length; i++) {
 			team[i] = new Terran2();
 		}
-		
+
 		int turn = 0;
 		int our = 1;
-		while(true) {
+		while (true) {
 			turn++;
-			our = (our == 0)? 1 : 0;
-			int enemy = (our == 0)? 1 : 0;
-			System.out.println("\n\n=============== Å×¶õ " + (our+1) + "ÆÀÀÇ " + turn +" ¹øÂ° ÅÏ ===============");
+			our = (our == 0) ? 1 : 0;
+			int enemy = (our == 0) ? 1 : 0;
+			System.out.println("\n\n=============== ï¿½×¶ï¿½ " + (our + 1) + "ï¿½ï¿½ï¿½ï¿½ " + turn + " ï¿½ï¿½Â° ï¿½ï¿½ ===============");
 			team[our].attack(team[enemy].unit);
-			if(checkEnd(team[enemy].unit)) {
-				System.out.println(" \n>>> Å×¶õ " + (our+1) + " ÆÀÀÇ ½Â¸®!");
+			if (checkEnd(team[enemy].unit)) {
+				System.out.println(" \n>>> ï¿½×¶ï¿½ " + (our + 1) + " ï¿½ï¿½ï¿½ï¿½ ï¿½Â¸ï¿½!");
 				break;
 			}
 			team[our].healOrRepair();
-			
+
 		}
 	}
-	
+
 	boolean checkEnd(AttUnit[] object) {
-		for(int i = 0; i < object.length ; i++) {
-			if(object[i] != null)
+		for (int i = 0; i < object.length; i++) {
+			if (object[i] != null)
 				return false;
 		}
 		return true;
@@ -214,7 +214,7 @@ class Game{
 public class Q48_student {
 
 	public static void main(String[] args) {
-		
+
 		new Game();
 	}
 

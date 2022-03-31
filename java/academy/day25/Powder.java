@@ -1,11 +1,11 @@
-package day25;
+package academy.day25;
 
 public class Powder extends Material {
 	public void doPrinting() {
-		System.out.println("Powder Àç·á·Î Ãâ·ÂÇÕ´Ï´Ù.");
+		System.out.println("Powder ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 	}
-	
+
 	public String toString() {
-		return "Àç·á´Â PowderÀÔ´Ï´Ù";
+		return "ï¿½ï¿½ï¿½ï¿½ Powderï¿½Ô´Ï´ï¿½";
 	}
 }

@@ -1,4 +1,4 @@
-package day29;
+package academy.day29;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -8,20 +8,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-class JPanel2 extends JFrame{
+class JPanel2 extends JFrame {
 	public JPanel2() {
 		Container ct = getContentPane();
 		ct.setLayout(new BorderLayout(5, 5));
 		JPanel jp1 = new JPanel();
 		jp1.setLayout(new GridLayout(5, 1));
-		jp1.add(new JRadioButton("ÀÚ¹Ù"));
+		jp1.add(new JRadioButton("ï¿½Ú¹ï¿½"));
 		jp1.add(new JRadioButton("C"));
 		jp1.add(new JRadioButton("VisualBasic"));
 		jp1.add(new JRadioButton("JSP"));
 		jp1.add(new JRadioButton("PHP"));
 		JPanel jp2 = new JPanel();
 		jp2.setLayout(new GridLayout(5, 1));
-		jp2.add(new JRadioButton("ÀÚ¹Ù"));
+		jp2.add(new JRadioButton("ï¿½Ú¹ï¿½"));
 		jp2.add(new JRadioButton("C"));
 		jp2.add(new JRadioButton("VisualBasic"));
 		jp2.add(new JRadioButton("JSP"));

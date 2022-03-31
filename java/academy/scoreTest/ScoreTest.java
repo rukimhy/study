@@ -1,4 +1,4 @@
-package scoreTest;
+package academy.scoreTest;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,8 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-class Student
-{
+class Student {
 	private String name;
 	private int kor;
 	private int eng;
@@ -20,7 +19,6 @@ class Student
 	private double avg;
 	private int rank;
 
-
 	public Student(String name, int kor, int eng, int math, int com) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
@@ -28,110 +26,107 @@ class Student
 		this.eng = eng;
 		this.math = math;
 		this.com = com;
-		this.avg = (kor+eng+math+com)/4.0;
+		this.avg = (kor + eng + math + com) / 4.0;
 	}
 
 	public String getName() {
 		return name;
 	}
+
 	public int getKor() {
 		return kor;
 	}
+
 	public int getEng() {
 		return eng;
 	}
+
 	public int getMath() {
 		return math;
 	}
+
 	public int getCom() {
 		return com;
 	}
+
 	public double getAvg() {
 		return avg;
 	}
+
 	public int getRank() {
 		return rank;
 	}
+
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
 
-	public void print()
-	{
-		System.out.println(getName()+":"+getKor()+"\t"+getEng()+"\t"+getMath()+"\t"
-				+getCom()+"\t"+getAvg()+"\t"+getRank());
+	public void print() {
+		System.out.println(getName() + ":" + getKor() + "\t" + getEng() + "\t" + getMath() + "\t"
+				+ getCom() + "\t" + getAvg() + "\t" + getRank());
 	}
 }
 
-class Rank implements Comparator<Student>
-{
+class Rank implements Comparator<Student> {
 	@Override
-	public int compare(Student a,Student b)
-	{
-		if(a.getAvg()<b.getAvg()) return 1;
-		if(a.getAvg()>b.getAvg()) return -1;
+	public int compare(Student a, Student b) {
+		if (a.getAvg() < b.getAvg())
+			return 1;
+		if (a.getAvg() > b.getAvg())
+			return -1;
 		return 0;
 	}
 }
 
-
-
 public class ScoreTest {
 
-
-	public static void writeText(ArrayList<Student> list) throws IOException
-	{
-		FileWriter fw = new FileWriter("ScoreMake.txt",false);
-		String open = "ÀÌ¸§"+"\t\t"+"±¹¾î"+"\t\t"+"¿µ¾î"+"\t\t"+"¼öÇÐ"
-				+"\t\t"+"ÄÄÇ»ÅÍ"+"\t\t"+"Æò±Õ"+"\t\t"+"¼øÀ§"+"\r\n";
+	public static void writeText(ArrayList<Student> list) throws IOException {
+		FileWriter fw = new FileWriter("ScoreMake.txt", false);
+		String open = "ï¿½Ì¸ï¿½" + "\t\t" + "ï¿½ï¿½ï¿½ï¿½" + "\t\t" + "ï¿½ï¿½ï¿½ï¿½" + "\t\t" + "ï¿½ï¿½ï¿½ï¿½"
+				+ "\t\t" + "ï¿½ï¿½Ç»ï¿½ï¿½" + "\t\t" + "ï¿½ï¿½ï¿½" + "\t\t" + "ï¿½ï¿½ï¿½ï¿½" + "\r\n";
 
 		fw.write(open);
 
-		for(int i = 0;i<list.size();i++)
-		{
-			String str = list.get(i).getName()+"\t\t"+list.get(i).getKor()+"\t\t"+
-					list.get(i).getEng()+"\t\t"+list.get(i).getMath()+"\t\t"+
-					list.get(i).getCom()+"\t\t"+list.get(i).getAvg()+"\t\t"+
-					list.get(i).getRank()+"\r\n";
+		for (int i = 0; i < list.size(); i++) {
+			String str = list.get(i).getName() + "\t\t" + list.get(i).getKor() + "\t\t" +
+					list.get(i).getEng() + "\t\t" + list.get(i).getMath() + "\t\t" +
+					list.get(i).getCom() + "\t\t" + list.get(i).getAvg() + "\t\t" +
+					list.get(i).getRank() + "\r\n";
 			fw.write(str);
 		}
 
 		fw.close();
 	}
 
-	public static int inputScore(Scanner sc,String name)
-	{
+	public static int inputScore(Scanner sc, String name) {
 		int score = 0;
-		while(true)
-		{
+		while (true) {
 			System.out.println(name);
 			score = sc.nextInt();
-			if(score >=0 && score <=100)
+			if (score >= 0 && score <= 100)
 				break;
 		}
 		return score;
 	}
 
-	public static void init(ArrayList<Student> list) throws NumberFormatException, IOException
-	{
-		File f = new File("ScoreMake.txt"); 
-		if(f.exists()) 
-		{ 
-			list.clear(); 
-			FileReader fr = new FileReader("ScoreMake.txt"); 
-			BufferedReader reader1 = new BufferedReader(fr); 
-			String line1; 
-			String[] splitLine1 = null; 
-			while((line1=reader1.readLine()) != null) 
-			{ 
+	public static void init(ArrayList<Student> list) throws NumberFormatException, IOException {
+		File f = new File("ScoreMake.txt");
+		if (f.exists()) {
+			list.clear();
+			FileReader fr = new FileReader("ScoreMake.txt");
+			BufferedReader reader1 = new BufferedReader(fr);
+			String line1;
+			String[] splitLine1 = null;
+			while ((line1 = reader1.readLine()) != null) {
 				splitLine1 = line1.split("\t\t");
-				if(!splitLine1[1].equals("±¹¾î"))
-				{
-					Student s = new Student(splitLine1[0], Integer.parseInt(splitLine1[1]),Integer.parseInt(splitLine1[2]), Integer.parseInt(splitLine1[3]), Integer.parseInt(splitLine1[4]));
+				if (!splitLine1[1].equals("ï¿½ï¿½ï¿½ï¿½")) {
+					Student s = new Student(splitLine1[0], Integer.parseInt(splitLine1[1]),
+							Integer.parseInt(splitLine1[2]), Integer.parseInt(splitLine1[3]),
+							Integer.parseInt(splitLine1[4]));
 					s.setRank(Integer.parseInt(splitLine1[6]));
 					list.add(s);
 				}
-			} 
+			}
 
 		}
 	}
@@ -140,106 +135,80 @@ public class ScoreTest {
 		// TODO Auto-generated method stub
 
 		ArrayList<Student> list = new ArrayList<Student>();
-		//ÆÄÀÏ¿¡ ÀÖ´Â ³»¿ëÀ» Ãß°¡ÇØÁÖ´Â ÀÛ¾÷ ÇÊ¿ä
-		//¸¸¾à ÆÄÀÏÀÌ ¾øÀ¸¸é ÀÚµ¿À¸·Î »ý¼ºÀ» ÇØÁÜ
+		// ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Û¾ï¿½ ï¿½Ê¿ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		init(list);
 		Scanner sc = new Scanner(System.in);
 
-		while(true)
-		{
-			System.out.print("1. ÀÔ·Â 2. Á¶È¸ 3. »èÁ¦ 4. Á¾·á : ");
+		while (true) {
+			System.out.print("1. ï¿½Ô·ï¿½ 2. ï¿½ï¿½È¸ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½ï¿½ï¿½ : ");
 			int sel = sc.nextInt();
-			if(sel == 1)
-			{
-				System.out.print("ÀÌ¸§ : ");
+			if (sel == 1) {
+				System.out.print("ï¿½Ì¸ï¿½ : ");
 				String name = sc.next();
-				Student s = new Student(name,inputScore(sc, "±¹¾î :"),inputScore(sc, "¿µ¾î :"),
-						inputScore(sc, "¼öÇÐ :"),inputScore(sc, "ÄÄÇ»ÅÍ :"));
+				Student s = new Student(name, inputScore(sc, "ï¿½ï¿½ï¿½ï¿½ :"), inputScore(sc, "ï¿½ï¿½ï¿½ï¿½ :"),
+						inputScore(sc, "ï¿½ï¿½ï¿½ï¿½ :"), inputScore(sc, "ï¿½ï¿½Ç»ï¿½ï¿½ :"));
 
 				list.add(s);
 
 				Collections.sort(list, new Rank());
 
-				for(int i =0;i<list.size();i++)
-				{
-					list.get(i).setRank(i+1);
+				for (int i = 0; i < list.size(); i++) {
+					list.get(i).setRank(i + 1);
 				}
 
-				//ÆÄÀÏÀ» ´Ù½Ã ¾÷·Îµå ½ÃÄÑ¾ßÇÔ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½
 				writeText(list);
 
-			}
-			else if(sel == 2)
-			{
-				System.out.print("1. ÀüÃ¼Á¶È¸ 2. ¼±ÅÃÁ¶È¸");
+			} else if (sel == 2) {
+				System.out.print("1. ï¿½ï¿½Ã¼ï¿½ï¿½È¸ 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸");
 				int select = sc.nextInt();
-				if(select == 1)
-				{
-					for(int i =0;i<list.size();i++)
-					{
+				if (select == 1) {
+					for (int i = 0; i < list.size(); i++) {
 						list.get(i).print();
 					}
-				}
-				else if(select == 2)
-				{
-					System.out.println("ÀÌ¸§ : ");
+				} else if (select == 2) {
+					System.out.println("ï¿½Ì¸ï¿½ : ");
 					String name = sc.next();
 					int i;
-					for(i =0;i<list.size();i++)
-					{
-						if(list.get(i).getName().equals(name))
-						{
+					for (i = 0; i < list.size(); i++) {
+						if (list.get(i).getName().equals(name)) {
 							list.get(i).print();
 							break;
 						}
 					}
-					if(i == list.size())
-					{
-						System.out.println("Ã£´Â »ç¶÷ÀÌ ¾ø½À´Ï´Ù.");
+					if (i == list.size()) {
+						System.out.println("Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 					}
+				} else {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 				}
-				else
-				{
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
-				}
-			}
-			else if(sel == 3)
-			{
-				System.out.println("ÀÌ¸§ : ");
+			} else if (sel == 3) {
+				System.out.println("ï¿½Ì¸ï¿½ : ");
 				String name = sc.next();
 				int i;
-				for(i =0;i<list.size();i++)
-				{
-					if(list.get(i).getName().equals(name))
-					{
-						System.out.println(list.get(i).getName()+"À» »èÁ¦ÇÕ´Ï´Ù.");
+				for (i = 0; i < list.size(); i++) {
+					if (list.get(i).getName().equals(name)) {
+						System.out.println(list.get(i).getName() + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 						list.remove(i);
 
 						break;
 					}
 				}
-				if(i == list.size())
-				{
-					System.out.println("Ã£´Â »ç¶÷ÀÌ ¾ø½À´Ï´Ù.");
-				}
-				else
-				{
-					for(int j =0;j<list.size();j++)
-					{
-						list.get(j).setRank(j+1);
+				if (i == list.size()) {
+					System.out.println("Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				} else {
+					for (int j = 0; j < list.size(); j++) {
+						list.get(j).setRank(j + 1);
 					}
-					//ÆÄÀÏ ¾÷·Îµå ÀÛ¾÷ ½ÇÇà
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 					writeText(list);
 				}
-			}
-			else if(sel == 4)
-			{
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á¸¦ ÇÕ´Ï´Ù.");
+			} else if (sel == 4) {
+				System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½á¸¦ ï¿½Õ´Ï´ï¿½.");
 				break;
-			}
-			else
-			{
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			} else {
+				System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 			}
 
 		}

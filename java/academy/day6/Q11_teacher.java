@@ -1,4 +1,4 @@
-package day6;
+package academy.day6;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,61 +7,56 @@ public class Q11_teacher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	/*	
-		int a = 10;
-		int b = 20;
-		
-		if(a > b)
-		{
-			System.out.println("a°¡ Å®´Ï´Ù.");
-		}
-		else if(a == b)
-		{
-			System.out.println("a¿Í b°¡ °°½À´Ï´Ù.");
-		}
-		else
-		{
-			System.out.println("b°¡ Å®´Ï´Ù.");
-		}
-		
-		
-		*/
-		
+		/*
+		 * int a = 10;
+		 * int b = 20;
+		 * 
+		 * if(a > b)
+		 * {
+		 * System.out.println("aï¿½ï¿½ Å®ï¿½Ï´ï¿½.");
+		 * }
+		 * else if(a == b)
+		 * {
+		 * System.out.println("aï¿½ï¿½ bï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		 * }
+		 * else
+		 * {
+		 * System.out.println("bï¿½ï¿½ Å®ï¿½Ï´ï¿½.");
+		 * }
+		 * 
+		 * 
+		 */
+
 		Scanner sc = new Scanner(System.in);
 		Random r = new Random();
-		System.out.print("¹è¿­ÀÇ ±æÀÌ¸¦ ÀÔ·Â : ");
+		System.out.print("ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Ô·ï¿½ : ");
 		int size = sc.nextInt();
-		int maxindex =0;
-		int minindex =0;
+		int maxindex = 0;
+		int minindex = 0;
 		int max = -1;
 		int min = 101;
-		
+
 		int[] total = new int[size];
-		
-		
-		for(int i =0;i<size;i++)
-		{
+
+		for (int i = 0; i < size; i++) {
 			total[i] = r.nextInt(101);
-			System.out.print(total[i]+" , ");
+			System.out.print(total[i] + " , ");
 		}
 		System.out.println();
-		
-		for(int i = 0;i<size;i++)
-		{
-			if(max < total[i])
-			{
+
+		for (int i = 0; i < size; i++) {
+			if (max < total[i]) {
 				max = total[i];
 				maxindex = i;
 			}
-			if(min > total[i])
-			{
+			if (min > total[i]) {
 				min = total[i];
 				minindex = i;
 			}
 		}
-		
-		System.out.println("max°ªÀÇ ÀÎµ¦½º : "+ maxindex+" min°ªÀÇ ÀÎµ¦½º : "+ minindex);
-		
+
+		System.out.println("maxï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ : " + maxindex + " minï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ : " + minindex);
+
 	}
 
 }

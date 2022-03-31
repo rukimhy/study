@@ -1,12 +1,12 @@
-package day17;
+package academy.day17;
 
 public class StudentTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Student studentLee = new Student();
-		studentLee.setStudentName("ÀÌ»ó¿ø");
-		
+		studentLee.setStudentName("ï¿½Ì»ï¿½ï¿½");
+
 		System.out.println(studentLee.getStudentName());
 	}
 

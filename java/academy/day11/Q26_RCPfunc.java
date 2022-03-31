@@ -1,95 +1,95 @@
-package day11;
+package academy.day11;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Q26_RCPfunc {
 
-	//ÄÄÇ»ÅÍ ·£´ý ±¸Çö
+	// ï¿½ï¿½Ç»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static int cpu_random() {
 		Random r = new Random();
 		int cpu_choice = r.nextInt(3);
 		return cpu_choice;
 	}
 
-	
-	//usr_input ÀÔ·Â
+	// usr_input ï¿½Ô·ï¿½
 	public static String usr_input_input() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		String usr_choice = scan.next();
-		
+
 		return usr_choice;
 	}
-	
-	//usr_input ÆÇº°
+
+	// usr_input ï¿½Çºï¿½
 	public static int usr_input_check() {
 		int usr_number;
-		while(true) {
+		while (true) {
 			String usr_choice = usr_input_input();
-			if(usr_choice.equals("Á¾·á")) {
+			if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½")) {
 				usr_number = -1;
 				break;
 			} else {
-				if(!(usr_choice.equals("°¡À§") || usr_choice.equals("¹ÙÀ§") || usr_choice.equals("º¸"))) 
-				{
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù."); 
-				} 
+				if (!(usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½ï¿½ï¿½") || usr_choice.equals("ï¿½ï¿½"))) {
+					System.out.println("ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
+				}
 
-				else 
-				{
-					if(usr_choice.equals("°¡À§")) usr_number = 0;
-					else if(usr_choice.equals("¹ÙÀ§")) usr_number = 1;
-					else usr_number = 2;
+				else {
+					if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 0;
+					else if (usr_choice.equals("ï¿½ï¿½ï¿½ï¿½"))
+						usr_number = 1;
+					else
+						usr_number = 2;
 					break;
 				}
 			}
 		}
 		return usr_number;
 	}
-	
-	//°ÔÀÓ ½ÃÀÛ
+
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void game_start() {
 		System.out.println("----------------------------------------");
-		System.out.println("ÄÄÇ»ÅÍ¿Í ÇÏ´Â °¡À§ ¹ÙÀ§ º¸ °ÔÀÓÀÔ´Ï´Ù.");
-		System.out.println("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.println("[Á¾·á]¶ó°í ÀÔ·ÂÇÏ¸é °ÔÀÓÀÌ ³¡³³´Ï´Ù.");
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í¿ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
+		System.out.println("[ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		System.out.println("----------------------------------------");
 	}
-	
-	//°¡À§¹ÙÀ§º¸ ÆÇº°
+
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Çºï¿½
 	public static int[] RCP(int usr_sum[]) {
-		if(usr_sum[0] == 1 || usr_sum[0] == -2) {
-			System.out.println("À¯Àú°¡ ÀÌ°å½À´Ï´Ù.");
+		if (usr_sum[0] == 1 || usr_sum[0] == -2) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			usr_sum[1]++;
-		} else if(usr_sum[0] == 0) {
-			System.out.println("ºñ°å½À´Ï´Ù.");
+		} else if (usr_sum[0] == 0) {
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			usr_sum[2]++;
 		} else {
-			System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.");
+			System.out.println("ï¿½ï¿½Ç»ï¿½Í°ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½Ï´ï¿½.");
 			usr_sum[3]++;
 		}
 		return usr_sum;
 	}
-	
 
-	//°ÔÀÓ ±¸Çö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void output() {
 		// TODO Auto-generated method stub
-		// °¡À§¹ÙÀ§º¸ ¹®Á¦ ÇÔ¼öÈ­ÇÏ´Âµ¥ ÃÖ´ëÇÑ Àß°Ô ÂÉ°³¼­ ÇÏ°í ¸ÞÀÎ¹®¿¡ ÇÔ¼ö ÇÏ³ª¸¸ È£Ãâ
-		// 0 = °¡À§, 1 = ¹ÙÀ§, 2 = º¸
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½È­ï¿½Ï´Âµï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½É°ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ È£ï¿½ï¿½
+		// 0 = ï¿½ï¿½ï¿½ï¿½, 1 = ï¿½ï¿½ï¿½ï¿½, 2 = ï¿½ï¿½
 
 		int[] sum = new int[4];
-		
+
 		game_start();
-		
-		while(true) {
+
+		while (true) {
 
 			int usr_number = usr_input_check();
-			if(usr_number == -1) break;
+			if (usr_number == -1)
+				break;
 			else {
 				int cpu_choice = cpu_random();
-				int usr_sum = usr_number - cpu_choice; 
+				int usr_sum = usr_number - cpu_choice;
 				sum[0] = usr_sum;
 
 				sum = RCP(sum);
@@ -97,8 +97,6 @@ public class Q26_RCPfunc {
 		}
 		System.out.println("");
 	}
-
-
 
 	public static void main(String[] args) {
 		output();

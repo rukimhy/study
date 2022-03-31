@@ -1,4 +1,4 @@
-package day3;
+package academy.day3;
 
 public class BreakExample2 {
 
@@ -6,17 +6,17 @@ public class BreakExample2 {
 		// TODO Auto-generated method stub
 		int sum = 0;
 		int num = 0;
-		
-		for(num = 0; ; num++) {
+
+		for (num = 0;; num++) {
 			sum += num;
-			if(sum>=100) {
+			if (sum >= 100) {
 				break;
 			}
 		}
-		
-		System.out.println("num : "+ num);
-		System.out.println("sum : "+ sum);
-		
+
+		System.out.println("num : " + num);
+		System.out.println("sum : " + sum);
+
 	}
 
 }

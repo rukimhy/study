@@ -1,4 +1,4 @@
-package day2;
+package academy.day2;
 
 public class CharacterEx3 {
 
@@ -6,14 +6,14 @@ public class CharacterEx3 {
 		// TODO Auto-generated method stub
 		int a = 65;
 		int b = -66;
-		
+
 		char a2 = 65;
-		//char b2 = -66;
-		
-		System.out.println((char)a);
-		System.out.println((char)b);
+		// char b2 = -66;
+
+		System.out.println((char) a);
+		System.out.println((char) b);
 		System.out.println(a2);
-		
+
 	}
 
 }

@@ -1,20 +1,21 @@
-package day28;
+package academy.day28;
 
 import java.io.DataInputStream;
 import java.io.InputStream;
 import java.net.Socket;
+
 //TCP
 public class ClientSide {
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 		String server = "192.168.219.103";
 		int port = 8888;
 		Socket c = new Socket(server, port);
 		InputStream is = c.getInputStream();
 		DataInputStream dis = new DataInputStream(is);
-		for ( int i = 1; i<=10; i++) {
+		for (int i = 1; i <= 10; i++) {
 			int j = dis.readInt();
-			System.out.println("¼­¹ö·ÎºÎÅÍ ¹ÞÀº µ¥ÀÌÅÍ "+j+" Ãâ·Â");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + j + " ï¿½ï¿½ï¿½");
 		}
 		c.close();
 	}
