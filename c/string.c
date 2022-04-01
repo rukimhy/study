@@ -2,6 +2,8 @@
 
 int str_length(char *str);
 int str_equal(char *a, char *b);
+int str_copy(char *a, char *b);
+void str_add(char *a, char *b);
 
 int main() {
     char null_1 = '\0';
@@ -34,10 +36,23 @@ int main() {
     char str_a[] = "abc";
     char str_b[] = "abc";
     if (str_equal(str_a, str_b)) {
-        printf("equals");
+        printf("equals\n");
     } else {
-        printf("different");
+        printf("different\n");
     }
+
+    char copy1[] = "hello";
+    char copy2[] = "hi";
+    printf("복사 이전 1 : %s\n", copy1);
+    printf("복사 이전 2 : %s\n", copy2);
+
+    str_copy(copy1, copy2);
+    printf("복사 이전 1 : %s\n", copy1);
+    printf("복사 이전 2 : %s\n", copy2);
+
+    char add1[100] = "hello, my name is";
+    char add2[] = "Psi";
+    str_add(add1, add2);
 
     return 0;
 }
@@ -61,4 +76,32 @@ int str_equal(char *a, char *b) {
         }
     }
     return 1;
+}
+
+int str_copy(char *dest, char *src) {
+    while (*src) {
+        *dest = *src;
+        src++;
+        dest++;
+    }
+    *dest = '\0';
+
+    return 1;
+}
+
+void str_add(char *a, char *b) {
+    int i = 0, j = 0;
+
+    while (a[i]) {
+        i++;
+    }
+    a[i++] = ' ';
+
+    while (b[j]) {
+        a[i] = b[j];
+        i++;
+        j++;
+    }
+    a[i] = '\0';
+    printf("%s\n", a);
 }
