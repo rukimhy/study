@@ -8,5 +8,7 @@ int main() {
         }
     }
 
-    printf("%dx%d=%2d", j, i, j * i);
+    printf("%dx%d=%2d\n", j, i, j * i);
+
+    printf("%d의 16진수 = %x\n", 120, 120);
 }

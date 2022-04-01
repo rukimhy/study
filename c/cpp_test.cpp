@@ -85,9 +85,12 @@ int main() {
     printf("------------------\n");
 
     // enum 예제
+    cout << "Sunday : " << Sunday << endl;
     enum Week week;
     week = Wednesday;
-    cout << "enum : " << week << endl;
+    cout << "enum(Wednesday) : " << week << endl;
+    enum Week week2 = Monday;
+    cout << "Monday : " << week2 << endl;
     printf("------------------\n");
 
     // struct 예제
