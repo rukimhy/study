@@ -1,0 +1,1 @@
+void strCopy(char *src, char *dest);
