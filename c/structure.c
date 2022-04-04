@@ -6,6 +6,14 @@ struct Human {
     int weight;
 } being = {20, 30, 40};
 
+struct MAN {
+    char *name;
+    int age;
+    int height;
+    int weight;
+};
+typedef struct MAN Man;
+
 struct Test {
     int a, b;
     char str[30];
@@ -20,6 +28,7 @@ int add_one(int *a);
 void str_cpy(char *dest, char *src);
 void setTest(struct Test *t, int a, int b, char *str);
 struct Test returnTest(int i);
+void printStruct(Man man);
 
 int main() {
     struct Human psi;
@@ -83,6 +92,11 @@ int main() {
     printf("%d, %d, %s\n", shorter.a, shorter.b, shorter.str);
     printf("%d, %d, %d\n", being.age, being.height, being.weight);
 
+    Man brian = {"brian", 30, 180, 70};
+    Man watson = {"watson", 20, 170, 60};
+    printStruct(brian);
+    printStruct(watson);
+
     return 0;
 }
 
@@ -111,4 +125,8 @@ struct Test returnTest(int i) {
     t.a = i;
 
     return t;
+}
+
+void printStruct(Man man) {
+    printf("%s의 age : %d, height : %d, weight : %d\n", man.name, man.age, man.height, man.weight);
 }
