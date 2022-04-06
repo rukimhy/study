@@ -26,7 +26,7 @@
 
   <div v-for="(숫자, i) in 2" :key="i">
     <img :src="사진[i]" alt="" srcset="" class="room-img" />
-    <h4>{{ products[i] }}</h4>
+    <h4>{{ products[i + 1] }}</h4>
     <p>{{ price2[i] }} 만원</p>
     <button @click="increase(i + 1)">허위매물신고</button
     ><span>신고 수 : {{ 신고수[i + 1] }} </span>
