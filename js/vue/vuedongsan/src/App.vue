@@ -33,10 +33,11 @@
     <hr />
   </div>
 
-  <div v-for="원룸 in 원룸들" :key="원룸">
-    <img :src="원룸[0]" alt="" srcset="" class="room-img" />
-    <h4>{{ 원룸[0] }}</h4>
-    <p>{{ 원룸[0] }}원</p>
+  <div v-for="(원룸, i) in 원룸들" :key="i">
+    <img :src="원룸.image" alt="" srcset="" class="room-img" />
+    <h4>{{ 원룸.title }}</h4>
+    <p>{{ 원룸.content }}</p>
+    <p>{{ 원룸.price }}원</p>
     <hr />
   </div>
 </template>
