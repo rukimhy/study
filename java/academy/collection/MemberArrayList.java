@@ -22,7 +22,7 @@ public class MemberArrayList {
 				return true;
 			}
 		}
-		System.out.println(memberId + "�� �������� �ʽ��ϴ�.");
+		System.out.println(memberId + " memberId");
 		return false;
 	}
 

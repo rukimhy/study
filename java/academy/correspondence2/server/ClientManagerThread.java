@@ -13,7 +13,6 @@ public class ClientManagerThread extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		super.run();
 		try {
 			BufferedReader tmpbuffer = new BufferedReader(new InputStreamReader(m_socket.getInputStream()));
@@ -24,9 +23,9 @@ public class ClientManagerThread extends Thread {
 				text = tmpbuffer.readLine();
 
 				if (text == null) {
-					System.out.println(m_ID + "��(��) �������ϴ�.");
+					System.out.println(m_ID + "입력해주세요.");
 					for (int i = 0; i < ChatServer.m_OutputList.size(); ++i) {
-						ChatServer.m_OutputList.get(i).println(m_ID + "��(��) �������ϴ�.");
+						ChatServer.m_OutputList.get(i).println(m_ID + "입력됐습니다.");
 						ChatServer.m_OutputList.get(i).flush();
 					}
 					break;
@@ -35,9 +34,9 @@ public class ClientManagerThread extends Thread {
 				String[] split = text.split("highkrs12345");
 				if (split.length == 2 && split[0].equals("ID")) {
 					m_ID = split[1];
-					System.out.println(m_ID + "��(��) �����Ͽ����ϴ�.");
+					System.out.println(m_ID + "입력해주세요.");
 					for (int i = 0; i < ChatServer.m_OutputList.size(); ++i) {
-						ChatServer.m_OutputList.get(i).println(m_ID + "��(��) �����Ͽ����ϴ�.");
+						ChatServer.m_OutputList.get(i).println(m_ID + "입력됐습니다.");
 						ChatServer.m_OutputList.get(i).flush();
 					}
 					continue;
@@ -53,7 +52,6 @@ public class ClientManagerThread extends Thread {
 			m_socket.close();
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -2,10 +2,8 @@ package academy.correspondence2.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.net.SocketException;
 
 public class ReceiveThread extends Thread {
 
@@ -13,7 +11,6 @@ public class ReceiveThread extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		super.run();
 
 		try {
@@ -34,7 +31,6 @@ public class ReceiveThread extends Thread {
 			}
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 		}
 	}
 

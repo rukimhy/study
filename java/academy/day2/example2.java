@@ -1,13 +1,10 @@
 package academy.day2;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class example2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		String a = "Hello";
 
 		if (a == "Hello") {
@@ -22,6 +19,8 @@ public class example2 {
 
 		int num = r.nextInt(10); // 0~9
 		int num1 = r.nextInt(10) + 1; // 1~10
+
+		System.out.println(num + " // " + num1);
 
 	}
 

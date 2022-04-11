@@ -9,9 +9,8 @@ public class ChatClient {
 	public static String UserID;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		try {
-			Socket c_socket = new Socket("192.168.0.2", 8888);
+			Socket c_socket = new Socket("192.168.219.104", 8888);
 
 			ReceiveThread rec_thread = new ReceiveThread();
 			rec_thread.setSocket(c_socket);
@@ -23,10 +22,8 @@ public class ChatClient {
 			rec_thread.start();
 
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

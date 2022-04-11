@@ -3,7 +3,6 @@ package academy.correspondence2.client;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -13,7 +12,6 @@ public class SendThread extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		super.run();
 		try {
 			BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(System.in));
@@ -22,7 +20,7 @@ public class SendThread extends Thread {
 
 			String sendString;
 
-			System.out.println("����� ID�� �Է����ֽʽÿ� : ");
+			System.out.println("ID 입력해주세요 : ");
 			ChatClient.UserID = tmpbuf.readLine();
 
 			sendWriter.println("IDhighkrs12345" + ChatClient.UserID);
@@ -43,7 +41,6 @@ public class SendThread extends Thread {
 			tmpbuf.close();
 			m_Socket.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

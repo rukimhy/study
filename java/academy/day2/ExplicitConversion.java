@@ -3,7 +3,6 @@ package academy.day2;
 public class ExplicitConversion {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		double dNum1 = 1.2;
 		float fNum2 = 0.9F;

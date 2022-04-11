@@ -4,10 +4,10 @@ public class MemberArrayListTest {
 
 	public static void main(String[] args) {
 		MemberArrayList memberArrayList = new MemberArrayList();
-		Member memberLee = new Member(1001, "������");
-		Member memberSon = new Member(1002, "�չα�");
-		Member memberPark = new Member(1003, "�ڼ���");
-		Member memberHong = new Member(1004, "ȫ�浿");
+		Member memberLee = new Member(1001, "Carbin");
+		Member memberSon = new Member(1002, "Mike");
+		Member memberPark = new Member(1003, "Housing");
+		Member memberHong = new Member(1004, "Nick");
 
 		memberArrayList.addMember(memberLee);
 		memberArrayList.addMember(memberSon);

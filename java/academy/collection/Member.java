@@ -26,6 +26,6 @@ public class Member {
 	}
 
 	public String toString() {
-		return memberName + " ȸ������ ���̵�� " + memberId + " �Դϴ�.";
+		return memberName + " memberName // " + memberId + " memberId";
 	}
 }

@@ -11,8 +11,6 @@ public class ChatServer {
 	public static ArrayList<PrintWriter> m_OutputList;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		m_OutputList = new ArrayList<PrintWriter>();
 
 		try {
@@ -29,7 +27,6 @@ public class ChatServer {
 			}
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
