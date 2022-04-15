@@ -1,3 +1,4 @@
 .vscode/
 ./js/react/blog/package-lock.json
 ./js/vue/vuedongsan/package-lock.json
+./ruby/blog
