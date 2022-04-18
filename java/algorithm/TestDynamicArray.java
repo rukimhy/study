@@ -103,6 +103,7 @@ public class TestDynamicArray {
     public static void main(String[] args) {
         DynamicArray dynamicArray = new DynamicArray(5);
         System.out.println("dynamicArray.isEmpty() : " + dynamicArray.isEmpty());
+        System.out.println("dynamicArray.size : " + dynamicArray.size);
 
         dynamicArray.add("A");
         dynamicArray.add("B");
