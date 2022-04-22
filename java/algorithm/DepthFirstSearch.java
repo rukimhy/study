@@ -1,14 +1,11 @@
 import java.util.ArrayList;
 
-class AdjacencyMatrix {
+class DepthFirstSearch {
     public static void main(String[] args) {
         /**
-         * Adjacency Matrix = A 2D array to store 1's / 0's to represent edges
-         * # of rows = # of unique nodes
-         * # of columns = #of unique nodes
-         * 
-         * runtime complexity to check an Edge : O(1)
-         * space complexity : O(v^2) // v = # of vertices (nodes)
+         * Depth First Search = Pick a route, keep going.
+         * If you reach a dead end, or an already visited node,
+         * backtrack to a previous node with unvisited adjacent neighbors
          */
         Graph graph = new Graph(5);
 
@@ -26,6 +23,8 @@ class AdjacencyMatrix {
         graph.addEdge(4, 2);
 
         graph.print();
+
+        graph.depthFirstSearch(3);
 
         System.out.println(graph.checkEdge(0, 1));
         System.out.println(graph.checkEdge(3, 2));
@@ -71,10 +70,31 @@ class AdjacencyMatrix {
                 System.out.println();
             }
         }
+
+        public void depthFirstSearch(int src) {
+            boolean[] visited = new boolean[matrix.length];
+            dFSHelper(src, visited);
+        }
+
+        private void dFSHelper(int src, boolean[] visited) {
+            if (visited[src]) {
+                return;
+            } else {
+                visited[src] = true;
+                System.out.println(nodes.get(src).data + " = visited");
+            }
+            for (int i = 0; i < matrix[src].length; i++) {
+                if (matrix[src][i] == 1) {
+                    dFSHelper(i, visited);
+                }
+            }
+            return;
+        }
     }
 
     static class Node {
         char data;
+        boolean visited;
 
         Node(char data) {
             this.data = data;

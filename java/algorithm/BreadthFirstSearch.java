@@ -1,14 +1,20 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
-class AdjacencyMatrix {
+public class BreadthFirstSearch {
     public static void main(String[] args) {
         /**
-         * Adjacency Matrix = A 2D array to store 1's / 0's to represent edges
-         * # of rows = # of unique nodes
-         * # of columns = #of unique nodes
+         * Breadth FS = Traverse a graph level by level
+         * Utilizes a Queue
+         * Better if destination is on average close to start
+         * Siblings are visited before children
          * 
-         * runtime complexity to check an Edge : O(1)
-         * space complexity : O(v^2) // v = # of vertices (nodes)
+         * Depth FS = Traverse a graph branch by branch
+         * Utilizes a Stack
+         * Better if destination is on average far from the start
+         * Childeren are visited before siblings
+         * More popular for games/puzzles
          */
         Graph graph = new Graph(5);
 
@@ -26,6 +32,8 @@ class AdjacencyMatrix {
         graph.addEdge(4, 2);
 
         graph.print();
+
+        graph.breadthFirstSearch(0);
 
         System.out.println(graph.checkEdge(0, 1));
         System.out.println(graph.checkEdge(3, 2));
@@ -69,6 +77,26 @@ class AdjacencyMatrix {
                     System.out.print(matrix[i][j] + " ");
                 }
                 System.out.println();
+            }
+        }
+
+        public void breadthFirstSearch(int src) {
+            Queue<Integer> queue = new LinkedList<>();
+            boolean[] visited = new boolean[matrix.length];
+
+            queue.offer(src);
+            visited[src] = true;
+
+            while (queue.size() != 0) {
+                src = queue.poll();
+                System.out.println(nodes.get(src).data + " = visited");
+
+                for (int i = 0; i < matrix[src].length; i++) {
+                    if (matrix[src][i] == 1 && !visited[i]) {
+                        queue.offer(i);
+                        visited[i] = true;
+                    }
+                }
             }
         }
     }
