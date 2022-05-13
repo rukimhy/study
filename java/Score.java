@@ -76,7 +76,7 @@ class Rank implements Comparator<Student> {
 	}
 }
 
-public class ScoreTest {
+public class Score {
 
 	public static void writeText(ArrayList<Student> list) throws IOException {
 		FileWriter fw = new FileWriter("ScoreMake.txt", false);
