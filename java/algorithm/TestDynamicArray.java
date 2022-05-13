@@ -1,3 +1,46 @@
+public class TestDynamicArray {
+    public static void main(String[] args) {
+        /**
+         * Java = ArrayList
+         * C++ = Vector
+         * JavaScript = Array
+         * Python = List
+         * 
+         * Advantages
+         * 1. Random access of elements O(1)
+         * 2. Good locality of reference and data cache utilization
+         * 3. Easy to insert/delete at the end
+         * 
+         * Disadvatages
+         * 1. Wastes more memory
+         * 2. Shifting elements is time cosuming O(n)
+         * 3. Expanding/Shrinking the array is time consuming O(n)
+         */
+
+        DynamicArray dynamicArray = new DynamicArray(5);
+        System.out.println("dynamicArray.isEmpty() : " + dynamicArray.isEmpty());
+        System.out.println("dynamicArray.size : " + dynamicArray.size);
+
+        dynamicArray.add("A");
+        dynamicArray.add("B");
+        dynamicArray.add("C");
+        dynamicArray.add("D");
+        dynamicArray.add("E");
+
+        System.out.println("dynamicArray : " + dynamicArray);
+        System.out.println("dynamicArray.size : " + dynamicArray.size);
+        System.out.println("dynamicArray.capacity : " + dynamicArray.capacity);
+
+        dynamicArray.insert(0, "X");
+        dynamicArray.delete("A");
+        dynamicArray.delete("B");
+        System.out.println("dynamicArray : " + dynamicArray);
+        System.out.println("dynamicArray.size : " + dynamicArray.size);
+        System.out.println("dynamicArray.capacity : " + dynamicArray.capacity);
+        System.out.println("dynamicArray.search(\"C\") : " + dynamicArray.search("C"));
+    }
+}
+
 class DynamicArray {
 
     int size;
@@ -96,31 +139,5 @@ class DynamicArray {
         }
 
         return string;
-    }
-}
-
-public class TestDynamicArray {
-    public static void main(String[] args) {
-        DynamicArray dynamicArray = new DynamicArray(5);
-        System.out.println("dynamicArray.isEmpty() : " + dynamicArray.isEmpty());
-        System.out.println("dynamicArray.size : " + dynamicArray.size);
-
-        dynamicArray.add("A");
-        dynamicArray.add("B");
-        dynamicArray.add("C");
-        dynamicArray.add("D");
-        dynamicArray.add("E");
-
-        System.out.println("dynamicArray : " + dynamicArray);
-        System.out.println("dynamicArray.size : " + dynamicArray.size);
-        System.out.println("dynamicArray.capacity : " + dynamicArray.capacity);
-
-        dynamicArray.insert(0, "X");
-        dynamicArray.delete("A");
-        dynamicArray.delete("B");
-        System.out.println("dynamicArray : " + dynamicArray);
-        System.out.println("dynamicArray.size : " + dynamicArray.size);
-        System.out.println("dynamicArray.capacity : " + dynamicArray.capacity);
-        System.out.println("dynamicArray.search(\"C\") : " + dynamicArray.search("C"));
     }
 }
