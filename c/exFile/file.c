@@ -2,7 +2,7 @@
 
 FILE *updateFile(char *name, char *str);
 int main() {
-    FILE *fp = fopen("a.txt", "w");
+    FILE *fp = fopen("./txt/a.txt", "w");
     if (fp == NULL) {
         printf("Write Error!\n");
         return 0;
@@ -10,7 +10,7 @@ int main() {
     fputs("Hello, world!\n", fp);
     fclose(fp);
 
-    FILE *fp2 = fopen("a.txt", "r");
+    FILE *fp2 = fopen("./txt/a.txt", "r");
     char buf[20];
     fgets(buf, 20, fp2);
     printf("입력받은 내용 : %s", buf);
@@ -23,7 +23,7 @@ int main() {
     }
     fclose(fp2);
 
-    FILE *fp3 = updateFile("a.txt", "super");
+    FILE *fp3 = updateFile("./txt/a.txt", "super");
     fclose(fp3);
 
     return 0;

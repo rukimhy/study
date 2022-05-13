@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    FILE* fp = fopen("c.txt", "r");
+    FILE* fp = fopen("./txt/c.txt", "r");
 
     char data[100];
 

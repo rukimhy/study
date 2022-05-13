@@ -2,9 +2,9 @@
 #include <string.h>
 
 int main() {
-    FILE *fp = fopen("b.txt", "r+");
+    FILE *fp = fopen("./txt/b.txt", "r+");
     if (fp == NULL) {
-        fp = fopen("b.txt", "w+");
+        fp = fopen("./txt/b.txt", "w+");
         fputs("There is some data.", fp);
         fseek(fp, 0, SEEK_SET);
 
