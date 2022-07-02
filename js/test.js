@@ -8,7 +8,7 @@ if (typeof (null) === Object) {
     console.log("typeof(null) != Object !!!");
 }
 
-console.log(5 > 3 ? "5는 0보다 크다." : "5는 0보다 작다.");
+console.log(5 > 0 ? "5는 0보다 크다." : "5는 0보다 작다.");
 
 const target = ['a', 'b', 'c'];
 target.unshift('first');
