@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+</head>
+
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어 : <span id="word"></span></div>
+    <input type="text" name="" id="">
+    <button>입력</button>
+    <h2 id="threeCheck"></h2>
+    <script>
+        /*
+        const number = parseInt(prompt('몇 명이 참가하나요?'), 10);
+        alert(number);
+        confirm('맞나요?');
+        */
+
+        /*
+         document.querySelector('input').addEventListener('input', (event) => {
+             console.log('글자 입력', event.target.value);
+         })
+ 
+         const onClick = function () {
+             console.log('버튼 클릭');
+         }
+         document.querySelector('button').addEventListener('click', onClick);
+         */
+
+        const number = parseInt(prompt('몇 명이 참가하나요?'), 10);
+
+        const $button = document.querySelector('button');
+        const $input = document.querySelector('input');
+        const $word = document.querySelector('#word');
+        const $order = document.querySelector('#order');
+        const $threeCheck = document.querySelector('#threeCheck');
+
+        if (number) {
+            $input.focus();
+
+            let word;
+            let newWord;
+
+            const onClickButton = () => {
+                if ((!word || (word[word.length - 1] === newWord[0] && newWord != '' && word != newWord)) && newWord.length === 3) {
+                    word = newWord;
+                    $word.textContent = word;
+
+                    const order = Number($order.textContent);
+                    if (order + 1 > number) {
+                        $order.textContent = "1";
+                    } else {
+                        $order.textContent = order + 1;
+                    }
+
+                } else {
+                    alert('올바르지않음');
+                }
+
+                $input.value = '';
+                $input.focus();
+            }
+
+            const onInput = (event) => {
+                newWord = event.target.value;
+                if (newWord.length != 3) {
+                    $threeCheck.textContent = "3글자가 아닙니다.";
+                    document.getElementById('threeCheck').style.color = 'red';
+                } else {
+                    $threeCheck.textContent = "3글자 확인";
+                    document.getElementById('threeCheck').style.color = 'green';
+                }
+            };
+
+            $button.addEventListener('click', onClickButton);
+            $input.addEventListener('input', onInput);
+        } else {
+            document.body.style.background = 'black';
+            $button.remove();
+            $input.remove();
+            $word.remove();
+            $order.remove();
+            $threeCheck.textContent = "게임 종료";
+            document.getElementById('threeCheck').style.color = 'red';
+        }
+
+    </script>
+</body>
+
+</html>
