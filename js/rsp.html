@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        #computer {
+            width: 142px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="computer"></div>
+    <div>
+        <button id="scissors" class="btn">가위</button>
+        <button id="rock" class="btn">바위</button>
+        <button id="paper" class="btn">보</button>
+    </div>
+    <div>=======================</div>
+    <div id="pannel"></div>
+    <div>=======================</div><br>
+    <div>당신의 점수 : <span id="userScore">0</span></div>
+    <div>컴퓨터의 점수 : <span id="cpuScore">0</span></div>
+
+
+    <script>
+        const $computer = document.querySelector('#computer');
+        const $pannel = document.querySelector('#pannel');
+        const $userScore = document.querySelector('#userScore');
+        const $cpuScore = document.querySelector('#cpuScore');
+        const $rock = document.querySelector('#rock');
+        const $scissors = document.querySelector('#scissors');
+        const $paper = document.querySelector('#paper');
+        const IMG_URL = './rsp.png';
+        $computer.style.background = `url(${IMG_URL}) 0 0`;
+        $computer.style.backgroundSize = 'auto 200px';
+
+        const rspX = {
+            scissors: '0',
+            rock: '-220px',
+            paper: '-440px',
+        };
+
+        let computerChoice = 'scissors';
+        const changeComputerHand = () => {
+            if (computerChoice === 'scissors') {
+                computerChoice = 'rock';
+            } else if (computerChoice === 'rock') {
+                computerChoice = 'paper';
+            } else {
+                computerChoice = 'scissors';
+            }
+            $computer.style.background = `url(${IMG_URL}) ${rspX[computerChoice]} 0`;
+            $computer.style.backgroundSize = 'auto 200px';
+        }
+
+        // diff === '고양이' || diff === '거북이' || diff === '강아지' || diff === '사자'
+        // ['고양이', '거북이', '강아지', '사자'].includes(diff);
+
+        let userScore = Number($userScore.textContent);
+        let cpuScore = Number($cpuScore.textContent);
+
+        const winner = (user, cpu) => {
+            if ([-2, 1].includes(user - cpu)) {
+                userScore++;
+                $pannel.textContent = '당신의 승리입니다!';
+            } else if (user - cpu === 0) {
+                $pannel.textContent = '무승부입니다.';
+            } else {
+                cpuScore++;
+                $pannel.textContent = '컴퓨터의 승리입니다...';
+            }
+            $userScore.textContent = userScore;
+            $cpuScore.textContent = cpuScore;
+
+            if (userScore == 3) {
+                $pannel.textContent = '당신의 완벽한 승리입니다!!!!!';
+                $pannel.style.color = 'green';
+                $rock.removeEventListener('click', clickButton);
+                $scissors.removeEventListener('click', clickButton);
+                $paper.removeEventListener('click', clickButton);
+            } else if (cpuScore == 3) {
+                $pannel.style.color = 'red';
+                $pannel.textContent = '컴퓨터의 완전한 승리입니다.....';
+                $rock.removeEventListener('click', clickButton);
+                $scissors.removeEventListener('click', clickButton);
+                $paper.removeEventListener('click', clickButton);
+            }
+        }
+
+        let intervalId = setInterval(changeComputerHand, 50);
+        let clickable = true;
+        const clickButton = () => {
+            if (clickable) {
+                clearInterval(intervalId);
+                const myChoice = event.target.id === 'scissors' ? 0
+                    : event.target.id === 'rock' ? 1 : 2;
+                const cpuChoice = computerChoice === 'scissors' ? 0
+                    : computerChoice === 'rock' ? 1 : 2;
+                winner(myChoice, cpuChoice);
+                clickable = false;
+                setTimeout(() => {
+                    clearInterval(intervalId);
+                    clickable = true;
+                    intervalId = setInterval(changeComputerHand, 50);
+                }, 1000);
+            }
+        }
+
+        /*
+        const clickButton = () => {
+            clearInterval(intervalId);
+            $rock.removeEventListener('click', clickButton);
+            $scissors.removeEventListener('click', clickButton);
+            $paper.removeEventListener('click', clickButton);
+            setTimeout(() => {
+                clearInterval(intervalId);
+                intervalId = setInterval(changeComputerHand, 50);
+            }, 1000);
+            $rock.addEventListener('click', clickButton);
+            $scissors.addEventListener('click', clickButton);
+            $paper.addEventListener('click', clickButton);
+        }
+        */
+        $rock.addEventListener('click', clickButton);
+        $scissors.addEventListener('click', clickButton);
+        $paper.addEventListener('click', clickButton);
+
+    </script>
+</body>
+
+</html>
