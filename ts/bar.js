@@ -21,3 +21,8 @@ var ABC = /** @class */ (function () {
 new ABC(1, 'first', 2).show();
 var abc = new ABC(3, 'second', 4);
 abc.show();
+var myobject = {
+    name: 'kim',
+    age: 4
+};
+console.log('myobject.name:', myobject.name);

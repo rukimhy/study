@@ -27,3 +27,16 @@ class ABC {
 new ABC(1, 'first', 2).show();
 let abc = new ABC(3, 'second', 4);
 abc.show();
+
+type MyObject = {
+	name?: String,
+	age: number,
+}
+
+let myobject: MyObject = {
+	name: 'kim',
+	age: 4,
+}
+
+console.log('myobject.name:', myobject.name);
+
