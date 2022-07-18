@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'lukas-reineke/lsp-format.nvim'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -37,6 +38,9 @@ set relativenumber
 set scrolloff=5
 set wrap
 
+set encoding=utf-8
+set fileencoding=utf-8
+
 set sts=2
 set ts=2
 set sw=2
@@ -46,7 +50,7 @@ set autoindent
 set smartindent
 
 set cursorline
-set signcolumn
+set signcolumn=yes
 
 
 " lua << EOF
@@ -128,10 +132,11 @@ lua <<EOF
 		single_file_support = true,
 		handlers = {
 			["textDocument/publishDiagnostics"] = vim.lsp.with(
-				vim.lsp.diagnostic.on_publish_diagnostics, {
-						update_in_insert = true,
+			vim.lsp.diagnostic.on_publish_diagnostics, {
+					update_in_insert = true,
 				}
 			)
-		},
+			},
   }
+	require "lspconfig".tsserver.setup { on_attach = require "lsp-format".on_attach }
 EOF
