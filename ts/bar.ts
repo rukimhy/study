@@ -5,15 +5,15 @@ console.log('foo.foo(1)=' + foo.foo(1));
 console.log('foo.abc(a, b, c)=' + foo.abc('a', 'b', 'c'));
 
 let a: number = 1;
-let b: String = 'string';
+let b: string = 'string';
 
 console.log('typeof(a):' + typeof (a), 'typeof(b):' + typeof (b));
 
 class ABC {
 	private a: number;
-	private b: String;
+	private b: string;
 	private c: number;
-	constructor(a: number, b: String, c: number) {
+	constructor(a: number, b: string, c: number) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
@@ -29,7 +29,7 @@ let abc = new ABC(3, 'second', 4);
 abc.show();
 
 type MyObject = {
-	name?: String,
+	name?: string,
 	age: number,
 }
 
@@ -39,4 +39,8 @@ let myobject: MyObject = {
 }
 
 console.log('myobject.name:', myobject.name);
+
+[10, 20, 30, 40].forEach((e, i) => {
+	foo.randomNumber(e);
+})
 

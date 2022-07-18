@@ -26,3 +26,6 @@ var myobject = {
     age: 4
 };
 console.log('myobject.name:', myobject.name);
+[10, 20, 30, 40].forEach(function (e, i) {
+    foo.randomNumber(e);
+});

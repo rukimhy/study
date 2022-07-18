@@ -9,6 +9,10 @@ var Foo = /** @class */ (function () {
     Foo.prototype.abc = function (a, b, c) {
         return "" + a + b + c;
     };
+    Foo.prototype.randomNumber = function (len) {
+        var randomNumber = Math.floor(Math.random() * len);
+        console.log('randomNumber=' + randomNumber);
+    };
     return Foo;
 }());
 exports["default"] = Foo;
