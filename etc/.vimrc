@@ -8,12 +8,14 @@ set nu
 set relativenumber
 set scrolloff=5
 set nowrap
+set cursorline
 
 set ts=4 "tab-stop : number of spaces that <Tab> in file uses
 set sts=4 "soft-tab-stop : number of spaces that <Tab> while editing
 set sw=4 "shift-width : number of spasces to use for autoindent step
 
 set cindent
+set autoindent
 set smartindent
 
 set incsearch

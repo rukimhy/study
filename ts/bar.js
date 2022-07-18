@@ -1,7 +1,9 @@
 "use strict";
 exports.__esModule = true;
 var foo_1 = require("./foo");
-(0, foo_1["default"])(2);
+var foo = new foo_1["default"]();
+console.log(foo.foo(1));
+console.log(foo.abc('a', 'b', 'c'));
 var a = 1;
 var b = 'string';
 console.log(typeof (a), typeof (b));

@@ -1,5 +1,11 @@
-export default function foo(i :number):number{
-	return i+1;
+class Foo {
+	foo(i :number):number{
+		return i+1;
+	}
+
+	abc(a:String, b:String, c:String){
+		return "" + a+ b+ c;
+	}
 }
 
-foo(1);
+export default Foo;

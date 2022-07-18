@@ -1,13 +1,13 @@
-import foo from './foo'
+import Foo from './foo'
 
-foo(2);
-
+const foo = new Foo();
+console.log(foo.foo(1));
+console.log(foo.abc('a', 'b', 'c'));
 
 let a: number = 1;
 let b: String = 'string';
 
 console.log(typeof(a), typeof(b));
-
 
 class ABC {
 	private a:number;
