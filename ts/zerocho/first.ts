@@ -17,3 +17,17 @@ type Animal = { breath: true };
 type Mammalia = Animal & { breed: true };
 type Human = Mammalia & { think: true };
 const zerocho: Human = { breath: true, breed: true, think: true };
+
+interface HumanInter {
+	talk: () => void;
+}
+const human: HumanInter = {
+	talk() { return 'abc'; }
+}
+function a(callback: () => void): void { };
+a(() => { return '3'; })
+
+declare function forEach(arr: number[], callback: (el: number) => void): void;
+let target: number[] = [];
+forEach([1, 2, 3], el => { target.push(el) });
+forEach([1, 2, 3], el => target.push(el));
