@@ -7,6 +7,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'lukas-reineke/lsp-format.nvim'
 
@@ -29,6 +31,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let mapleader=" "
 nmap <Leader>f :NERDTreeToggle<CR>
+nmap <Leader>p :MarkdownPreviewToggle<CR>
 nmap <Leader>h :bp<CR>
 nmap <Leader>l :bn<CR>
 nmap <Leader>w :bw<CR>
