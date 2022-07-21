@@ -11,3 +11,4 @@ logname : 현재 로그인한 내 최초 아이디 (su로 변경해도 최초 �
 uname -a : 커널 정보
 lscpu : cpu 관련 정보
 stat : 파일 정보
+update-alternatives : java 등 심볼릭 링크를 통해 버전관리
