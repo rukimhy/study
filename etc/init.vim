@@ -55,13 +55,6 @@ set smartindent
 set cursorline
 set signcolumn=yes
 
-
-" lua << EOF
-" require'lspconfig'.tsserver.setup{
-"	single_file_support = true,
-"}
-"EOF
-
 set completeopt=menu,menuone,noselect
 
 lua <<EOF
