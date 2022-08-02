@@ -132,7 +132,13 @@ lua <<EOF
 					update_in_insert = true,
 				}
 			)
-			},
+		},
 		on_attach = require "lsp-format".on_attach,
   }
+EOF
+
+lua<<EOF
+vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
 EOF
