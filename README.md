@@ -1,4 +1,4 @@
-# Study
-Just study repository.
+# TEST
+Just test repository.
 
 [test.md](./md/test.md)
