@@ -21,7 +21,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
-colorscheme tokyonight
+colorscheme gruvbox
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
