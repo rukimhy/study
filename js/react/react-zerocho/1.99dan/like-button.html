@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>웹게임</title>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+	<!-- <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script> -->
+	<!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script> -->
+
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<script type="text/babel">
+		'use strict';
+
+
+		class LikeButton extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = { liked: false };
+			}
+			render() {
+				if (this.state.liked) {
+					return 'You liked this';
+				}
+
+				// return React.createElement('button', { onClick: () => this.setState({ liked: true }) }, 'Like');
+				/*
+				return (
+					<button onClick={() => { this.setState({ liked: true }); }}>
+						{this.state.liked ? 'liked' : 'Like!'}
+						{[1, 2, 3].map((i) => {
+							return <div>i</div>;
+						})}
+					</button>
+				) //JSX -> babel 이라는 framework가 읽을 수 있게 바꿔줌.
+				*/
+
+				return (
+					<div>
+						<button onClick={() => { this.setState({ liked: true }); }}>
+							{this.state.liked ? 'liked' : 'Like!'}
+							{[1, 2, 3].map((i) => {
+								return <div>{i}</div>;
+							})}
+						</button>
+						<input type="text" />
+					</div> // return에는 하나의 요소만 들어와야함
+				);
+			}
+		} // 1% ErrorBoundary
+
+		function LikeButton2() { // 함수 컴포넌트
+			const [liked, setLiked] = React.useState(false); // 구조분해
+			if (liked) {
+				return 'You liked this.';
+			}
+			return (
+				<button onClick={() => { setLiked(true); }}>Like</button>
+			);
+		}
+	</script>
+
+	<script type="text/babel">
+		// ReactDOM.render(React.createElement(LikeButton), document.querySelector('#root'));
+		// ReactDOM.render(<LikeButton />, document.querySelector('#root')); // React 17
+		ReactDOM.createRoot(document.querySelector('#root')).render(
+			<div>
+				<LikeButton />
+				<LikeButton2 />
+			</div>
+		); // React 18
+	</script>
+
+</body>
+
+</html>
