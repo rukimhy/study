@@ -30,3 +30,14 @@ a.a1 = "900 Tiger"
 a.a2 = 88
 print("a[\"a1\"]="..a["a1"])
 print("a[\"a2\"]="..a["a2"])
+
+Foo = {}
+Foo.a = "Foo.a"
+Foo.foo = function () 
+	print("print Foo.foo()")
+end
+function Foo:bar()
+	print("print Foo.bar() "..self.a)
+end
+Foo.foo()
+Foo:bar()
