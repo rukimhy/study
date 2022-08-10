@@ -19,6 +19,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 call plug#end()
 
 colorscheme gruvbox
@@ -36,6 +39,11 @@ nnoremap <Leader>p :MarkdownPreviewToggle<CR>
 nnoremap <Leader>h :bp<CR>
 nnoremap <Leader>l :bn<CR>
 nnoremap <Leader>w :bw<CR>
+
+nnoremap <leader>tf <cmd>Telescope find_files<CR>
+nnoremap <leader>tg <cmd>Telescope live_grep<CR>
+nnoremap <leader>tb <cmd>Telescope buffers<CR>
+nnoremap <leader>th <cmd>Telescope help_tags<CR>
 
 set nu
 set relativenumber
@@ -142,4 +150,5 @@ lua << EOF
 	vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
+	vim.api.nvim_set_keymap('n', '<C-a>', 'gg<S-v>G', {noremap = true})
 EOF
