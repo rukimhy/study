@@ -12,3 +12,7 @@ uname -a : 커널 정보
 lscpu : cpu 관련 정보
 stat : 파일 정보
 update-alternatives : java 등 심볼릭 링크를 통해 버전관리
+
+mount : mount /dev/sda ./usb
+umount : umount /dev/sda
+
