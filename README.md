@@ -1,2 +1,0 @@
-# TEST
-Just test repository.
